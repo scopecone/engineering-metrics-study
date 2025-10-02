@@ -40,6 +40,8 @@ export interface CollectorRuntimeConfig {
   windowEnd: string;
   rateLimiter: RateLimiter;
   graphqlClient: typeof import("@octokit/graphql").graphql;
+  includeBotPRs: boolean;
+  botAuthorPatterns: string[];
 }
 
 export interface DeploymentLikeEvent {

@@ -20,7 +20,7 @@ This proof of concept focuses on collecting reproducible GitHub telemetry that c
 ### Pull Request Cycle Time (hours)
 - **Definition**: Time from PR creation to merge for pull requests merged into the default branch.
 - **Source**: GitHub GraphQL API `pullRequests` connection with `createdAt` and `mergedAt` timestamps; fallback to REST if needed.
-- **Calculation**: Compute duration in hours for each merged PR during the observation window; report per-repo median, P85, and P95.
+- **Calculation**: Compute duration in hours for each merged PR during the observation window; report per-repo median, P85, and P95. Bot-authored PRs (accounts ending in `[bot]`, Dependabot, Renovate, etc.) are excluded by default to avoid skew; pass `--include-bot-prs` if you prefer to keep them.
 - **Caveats**: Rebased/force-pushed histories may hide intermediate commits; we ignore PRs closed without merge.
 
 ## Experimental metrics (not part of iteration one outputs)

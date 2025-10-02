@@ -72,6 +72,7 @@ This directory houses the data-collection spike that supports our engineering me
 - `COLLECTOR_PROGRESS=true npm run collect …` — surfaces progress logs from each worker without enabling full debug mode.
 - `USE_GRAPHQL_DEPLOYMENTS=false npm run collect …` — falls back to the REST Deployments API if the GitHub GraphQL schema changes; the default GraphQL path batches deployments and statuses to minimise API calls.
 - The collector automatically respects conditional requests (ETag/Last-Modified headers) and will pause when the GitHub rate limit approaches zero, so reruns can safely share cached responses.
+- PR bot authors are filtered by default. Use `npm run collect -- --include-bot-prs …` to keep them, or override detection heuristics with `--bot-author-patterns dependabot,renovate`.
 
 ### Testing
 

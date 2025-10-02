@@ -10,6 +10,7 @@ import { RateLimiter } from "./rate-limiter";
 import { fetchWithConditional } from "./fetch";
 
 import { readRepoEntries, mergeRepoEntries, type RawRepoEntry } from "./config";
+import { DEFAULT_BOT_AUTHOR_PATTERNS, normalizeBotPatterns, isBotAuthorLogin } from "./bots";
 import type {
   CollectorRuntimeConfig,
   RepoConfig,
@@ -36,6 +37,11 @@ interface PullRequestSummary {
   authorLogin: string | null;
 }
 
+interface PullRequestCollection {
+  pullRequests: PullRequestSummary[];
+  excludedBots: Array<{ number: number; authorLogin: string | null }>;
+}
+
 interface RepoMetadata {
   id: number;
   name: string;
@@ -59,6 +65,13 @@ interface RepoMetadataCache {
 }
 
 const program = new Command();
+
+function parseList(value: string): string[] {
+  return value
+    .split(",")
+    .map((item) => item.trim())
+    .filter((item) => item.length > 0);
+}
 
 program
   .description("Collect GitHub telemetry for the engineering metrics study")
@@ -85,6 +98,17 @@ program
     "engineering-metrics-study/data/raw"
   )
   .option("--debug", "Enable verbose logging for filtered artifacts")
+  .option(
+    "--bot-author-patterns <list>",
+    "Comma-separated substrings identifying bot accounts (default includes dependabot, renovate, github-actions, ...)",
+    parseList,
+    DEFAULT_BOT_AUTHOR_PATTERNS
+  )
+  .option(
+    "--include-bot-prs",
+    "Keep PRs authored by bot accounts (default: filtered)",
+    false
+  )
   .parse(process.argv);
 
 async function readRepoArguments(
@@ -132,11 +156,15 @@ async function collectPullRequests(
   owner: string,
   repo: string,
   baseBranch: string,
-  windowStart: string
-): Promise<PullRequestSummary[]> {
+  windowStart: string,
+  options: { includeBotPRs: boolean; botAuthorPatterns: string[]; debug: boolean }
+): Promise<PullRequestCollection> {
   const results: PullRequestSummary[] = [];
+  const excludedBots: Array<{ number: number; authorLogin: string | null }> = [];
   let cursor: string | null = null;
   const windowStartDate = new Date(windowStart);
+  const botPatterns = options.botAuthorPatterns;
+  const debugLog = options.debug;
 
   const query = /* GraphQL */ `
     query ($owner: String!, $name: String!, $base: String!, $cursor: String) {
@@ -204,9 +232,23 @@ async function collectPullRequests(
       if (!pr.mergedAt) {
         continue;
       }
+      const authorLogin = pr.author?.login ?? null;
+      const isBot = !options.includeBotPRs && isBotAuthorLogin(authorLogin, botPatterns);
+      if (isBot) {
+        excludedBots.push({ number: pr.number, authorLogin });
+        if (debugLog) {
+          console.log(
+            `[${owner}/${repo}] [pull-requests] PR #${pr.number} excluded (bot author: ${authorLogin ?? "unknown"})`
+          );
+        }
+        continue;
+      }
       const createdAt = new Date(pr.createdAt);
       if (createdAt < windowStartDate) {
-        return results;
+        return {
+          pullRequests: results,
+          excludedBots,
+        };
       }
       results.push({
         number: pr.number,
@@ -229,7 +271,14 @@ async function collectPullRequests(
     cursor = connection.pageInfo.endCursor;
   }
 
-  return results;
+  if (debugLog && excludedBots.length > 0) {
+    console.log(`[${owner}/${repo}] filtered ${excludedBots.length} bot PR(s)`);
+  }
+
+  return {
+    pullRequests: results,
+    excludedBots,
+  };
 }
 
 async function collectDeploymentEvents(
@@ -367,25 +416,31 @@ async function collectRepo(
   }
 
   const pullRequestPath = path.join(repoDir, "pull-requests.json");
-  let prPayload = await maybeReadCache<{ pullRequests: PullRequestSummary[] }>(
+  let prPayload = await maybeReadCache<{ pullRequests: PullRequestSummary[]; excludedBots?: Array<{ number: number; authorLogin: string | null }> }>(
     pullRequestPath,
     runtime.forceRefresh
   );
   if (!prPayload) {
-    const prs = await collectPullRequests(
+    const prCollection = await collectPullRequests(
       graphqlClient,
       repo.owner,
       repo.name,
       metadata.defaultBranch,
-      runtime.windowStart
+      runtime.windowStart,
+      {
+        includeBotPRs: runtime.includeBotPRs,
+        botAuthorPatterns: runtime.botAuthorPatterns,
+        debug: runtime.debug,
+      }
     );
-    prPayload = { pullRequests: prs };
+    prPayload = { pullRequests: prCollection.pullRequests, excludedBots: prCollection.excludedBots };
     await writeJson(pullRequestPath, {
       fetchedAt: new Date().toISOString(),
       windowStart: runtime.windowStart,
       windowEnd: runtime.windowEnd,
       baseBranch: metadata.defaultBranch,
-      pullRequests: prs,
+      pullRequests: prCollection.pullRequests,
+      excludedBots: prCollection.excludedBots,
     });
   }
 
@@ -461,6 +516,8 @@ async function run() {
     workflowFilter: string[];
     output: string;
     debug?: boolean;
+    botAuthorPatterns: string[];
+    includeBotPrs: boolean;
   }>();
 
   if (options.debug) {
@@ -476,6 +533,8 @@ async function run() {
   const repoConfigs = mergeRepoEntries(rawEntries, {
     workflowKeywords: options.workflowFilter,
   });
+
+  const botAuthorPatterns = normalizeBotPatterns(options.botAuthorPatterns ?? DEFAULT_BOT_AUTHOR_PATTERNS);
 
   const rateLimiter = new RateLimiter();
   const octokit = new Octokit({ auth: token });
@@ -507,6 +566,8 @@ async function run() {
     windowEnd: nowIso,
     rateLimiter,
     graphqlClient,
+    includeBotPRs: Boolean(options.includeBotPrs),
+    botAuthorPatterns,
   };
 
   const summaries = await collectReposParallel(runtime, repoConfigs, graphqlClient, 5);
