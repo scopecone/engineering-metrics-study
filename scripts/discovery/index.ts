@@ -40,6 +40,9 @@ interface RecommendationResult {
 
 const DEFAULT_KEYWORDS = ["deploy", "release", "publish"];
 
+const DEFAULT_EXCLUDE_TOPICS = ["awesome", "awesome-list", "list", "manual", "books"];
+const DEFAULT_EXCLUDE_KEYWORDS = ["curated list", "handbook", "interview questions", "awesome"];
+
 const program = new Command();
 
 program
@@ -55,6 +58,18 @@ program
     "Comma-separated workflow keywords to inspect",
     (value) => value.split(",").map((item) => item.trim()).filter(Boolean),
     DEFAULT_KEYWORDS
+  )
+  .option(
+    "--exclude-topics <list>",
+    "Comma-separated list of topics to skip (default: awesome,awesome-list,list,manual,books)",
+    (value) => value.split(",").map((item) => item.trim()).filter(Boolean),
+    DEFAULT_EXCLUDE_TOPICS
+  )
+  .option(
+    "--exclude-keywords <list>",
+    "Comma-separated substrings; repos whose description matches are skipped",
+    (value) => value.split(",").map((item) => item.trim()).filter(Boolean),
+    DEFAULT_EXCLUDE_KEYWORDS
   )
   .option("-f, --format <type>", "Output format: json or table", "table")
   .parse(process.argv);
@@ -100,6 +115,31 @@ async function fetchTopicRepos(
     defaultBranch: item.default_branch,
     topics: item.topics ?? [],
   }));
+}
+
+function shouldSkipRepo(
+  repo: RepoSummary,
+  excludeTopics: string[],
+  excludeKeywords: string[]
+): { skip: boolean; reasons: string[] } {
+  const reasons: string[] = [];
+  const normalizedTopics = repo.topics.map((topic) => topic.toLowerCase());
+  const topicMatches = excludeTopics
+    .map((topic) => topic.toLowerCase())
+    .filter((topic) => normalizedTopics.includes(topic));
+  if (topicMatches.length > 0) {
+    reasons.push(`topics: ${topicMatches.join(", ")}`);
+  }
+
+  const haystack = `${repo.description ?? ""} ${repo.name}`.toLowerCase();
+  const keywordMatches = excludeKeywords
+    .map((keyword) => keyword.toLowerCase())
+    .filter((keyword) => keyword.length > 0 && haystack.includes(keyword));
+  if (keywordMatches.length > 0) {
+    reasons.push(`keywords: ${keywordMatches.join(", ")}`);
+  }
+
+  return { skip: reasons.length > 0, reasons };
 }
 
 async function inspectReleases(
@@ -305,6 +345,8 @@ async function run() {
     limit: number;
     days: number;
     keywords: string[];
+    excludeTopics: string[];
+    excludeKeywords: string[];
     format: string;
   }>();
 
@@ -324,6 +366,13 @@ async function run() {
     console.log(`\n🔍 Topic: ${topic}`);
     const repos = await fetchTopicRepos(octokit, topic, options.limit);
     for (const repo of repos) {
+      const skipCheck = shouldSkipRepo(repo, options.excludeTopics, options.excludeKeywords);
+      if (skipCheck.skip) {
+        console.log(
+          `  Skipping ${repo.fullName} (filtered by ${skipCheck.reasons.join("; ")})`
+        );
+        continue;
+      }
       console.log(`  Analysing ${repo.fullName}…`);
       const result = await analyseRepo(octokit, repo, options.keywords, windowStart, windowEnd);
       results.push(result);

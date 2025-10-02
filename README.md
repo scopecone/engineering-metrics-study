@@ -64,6 +64,7 @@ This directory houses the data-collection spike that supports our engineering me
    ```
 
    Use `--format json` to export machine-consumable output for downstream tooling or AI-assisted triage.
+   Filter out curated lists or manuals via `--exclude-topics` / `--exclude-keywords` if a topic returns non-product repos.
 
 ## Directory layout
 
