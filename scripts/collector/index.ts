@@ -18,6 +18,7 @@ import type {
 } from "./types";
 import { collectActionsEvents } from "./methods/actions";
 import { collectDeploymentApiEvents } from "./methods/deployments";
+import { collectDeploymentGraphQLEvents } from "./methods/deployments-graphql";
 import { collectReleaseEvents } from "./methods/releases";
 
 type GraphqlClient = typeof graphql;
@@ -251,6 +252,18 @@ async function collectDeploymentEvents(
   }
 
   if (repo.method === "deployments") {
+    if (process.env.USE_GRAPHQL_DEPLOYMENTS !== "false") {
+      return collectDeploymentGraphQLEvents({
+        graphqlClient: runtime.graphqlClient,
+        owner: repo.owner,
+        repo: repo.name,
+        windowStart: runtime.windowStart,
+        windowEnd: runtime.windowEnd,
+        options: repo.deployments,
+        debug: runtime.debug,
+      });
+    }
+
     return collectDeploymentApiEvents({
       octokit: runtime.octokit,
       owner: repo.owner,
@@ -379,6 +392,7 @@ async function collectReposParallel(
 ): Promise<RepoCollectionResult[]> {
   const results: RepoCollectionResult[] = new Array(repoConfigs.length);
   let index = 0;
+  const showProgress = process.env.COLLECTOR_PROGRESS === "true" || runtime.debug;
 
   const worker = async () => {
     while (true) {
@@ -387,9 +401,19 @@ async function collectReposParallel(
         break;
       }
       const repoConfig = repoConfigs[currentIndex];
+      if (showProgress) {
+        console.log(
+          `[${currentIndex + 1}/${repoConfigs.length}] Collecting ${repoConfig.slug}…`
+        );
+      }
       try {
         const summary = await collectRepo(runtime, repoConfig, graphqlClient);
         results[currentIndex] = summary;
+        if (showProgress) {
+          console.log(
+            `✓ [${currentIndex + 1}/${repoConfigs.length}] ${repoConfig.slug}`
+          );
+        }
       } catch (error) {
         console.error(
           `❌ Failed to collect ${repoConfig.slug}:`,
@@ -465,6 +489,7 @@ async function run() {
     windowStart: windowStartIso,
     windowEnd: nowIso,
     rateLimiter,
+    graphqlClient,
   };
 
   const summaries = await collectReposParallel(runtime, repoConfigs, graphqlClient, 5);

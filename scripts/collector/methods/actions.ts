@@ -41,24 +41,85 @@ export async function collectActionsEvents({
   const keywords = options.workflowKeywords.map((keyword) => keyword.toLowerCase());
   const allowedEvents = options.events?.map((event) => event.toLowerCase());
   const branchCandidates = options.branch ? normalizeBranchCandidates(options.branch) : null;
+  const windowStartDate = new Date(windowStart);
+  const windowEndDate = new Date(windowEnd);
 
-  const runs = await octokit.paginate(octokit.actions.listWorkflowRunsForRepo, {
+  const runs: typeof octokit.actions.listWorkflowRunsForRepo extends (...args: any) => Promise<{ data: infer R }>
+    ? R
+    : never = [] as any;
+
+  const iterator = octokit.paginate.iterator(octokit.actions.listWorkflowRunsForRepo, {
     owner,
     repo,
     per_page: 100,
     created: `${windowStart}..${windowEnd}`,
   });
 
+  for await (const response of iterator) {
+    for (const run of response.data) {
+      const createdAt = new Date(run.created_at ?? 0);
+      if (createdAt < windowStartDate) {
+        if (debug) {
+          console.log(`[${owner}/${repo}] [actions] reached runs older than window; stopping pagination`);
+        }
+        return buildActionEvents(
+          runs,
+          keywords,
+          allowedEvents,
+          branchCandidates,
+          windowStartDate,
+          windowEndDate,
+          windowStart,
+          windowEnd,
+          debug
+        );
+      }
+      runs.push(run);
+    }
+
+    const oldest = response.data[response.data.length - 1];
+    if (oldest) {
+      const oldestDate = new Date(oldest.created_at ?? 0);
+      if (oldestDate < windowStartDate) {
+        break;
+      }
+    }
+  }
+
   if (debug) {
     console.log(
-      `[${owner}/${repo}] [actions] inspecting ${runs.length} workflow runs between ${windowStart} and ${windowEnd}`
+      `[${owner}/${repo}] [actions] inspected ${runs.length} workflow runs between ${windowStart} and ${windowEnd}`
     );
   }
 
+  return buildActionEvents(
+    runs,
+    keywords,
+    allowedEvents,
+    branchCandidates,
+    windowStartDate,
+    windowEndDate,
+    windowStart,
+    windowEnd,
+    debug
+  );
+}
+
+function buildActionEvents(
+  runs: any[],
+  keywords: string[],
+  allowedEvents: string[] | undefined,
+  branchCandidates: Set<string> | null,
+  windowStartDate: Date,
+  windowEndDate: Date,
+  windowStart: string,
+  windowEnd: string,
+  debug?: boolean
+): DeploymentLikeEvent[] {
   const selected: DeploymentLikeEvent[] = [];
 
   for (const run of runs) {
-    const logPrefix = `[${owner}/${repo}] workflow#${run.id}`;
+    const logPrefix = `[actions] workflow#${run.id}`;
     if (run.status !== "completed" || run.conclusion !== "success") {
       if (debug) {
         console.log(
