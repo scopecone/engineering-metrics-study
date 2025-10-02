@@ -39,9 +39,10 @@ interface RecommendationResult {
 }
 
 const DEFAULT_KEYWORDS = ["deploy", "release", "publish"];
-
 const DEFAULT_EXCLUDE_TOPICS = ["awesome", "awesome-list", "list", "manual", "books"];
 const DEFAULT_EXCLUDE_KEYWORDS = ["curated list", "handbook", "interview questions", "awesome"];
+const RELEASE_SIGNAL_THRESHOLD = 3;
+const DEPLOY_SIGNAL_THRESHOLD = 3;
 
 const program = new Command();
 
@@ -149,15 +150,11 @@ async function inspectReleases(
   windowStart: Date,
   windowEnd: Date
 ): Promise<ReleaseInsight> {
-  const releases = await octokit.paginate(octokit.repos.listReleases, {
-    owner,
-    repo,
-    per_page: 50,
-  });
+  const { data } = await octokit.repos.listReleases({ owner, repo, per_page: 20 });
 
   const tags: string[] = [];
   let count = 0;
-  for (const release of releases) {
+  for (const release of data) {
     const publishedAt = release.published_at ?? release.created_at;
     if (!withinWindow(publishedAt, windowStart, windowEnd)) {
       if (publishedAt && new Date(publishedAt) < windowStart) {
@@ -168,6 +165,9 @@ async function inspectReleases(
     count += 1;
     if (release.tag_name && tags.length < 5) {
       tags.push(release.tag_name);
+    }
+    if (count >= RELEASE_SIGNAL_THRESHOLD) {
+      break;
     }
   }
 
@@ -182,25 +182,21 @@ async function inspectDeployments(
   windowEnd: Date
 ): Promise<DeploymentInsight> {
   try {
-    const deployments = await octokit.paginate(octokit.repos.listDeployments, {
-      owner,
-      repo,
-      per_page: 50,
-    });
+    const { data } = await octokit.repos.listDeployments({ owner, repo, per_page: 20 });
 
     let count = 0;
     const environments = new Set<string>();
 
-    for (const deployment of deployments) {
+    for (const deployment of data) {
       if (!withinWindow(deployment.created_at ?? deployment.updated_at, windowStart, windowEnd)) {
-        if (deployment.created_at && new Date(deployment.created_at) < windowStart) {
-          break;
-        }
         continue;
       }
       count += 1;
       if (deployment.environment) {
         environments.add(deployment.environment);
+      }
+      if (count >= DEPLOY_SIGNAL_THRESHOLD) {
+        break;
       }
     }
 
@@ -222,10 +218,10 @@ async function inspectActions(
   windowEnd: Date
 ): Promise<ActionsInsight> {
   try {
-    const runs = await octokit.paginate(octokit.actions.listWorkflowRunsForRepo, {
+    const { data } = await octokit.actions.listWorkflowRunsForRepo({
       owner,
       repo,
-      per_page: 100,
+      per_page: 20,
       created: `${windowStart.toISOString().split(".")[0]}Z..${windowEnd.toISOString().split(".")[0]}Z`,
     });
 
@@ -233,7 +229,7 @@ async function inspectActions(
     const keywordHits: Record<string, number> = Object.fromEntries(lowerKeywords.map((k) => [k, 0]));
     let count = 0;
 
-    for (const run of runs) {
+    for (const run of data) {
       if (!withinWindow(run.created_at, windowStart, windowEnd)) {
         continue;
       }
@@ -294,7 +290,39 @@ async function analyseRepo(
   windowEnd: Date
 ): Promise<RecommendationResult> {
   const releases = await inspectReleases(octokit, repo.owner, repo.name, windowStart, windowEnd);
+  if (releases.count >= RELEASE_SIGNAL_THRESHOLD) {
+    const recommendation = decideRecommendation(releases, { count: 0, environments: [] }, {
+      count: 0,
+      keywordsHit: Object.fromEntries(keywords.map((k) => [k.toLowerCase(), 0])),
+    });
+
+    return {
+      repo,
+      releases,
+      deployments: { count: 0, environments: [] },
+      actions: { count: 0, keywordsHit: Object.fromEntries(keywords.map((k) => [k.toLowerCase(), 0])) },
+      recommendedMethod: recommendation.method,
+      notes: recommendation.notes,
+    };
+  }
+
   const deployments = await inspectDeployments(octokit, repo.owner, repo.name, windowStart, windowEnd);
+  if (deployments.count >= DEPLOY_SIGNAL_THRESHOLD) {
+    const recommendation = decideRecommendation(releases, deployments, {
+      count: 0,
+      keywordsHit: Object.fromEntries(keywords.map((k) => [k.toLowerCase(), 0])),
+    });
+
+    return {
+      repo,
+      releases,
+      deployments,
+      actions: { count: 0, keywordsHit: Object.fromEntries(keywords.map((k) => [k.toLowerCase(), 0])) },
+      recommendedMethod: recommendation.method,
+      notes: recommendation.notes,
+    };
+  }
+
   const actions = await inspectActions(octokit, repo.owner, repo.name, keywords, windowStart, windowEnd);
 
   const recommendation = decideRecommendation(releases, deployments, actions);
