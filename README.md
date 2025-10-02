@@ -35,11 +35,11 @@ This directory houses the data-collection spike that supports our engineering me
 4. Collect raw payloads:
 
    ```bash
-   npm run collect -- \
-     --input config/repos.sample.json \
-     --days 60 \
+   npm run collect -- \\
+     --input config/repos.sample.json \\
+     --days 60 \\
      --output engineering-metrics-study/data/raw
-  ```
+   ```
 
    - Use repeated `--repo owner/name` flags for ad-hoc runs.
    - Add `--refresh` to ignore cached responses.
@@ -48,10 +48,22 @@ This directory houses the data-collection spike that supports our engineering me
 5. Aggregate metrics into CSV and JSON summaries:
 
    ```bash
-   npm run aggregate -- \
-     --input engineering-metrics-study/data/raw \
+   npm run aggregate -- \\
+     --input engineering-metrics-study/data/raw \\
      --output engineering-metrics-study/output
    ```
+
+6. Discover candidate repos by topic and get method recommendations:
+
+   ```bash
+   npm run discover -- \\
+     --topic nextjs \\
+     --topic astro \\
+     --limit 3 \\
+     --format table
+   ```
+
+   Use `--format json` to export machine-consumable output for downstream tooling or AI-assisted triage.
 
 ## Directory layout
 

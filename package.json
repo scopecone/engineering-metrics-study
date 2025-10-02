@@ -6,11 +6,13 @@
   "scripts": {
     "collect": "tsx scripts/collector/index.ts",
     "aggregate": "tsx scripts/aggregate.ts",
+    "discover": "tsx scripts/discovery/index.ts",
     "lint": "eslint \"scripts/**/*.ts\""
   },
   "dependencies": {
     "@octokit/graphql": "^7.0.1",
     "@octokit/rest": "^20.1.1",
+    "cli-table3": "^0.6.3",
     "commander": "^12.1.0",
     "dotenv": "^16.4.5",
     "fs-extra": "^11.2.0",
