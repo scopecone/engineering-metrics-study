@@ -23,5 +23,84 @@
       "includePrereleases": false,
       "tagPattern": "^v"
     }
+  },
+  {
+    "slug": "netdata/netdata",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "nektos/act",
+    "method": "deployments",
+    "deployments": {
+      "environments": ["release", "promote"]
+    }
+  },
+  {
+    "slug": "go-gitea/gitea",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "getsentry/sentry",
+    "method": "deployments",
+    "deployments": {
+      "environments": ["Preview", "Production"]
+    }
+  },
+  {
+    "slug": "Kong/kong",
+    "method": "deployments",
+    "deployments": {
+      "environments": ["release"]
+    }
+  },
+  {
+    "slug": "httpie/cli",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": ["release", "publish"],
+      "events": ["push"],
+      "branch": null
+    }
+  },
+  {
+    "slug": "dokku/dokku",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "Dokploy/dokploy",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "jenkinsci/jenkins",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^jenkins-"
+    }
+  },
+  {
+    "slug": "containrrr/watchtower",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": ["deploy", "release"],
+      "events": ["push"],
+      "branch": null
+    }
   }
 ]
