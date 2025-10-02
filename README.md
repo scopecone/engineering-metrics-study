@@ -44,6 +44,7 @@ This directory houses the data-collection spike that supports our engineering me
    - Use repeated `--repo owner/name` flags for ad-hoc runs.
    - Add `--refresh` to ignore cached responses.
    - Add `--debug` to log every workflow run that is counted or skipped.
+   - Set `COLLECTOR_PROGRESS=true` to emit `[n/total]` progress updates during long batches.
 
 5. Aggregate metrics into CSV and JSON summaries:
 
@@ -65,6 +66,22 @@ This directory houses the data-collection spike that supports our engineering me
 
    Use `--format json` to export machine-consumable output for downstream tooling or AI-assisted triage.
    Filter out curated lists or manuals via `--exclude-topics` / `--exclude-keywords` if a topic returns non-product repos.
+
+### Runtime configuration
+
+- `COLLECTOR_PROGRESS=true npm run collect …` — surfaces progress logs from each worker without enabling full debug mode.
+- `USE_GRAPHQL_DEPLOYMENTS=false npm run collect …` — falls back to the REST Deployments API if the GitHub GraphQL schema changes; the default GraphQL path batches deployments and statuses to minimise API calls.
+- The collector automatically respects conditional requests (ETag/Last-Modified headers) and will pause when the GitHub rate limit approaches zero, so reruns can safely share cached responses.
+
+### Testing
+
+Run the targeted regression tests with:
+
+```bash
+npm test
+```
+
+This suite covers the deployment GraphQL collector pagination/filters and the Actions workflow pagination behaviour.
 
 ## Directory layout
 

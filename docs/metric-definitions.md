@@ -9,10 +9,13 @@ This proof of concept focuses on collecting reproducible GitHub telemetry that c
 ## Metrics in scope
 
 ### Deployment Frequency (per week)
-- **Definition**: Count of successful deployment workflows on the default branch grouped by ISO week.
-- **Source**: GitHub REST API `GET /repos/{owner}/{repo}/actions/runs` filtered to workflows tagged with `deployment` or matching a configurable allowlist.
-- **Calculation**: For each repo, aggregate successful runs per week over the observation window; report median, P85, and P95 counts across the sample.
-- **Caveats**: Actions workflow retention for public repositories is ~90 days, so older history must be captured via releases/deployments API or cached locally.
+- **Definition**: Count of successful deployment events on the default branch grouped by ISO week.
+- **Source**: Depending on the `method` selected for a repository:
+  - GitHub Actions workflow runs via REST (`GET /repos/{owner}/{repo}/actions/runs`).
+  - GitHub Deployments GraphQL connection (default) with inline statuses.
+  - GitHub Releases via REST (`GET /repos/{owner}/{repo}/releases`).
+- **Calculation**: For each repo, aggregate successful events per week over the observation window; report median, P85, and P95 counts across the sample.
+- **Caveats**: Actions workflow retention for public repositories is ~90 days, so older history must be captured via releases or deployments, and the GraphQL collector exits early once it encounters data older than the window.
 
 ### Pull Request Cycle Time (hours)
 - **Definition**: Time from PR creation to merge for pull requests merged into the default branch.
@@ -60,7 +63,7 @@ Scans GitHub Actions workflow runs, useful for projects that ship via CI pipelin
 
 ### `method: "deployments"`
 
-Uses the GitHub Deployments API. Ideal when teams promote builds through environments (`production`, `staging`, and so on).
+Uses the GitHub GraphQL Deployments connection by default. Ideal when teams promote builds through environments (`production`, `staging`, and so on).
 
 ```json
 {
@@ -76,7 +79,7 @@ Uses the GitHub Deployments API. Ideal when teams promote builds through environ
 - `environments`: optional allow-list of deployment environments (case-insensitive).
 - `statuses`: optional allow-list of latest deployment status states (`success`, `inactive`, `failure`, ...).
 
-The collector fetches deployment statuses to determine the final outcome and filters accordingly.
+The GraphQL path returns deployments with their latest status in a single request and stops paginating once the window is exhausted. Set `USE_GRAPHQL_DEPLOYMENTS=false` to fall back to the REST Deployments API if GitHub introduces a breaking schema change.
 
 ### `method: "releases"`
 

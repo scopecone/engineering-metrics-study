@@ -7,7 +7,8 @@
     "collect": "tsx scripts/collector/index.ts",
     "aggregate": "tsx scripts/aggregate.ts",
     "discover": "tsx scripts/discovery/index.ts",
-    "lint": "eslint \"scripts/**/*.ts\""
+    "lint": "eslint \"scripts/**/*.ts\"",
+    "test": "vitest run"
   },
   "dependencies": {
     "@octokit/graphql": "^7.0.1",
@@ -22,6 +23,7 @@
     "@types/node": "^20.16.5",
     "eslint": "^9.11.1",
     "typescript": "^5.4.5",
-    "tsx": "^4.17.0"
+    "tsx": "^4.17.0",
+    "vitest": "^1.6.0"
   }
 }
