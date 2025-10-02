@@ -1,4 +1,4 @@
-repo,language,default_branch,deploy_count,pr_count,deployments_per_week_median,deployments_per_week_p85,deployments_per_week_p95,pr_cycle_time_hours_median,pr_cycle_time_hours_p85,pr_cycle_time_hours_p95,sample_window_start,sample_window_end
-"axios/axios","JavaScript","v1.x","5","1","1.000","2.400","2.800","11.118","11.118","11.118","2025-08-04T18:15:58Z","2025-10-01T15:18:49Z"
-"vercel/next.js","JavaScript","canary","22","41","22.000","22.000","22.000","5.377","39.625","150.421","2025-09-05T03:39:53Z","2025-10-02T01:10:08Z"
-"withastro/astro","TypeScript","main","16","13","2.000","3.100","3.700","3.081","19.199","107.908","2025-08-08T15:05:44Z","2025-10-01T16:46:50Z"
+repo,language,topics,default_branch,deploy_count,pr_count,deployments_per_week_median,deployments_per_week_p85,deployments_per_week_p95,pr_cycle_time_hours_median,pr_cycle_time_hours_p85,pr_cycle_time_hours_p95,sample_window_start,sample_window_end
+"axios/axios","JavaScript","http-client|javascript|nodejs|promise|hacktoberfest","v1.x","5","1","1.000","2.400","2.800","11.118","11.118","11.118","2025-08-04T18:15:58Z","2025-10-01T15:18:49Z"
+"vercel/next.js","JavaScript","react|server-rendering|universal|node|components|browser|nextjs|vercel|static-site-generator|hybrid|ssg|static|blog|compiler","canary","22","42","22.000","22.000","22.000","6.710","39.615","149.190","2025-09-05T03:39:53Z","2025-10-02T09:15:09Z"
+"withastro/astro","TypeScript","static-site-generator|blog|islands|components|node|browser|server|hybrid|universal|astro|static","main","16","13","2.000","3.100","3.700","3.081","19.199","107.908","2025-08-08T15:05:44Z","2025-10-01T16:46:50Z"

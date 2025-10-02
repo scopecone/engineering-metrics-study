@@ -13,6 +13,7 @@ interface RepoMetadataPayload {
     htmlUrl: string;
     defaultBranch: string;
     language: string | null;
+    topics: string[];
     stargazersCount: number;
     forksCount: number;
     openIssuesCount: number;
@@ -48,6 +49,7 @@ interface PullRequestPayload {
 interface RepoAggregateRow {
   repo: string;
   language: string | null;
+  topics: string;
   defaultBranch: string;
   deployCount: number;
   prCount: number;
@@ -172,6 +174,7 @@ async function aggregateRepo(dirPath: string, slug: string): Promise<RepoAggrega
   return {
     repo: metadata.metadata.fullName,
     language: metadata.metadata.language,
+    topics: metadata.metadata.topics?.join("|") ?? "",
     defaultBranch: metadata.metadata.defaultBranch,
     deployCount: workflows.runs.length,
     prCount: pullRequests.pullRequests.length,
@@ -190,6 +193,7 @@ async function writeCsv(filePath: string, rows: RepoAggregateRow[]) {
   const headers = [
     "repo",
     "language",
+    "topics",
     "default_branch",
     "deploy_count",
     "pr_count",
@@ -208,6 +212,7 @@ async function writeCsv(filePath: string, rows: RepoAggregateRow[]) {
     const values = [
       row.repo,
       row.language ?? "",
+      row.topics,
       row.defaultBranch,
       row.deployCount.toString(),
       row.prCount.toString(),

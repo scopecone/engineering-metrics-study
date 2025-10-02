@@ -40,6 +40,7 @@ interface RepoMetadata {
   htmlUrl: string;
   defaultBranch: string;
   language: string | null;
+  topics: string[];
   stargazersCount: number;
   forksCount: number;
   openIssuesCount: number;
@@ -122,6 +123,19 @@ async function writeJson(filePath: string, data: unknown) {
 
 async function collectMetadata(octokit: Octokit, owner: string, repo: string): Promise<RepoMetadata> {
   const { data } = await octokit.repos.get({ owner, repo });
+  let topics: string[] = [];
+  try {
+    const topicsResponse = await octokit.repos.getAllTopics({
+      owner,
+      repo,
+      mediaType: { previews: ["mercy"] },
+    });
+    topics = topicsResponse.data.names ?? [];
+  } catch (error) {
+    if (process.env.DEBUG_COLLECTOR) {
+      console.warn(`⚠️  Failed to fetch topics for ${owner}/${repo}:`, error);
+    }
+  }
   return {
     id: data.id,
     name: data.name,
@@ -130,6 +144,7 @@ async function collectMetadata(octokit: Octokit, owner: string, repo: string): P
     htmlUrl: data.html_url,
     defaultBranch: data.default_branch,
     language: data.language,
+    topics,
     stargazersCount: data.stargazers_count,
     forksCount: data.forks_count,
     openIssuesCount: data.open_issues_count,

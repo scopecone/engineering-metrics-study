@@ -102,6 +102,7 @@ Counts GitHub Releases, best for libraries that tag semantic versions.
 | --- | --- |
 | `repo` | `owner/name` identifier |
 | `language` | Primary language reported by GitHub |
+| `topics` | Pipe-delimited GitHub topics associated with the repository |
 | `default_branch` | Default branch name |
 | `deployments_per_week_median` | Median successful deployment runs/week |
 | `deployments_per_week_p85` | 85th percentile deployments/week |

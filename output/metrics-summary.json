@@ -1,9 +1,10 @@
 {
-  "generatedAt": "2025-10-02T08:41:19.876Z",
+  "generatedAt": "2025-10-02T09:20:06.377Z",
   "rows": [
     {
       "repo": "axios/axios",
       "language": "JavaScript",
+      "topics": "http-client|javascript|nodejs|promise|hacktoberfest",
       "defaultBranch": "v1.x",
       "deployCount": 5,
       "prCount": 1,
@@ -19,21 +20,23 @@
     {
       "repo": "vercel/next.js",
       "language": "JavaScript",
+      "topics": "react|server-rendering|universal|node|components|browser|nextjs|vercel|static-site-generator|hybrid|ssg|static|blog|compiler",
       "defaultBranch": "canary",
       "deployCount": 22,
-      "prCount": 41,
+      "prCount": 42,
       "deploymentsPerWeekMedian": 22,
       "deploymentsPerWeekP85": 22,
       "deploymentsPerWeekP95": 22,
-      "prCycleTimeHoursMedian": 5.377222222222223,
-      "prCycleTimeHoursP85": 39.625277777777775,
-      "prCycleTimeHoursP95": 150.42083333333332,
+      "prCycleTimeHoursMedian": 6.71,
+      "prCycleTimeHoursP85": 39.615402777777774,
+      "prCycleTimeHoursP95": 149.19013888888878,
       "sampleWindowStart": "2025-09-05T03:39:53Z",
-      "sampleWindowEnd": "2025-10-02T01:10:08Z"
+      "sampleWindowEnd": "2025-10-02T09:15:09Z"
     },
     {
       "repo": "withastro/astro",
       "language": "TypeScript",
+      "topics": "static-site-generator|blog|islands|components|node|browser|server|hybrid|universal|astro|static",
       "defaultBranch": "main",
       "deployCount": 16,
       "prCount": 13,
