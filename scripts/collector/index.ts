@@ -1,53 +1,23 @@
 #!/usr/bin/env node
 import { Command } from "commander";
 import "dotenv/config";
-import fs from "fs-extra";
 import path from "node:path";
+import fs from "fs-extra";
 import { Octokit } from "@octokit/rest";
 import { graphql } from "@octokit/graphql";
 
-interface RepoSlug {
-  owner: string;
-  name: string;
-}
+import { readRepoEntries, mergeRepoEntries, type RawRepoEntry } from "./config";
+import type {
+  CollectorRuntimeConfig,
+  RepoConfig,
+  RepoCollectionResult,
+  DeploymentLikeEvent,
+} from "./types";
+import { collectActionsEvents } from "./methods/actions";
+import { collectDeploymentApiEvents } from "./methods/deployments";
+import { collectReleaseEvents } from "./methods/releases";
 
-type CollectionMethod = "actions" | "deployments" | "releases";
-
-interface ActionsCollectionOptions {
-  workflowKeywords: string[];
-  events?: string[];
-  branch?: string | null;
-}
-
-interface RepoConfig {
-  slug: string;
-  owner: string;
-  name: string;
-  method: CollectionMethod;
-  actions: ActionsCollectionOptions;
-}
-
-interface CollectorConfig {
-  repos: RepoConfig[];
-  days: number;
-  forceRefresh: boolean;
-  outputDir: string;
-  debug: boolean;
-}
-
-interface WorkflowRunSummary {
-  id: number;
-  name: string;
-  displayTitle: string;
-  event: string;
-  status: string | null;
-  conclusion: string | null;
-  createdAt: string;
-  updatedAt: string;
-  runAttempt?: number | null;
-  headBranch: string | null;
-  headSha: string | null;
-}
+type GraphqlClient = typeof graphql;
 
 interface PullRequestSummary {
   number: number;
@@ -85,16 +55,20 @@ const program = new Command();
 
 program
   .description("Collect GitHub telemetry for the engineering metrics study")
-  .option("-r, --repo <owner/name>", "Repository to include", (value, previous: string[] = []) => {
-    previous.push(value);
-    return previous;
-  })
-  .option("-i, --input <path>", "Path to JSON file containing an array of repo slugs")
+  .option(
+    "-r, --repo <owner/name>",
+    "Repository to include (can be repeated)",
+    (value, previous: string[] = []) => {
+      previous.push(value);
+      return previous;
+    }
+  )
+  .option("-i, --input <path>", "Path to JSON file containing repository entries")
   .option("-d, --days <number>", "Number of days to look back", (value) => Number.parseInt(value, 10), 60)
   .option("--refresh", "Ignore cached responses and fetch from the API")
   .option(
     "--workflow-filter <words>",
-    "Comma-separated list of keywords that identify deployment workflows",
+    "Comma-separated list of keywords that identify deployment workflows (default: deploy,release)",
     (value) => value.split(",").map((word) => word.trim()).filter(Boolean),
     ["deploy", "release"]
   )
@@ -106,84 +80,48 @@ program
   .option("--debug", "Enable verbose logging for filtered artifacts")
   .parse(process.argv);
 
-type RawRepoEntry =
-  | string
-  | {
-      slug?: string;
-      repo?: string;
-      method?: CollectionMethod;
-      actions?: {
-        workflowKeywords?: string[];
-        events?: string[];
-        branch?: string | null;
-      };
-    };
-
-async function readReposFromFile(filePath: string): Promise<RawRepoEntry[]> {
-  const resolved = path.resolve(filePath);
-  if (!(await fs.pathExists(resolved))) {
-    throw new Error(`Repo list file not found: ${resolved}`);
+async function readRepoArguments(
+  inputPath: string | undefined,
+  inlineRepos: string[] | undefined
+): Promise<RawRepoEntry[]> {
+  const entries: RawRepoEntry[] = [];
+  if (inlineRepos) {
+    entries.push(...inlineRepos);
   }
-  const raw = await fs.readFile(resolved, "utf8");
-  const parsed = JSON.parse(raw);
-  if (!Array.isArray(parsed)) {
-    throw new Error("Repo list file must contain a JSON array");
+  if (inputPath) {
+    const fileEntries = await readRepoEntries(inputPath);
+    entries.push(...fileEntries);
   }
-  return parsed as RawRepoEntry[];
+  if (entries.length === 0) {
+    throw new Error("No repositories specified. Use --repo or --input.");
+  }
+  return entries;
 }
 
-function normalizeRepoSlug(slug: string): RepoSlug {
-  const [owner, name] = slug.split("/");
-  if (!owner || !name) {
-    throw new Error(`Invalid repo slug: ${slug}`);
-  }
-  return { owner, name };
+async function ensureRepoDir(outputDir: string, slug: { owner: string; name: string }): Promise<string> {
+  const safeName = `${slug.owner.replace(/[^a-z0-9_\-]/gi, "_")}__${slug.name.replace(/[^a-z0-9_\-]/gi, "_")}`;
+  const repoDir = path.join(outputDir, safeName);
+  await fs.ensureDir(repoDir);
+  return repoDir;
 }
 
-function normalizeWorkflowKeywords(keywords: string[] | undefined, defaults: string[]): string[] {
-  const source = keywords && keywords.length > 0 ? keywords : defaults;
-  return source.map((keyword) => keyword.toLowerCase());
+async function maybeReadCache<T>(filePath: string, forceRefresh: boolean): Promise<T | null> {
+  if (forceRefresh) {
+    return null;
+  }
+  if (!(await fs.pathExists(filePath))) {
+    return null;
+  }
+  const raw = await fs.readFile(filePath, "utf8");
+  return JSON.parse(raw) as T;
 }
 
-function normalizeEvents(events?: string[]): string[] | undefined {
-  if (!events || events.length === 0) {
-    return undefined;
-  }
-  return events.map((event) => event.toLowerCase());
+async function writeJson(filePath: string, data: unknown) {
+  await fs.outputJson(filePath, data, { spaces: 2 });
 }
 
-function toRepoConfig(entry: RawRepoEntry, defaults: { workflowKeywords: string[] }): RepoConfig {
-  const slug = typeof entry === "string" ? entry : entry.slug ?? entry.repo;
-  if (!slug) {
-    throw new Error("Repository entry is missing a 'slug' field (owner/name)");
-  }
-
-  const method: CollectionMethod = typeof entry === "object" && entry !== null && entry.method ? entry.method : "actions";
-
-  if (method !== "actions") {
-    throw new Error(
-      `Collection method '${method}' is not implemented yet. Supported methods: actions`
-    );
-  }
-
-  const actionsConfig = typeof entry === "object" && entry !== null ? entry.actions ?? {} : {};
-
-  const slugParts = normalizeRepoSlug(slug);
-  return {
-    slug,
-    owner: slugParts.owner,
-    name: slugParts.name,
-    method: "actions",
-    actions: {
-      workflowKeywords: normalizeWorkflowKeywords(actionsConfig.workflowKeywords, defaults.workflowKeywords),
-      events: normalizeEvents(actionsConfig.events),
-      branch: actionsConfig.branch ?? null,
-    },
-  };
-}
-
-async function collectMetadata(octokit: Octokit, slug: RepoSlug): Promise<RepoMetadata> {
-  const { data } = await octokit.repos.get({ owner: slug.owner, repo: slug.name });
+async function collectMetadata(octokit: Octokit, owner: string, repo: string): Promise<RepoMetadata> {
+  const { data } = await octokit.repos.get({ owner, repo });
   return {
     id: data.id,
     name: data.name,
@@ -199,148 +137,17 @@ async function collectMetadata(octokit: Octokit, slug: RepoSlug): Promise<RepoMe
   };
 }
 
-async function collectWorkflowRuns(
-  octokit: Octokit,
-  slug: RepoSlug,
-  windowStart: string,
-  windowEnd: string,
-  workflowNameIncludes: string[],
-  events: string[] | undefined,
-  branch: string | null,
-  debug: boolean
-): Promise<WorkflowRunSummary[]> {
-  if (debug) {
-    console.log(`[${slug.owner}/${slug.name}] debug logging enabled for workflow run filtering`);
-  }
-  const windowStartDate = new Date(windowStart);
-  const windowEndDate = new Date(windowEnd);
-
-  if (Number.isNaN(windowStartDate.getTime()) || Number.isNaN(windowEndDate.getTime())) {
-    throw new Error("Invalid window start or end timestamp supplied to workflow run collector");
-  }
-
-  const runs = await octokit.paginate(octokit.actions.listWorkflowRunsForRepo, {
-    owner: slug.owner,
-    repo: slug.name,
-    per_page: 100,
-    created: `${windowStart}..${windowEnd}`,
-  });
-
-  const keywords = workflowNameIncludes.map((word) => word.toLowerCase());
-
-  if (debug) {
-    console.log(
-      `[${slug.owner}/${slug.name}] inspecting ${runs.length} workflow runs between ${windowStart} and ${windowEnd}`
-    );
-  }
-
-  const selected: WorkflowRunSummary[] = [];
-
-  for (const run of runs) {
-    const logPrefix = `[${slug.owner}/${slug.name}] workflow#${run.id}`;
-    if (run.status !== "completed" || run.conclusion !== "success") {
-      if (debug) {
-        console.log(`${logPrefix} ⏭️  skipped (status=${run.status}, conclusion=${run.conclusion})`);
-      }
-      continue;
-    }
-
-    if (!run.created_at) {
-      if (debug) {
-        console.log(`${logPrefix} ⏭️  skipped (missing created_at)`);
-      }
-      continue;
-    }
-
-    const createdAt = new Date(run.created_at);
-    if (createdAt < windowStartDate || createdAt > windowEndDate) {
-      if (debug) {
-        console.log(`${logPrefix} ⏭️  skipped (outside window ${windowStart}..${windowEnd})`);
-      }
-      continue;
-    }
-
-    const target = `${run.name ?? ""} ${run.display_title ?? ""}`.toLowerCase();
-    const matchedKeyword = keywords.find((keyword) => target.includes(keyword));
-    if (!matchedKeyword) {
-      if (debug) {
-        console.log(`${logPrefix} ⏭️  skipped (no keyword match) title="${run.display_title ?? run.name ?? ""}")`);
-      }
-      continue;
-    }
-
-    if (events && events.length > 0) {
-      const eventName = (run.event ?? "").toLowerCase();
-      if (!events.includes(eventName)) {
-        if (debug) {
-          console.log(`${logPrefix} ⏭️  skipped (event '${eventName}' not in ${events.join(", ")})`);
-        }
-        continue;
-      }
-    }
-
-    if (branch) {
-      const headBranch = run.head_branch ?? null;
-      const normalized = branch.startsWith("refs/") ? branch : branch;
-      const trimmed = normalized.replace(/^refs\/heads\//, "");
-      const allowedBranches = new Set<string>([
-        branch,
-        normalized,
-        trimmed,
-        `refs/heads/${trimmed}`,
-      ]);
-
-      if (!headBranch || !allowedBranches.has(headBranch)) {
-        if (debug) {
-          console.log(`${logPrefix} ⏭️  skipped (head branch '${headBranch ?? "unknown"}' not matching '${Array.from(allowedBranches).join(", ")}')`);
-        }
-        continue;
-      }
-    }
-
-    const summary: WorkflowRunSummary = {
-      id: run.id,
-      name: run.name ?? "",
-      displayTitle: run.display_title ?? "",
-      event: run.event ?? "",
-      status: run.status ?? null,
-      conclusion: run.conclusion ?? null,
-      createdAt: run.created_at ?? "",
-      updatedAt: run.updated_at ?? "",
-      runAttempt: run.run_attempt,
-      headBranch: run.head_branch ?? null,
-      headSha: run.head_sha ?? null,
-    };
-
-    selected.push(summary);
-
-    if (debug) {
-      console.log(
-        `${logPrefix} ✅ counted (created=${summary.createdAt}, event=${summary.event}, matched="${matchedKeyword}") title="${summary.displayTitle}"
-`      );
-    }
-  }
-
-  if (debug) {
-    console.log(
-      `[${slug.owner}/${slug.name}] → ${selected.length} deployment-like runs between ${windowStart} and ${windowEnd}`
-    );
-  }
-
-  return selected;
-}
-
 async function collectPullRequests(
-  graphqlClient: typeof graphql,
-  slug: RepoSlug,
-  windowStart: string,
-  baseRef: string
+  graphqlClient: GraphqlClient,
+  owner: string,
+  repo: string,
+  baseBranch: string,
+  windowStart: string
 ): Promise<PullRequestSummary[]> {
   const results: PullRequestSummary[] = [];
   let cursor: string | null = null;
   const windowStartDate = new Date(windowStart);
 
-  // GraphQL query returns PRs merged into target branch ordered by newest
   const query = /* GraphQL */ `
     query ($owner: String!, $name: String!, $base: String!, $cursor: String) {
       repository(owner: $owner, name: $name) {
@@ -396,9 +203,9 @@ async function collectPullRequests(
 
   while (true) {
     const response = await graphqlClient<PullRequestQueryResponse>(query, {
-      owner: slug.owner,
-      name: slug.name,
-      base: baseRef,
+      owner,
+      name: repo,
+      base: baseBranch,
       cursor,
     });
 
@@ -435,26 +242,116 @@ async function collectPullRequests(
   return results;
 }
 
-async function ensureRepoDir(outputDir: string, slug: RepoSlug): Promise<string> {
-  const safeName = `${slug.owner.replace(/[^a-z0-9_\-]/gi, "_")}__${slug.name.replace(/[^a-z0-9_\-]/gi, "_")}`;
-  const repoDir = path.join(outputDir, safeName);
-  await fs.ensureDir(repoDir);
-  return repoDir;
+async function collectDeploymentEvents(
+  runtime: CollectorRuntimeConfig,
+  repo: RepoConfig
+): Promise<DeploymentLikeEvent[]> {
+  if (repo.method === "actions") {
+    if (!repo.actions) {
+      throw new Error(`Repository ${repo.slug} missing 'actions' configuration`);
+    }
+    return collectActionsEvents({
+      octokit: runtime.octokit,
+      owner: repo.owner,
+      repo: repo.name,
+      windowStart: runtime.windowStart,
+      windowEnd: runtime.windowEnd,
+      options: repo.actions,
+      debug: runtime.debug,
+    });
+  }
+
+  if (repo.method === "deployments") {
+    return collectDeploymentApiEvents({
+      octokit: runtime.octokit,
+      owner: repo.owner,
+      repo: repo.name,
+      windowStart: runtime.windowStart,
+      windowEnd: runtime.windowEnd,
+      options: repo.deployments,
+      debug: runtime.debug,
+    });
+  }
+
+  if (repo.method === "releases") {
+    return collectReleaseEvents({
+      octokit: runtime.octokit,
+      owner: repo.owner,
+      repo: repo.name,
+      windowStart: runtime.windowStart,
+      windowEnd: runtime.windowEnd,
+      options: repo.releases,
+      debug: runtime.debug,
+    });
+  }
+
+  throw new Error(`Collection method '${repo.method}' not implemented yet for ${repo.slug}`);
 }
 
-async function maybeReadCache<T>(filePath: string, forceRefresh: boolean): Promise<T | null> {
-  if (forceRefresh) {
-    return null;
-  }
-  if (!(await fs.pathExists(filePath))) {
-    return null;
-  }
-  const raw = await fs.readFile(filePath, "utf8");
-  return JSON.parse(raw) as T;
-}
+async function collectRepo(
+  runtime: CollectorRuntimeConfig,
+  repo: RepoConfig,
+  graphqlClient: GraphqlClient
+): Promise<RepoCollectionResult> {
+  const repoDir = await ensureRepoDir(runtime.outputDir, { owner: repo.owner, name: repo.name });
 
-async function writeJson(filePath: string, data: unknown) {
-  await fs.outputJson(filePath, data, { spaces: 2 });
+  console.log(`\n⏳ Collecting ${repo.owner}/${repo.name} [method=${repo.method}]`);
+
+  const metadataPath = path.join(repoDir, "metadata.json");
+  let metadata: RepoMetadata;
+  const cachedMetadata = await maybeReadCache<RepoMetadataCache>(metadataPath, runtime.forceRefresh);
+  if (cachedMetadata) {
+    metadata = cachedMetadata.metadata;
+  } else {
+    metadata = await collectMetadata(runtime.octokit, repo.owner, repo.name);
+    await writeJson(metadataPath, {
+      fetchedAt: new Date().toISOString(),
+      metadata,
+    });
+  }
+
+  const eventsPath = path.join(repoDir, "workflow-runs.json");
+  let eventsPayload = await maybeReadCache<{ runs: DeploymentLikeEvent[] }>(eventsPath, runtime.forceRefresh);
+  if (!eventsPayload) {
+    const events = await collectDeploymentEvents(runtime, repo);
+    eventsPayload = { runs: events };
+    await writeJson(eventsPath, {
+      fetchedAt: new Date().toISOString(),
+      windowStart: runtime.windowStart,
+      windowEnd: runtime.windowEnd,
+      runs: events,
+    });
+  }
+
+  const pullRequestPath = path.join(repoDir, "pull-requests.json");
+  let prPayload = await maybeReadCache<{ pullRequests: PullRequestSummary[] }>(
+    pullRequestPath,
+    runtime.forceRefresh
+  );
+  if (!prPayload) {
+    const prs = await collectPullRequests(
+      graphqlClient,
+      repo.owner,
+      repo.name,
+      metadata.defaultBranch,
+      runtime.windowStart
+    );
+    prPayload = { pullRequests: prs };
+    await writeJson(pullRequestPath, {
+      fetchedAt: new Date().toISOString(),
+      windowStart: runtime.windowStart,
+      windowEnd: runtime.windowEnd,
+      baseBranch: metadata.defaultBranch,
+      pullRequests: prs,
+    });
+  }
+
+  return {
+    repo: metadata.fullName,
+    pullRequests: prPayload.pullRequests.length,
+    deploymentEvents: eventsPayload.runs.length,
+    cached: !runtime.forceRefresh,
+  };
 }
 
 async function run() {
@@ -477,34 +374,10 @@ async function run() {
     throw new Error("GITHUB_TOKEN is required. Set it via environment variable or .env file.");
   }
 
-  const rawEntries: RawRepoEntry[] = [];
-  if (options.repo) {
-    rawEntries.push(...options.repo);
-  }
-  if (options.input) {
-    const fromFile = await readReposFromFile(options.input);
-    rawEntries.push(...fromFile);
-  }
-
-  if (rawEntries.length === 0) {
-    throw new Error("No repositories specified. Use --repo or --input.");
-  }
-
-  const repoMap = new Map<string, RepoConfig>();
-  for (const entry of rawEntries) {
-    const repoConfig = toRepoConfig(entry, { workflowKeywords: options.workflowFilter });
-    repoMap.set(repoConfig.slug.toLowerCase(), repoConfig);
-  }
-
-  const repoConfigs = Array.from(repoMap.values());
-
-  const config: CollectorConfig = {
-    repos: repoConfigs,
-    days: options.days,
-    forceRefresh: Boolean(options.refresh),
-    outputDir: options.output,
-    debug: Boolean(options.debug),
-  };
+  const rawEntries = await readRepoArguments(options.input, options.repo);
+  const repoConfigs = mergeRepoEntries(rawEntries, {
+    workflowKeywords: options.workflowFilter,
+  });
 
   const octokit = new Octokit({ auth: token });
   const graphqlClient = graphql.defaults({
@@ -514,77 +387,32 @@ async function run() {
   });
 
   const nowIso = new Date().toISOString().split(".")[0] + "Z";
-  const windowStart = new Date(Date.now() - config.days * 24 * 60 * 60 * 1000)
+  const windowStartIso = new Date(Date.now() - options.days * 24 * 60 * 60 * 1000)
     .toISOString()
-    .split(".")[0] + "Z"; // drop milliseconds for compatibility
+    .split(".")[0] + "Z";
 
-  const summary: { repo: string; pullRequests: number; workflows: number; cached: boolean }[] = [];
+  const runtime: CollectorRuntimeConfig = {
+    repos: repoConfigs,
+    days: options.days,
+    forceRefresh: Boolean(options.refresh),
+    outputDir: options.output,
+    debug: Boolean(options.debug),
+    octokit,
+    windowStart: windowStartIso,
+    windowEnd: nowIso,
+  };
 
-  for (const repoConfig of config.repos) {
-    const slug: RepoSlug = { owner: repoConfig.owner, name: repoConfig.name };
-    const repoDir = await ensureRepoDir(config.outputDir, slug);
-
-    console.log(`\n⏳ Collecting ${slug.owner}/${slug.name} [method=${repoConfig.method}]`);
-
-    const metadataPath = path.join(repoDir, "metadata.json");
-    let metadata: RepoMetadata;
-    const cachedMetadata = await maybeReadCache<RepoMetadataCache>(metadataPath, config.forceRefresh);
-    if (cachedMetadata) {
-      metadata = cachedMetadata.metadata;
-    } else {
-      metadata = await collectMetadata(octokit, slug);
-      await writeJson(metadataPath, { fetchedAt: new Date().toISOString(), metadata });
-    }
-
-    const workflowPath = path.join(repoDir, "workflow-runs.json");
-    let workflowPayload = await maybeReadCache<{ runs: WorkflowRunSummary[] }>(workflowPath, config.forceRefresh);
-    if (!workflowPayload) {
-      if (repoConfig.method !== "actions") {
-        throw new Error(
-          `Repository ${repoConfig.slug} configured with method '${repoConfig.method}' which is not implemented yet.`
-        );
-      }
-
-      const runs = await collectWorkflowRuns(
-        octokit,
-        slug,
-        windowStart,
-        nowIso,
-        repoConfig.actions.workflowKeywords,
-        repoConfig.actions.events,
-        repoConfig.actions.branch,
-        config.debug
-      );
-      workflowPayload = { runs };
-      await writeJson(workflowPath, { fetchedAt: new Date().toISOString(), windowStart, windowEnd: nowIso, runs });
-    }
-
-    const defaultBranch = metadata.defaultBranch;
-    const prPath = path.join(repoDir, "pull-requests.json");
-    let prPayload = await maybeReadCache<{ pullRequests: PullRequestSummary[] }>(prPath, config.forceRefresh);
-    if (!prPayload) {
-      const prs = await collectPullRequests(graphqlClient, slug, windowStart, defaultBranch);
-      prPayload = { pullRequests: prs };
-      await writeJson(prPath, {
-        fetchedAt: new Date().toISOString(),
-        windowStart,
-        windowEnd: nowIso,
-        baseBranch: defaultBranch,
-        pullRequests: prs,
-      });
-    }
-
-    summary.push({
-      repo: metadata.fullName,
-      pullRequests: prPayload.pullRequests.length,
-      workflows: workflowPayload.runs.length,
-      cached: !config.forceRefresh,
-    });
+  const summaries: RepoCollectionResult[] = [];
+  for (const repoConfig of repoConfigs) {
+    const summary = await collectRepo(runtime, repoConfig, graphqlClient);
+    summaries.push(summary);
   }
 
   console.log("\n✅ Collection complete:");
-  for (const item of summary) {
-    console.log(`  • ${item.repo}: ${item.pullRequests} PRs, ${item.workflows} deployment runs`);
+  for (const item of summaries) {
+    console.log(
+      `  • ${item.repo}: ${item.pullRequests} PRs, ${item.deploymentEvents} deployment events`
+    );
   }
 }
 

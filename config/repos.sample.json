@@ -8,5 +8,20 @@
       "branch": "canary"
     }
   },
-  "withastro/astro"
+  {
+    "slug": "withastro/astro",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^astro@"
+    }
+  },
+  {
+    "slug": "axios/axios",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  }
 ]

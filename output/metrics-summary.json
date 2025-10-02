@@ -1,6 +1,21 @@
 {
-  "generatedAt": "2025-10-02T08:27:04.857Z",
+  "generatedAt": "2025-10-02T08:41:19.876Z",
   "rows": [
+    {
+      "repo": "axios/axios",
+      "language": "JavaScript",
+      "defaultBranch": "v1.x",
+      "deployCount": 5,
+      "prCount": 1,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 2.4,
+      "deploymentsPerWeekP95": 2.8,
+      "prCycleTimeHoursMedian": 11.118333333333334,
+      "prCycleTimeHoursP85": 11.118333333333334,
+      "prCycleTimeHoursP95": 11.118333333333334,
+      "sampleWindowStart": "2025-08-04T18:15:58Z",
+      "sampleWindowEnd": "2025-10-01T15:18:49Z"
+    },
     {
       "repo": "vercel/next.js",
       "language": "JavaScript",
@@ -20,16 +35,16 @@
       "repo": "withastro/astro",
       "language": "TypeScript",
       "defaultBranch": "main",
-      "deployCount": 56,
+      "deployCount": 16,
       "prCount": 13,
-      "deploymentsPerWeekMedian": 28,
-      "deploymentsPerWeekP85": 39.2,
-      "deploymentsPerWeekP95": 42.4,
+      "deploymentsPerWeekMedian": 2,
+      "deploymentsPerWeekP85": 3.0999999999999996,
+      "deploymentsPerWeekP95": 3.6999999999999993,
       "prCycleTimeHoursMedian": 3.0805555555555557,
       "prCycleTimeHoursP85": 19.199166666666663,
       "prCycleTimeHoursP95": 107.90805555555525,
-      "sampleWindowStart": "2025-09-16T14:46:06Z",
-      "sampleWindowEnd": "2025-10-01T16:49:02Z"
+      "sampleWindowStart": "2025-08-08T15:05:44Z",
+      "sampleWindowEnd": "2025-10-01T16:46:50Z"
     }
   ]
 }

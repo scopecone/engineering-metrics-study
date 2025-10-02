@@ -25,11 +25,11 @@ interface WorkflowPayload {
   windowStart: string;
   windowEnd?: string;
   runs: Array<{
-    id: number;
+    id: string;
     createdAt: string;
-    updatedAt: string;
-    headBranch?: string | null;
-    headSha?: string | null;
+    completedAt?: string | null;
+    branch?: string | null;
+    sha?: string | null;
   }>;
 }
 
@@ -153,8 +153,8 @@ async function aggregateRepo(dirPath: string, slug: string): Promise<RepoAggrega
     if (run.createdAt) {
       timeCandidates.push(run.createdAt);
     }
-    if (run.updatedAt) {
-      timeCandidates.push(run.updatedAt);
+    if (run.completedAt) {
+      timeCandidates.push(run.completedAt);
     }
   }
   for (const pr of pullRequests.pullRequests) {

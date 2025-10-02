@@ -36,7 +36,11 @@ This proof of concept focuses on collecting reproducible GitHub telemetry that c
 
 ### Per-repository collection options
 
-Each repository entry in `config/repos*.json` can declare a `method` that controls how deployment-like events are captured. Iteration one implements the `actions` method with the following options:
+Each repository entry in `config/repos*.json` can declare a `method` that controls how deployment-like events are captured. The collector currently supports three strategies:
+
+### `method: "actions"`
+
+Scans GitHub Actions workflow runs, useful for projects that ship via CI pipelines. Options:
 
 ```json
 {
@@ -54,7 +58,43 @@ Each repository entry in `config/repos*.json` can declare a `method` that contro
 - `events`: optional subset of Actions event types to include (e.g., only `push`, `release`).
 - `branch`: optional branch/ref restriction (`canary`, `refs/heads/main`, etc.).
 
-Additional methods (`deployments`, `releases`) will be introduced in subsequent iterations to cover projects that track production pushes via GitHub Environments or Releases rather than Actions keywords.
+### `method: "deployments"`
+
+Uses the GitHub Deployments API. Ideal when teams promote builds through environments (`production`, `staging`, and so on).
+
+```json
+{
+  "slug": "owner/name",
+  "method": "deployments",
+  "deployments": {
+    "environments": ["production"],
+    "statuses": ["success"]
+  }
+}
+```
+
+- `environments`: optional allow-list of deployment environments (case-insensitive).
+- `statuses`: optional allow-list of latest deployment status states (`success`, `inactive`, `failure`, ...).
+
+The collector fetches deployment statuses to determine the final outcome and filters accordingly.
+
+### `method: "releases"`
+
+Counts GitHub Releases, best for libraries that tag semantic versions.
+
+```json
+{
+  "slug": "owner/name",
+  "method": "releases",
+  "releases": {
+    "includePrereleases": false,
+    "tagPattern": "^v"
+  }
+}
+```
+
+- `includePrereleases`: include releases marked as `prerelease` when `true` (default `false`).
+- `tagPattern`: optional regular expression (or substring fallback) to match against `tag_name`.
 
 ## Output schema (iteration one)
 

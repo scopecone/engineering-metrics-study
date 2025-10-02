@@ -30,7 +30,7 @@ This directory houses the data-collection spike that supports our engineering me
    ]
    ```
 
-   Each entry can be a simple `"owner/name"` string (default `actions` method with the global filters), or an object that specifies per-repo collection rules. See [`docs/metric-definitions.md`](docs/metric-definitions.md) for details.
+   Each entry can be a simple `"owner/name"` string (default `actions` method with the global filters), or an object that specifies per-repo collection rules. Supported methods are `actions`, `deployments`, and `releases`. See [`docs/metric-definitions.md`](docs/metric-definitions.md) for option details and trade-offs.
 
 4. Collect raw payloads:
 
