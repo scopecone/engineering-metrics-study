@@ -300,7 +300,10 @@ async function collectRepo(
   console.log(`\n⏳ Collecting ${repo.owner}/${repo.name} [method=${repo.method}]`);
 
   const metadataPath = path.join(repoDir, "metadata.json");
-  const cachedMetadata = await maybeReadCache<RepoMetadataCache>(metadataPath, runtime.forceRefresh);
+  const cachedMetadataFile = await maybeReadCache<RepoMetadataCache>(
+    metadataPath,
+    runtime.forceRefresh
+  );
   const metadataResult = await fetchWithConditional(
     async (headers) => {
       const response = await runtime.octokit.repos.get({
@@ -311,26 +314,36 @@ async function collectRepo(
       });
       return response as { data: any; headers: Record<string, string> };
     },
-    cachedMetadata ?? null,
+    cachedMetadataFile
+      ? {
+          data: cachedMetadataFile.metadata,
+          etag: cachedMetadataFile.etag,
+          lastModified: cachedMetadataFile.lastModified,
+        }
+      : null,
     (headers) => runtime.rateLimiter.updateFromHeaders(headers as any)
   );
 
   const metadataData = metadataResult.data as any;
   const metadata: RepoMetadata = {
-    id: metadataData.id,
-    name: metadataData.name,
-    fullName: metadataData.full_name,
-    description: metadataData.description,
-    htmlUrl: metadataData.html_url,
-    defaultBranch: metadataData.default_branch,
-    language: metadataData.language,
+    id: metadataData.id ?? cachedMetadataFile?.metadata.id ?? 0,
+    name: metadataData.name ?? cachedMetadataFile?.metadata.name ?? repo.name,
+    fullName:
+      metadataData.full_name ?? metadataData.fullName ?? cachedMetadataFile?.metadata.fullName ?? `${repo.owner}/${repo.name}`,
+    description: metadataData.description ?? cachedMetadataFile?.metadata.description ?? null,
+    htmlUrl: metadataData.html_url ?? metadataData.htmlUrl ?? cachedMetadataFile?.metadata.htmlUrl ?? "",
+    defaultBranch:
+      metadataData.default_branch ?? metadataData.defaultBranch ?? cachedMetadataFile?.metadata.defaultBranch ?? "main",
+    language: metadataData.language ?? cachedMetadataFile?.metadata.language ?? null,
     topics: Array.isArray(metadataData.topics)
       ? metadataData.topics
-      : cachedMetadata?.metadata.topics ?? [],
-    stargazersCount: metadataData.stargazers_count,
-    forksCount: metadataData.forks_count,
-    openIssuesCount: metadataData.open_issues_count,
-    pushedAt: metadataData.pushed_at,
+      : cachedMetadataFile?.metadata.topics ?? [],
+    stargazersCount:
+      metadataData.stargazers_count ?? metadataData.stargazerCount ?? cachedMetadataFile?.metadata.stargazersCount ?? 0,
+    forksCount: metadataData.forks_count ?? metadataData.forkCount ?? cachedMetadataFile?.metadata.forksCount ?? 0,
+    openIssuesCount:
+      metadataData.open_issues_count ?? metadataData.openIssuesCount ?? cachedMetadataFile?.metadata.openIssuesCount ?? 0,
+    pushedAt: metadataData.pushed_at ?? metadataData.pushedAt ?? cachedMetadataFile?.metadata.pushedAt ?? null,
   };
 
   await writeJson(metadataPath, {
@@ -415,10 +428,14 @@ async function collectReposParallel(
           );
         }
       } catch (error) {
-        console.error(
-          `❌ Failed to collect ${repoConfig.slug}:`,
-          error instanceof Error ? error.message : error
-        );
+        if (error instanceof Error) {
+          console.error(`❌ Failed to collect ${repoConfig.slug}: ${error.message}`);
+          if (runtime.debug || process.env.COLLECTOR_PROGRESS === "true") {
+            console.error(error.stack);
+          }
+        } else {
+          console.error(`❌ Failed to collect ${repoConfig.slug}:`, error);
+        }
         results[currentIndex] = {
           repo: repoConfig.slug,
           pullRequests: 0,

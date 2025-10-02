@@ -44,9 +44,7 @@ export async function collectActionsEvents({
   const windowStartDate = new Date(windowStart);
   const windowEndDate = new Date(windowEnd);
 
-  const runs: typeof octokit.actions.listWorkflowRunsForRepo extends (...args: any) => Promise<{ data: infer R }>
-    ? R
-    : never = [] as any;
+  const runs: any[] = [];
 
   const iterator = octokit.paginate.iterator(octokit.actions.listWorkflowRunsForRepo, {
     owner,
@@ -57,6 +55,9 @@ export async function collectActionsEvents({
 
   for await (const response of iterator) {
     for (const run of response.data) {
+      if (!run) {
+        continue;
+      }
       const createdAt = new Date(run.created_at ?? 0);
       if (createdAt < windowStartDate) {
         if (debug) {
@@ -119,7 +120,10 @@ function buildActionEvents(
   const selected: DeploymentLikeEvent[] = [];
 
   for (const run of runs) {
-    const logPrefix = `[actions] workflow#${run.id}`;
+    if (!run) {
+      continue;
+    }
+    const logPrefix = `[actions] workflow#${run.id ?? "unknown"}`;
     if (run.status !== "completed" || run.conclusion !== "success") {
       if (debug) {
         console.log(
