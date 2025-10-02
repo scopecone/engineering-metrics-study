@@ -1,4 +1,5 @@
 import type { Octokit } from "@octokit/rest";
+import type { RateLimiter } from "./rate-limiter";
 
 export type CollectionMethod = "actions" | "deployments" | "releases";
 
@@ -37,6 +38,7 @@ export interface CollectorRuntimeConfig {
   octokit: Octokit;
   windowStart: string;
   windowEnd: string;
+  rateLimiter: RateLimiter;
 }
 
 export interface DeploymentLikeEvent {

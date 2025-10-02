@@ -6,6 +6,9 @@ import fs from "fs-extra";
 import { Octokit } from "@octokit/rest";
 import { graphql } from "@octokit/graphql";
 
+import { RateLimiter } from "./rate-limiter";
+import { fetchWithConditional } from "./fetch";
+
 import { readRepoEntries, mergeRepoEntries, type RawRepoEntry } from "./config";
 import type {
   CollectorRuntimeConfig,
@@ -50,6 +53,8 @@ interface RepoMetadata {
 interface RepoMetadataCache {
   fetchedAt: string;
   metadata: RepoMetadata;
+  etag?: string;
+  lastModified?: string;
 }
 
 const program = new Command();
@@ -119,37 +124,6 @@ async function maybeReadCache<T>(filePath: string, forceRefresh: boolean): Promi
 
 async function writeJson(filePath: string, data: unknown) {
   await fs.outputJson(filePath, data, { spaces: 2 });
-}
-
-async function collectMetadata(octokit: Octokit, owner: string, repo: string): Promise<RepoMetadata> {
-  const { data } = await octokit.repos.get({ owner, repo });
-  let topics: string[] = [];
-  try {
-    const topicsResponse = await octokit.repos.getAllTopics({
-      owner,
-      repo,
-      mediaType: { previews: ["mercy"] },
-    });
-    topics = topicsResponse.data.names ?? [];
-  } catch (error) {
-    if (process.env.DEBUG_COLLECTOR) {
-      console.warn(`⚠️  Failed to fetch topics for ${owner}/${repo}:`, error);
-    }
-  }
-  return {
-    id: data.id,
-    name: data.name,
-    fullName: data.full_name,
-    description: data.description,
-    htmlUrl: data.html_url,
-    defaultBranch: data.default_branch,
-    language: data.language,
-    topics,
-    stargazersCount: data.stargazers_count,
-    forksCount: data.forks_count,
-    openIssuesCount: data.open_issues_count,
-    pushedAt: data.pushed_at,
-  };
 }
 
 async function collectPullRequests(
@@ -313,17 +287,45 @@ async function collectRepo(
   console.log(`\n⏳ Collecting ${repo.owner}/${repo.name} [method=${repo.method}]`);
 
   const metadataPath = path.join(repoDir, "metadata.json");
-  let metadata: RepoMetadata;
   const cachedMetadata = await maybeReadCache<RepoMetadataCache>(metadataPath, runtime.forceRefresh);
-  if (cachedMetadata) {
-    metadata = cachedMetadata.metadata;
-  } else {
-    metadata = await collectMetadata(runtime.octokit, repo.owner, repo.name);
-    await writeJson(metadataPath, {
-      fetchedAt: new Date().toISOString(),
-      metadata,
-    });
-  }
+  const metadataResult = await fetchWithConditional(
+    async (headers) => {
+      const response = await runtime.octokit.repos.get({
+        owner: repo.owner,
+        repo: repo.name,
+        headers,
+        mediaType: { previews: ["mercy"] },
+      });
+      return response as { data: any; headers: Record<string, string> };
+    },
+    cachedMetadata ?? null,
+    (headers) => runtime.rateLimiter.updateFromHeaders(headers as any)
+  );
+
+  const metadataData = metadataResult.data as any;
+  const metadata: RepoMetadata = {
+    id: metadataData.id,
+    name: metadataData.name,
+    fullName: metadataData.full_name,
+    description: metadataData.description,
+    htmlUrl: metadataData.html_url,
+    defaultBranch: metadataData.default_branch,
+    language: metadataData.language,
+    topics: Array.isArray(metadataData.topics)
+      ? metadataData.topics
+      : cachedMetadata?.metadata.topics ?? [],
+    stargazersCount: metadataData.stargazers_count,
+    forksCount: metadataData.forks_count,
+    openIssuesCount: metadataData.open_issues_count,
+    pushedAt: metadataData.pushed_at,
+  };
+
+  await writeJson(metadataPath, {
+    fetchedAt: new Date().toISOString(),
+    metadata,
+    etag: metadataResult.etag,
+    lastModified: metadataResult.lastModified,
+  });
 
   const eventsPath = path.join(repoDir, "workflow-runs.json");
   let eventsPayload = await maybeReadCache<{ runs: DeploymentLikeEvent[] }>(eventsPath, runtime.forceRefresh);
@@ -369,6 +371,46 @@ async function collectRepo(
   };
 }
 
+async function collectReposParallel(
+  runtime: CollectorRuntimeConfig,
+  repoConfigs: RepoConfig[],
+  graphqlClient: GraphqlClient,
+  concurrency = 5
+): Promise<RepoCollectionResult[]> {
+  const results: RepoCollectionResult[] = new Array(repoConfigs.length);
+  let index = 0;
+
+  const worker = async () => {
+    while (true) {
+      const currentIndex = index++;
+      if (currentIndex >= repoConfigs.length) {
+        break;
+      }
+      const repoConfig = repoConfigs[currentIndex];
+      try {
+        const summary = await collectRepo(runtime, repoConfig, graphqlClient);
+        results[currentIndex] = summary;
+      } catch (error) {
+        console.error(
+          `❌ Failed to collect ${repoConfig.slug}:`,
+          error instanceof Error ? error.message : error
+        );
+        results[currentIndex] = {
+          repo: repoConfig.slug,
+          pullRequests: 0,
+          deploymentEvents: 0,
+          cached: false,
+        };
+      }
+    }
+  };
+
+  const workerCount = Math.min(concurrency, repoConfigs.length || 1);
+  await Promise.all(Array.from({ length: workerCount }, () => worker()));
+
+  return results.filter(Boolean);
+}
+
 async function run() {
   const options = program.opts<{
     repo?: string[];
@@ -394,7 +436,14 @@ async function run() {
     workflowKeywords: options.workflowFilter,
   });
 
+  const rateLimiter = new RateLimiter();
   const octokit = new Octokit({ auth: token });
+  octokit.hook.before("request", async () => {
+    await rateLimiter.checkAndWait();
+  });
+  octokit.hook.after("request", (response) => {
+    rateLimiter.updateFromHeaders(response.headers as any);
+  });
   const graphqlClient = graphql.defaults({
     headers: {
       authorization: `token ${token}`,
@@ -415,13 +464,10 @@ async function run() {
     octokit,
     windowStart: windowStartIso,
     windowEnd: nowIso,
+    rateLimiter,
   };
 
-  const summaries: RepoCollectionResult[] = [];
-  for (const repoConfig of repoConfigs) {
-    const summary = await collectRepo(runtime, repoConfig, graphqlClient);
-    summaries.push(summary);
-  }
+  const summaries = await collectReposParallel(runtime, repoConfigs, graphqlClient, 5);
 
   console.log("\n✅ Collection complete:");
   for (const item of summaries) {
