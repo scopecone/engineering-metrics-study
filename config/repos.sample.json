@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "vercel/next.js",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": ["deploy", "release"],
+      "events": ["push"],
+      "branch": "canary"
+    }
+  },
+  "withastro/astro"
+]

@@ -1,0 +1,6 @@
+# Generated API payloads and intermediate caches
+/data/raw/
+/tmp/
+
+# Local environment files
+.env

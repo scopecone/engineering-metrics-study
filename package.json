@@ -1,0 +1,25 @@
+{
+  "name": "engineering-metrics-study",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "collect": "tsx scripts/collector/index.ts",
+    "aggregate": "tsx scripts/aggregate.ts",
+    "lint": "eslint \"scripts/**/*.ts\""
+  },
+  "dependencies": {
+    "@octokit/graphql": "^7.0.1",
+    "@octokit/rest": "^20.1.1",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.5",
+    "eslint": "^9.11.1",
+    "typescript": "^5.4.5",
+    "tsx": "^4.17.0"
+  }
+}
