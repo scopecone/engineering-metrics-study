@@ -2,6 +2,7 @@
 import { Command } from "commander";
 import "dotenv/config";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import fs from "fs-extra";
 import { Octokit } from "@octokit/rest";
 import { graphql } from "@octokit/graphql";
@@ -21,6 +22,11 @@ import { collectActionsEvents } from "./methods/actions";
 import { collectDeploymentApiEvents } from "./methods/deployments";
 import { collectDeploymentGraphQLEvents } from "./methods/deployments-graphql";
 import { collectReleaseEvents } from "./methods/releases";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, "..", "..");
+const DEFAULT_OUTPUT_DIR = path.join(PROJECT_ROOT, "data", "raw");
 
 type GraphqlClient = typeof graphql;
 
@@ -95,7 +101,7 @@ program
   .option(
     "-o, --output <dir>",
     "Directory to store raw payloads",
-    "engineering-metrics-study/data/raw"
+    DEFAULT_OUTPUT_DIR
   )
   .option("--debug", "Enable verbose logging for filtered artifacts")
   .option(
@@ -555,11 +561,17 @@ async function run() {
     .toISOString()
     .split(".")[0] + "Z";
 
+  const outputDir = options.output
+    ? path.isAbsolute(options.output)
+      ? options.output
+      : path.join(PROJECT_ROOT, options.output)
+    : DEFAULT_OUTPUT_DIR;
+
   const runtime: CollectorRuntimeConfig = {
     repos: repoConfigs,
     days: options.days,
     forceRefresh: Boolean(options.refresh),
-    outputDir: options.output,
+    outputDir,
     debug: Boolean(options.debug),
     octokit,
     windowStart: windowStartIso,

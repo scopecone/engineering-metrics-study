@@ -37,14 +37,14 @@ This directory houses the data-collection spike that supports our engineering me
    ```bash
    npm run collect -- \\
      --input config/repos.sample.json \\
-     --days 60 \\
-     --output engineering-metrics-study/data/raw
+     --days 365
    ```
 
    - Use repeated `--repo owner/name` flags for ad-hoc runs.
    - Add `--refresh` to ignore cached responses.
    - Add `--debug` to log every workflow run that is counted or skipped.
    - Set `COLLECTOR_PROGRESS=true` to emit `[n/total]` progress updates during long batches.
+   - By default, raw payloads are written to `engineering-metrics-study/data/raw`. Pass `--output ../tmp` (or any path) if you need an alternate cache directory.
 
 5. Aggregate metrics into CSV and JSON summaries:
 
@@ -73,6 +73,7 @@ This directory houses the data-collection spike that supports our engineering me
 - `USE_GRAPHQL_DEPLOYMENTS=false npm run collect …` — falls back to the REST Deployments API if the GitHub GraphQL schema changes; the default GraphQL path batches deployments and statuses to minimise API calls.
 - The collector automatically respects conditional requests (ETag/Last-Modified headers) and will pause when the GitHub rate limit approaches zero, so reruns can safely share cached responses.
 - PR bot authors are filtered by default. Use `npm run collect -- --include-bot-prs …` to keep them, or override detection heuristics with `--bot-author-patterns dependabot,renovate`.
+- Deployments collected through the GitHub Deployments API can be narrowed to production-ready signals by setting both `deployments.environments` and `deployments.statuses` per repo. For example, Sentry now limits counting to `Production` deployments whose latest status is `success`, removing thousands of preview deploys from the weekly totals.
 
 ### Testing
 

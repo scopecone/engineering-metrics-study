@@ -2,6 +2,7 @@
 import { Command } from "commander";
 import fs from "fs-extra";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 interface RepoMetadataPayload {
   fetchedAt: string;
@@ -63,12 +64,18 @@ interface RepoAggregateRow {
   sampleWindowEnd: string | null;
 }
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, "..");
+const DEFAULT_INPUT_DIR = path.join(PROJECT_ROOT, "data", "raw");
+const DEFAULT_OUTPUT_DIR = path.join(PROJECT_ROOT, "output");
+
 const program = new Command();
 
 program
   .description("Aggregate cached GitHub telemetry into summary statistics")
-  .option("-i, --input <dir>", "Directory containing raw repo payloads", "engineering-metrics-study/data/raw")
-  .option("-o, --output <dir>", "Directory for aggregated outputs", "engineering-metrics-study/output")
+  .option("-i, --input <dir>", "Directory containing raw repo payloads", DEFAULT_INPUT_DIR)
+  .option("-o, --output <dir>", "Directory for aggregated outputs", DEFAULT_OUTPUT_DIR)
   .parse(process.argv);
 
 function parseIsoDate(value: string): Date {
@@ -233,8 +240,16 @@ async function writeCsv(filePath: string, rows: RepoAggregateRow[]) {
 
 async function run() {
   const options = program.opts<{ input: string; output: string }>();
-  const inputDir = path.resolve(options.input);
-  const outputDir = path.resolve(options.output);
+  const inputDir = options.input
+    ? path.isAbsolute(options.input)
+      ? options.input
+      : path.join(PROJECT_ROOT, options.input)
+    : DEFAULT_INPUT_DIR;
+  const outputDir = options.output
+    ? path.isAbsolute(options.output)
+      ? options.output
+      : path.join(PROJECT_ROOT, options.output)
+    : DEFAULT_OUTPUT_DIR;
 
   if (!(await fs.pathExists(inputDir))) {
     throw new Error(`Input directory not found: ${inputDir}`);

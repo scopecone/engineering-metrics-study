@@ -1,8 +1,8 @@
 # Engineering Metrics Study · Metric Definitions
 
-This proof of concept focuses on collecting reproducible GitHub telemetry that can validate (or challenge) the assumptions used inside the Engineering Metrics Simulator. The scope for iteration one is intentionally small—roughly 25 open-source repositories that:
+This proof of concept focuses on collecting reproducible GitHub telemetry that can validate (or challenge) the assumptions used inside the Engineering Metrics Simulator. The scope for iteration one is intentionally small—roughly 75 open-source repositories that:
 
-- have seen at least one successful deployment workflow run in the last 60 days,
+- have seen at least one successful deployment workflow run in the observation window (we currently pull 365 days for the pilot cohort so long-release libraries aren’t excluded),
 - use pull requests as the primary integration path,
 - expose their default branch history publicly.
 
@@ -34,7 +34,7 @@ This proof of concept focuses on collecting reproducible GitHub telemetry that c
 - Collection strategy will be validated after the first data slice.
 
 ## Observation window
-- **Duration**: Default to the most recent 60 days to stay within Actions retention limits.
+- **Duration**: CLI default is the most recent 60 days (aligned with Actions retention), but for the 75-repo pilot we collect 365 days to capture slower release cadences. Increase `--days` when working with libraries or infrastructure projects that publish quarterly.
 - **Granularity**: Daily collection, aggregated into weekly buckets for deployments and raw PR durations for cycle time statistics.
 
 ### Per-repository collection options
@@ -76,7 +76,7 @@ Uses the GitHub GraphQL Deployments connection by default. Ideal when teams prom
 }
 ```
 
-- `environments`: optional allow-list of deployment environments (case-insensitive).
+- `environments`: optional allow-list of deployment environments (case-insensitive). Combine with `statuses` to focus on production-ready rollouts—for example, Sentry only counts the `Production` environment with a `success` status to avoid inflating metrics with preview builds that Vercel later marks `inactive`.
 - `statuses`: optional allow-list of latest deployment status states (`success`, `inactive`, `failure`, ...).
 
 The GraphQL path returns deployments with their latest status in a single request and stops paginating once the window is exhausted. Set `USE_GRAPHQL_DEPLOYMENTS=false` to fall back to the REST Deployments API if GitHub introduces a breaking schema change.
