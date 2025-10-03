@@ -1,9 +1,5 @@
 [
   {
-    "slug": "GokuMohandas/Made-With-ML",
-    "reason": "docs_only"
-  },
-  {
     "slug": "atom/atom",
     "reason": "archived"
   },
@@ -28,11 +24,51 @@
     "reason": "no_github_release"
   },
   {
+    "slug": "GokuMohandas/Made-With-ML",
+    "reason": "docs_only"
+  },
+  {
+    "slug": "HamishMW/portfolio",
+    "reason": "personal_site"
+  },
+  {
+    "slug": "ityouknow/spring-boot-examples",
+    "reason": "docs_or_template"
+  },
+  {
+    "slug": "keystonejs/keystone-classic",
+    "reason": "deprecated"
+  },
+  {
     "slug": "lencx/ChatGPT",
     "reason": "archived"
   },
   {
+    "slug": "leonardomso/33-js-concepts",
+    "reason": "docs_only"
+  },
+  {
+    "slug": "macrozheng/mall",
+    "reason": "docs_or_template"
+  },
+  {
+    "slug": "smartcontractkit/full-blockchain-solidity-course-js",
+    "reason": "tutorial"
+  },
+  {
+    "slug": "Snailclimb/JavaGuide",
+    "reason": "docs_only"
+  },
+  {
+    "slug": "tldr-devops/startpack",
+    "reason": "template"
+  },
+  {
     "slug": "tw93/Pake",
+    "reason": "template"
+  },
+  {
+    "slug": "xkcoding/spring-boot-demo",
     "reason": "template"
   }
 ]

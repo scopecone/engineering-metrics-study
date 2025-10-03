@@ -1,14 +1,6 @@
 [
   {
-    "slug": "facebook/react",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "microsoft/vscode",
+    "slug": "angular/angular",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -16,7 +8,7 @@
     }
   },
   {
-    "slug": "facebook/react-native",
+    "slug": "laravel/laravel",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -24,7 +16,7 @@
     }
   },
   {
-    "slug": "electron/electron",
+    "slug": "spring-projects/spring-boot",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -32,31 +24,7 @@
     }
   },
   {
-    "slug": "langgenius/dify",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "fastapi/fastapi",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "supabase/supabase",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "ChatGPTNextWeb/NextChat",
+    "slug": "strapi/strapi",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -64,7 +32,7 @@
     }
   },
   {
-    "slug": "immich-app/immich",
+    "slug": "spring-projects/spring-framework",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -72,7 +40,7 @@
     }
   },
   {
-    "slug": "microsoft/playwright",
+    "slug": "ionic-team/ionic-framework",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -80,93 +48,7 @@
     }
   },
   {
-    "slug": "unionlabs/union",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false
-    }
-  },
-  {
-    "slug": "nestjs/nest",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "grafana/grafana",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "apache/superset",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false
-    }
-  },
-  {
-    "slug": "localsend/localsend",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "AppFlowy-IO/AppFlowy",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "vllm-project/vllm",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "rails/rails",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "appwrite/appwrite",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "hashicorp/terraform",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "coollabsio/coolify",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "discourse/discourse",
+    "slug": "AlistGo/alist",
     "method": "actions",
     "actions": {
       "workflowKeywords": [
@@ -180,31 +62,7 @@
     }
   },
   {
-    "slug": "metabase/metabase",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "ClickHouse/ClickHouse",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "apache/airflow",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "chakra-ui/chakra-ui",
+    "slug": "TanStack/query",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -212,7 +70,7 @@
     }
   },
   {
-    "slug": "makeplane/plane",
+    "slug": "laravel/framework",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -220,7 +78,7 @@
     }
   },
   {
-    "slug": "saadeghi/daisyui",
+    "slug": "directus/directus",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -228,7 +86,7 @@
     }
   },
   {
-    "slug": "menloresearch/jan",
+    "slug": "symfony/symfony",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -236,7 +94,7 @@
     }
   },
   {
-    "slug": "twentyhq/twenty",
+    "slug": "conductor-oss/conductor",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -244,7 +102,159 @@
     }
   },
   {
-    "slug": "AmruthPillai/Reactive-Resume",
+    "slug": "nextauthjs/next-auth",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^next-auth@"
+    }
+  },
+  {
+    "slug": "TanStack/table",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "filamentphp/filament",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "NativeScript/NativeScript",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "redisson/redisson",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false
+    }
+  },
+  {
+    "slug": "monicahq/monica",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "bagisto/bagisto",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "getgrav/grav",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "BuilderIO/mitosis",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^@"
+    }
+  },
+  {
+    "slug": "wallabag/wallabag",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "supermemoryai/supermemory",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "staging - apps/docs"
+      ],
+      "statuses": [
+        "success"
+      ]
+    }
+  },
+  {
+    "slug": "symfony/console",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "keystonejs/keystone",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "api-platform/api-platform",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "webstudio-is/webstudio",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "ly525/luban-h5",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "Preview",
+        "Production"
+      ],
+      "statuses": [
+        "success"
+      ]
+    }
+  },
+  {
+    "slug": "remix-project-org/remix-project",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "rjaros/kvision",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "strapi/documentation",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
