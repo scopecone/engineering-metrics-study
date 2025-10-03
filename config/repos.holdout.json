@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "GokuMohandas/Made-With-ML",
+    "reason": "docs_only"
+  },
+  {
+    "slug": "atom/atom",
+    "reason": "archived"
+  },
+  {
+    "slug": "django/django",
+    "reason": "no_github_release"
+  },
+  {
+    "slug": "donnemartin/system-design-primer",
+    "reason": "docs_only"
+  },
+  {
+    "slug": "fastapi/full-stack-fastapi-template",
+    "reason": "template_repo"
+  },
+  {
+    "slug": "flutter/flutter",
+    "reason": "no_release_within_365d"
+  },
+  {
+    "slug": "freeCodeCamp/freeCodeCamp",
+    "reason": "no_github_release"
+  },
+  {
+    "slug": "lencx/ChatGPT",
+    "reason": "archived"
+  },
+  {
+    "slug": "tw93/Pake",
+    "reason": "template"
+  }
+]

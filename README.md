@@ -61,11 +61,13 @@ This directory houses the data-collection spike that supports our engineering me
      --topic nextjs \\
      --topic astro \\
      --limit 3 \\
+     --holdout config/repos.holdout.json \\
+     --cache-dir tmp/discovery-cache \\
      --format table
    ```
 
    Use `--format json` to export machine-consumable output for downstream tooling or AI-assisted triage.
-   Filter out curated lists or manuals via `--exclude-topics` / `--exclude-keywords` if a topic returns non-product repos.
+   Filter out curated lists or manuals via `--exclude-topics` / `--exclude-keywords` if a topic returns non-product repos. Combine `--holdout config/repos.holdout.json` with the new activity flags (`--min-commits`, `--min-prs`) to ensure discovery skips archived/templates we have already reviewed. Running discovery in small topic batches helps stay under GitHub’s 30 requests/min search quota; cached responses are reused for 24 hours by default.
 
 ### Runtime configuration
 
