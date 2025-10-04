@@ -10,6 +10,7 @@ export type RawRepoEntry =
       method?: CollectionMethod;
       actions?: {
         workflowKeywords?: string[];
+        workflowId?: number;
         events?: string[];
         branch?: string | null;
       };
@@ -45,8 +46,10 @@ function normalizeRepoSlug(slug: string): { owner: string; name: string } {
 }
 
 function normalizeWorkflowKeywords(keywords: string[] | undefined, defaults: string[]): string[] {
-  const source = keywords && keywords.length > 0 ? keywords : defaults;
-  return source.map((keyword) => keyword.toLowerCase());
+  if (Array.isArray(keywords)) {
+    return keywords.map((keyword) => keyword.toLowerCase());
+  }
+  return defaults.map((keyword) => keyword.toLowerCase());
 }
 
 function normalizeEvents(events?: string[]): string[] | undefined {
@@ -67,6 +70,7 @@ function normalizeActionsOptions(
   const normalized = options ?? {};
   return {
     workflowKeywords: normalizeWorkflowKeywords(normalized.workflowKeywords, defaults),
+    workflowId: typeof normalized.workflowId === "number" ? normalized.workflowId : undefined,
     events: normalizeEvents(normalized.events),
     branch: normalized.branch ?? null,
   };

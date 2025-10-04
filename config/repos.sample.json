@@ -1,83 +1,30 @@
 [
   {
-    "slug": "vercel/next.js",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release"
-      ],
-      "events": [
-        "push"
-      ],
-      "branch": "canary"
-    }
-  },
-  {
-    "slug": "withastro/astro",
+    "slug": "18F/identity-idp",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
-      "tagPattern": "^astro@"
+      "tagPattern": "^[0-9]{4}"
     }
   },
   {
-    "slug": "axios/axios",
+    "slug": "1backend/1backend",
     "method": "releases",
     "releases": {
-      "includePrereleases": false,
+      "includePrereleases": true,
       "tagPattern": "^v"
     }
   },
   {
-    "slug": "netdata/netdata",
+    "slug": "abpframework/abp",
     "method": "releases",
     "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
+      "includePrereleases": true,
+      "tagPattern": "^[0-9]"
     }
   },
   {
-    "slug": "nektos/act",
-    "method": "deployments",
-    "deployments": {
-      "environments": [
-        "release",
-        "promote"
-      ]
-    }
-  },
-  {
-    "slug": "go-gitea/gitea",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "getsentry/sentry",
-    "method": "deployments",
-    "deployments": {
-      "environments": [
-        "Production"
-      ],
-      "statuses": [
-        "success"
-      ]
-    }
-  },
-  {
-    "slug": "Kong/kong",
-    "method": "deployments",
-    "deployments": {
-      "environments": [
-        "release"
-      ]
-    }
-  },
-  {
-    "slug": "httpie/cli",
+    "slug": "activepieces/activepieces",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -85,7 +32,21 @@
     }
   },
   {
-    "slug": "dokku/dokku",
+    "slug": "AlistGo/alist",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "AmruthPillai/Reactive-Resume",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -93,50 +54,18 @@
     }
   },
   {
-    "slug": "Dokploy/dokploy",
+    "slug": "angular/angular",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
-      "tagPattern": "^v"
+      "tagPattern": "^[0-9]"
     }
   },
   {
-    "slug": "jenkinsci/jenkins",
+    "slug": "ansible/ansible",
     "method": "releases",
     "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^jenkins-"
-    }
-  },
-  {
-    "slug": "kubernetes/kubernetes",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "denoland/deno",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "tauri-apps/tauri",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^tauri-v"
-    }
-  },
-  {
-    "slug": "mui/material-ui",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
+      "includePrereleases": true,
       "tagPattern": "^v"
     }
   },
@@ -149,31 +78,7 @@
     }
   },
   {
-    "slug": "ollama/ollama",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "moby/moby",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "traefik/traefik",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "istio/istio",
+    "slug": "apache/airflow",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -181,7 +86,21 @@
     }
   },
   {
-    "slug": "wagtail/wagtail",
+    "slug": "apache/apisix",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "apache/beam",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -189,31 +108,7 @@
     }
   },
   {
-    "slug": "paperless-ngx/paperless-ngx",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "storybookjs/storybook",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v[0-9]"
-    }
-  },
-  {
-    "slug": "shadcn-ui/ui",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^shadcn@"
-    }
-  },
-  {
-    "slug": "rustdesk/rustdesk",
+    "slug": "apache/dolphinscheduler",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -221,31 +116,31 @@
     }
   },
   {
-    "slug": "toeverything/AFFiNE",
+    "slug": "apache/doris",
     "method": "releases",
     "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v[0-9]"
-    }
-  },
-  {
-    "slug": "facebook/react",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "microsoft/vscode",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
+      "includePrereleases": true,
       "tagPattern": "^[0-9]"
     }
   },
   {
-    "slug": "facebook/react-native",
+    "slug": "apache/druid",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^druid-"
+    }
+  },
+  {
+    "slug": "apache/iceberg",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^apache-iceberg-"
+    }
+  },
+  {
+    "slug": "apache/pulsar",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -253,82 +148,25 @@
     }
   },
   {
-    "slug": "electron/electron",
+    "slug": "apache/rocketmq",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
-      "tagPattern": "^v"
+      "tagPattern": "^rocketmq-all-"
     }
   },
   {
-    "slug": "langgenius/dify",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "fastapi/fastapi",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "supabase/supabase",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "ChatGPTNextWeb/NextChat",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "immich-app/immich",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "microsoft/playwright",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "unionlabs/union",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false
-    }
-  },
-  {
-    "slug": "nestjs/nest",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "grafana/grafana",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
+    "slug": "apache/skywalking",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
     }
   },
   {
@@ -339,7 +177,15 @@
     }
   },
   {
-    "slug": "localsend/localsend",
+    "slug": "apereo/cas",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "api-platform/api-platform",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -355,22 +201,6 @@
     }
   },
   {
-    "slug": "vllm-project/vllm",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "rails/rails",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
     "slug": "appwrite/appwrite",
     "method": "releases",
     "releases": {
@@ -379,7 +209,225 @@
     }
   },
   {
-    "slug": "hashicorp/terraform",
+    "slug": "aquasecurity/tracee",
+    "method": "deployments",
+    "deployments": {}
+  },
+  {
+    "slug": "aquasecurity/trivy",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "argoproj/argo-cd",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "argoproj/argo-events",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "argoproj/argo-workflows",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "artilleryio/artillery",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^artillery-"
+    }
+  },
+  {
+    "slug": "AvaloniaUI/Avalonia",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "aws-cloudformation/cloudformation-guard",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "axios/axios",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "bagisto/bagisto",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "baidu/dperf",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "bazelbuild/bazel",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "beclab/Olares",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "Budibase/budibase",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "build-trust/ockam",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^ockam_v"
+    }
+  },
+  {
+    "slug": "BuilderIO/mitosis",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^@"
+    }
+  },
+  {
+    "slug": "cake-build/cake",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "chakra-ui/chakra-ui",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^@"
+    }
+  },
+  {
+    "slug": "chaos-mesh/chaos-mesh",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "chaosblade-io/chaosblade",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "ChatGPTNextWeb/NextChat",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "cilium/cilium",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "ClickHouse/ClickHouse",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "cloudflare/cloudflared",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "cloudprober/cloudprober",
+    "method": "deployments",
+    "deployments": {}
+  },
+  {
+    "slug": "codenotary/immudb",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "coder/coder",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "commitizen-tools/commitizen",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "conductor-oss/conductor",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -388,6 +436,54 @@
   },
   {
     "slug": "coollabsio/coolify",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "datahub-project/datahub",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "denoland/deno",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "devtron-labs/devtron",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "dexidp/dex",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "digitalocean/doctl",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "directus/directus",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -409,7 +505,7 @@
     }
   },
   {
-    "slug": "metabase/metabase",
+    "slug": "dokku/dokku",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -417,7 +513,7 @@
     }
   },
   {
-    "slug": "ClickHouse/ClickHouse",
+    "slug": "Dokploy/dokploy",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -425,7 +521,92 @@
     }
   },
   {
-    "slug": "apache/airflow",
+    "slug": "dotenvx/dotenvx",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "duixcom/Duix-Mobile",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "earthly/earthly",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "elastic/elasticsearch",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "elastic/kibana",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "electron/electron",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "elementary-data/elementary",
+    "method": "deployments",
+    "deployments": {}
+  },
+  {
+    "slug": "envoyproxy/envoy",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "etcd-io/etcd",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "facebook/react",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "facebook/react-native",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "falcosecurity/falco",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -433,11 +614,526 @@
     }
   },
   {
-    "slug": "chakra-ui/chakra-ui",
+    "slug": "fastapi/fastapi",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
-      "tagPattern": "^@"
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "filamentphp/filament",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "files-community/Files",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "firecracker-microvm/firecracker",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "firezone/firezone",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^gateway-"
+    }
+  },
+  {
+    "slug": "Flagsmith/flagsmith",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "FlowiseAI/Flowise",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^flowise@"
+    }
+  },
+  {
+    "slug": "flyteorg/flyte",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "fosrl/pangolin",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "future-architect/vuls",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "gatling/gatling",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "getgrav/grav",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "getmaxun/maxun",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "getsentry/sentry",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "Production"
+      ],
+      "statuses": [
+        "success"
+      ]
+    }
+  },
+  {
+    "slug": "go-gitea/gitea",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "goreleaser/goreleaser",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false
+    }
+  },
+  {
+    "slug": "grafana/agent",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "grafana/grafana",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "grafana/k6",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "grafana/loki",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "grafana/mimir",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^mimir-"
+    }
+  },
+  {
+    "slug": "grafana/tempo",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "gravitl/netmaker",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "great-expectations/great_expectations",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "growthbook/growthbook",
+    "method": "deployments",
+    "deployments": {}
+  },
+  {
+    "slug": "grpc/grpc",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "harness/harness",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "hashicorp/boundary",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "hashicorp/consul",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "hashicorp/nomad",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v[0-9]"
+    }
+  },
+  {
+    "slug": "hashicorp/terraform",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "hashicorp/vault",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "hatoo/oha",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "httpie/cli",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "hypermodeinc/dgraph",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "immich-app/immich",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "Infisical/infisical",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "intel/pcm",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "ionic-team/ionic-framework",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "istio/istio",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "jaegertracing/jaeger",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "jellyfin/jellyfin",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "jenkinsci/jenkins",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^jenkins-"
+    }
+  },
+  {
+    "slug": "kanidm/kanidm",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "karatelabs/karate",
+    "method": "deployments",
+    "deployments": {}
+  },
+  {
+    "slug": "kedacore/keda",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "keystonejs/keystone",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "Kong/kong",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "release"
+      ]
+    }
+  },
+  {
+    "slug": "kptdev/kpt",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "kubernetes-sigs/external-dns",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^(v|external-dns-helm-chart-)"
+    }
+  },
+  {
+    "slug": "kubernetes/kubernetes",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "kubescape/kubescape",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "kubeshark/kubeshark",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "lancedb/lance",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "langgenius/dify",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "laravel/framework",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "laravel/laravel",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "litmuschaos/litmus",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "localsend/localsend",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "locustio/locust",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "loft-sh/devpod",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "ly525/luban-h5",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "Preview",
+        "Production"
+      ],
+      "statuses": [
+        "success"
+      ]
     }
   },
   {
@@ -449,7 +1145,15 @@
     }
   },
   {
-    "slug": "saadeghi/daisyui",
+    "slug": "MarquezProject/marquez",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "meilisearch/meilisearch",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -465,7 +1169,7 @@
     }
   },
   {
-    "slug": "twentyhq/twenty",
+    "slug": "metabase/metabase",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -473,7 +1177,7 @@
     }
   },
   {
-    "slug": "AmruthPillai/Reactive-Resume",
+    "slug": "microsoft/playwright",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -481,7 +1185,7 @@
     }
   },
   {
-    "slug": "angular/angular",
+    "slug": "microsoft/vscode",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -489,23 +1193,476 @@
     }
   },
   {
-    "slug": "laravel/laravel",
+    "slug": "milvus-io/milvus",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "Mintplex-Labs/anything-llm",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "mlflow/mlflow",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "MobSF/Mobile-Security-Framework-MobSF",
+    "method": "deployments",
+    "deployments": {}
+  },
+  {
+    "slug": "moby/moby",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "monicahq/monica",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "mui/material-ui",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "n8n-io/n8n",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^n8n@"
+    }
+  },
+  {
+    "slug": "NativeScript/NativeScript",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "nats-io/nats-server",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "nektos/act",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "release",
+        "promote"
+      ]
+    }
+  },
+  {
+    "slug": "nestjs/nest",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "netdata/netdata",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "nextauthjs/next-auth",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^next-auth@"
+    }
+  },
+  {
+    "slug": "ollama/ollama",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "OneUptime/oneuptime",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "open-metadata/OpenMetadata",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "open-policy-agent/gatekeeper",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "open-telemetry/opentelemetry-collector",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "openreplay/openreplay",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "opensearch-project/OpenSearch",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "openstatusHQ/openstatus",
+    "method": "deployments",
+    "deployments": {}
+  },
+  {
+    "slug": "openziti/ziti",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "ory/kratos",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "paperless-ngx/paperless-ngx",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "permitio/opal",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "pingcap/tidb",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "pomerium/pomerium",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "PostHog/posthog",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "Container Images CD"
+      ],
+      "workflowId": 44467777,
+      "events": [
+        "push"
+      ],
+      "branch": "master"
+    }
+  },
+  {
+    "slug": "PrefectHQ/prefect",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "prometheus/prometheus",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "pulumi/pulumi",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "qdrant/qdrant",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "rails/rails",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "reata/sqllineage",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "redis/redis",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "redisson/redisson",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false
+    }
+  },
+  {
+    "slug": "redpanda-data/console",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "redpanda-data/redpanda",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "release-it/release-it",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "remix-project-org/remix-project",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "rjaros/kvision",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "run-llama/llama_index",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "rustdesk/rustdesk",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "saadeghi/daisyui",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "saltstack/salt",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "SamKirkland/FTP-Deploy-Action",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "securego/gosec",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "SeleniumHQ/selenium",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^selenium-"
+    }
+  },
+  {
+    "slug": "semantic-release/semantic-release",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
+    }
+  },
+  {
+    "slug": "serverless/serverless",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "shadcn-ui/ui",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^shadcn@"
+    }
+  },
+  {
+    "slug": "SigNoz/signoz",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "sodadata/soda-core",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
     }
   },
   {
     "slug": "spring-projects/spring-boot",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "strapi/strapi",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -521,7 +1678,15 @@
     }
   },
   {
-    "slug": "ionic-team/ionic-framework",
+    "slug": "storybookjs/storybook",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v[0-9]"
+    }
+  },
+  {
+    "slug": "strapi/documentation",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -529,7 +1694,15 @@
     }
   },
   {
-    "slug": "AlistGo/alist",
+    "slug": "strapi/strapi",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "strimzi/strimzi-kafka-operator",
     "method": "actions",
     "actions": {
       "workflowKeywords": [
@@ -543,15 +1716,7 @@
     }
   },
   {
-    "slug": "TanStack/query",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^@"
-    }
-  },
-  {
-    "slug": "laravel/framework",
+    "slug": "supabase/realtime",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -559,106 +1724,11 @@
     }
   },
   {
-    "slug": "directus/directus",
+    "slug": "supabase/supabase",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "symfony/symfony",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "conductor-oss/conductor",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "nextauthjs/next-auth",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^next-auth@"
-    }
-  },
-  {
-    "slug": "TanStack/table",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "filamentphp/filament",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "NativeScript/NativeScript",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "redisson/redisson",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false
-    }
-  },
-  {
-    "slug": "monicahq/monica",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": true,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "bagisto/bagisto",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "getgrav/grav",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "BuilderIO/mitosis",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^@"
-    }
-  },
-  {
-    "slug": "wallabag/wallabag",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
+      "tagPattern": "^v?[0-9]"
     }
   },
   {
@@ -682,7 +1752,148 @@
     }
   },
   {
-    "slug": "keystonejs/keystone",
+    "slug": "symfony/symfony",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "TanStack/query",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v[0-9]"
+    }
+  },
+  {
+    "slug": "TanStack/table",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "tauri-apps/tauri",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^tauri-v"
+    }
+  },
+  {
+    "slug": "temporalio/temporal",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "TobikoData/sqlmesh",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "toeverything/AFFiNE",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v[0-9]"
+    }
+  },
+  {
+    "slug": "traefik/traefik",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "twentyhq/twenty",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "unionlabs/union",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false
+    }
+  },
+  {
+    "slug": "Unleash/unleash",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "uptrace/uptrace",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "vercel/next.js",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release"
+      ],
+      "events": [
+        "push"
+      ],
+      "branch": "canary"
+    }
+  },
+  {
+    "slug": "vitessio/vitess",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "vllm-project/vllm",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "voxel51/fiftyone",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "wagtail/wagtail",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "wallabag/wallabag",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -690,7 +1901,7 @@
     }
   },
   {
-    "slug": "api-platform/api-platform",
+    "slug": "wazuh/wazuh",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -706,40 +1917,55 @@
     }
   },
   {
-    "slug": "ly525/luban-h5",
-    "method": "deployments",
-    "deployments": {
-      "environments": [
-        "Preview",
-        "Production"
+    "slug": "whylabs/whylogs",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "winsiderss/systeminformer",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "withastro/astro",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^astro@"
+    }
+  },
+  {
+    "slug": "xonsh/xonsh",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
       ],
-      "statuses": [
-        "success"
+      "events": [
+        "push"
       ]
     }
   },
   {
-    "slug": "remix-project-org/remix-project",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "rjaros/kvision",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "strapi/documentation",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
+    "slug": "ydataai/ydata-profiling",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ],
+      "events": [
+        "push"
+      ]
     }
   }
 ]

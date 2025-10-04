@@ -1,50 +1,18 @@
 [
   {
-    "slug": "angular/angular",
+    "slug": "18F/identity-idp",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
+      "tagPattern": "^[0-9]{4}"
+    }
+  },
+  {
+    "slug": "abpframework/abp",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
       "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "laravel/laravel",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "spring-projects/spring-boot",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "strapi/strapi",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "spring-projects/spring-framework",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "ionic-team/ionic-framework",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
     }
   },
   {
@@ -62,7 +30,63 @@
     }
   },
   {
-    "slug": "TanStack/query",
+    "slug": "angular/angular",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "apache/beam",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "apereo/cas",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "api-platform/api-platform",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "AvaloniaUI/Avalonia",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "aws-cloudformation/cloudformation-guard",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "bagisto/bagisto",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "BuilderIO/mitosis",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -70,7 +94,15 @@
     }
   },
   {
-    "slug": "laravel/framework",
+    "slug": "conductor-oss/conductor",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "dexidp/dex",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -86,42 +118,119 @@
     }
   },
   {
-    "slug": "symfony/symfony",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "conductor-oss/conductor",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "nextauthjs/next-auth",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^next-auth@"
-    }
-  },
-  {
-    "slug": "TanStack/table",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
     "slug": "filamentphp/filament",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "files-community/Files",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "firezone/firezone",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^gateway-"
+    }
+  },
+  {
+    "slug": "fosrl/pangolin",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "getgrav/grav",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "ionic-team/ionic-framework",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "jellyfin/jellyfin",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "kanidm/kanidm",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "keystonejs/keystone",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "kptdev/kpt",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "laravel/framework",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "laravel/laravel",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "ly525/luban-h5",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "Preview",
+        "Production"
+      ],
+      "statuses": [
+        "success"
+      ]
+    }
+  },
+  {
+    "slug": "monicahq/monica",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
       "tagPattern": "^v"
     }
   },
@@ -134,14 +243,15 @@
     }
   },
   {
-    "slug": "redisson/redisson",
+    "slug": "nextauthjs/next-auth",
     "method": "releases",
     "releases": {
-      "includePrereleases": false
+      "includePrereleases": true,
+      "tagPattern": "^next-auth@"
     }
   },
   {
-    "slug": "monicahq/monica",
+    "slug": "open-policy-agent/gatekeeper",
     "method": "releases",
     "releases": {
       "includePrereleases": true,
@@ -149,7 +259,7 @@
     }
   },
   {
-    "slug": "bagisto/bagisto",
+    "slug": "ory/kratos",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -157,7 +267,38 @@
     }
   },
   {
-    "slug": "getgrav/grav",
+    "slug": "permitio/opal",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "pulumi/pulumi",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "redisson/redisson",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false
+    }
+  },
+  {
+    "slug": "remix-project-org/remix-project",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "rjaros/kvision",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -165,19 +306,51 @@
     }
   },
   {
-    "slug": "BuilderIO/mitosis",
+    "slug": "SeleniumHQ/selenium",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
-      "tagPattern": "^@"
+      "tagPattern": "^selenium-"
     }
   },
   {
-    "slug": "wallabag/wallabag",
+    "slug": "spring-projects/spring-boot",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
-      "tagPattern": "^[0-9]"
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "spring-projects/spring-framework",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "strapi/documentation",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "strapi/strapi",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "supabase/realtime",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
     }
   },
   {
@@ -201,19 +374,35 @@
     }
   },
   {
-    "slug": "keystonejs/keystone",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "api-platform/api-platform",
+    "slug": "symfony/symfony",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "TanStack/query",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v[0-9]"
+    }
+  },
+  {
+    "slug": "TanStack/table",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "wallabag/wallabag",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
     }
   },
   {
@@ -222,43 +411,6 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "ly525/luban-h5",
-    "method": "deployments",
-    "deployments": {
-      "environments": [
-        "Preview",
-        "Production"
-      ],
-      "statuses": [
-        "success"
-      ]
-    }
-  },
-  {
-    "slug": "remix-project-org/remix-project",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "rjaros/kvision",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "strapi/documentation",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v"
     }
   }
 ]

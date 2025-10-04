@@ -70,5 +70,49 @@
   {
     "slug": "xkcoding/spring-boot-demo",
     "reason": "template"
+  },
+  {
+    "slug": "songquanpeng/one-api",
+    "reason": "no_deploy_signals_120d"
+  },
+  {
+    "slug": "chaitin/SafeLine",
+    "reason": "no_deploy_signals_120d"
+  },
+  {
+    "slug": "HumanSignal/label-studio",
+    "reason": "no_deploy_signals_120d"
+  },
+  {
+    "slug": "cleanlab/cleanlab",
+    "reason": "no_deploy_signals_120d"
+  },
+  {
+    "slug": "pathwaycom/llm-app",
+    "reason": "no_deploy_signals_120d"
+  },
+  {
+    "slug": "guardicore/monkey",
+    "reason": "no_deploy_signals_120d"
+  },
+  {
+    "slug": "tsenart/vegeta",
+    "reason": "no_releases_365d"
+  },
+  {
+    "slug": "getanteon/anteon",
+    "reason": "no_releases_365d"
+  },
+  {
+    "slug": "gitpod-io/gitpod",
+    "reason": "stale_release_stream"
+  },
+  {
+    "slug": "CrunchyData/postgres-operator",
+    "reason": "stale_release_stream"
+  },
+  {
+    "slug": "superstreamlabs/memphis",
+    "reason": "stale_release_stream"
   }
 ]

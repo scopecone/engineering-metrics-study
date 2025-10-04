@@ -51,15 +51,18 @@ Scans GitHub Actions workflow runs, useful for projects that ship via CI pipelin
   "method": "actions",
   "actions": {
     "workflowKeywords": ["deploy", "release"],
+    "workflowId": 123456789,
     "events": ["push", "workflow_dispatch"],
     "branch": "canary"
   }
 }
 ```
 
-- `workflowKeywords`: lower-cased substrings matched against the workflow `name` or `displayTitle`. Defaults to the CLI `--workflow-filter` list (`["deploy", "release"]`).
+- `workflowKeywords`: lower-cased substrings matched against the workflow `name` or `displayTitle`. Defaults to the CLI `--workflow-filter` list (`["deploy", "release"]`). Provide an empty array (`[]`) if you only want to rely on `workflowId`.
+- `workflowId`: optional numeric workflow identifier. When present the collector scopes requests to that workflow (`GET /repos/{owner}/{repo}/actions/workflows/{id}/runs`), which is useful for high-volume pipelines such as PostHog’s "Container Images CD" job.
 - `events`: optional subset of Actions event types to include (e.g., only `push`, `release`).
 - `branch`: optional branch/ref restriction (`canary`, `refs/heads/main`, etc.).
+- **Retention:** GitHub prunes Actions logs after ~30 days on public repos. Run the collector regularly without `--refresh` if you need longer history; each run will append fresh workflow runs to the existing cache.
 
 ### `method: "deployments"`
 

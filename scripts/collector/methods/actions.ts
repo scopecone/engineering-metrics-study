@@ -38,6 +38,7 @@ export async function collectActionsEvents({
   options,
   debug,
 }: CollectActionsParams): Promise<DeploymentLikeEvent[]> {
+  const workflowId = options.workflowId;
   const keywords = options.workflowKeywords.map((keyword) => keyword.toLowerCase());
   const allowedEvents = options.events?.map((event) => event.toLowerCase());
   const branchCandidates = options.branch ? normalizeBranchCandidates(options.branch) : null;
@@ -46,12 +47,20 @@ export async function collectActionsEvents({
 
   const runs: any[] = [];
 
-  const iterator = octokit.paginate.iterator(octokit.actions.listWorkflowRunsForRepo, {
-    owner,
-    repo,
-    per_page: 100,
-    created: `${windowStart}..${windowEnd}`,
-  });
+  const iterator = workflowId
+    ? octokit.paginate.iterator(octokit.actions.listWorkflowRuns, {
+        owner,
+        repo,
+        workflow_id: workflowId,
+        per_page: 100,
+        created: `${windowStart}..${windowEnd}`,
+      })
+    : octokit.paginate.iterator(octokit.actions.listWorkflowRunsForRepo, {
+        owner,
+        repo,
+        per_page: 100,
+        created: `${windowStart}..${windowEnd}`,
+      });
 
   for await (const response of iterator) {
     for (const run of response.data) {
@@ -64,6 +73,8 @@ export async function collectActionsEvents({
           console.log(`[${owner}/${repo}] [actions] reached runs older than window; stopping pagination`);
         }
         return buildActionEvents(
+          owner,
+          repo,
           runs,
           keywords,
           allowedEvents,
@@ -94,6 +105,8 @@ export async function collectActionsEvents({
   }
 
   return buildActionEvents(
+    owner,
+    repo,
     runs,
     keywords,
     allowedEvents,
@@ -107,6 +120,8 @@ export async function collectActionsEvents({
 }
 
 function buildActionEvents(
+  owner: string,
+  repo: string,
   runs: any[],
   keywords: string[],
   allowedEvents: string[] | undefined,
@@ -153,8 +168,8 @@ function buildActionEvents(
     }
 
     const target = `${run.name ?? ""} ${run.display_title ?? ""}`.toLowerCase();
-    const matchedKeyword = keywords.find((keyword) => target.includes(keyword));
-    if (!matchedKeyword) {
+    const matchedKeyword = keywords.length > 0 ? keywords.find((keyword) => target.includes(keyword)) : null;
+    if (keywords.length > 0 && !matchedKeyword) {
       if (debug) {
         console.log(
           `${logPrefix} ⏭️  skipped (no keyword match) title="${run.display_title ?? run.name ?? ""}")`
@@ -212,7 +227,7 @@ function buildActionEvents(
 
     if (debug) {
       console.log(
-        `${logPrefix} ✅ counted (created=${event.createdAt}, event=${event.event ?? "unknown"}, matched="${matchedKeyword}") title="${event.displayTitle}"
+        `${logPrefix} ✅ counted (created=${event.createdAt}, event=${event.event ?? "unknown"}, matched="${matchedKeyword ?? "(workflowId)"}") title="${event.displayTitle}"
 `
       );
     }

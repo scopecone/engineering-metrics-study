@@ -5,6 +5,7 @@ export type CollectionMethod = "actions" | "deployments" | "releases";
 
 export interface ActionsCollectionOptions {
   workflowKeywords: string[];
+  workflowId?: number;
   events?: string[];
   branch?: string | null;
 }

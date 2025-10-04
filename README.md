@@ -20,17 +20,19 @@ This directory houses the data-collection spike that supports our engineering me
      {
        "slug": "vercel/next.js",
        "method": "actions",
-       "actions": {
-         "workflowKeywords": ["deploy", "release"],
-         "events": ["push"],
-         "branch": "canary"
-       }
-     },
-     "withastro/astro"
-   ]
-   ```
+   "actions": {
+     "workflowKeywords": ["deploy", "release"],
+      "workflowId": 123456789,
+      "events": ["push"],
+      "branch": "canary"
+    }
+  },
+  "withastro/astro"
+  ]
+  ```
 
-   Each entry can be a simple `"owner/name"` string (default `actions` method with the global filters), or an object that specifies per-repo collection rules. Supported methods are `actions`, `deployments`, and `releases`. See [`docs/metric-definitions.md`](docs/metric-definitions.md) for option details and trade-offs.
+  Each entry can be a simple `"owner/name"` string (default `actions` method with the global filters), or an object that specifies per-repo collection rules. Supported methods are `actions`, `deployments`, and `releases`. See [`docs/metric-definitions.md`](docs/metric-definitions.md) for option details and trade-offs.
+  - Set `workflowId` when you want to bind collection to a particular workflow (e.g. PostHog’s "Container Images CD" job). Provide an empty `workflowKeywords` array if you rely solely on the id to avoid falling back to the CLI keyword defaults.
 
 4. Collect raw payloads:
 
@@ -41,10 +43,11 @@ This directory houses the data-collection spike that supports our engineering me
    ```
 
    - Use repeated `--repo owner/name` flags for ad-hoc runs.
-   - Add `--refresh` to ignore cached responses.
-   - Add `--debug` to log every workflow run that is counted or skipped.
-   - Set `COLLECTOR_PROGRESS=true` to emit `[n/total]` progress updates during long batches.
-   - By default, raw payloads are written to `engineering-metrics-study/data/raw`. Pass `--output ../tmp` (or any path) if you need an alternate cache directory.
+- Add `--refresh` to ignore cached responses.
+- Add `--debug` to log every workflow run that is counted or skipped.
+- Set `COLLECTOR_PROGRESS=true` to emit `[n/total]` progress updates during long batches.
+- By default, raw payloads are written to `engineering-metrics-study/data/raw`. Pass `--output ../tmp` (or any path) if you need an alternate cache directory.
+- **Retention note:** GitHub only keeps Actions runs for ~30 days on most public repos. Once you have a stable `data/raw` cache, avoid using `--refresh` during recurring collections; append new runs instead so the archive grows over time.
 
 5. Aggregate metrics into CSV and JSON summaries:
 
