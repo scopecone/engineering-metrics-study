@@ -6,6 +6,7 @@ import { graphql } from "@octokit/graphql";
 import Table from "cli-table3";
 import fs from "fs-extra";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import crypto from "node:crypto";
 
 interface RepoSummary {
@@ -50,6 +51,13 @@ interface RecommendationResult {
   activity: ActivityInsight;
   status: "accepted" | "excluded";
   exclusionReason?: string;
+}
+
+interface ValidationWriteOptions {
+  outputPath: string;
+  append: boolean;
+  samplePath: string;
+  defaultKeywords: string[];
 }
 
 const DEFAULT_KEYWORDS = ["deploy", "release", "publish"];
@@ -103,6 +111,13 @@ program
   .option("--min-commits <number>", "Minimum commits on default branch in last 90 days", (value) => Number.parseInt(value, 10), 5)
   .option("--min-prs <number>", "Minimum merged PRs in last 180 days", (value) => Number.parseInt(value, 10), 10)
   .option("--include-low-activity", "Do not exclude repos that fail activity thresholds", false)
+  .option("--write-validation <path>", "Write accepted repos to a validation config file")
+  .option("--append-validation", "Append to validation file instead of overwriting", false)
+  .option(
+    "--existing-sample <path>",
+    "Path to repos.sample.json for deduplication",
+    path.resolve(process.cwd(), "config/repos.sample.json")
+  )
   .option("-f, --format <type>", "Output format: json or table", "table")
   .parse(process.argv);
 
@@ -603,6 +618,97 @@ function outputResults(results: RecommendationResult[], format: string) {
   console.log(table.toString());
 }
 
+async function loadExistingSlugs(samplePath: string): Promise<Set<string>> {
+  try {
+    const data = await fs.readJson(samplePath);
+    if (!Array.isArray(data)) {
+      return new Set();
+    }
+    const slugs = data
+      .map((entry) => (entry && typeof entry.slug === "string" ? entry.slug.toLowerCase() : null))
+      .filter((value): value is string => Boolean(value));
+    return new Set(slugs);
+  } catch {
+    return new Set();
+  }
+}
+
+function toValidationEntry(result: RecommendationResult, defaultKeywords: string[]): Record<string, unknown> {
+  const slug = result.repo.fullName;
+  const base: Record<string, unknown> = {
+    slug,
+    method: result.recommendedMethod,
+  };
+
+  if (result.recommendedMethod === "actions") {
+    base.actions = {
+      workflowKeywords: defaultKeywords.map((keyword) => keyword.toLowerCase()),
+    };
+  } else if (result.recommendedMethod === "deployments") {
+    base.deployments = result.deployments.environments.length > 0
+      ? { environments: result.deployments.environments.slice(0, 5) }
+      : {};
+  } else if (result.recommendedMethod === "releases") {
+    base.releases = {};
+  }
+
+  return base;
+}
+
+async function writeValidationFile(
+  results: RecommendationResult[],
+  options: ValidationWriteOptions
+): Promise<{ written: number; skipped: number }> {
+  const accepted = results.filter((item) => item.status === "accepted");
+  if (accepted.length === 0) {
+    return { written: 0, skipped: 0 };
+  }
+
+  const sampleSlugs = await loadExistingSlugs(options.samplePath);
+
+  let existingEntries: Record<string, unknown>[] = [];
+  const validationPath = path.resolve(options.outputPath);
+  if (options.append && (await fs.pathExists(validationPath))) {
+    try {
+      const data = await fs.readJson(validationPath);
+      if (Array.isArray(data)) {
+        existingEntries = data;
+      }
+    } catch {
+      existingEntries = [];
+    }
+  }
+
+  const existingValidationSlugs = new Set(
+    existingEntries
+      .map((entry) => (entry && typeof entry.slug === "string" ? entry.slug.toLowerCase() : null))
+      .filter((value): value is string => Boolean(value))
+  );
+
+  const additions: Record<string, unknown>[] = [];
+  let skipped = 0;
+
+  for (const item of accepted) {
+    const slug = item.repo.fullName.toLowerCase();
+    if (sampleSlugs.has(slug) || existingValidationSlugs.has(slug)) {
+      skipped += 1;
+      continue;
+    }
+    additions.push(toValidationEntry(item, options.defaultKeywords));
+    existingValidationSlugs.add(slug);
+  }
+
+  if (additions.length === 0) {
+    return { written: 0, skipped: accepted.length };
+  }
+
+  const payload = options.append ? [...existingEntries, ...additions] : additions;
+  await fs.writeJson(validationPath, payload, { spaces: 2 });
+  await fs.appendFile(validationPath, "\n");
+
+  return { written: additions.length, skipped };
+}
+
 async function run() {
   const options = program.opts<{
     topic?: string[];
@@ -618,6 +724,9 @@ async function run() {
     minCommits: number;
     minPRs: number;
     includeLowActivity: boolean;
+    writeValidation?: string;
+    appendValidation: boolean;
+    existingSample: string;
   }>();
 
   const topics = options.topic ?? [];
@@ -714,10 +823,36 @@ async function run() {
     }
   }
 
+  if (options.writeValidation) {
+    const validationPath = path.resolve(process.cwd(), options.writeValidation);
+    const samplePath = path.resolve(process.cwd(), options.existingSample);
+    const { written, skipped } = await writeValidationFile(results, {
+      outputPath: validationPath,
+      append: Boolean(options.appendValidation),
+      samplePath,
+      defaultKeywords: options.keywords,
+    });
+
+    console.log(`\n📝 Validation config: wrote ${written} new entr${written === 1 ? "y" : "ies"}` + (skipped > 0 ? `, skipped ${skipped} duplicate${skipped === 1 ? "" : "s"}.` : "."));
+    console.log(`   Path: ${validationPath}`);
+  }
+
   outputResults(results, options.format);
 }
 
-run().catch((error) => {
-  console.error("\n❌ Discovery failed:", error instanceof Error ? error.message : error);
-  process.exit(1);
-});
+const discoveryDirectInvocation = (() => {
+  try {
+    return pathToFileURL(process.argv[1] ?? "").href === import.meta.url;
+  } catch {
+    return false;
+  }
+})();
+
+if (discoveryDirectInvocation) {
+  run().catch((error) => {
+    console.error("\n❌ Discovery failed:", error instanceof Error ? error.message : error);
+    process.exit(1);
+  });
+}
+
+export { loadExistingSlugs, toValidationEntry, writeValidationFile };

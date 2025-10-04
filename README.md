@@ -43,11 +43,11 @@ This directory houses the data-collection spike that supports our engineering me
    ```
 
    - Use repeated `--repo owner/name` flags for ad-hoc runs.
-- Add `--refresh` to ignore cached responses.
-- Add `--debug` to log every workflow run that is counted or skipped.
-- Set `COLLECTOR_PROGRESS=true` to emit `[n/total]` progress updates during long batches.
-- By default, raw payloads are written to `engineering-metrics-study/data/raw`. Pass `--output ../tmp` (or any path) if you need an alternate cache directory.
-- **Retention note:** GitHub only keeps Actions runs for ~30 days on most public repos. Once you have a stable `data/raw` cache, avoid using `--refresh` during recurring collections; append new runs instead so the archive grows over time.
+   - Add `--refresh` to ignore cached responses.
+   - Add `--debug` to log every workflow run that is counted or skipped.
+   - Set `COLLECTOR_PROGRESS=true` to emit `[n/total]` progress updates during long batches.
+   - By default, raw payloads are written to `engineering-metrics-study/data/raw`. Pass `--output ../tmp` (or any path) if you need an alternate cache directory.
+   - **Retention note:** GitHub only keeps Actions runs for ~30 days on most public repos. Once you have a stable `data/raw` cache, avoid using `--refresh` during recurring collections; append new runs instead so the archive grows over time.
 
 5. Aggregate metrics into CSV and JSON summaries:
 
@@ -69,8 +69,15 @@ This directory houses the data-collection spike that supports our engineering me
      --format table
    ```
 
-   Use `--format json` to export machine-consumable output for downstream tooling or AI-assisted triage.
-   Filter out curated lists or manuals via `--exclude-topics` / `--exclude-keywords` if a topic returns non-product repos. Combine `--holdout config/repos.holdout.json` with the new activity flags (`--min-commits`, `--min-prs`) to ensure discovery skips archived/templates we have already reviewed. Running discovery in small topic batches helps stay under GitHub’s 30 requests/min search quota; cached responses are reused for 24 hours by default.
+   - Use `--format json` to export machine-consumable output for downstream tooling or AI-assisted triage.
+   - Filter out curated lists or manuals via `--exclude-topics` / `--exclude-keywords` if a topic returns non-product repos. Combine `--holdout config/repos.holdout.json` with the activity flags (`--min-commits`, `--min-prs`) to ensure discovery skips archived/templates we have already reviewed. Running discovery in small topic batches helps stay under GitHub’s 30 requests/min search quota; cached responses are reused for 24 hours by default.
+   - Pass `--write-validation config/repos.batchN.validation.json` to emit a ready-to-collect slice containing only the accepted repos that are not already present in `config/repos.sample.json`. Add `--append-validation` to grow an existing file when iterating on the same batch.
+
+### Batch tooling
+
+- **Validation promotion**: `npm run promote -- --input config/repos.batchN.validation.json [--apply] [--update-discovery]`. Dry runs show which repos would be merged; re-run with `--apply` to persist and optionally update `config/repos.discovery.json`.
+- **Release inspector**: `npm run inspect-releases -- --repo owner/name --repo another/project --count 25`. The helper prints recent tag patterns, prerelease ratios, and compares them against the current config when `--validate config/repos.sample.json` is supplied. Use `--write tmp/release-audit` to capture JSON summaries for later review.
+- **Discovery pipeline**: Combine the steps — run discovery per topic with `--write-validation`, sanity-check release patterns via `npm run inspect-releases`, then collect with the generated config before promoting it into `repos.sample.json`.
 
 ### Runtime configuration
 

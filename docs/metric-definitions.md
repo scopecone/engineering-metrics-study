@@ -101,6 +101,7 @@ Counts GitHub Releases, best for libraries that tag semantic versions.
 
 - `includePrereleases`: include releases marked as `prerelease` when `true` (default `false`).
 - `tagPattern`: optional regular expression (or substring fallback) to match against `tag_name`.
+- Helper: `npm run inspect-releases -- --repo owner/name` samples recent tags, highlights prerelease ratios, and reports a suggested `tagPattern`. Use it when auditing new libraries before promoting configs.
 
 ## Output schema (iteration one)
 
