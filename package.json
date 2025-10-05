@@ -9,6 +9,7 @@
     "discover": "tsx scripts/discovery/index.ts",
     "promote": "tsx scripts/tools/promote-config.ts",
     "inspect-releases": "tsx scripts/tools/inspect-releases.ts",
+    "mttr-cfr": "tsx scripts/analysis/mttr-cfr.ts",
     "lint": "eslint \"scripts/**/*.ts\"",
     "test": "vitest run"
   },

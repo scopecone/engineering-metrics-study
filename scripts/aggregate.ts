@@ -69,6 +69,7 @@ const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, "..");
 const DEFAULT_INPUT_DIR = path.join(PROJECT_ROOT, "data", "raw");
 const DEFAULT_OUTPUT_DIR = path.join(PROJECT_ROOT, "output");
+const DEFAULT_SAMPLE_PATH = path.join(PROJECT_ROOT, "config", "repos.sample.json");
 
 const program = new Command();
 
@@ -76,6 +77,7 @@ program
   .description("Aggregate cached GitHub telemetry into summary statistics")
   .option("-i, --input <dir>", "Directory containing raw repo payloads", DEFAULT_INPUT_DIR)
   .option("-o, --output <dir>", "Directory for aggregated outputs", DEFAULT_OUTPUT_DIR)
+  .option("-s, --sample <path>", "Path to repos.sample.json for filtering", DEFAULT_SAMPLE_PATH)
   .parse(process.argv);
 
 function parseIsoDate(value: string): Date {
@@ -238,8 +240,25 @@ async function writeCsv(filePath: string, rows: RepoAggregateRow[]) {
   await fs.outputFile(filePath, `${lines.join("\n")}\n`, "utf8");
 }
 
+async function loadSampleSlugs(samplePath: string): Promise<Set<string>> {
+  try {
+    const raw = await fs.readJson(samplePath);
+    if (!Array.isArray(raw)) {
+      return new Set();
+    }
+    return new Set(
+      raw
+        .map((entry) => (entry && typeof entry.slug === "string" ? entry.slug.toLowerCase() : null))
+        .filter((value): value is string => Boolean(value))
+    );
+  } catch (error) {
+    console.warn(`⚠️  Failed to read sample file '${samplePath}':`, error instanceof Error ? error.message : error);
+    return new Set();
+  }
+}
+
 async function run() {
-  const options = program.opts<{ input: string; output: string }>();
+  const options = program.opts<{ input: string; output: string; sample: string }>();
   const inputDir = options.input
     ? path.isAbsolute(options.input)
       ? options.input
@@ -251,12 +270,21 @@ async function run() {
       : path.join(PROJECT_ROOT, options.output)
     : DEFAULT_OUTPUT_DIR;
 
+  const samplePath = options.sample
+    ? path.isAbsolute(options.sample)
+      ? options.sample
+      : path.join(PROJECT_ROOT, options.sample)
+    : DEFAULT_SAMPLE_PATH;
+
   if (!(await fs.pathExists(inputDir))) {
     throw new Error(`Input directory not found: ${inputDir}`);
   }
 
+  const sampleSlugs = await loadSampleSlugs(samplePath);
+  const filterEnabled = sampleSlugs.size > 0;
   const entries = await fs.readdir(inputDir, { withFileTypes: true });
   const aggregates: RepoAggregateRow[] = [];
+  const seenSlugs = new Set<string>();
 
   for (const entry of entries) {
     if (!entry.isDirectory()) {
@@ -266,6 +294,11 @@ async function run() {
     const slug = entry.name;
     const aggregate = await aggregateRepo(repoDir, slug);
     if (aggregate) {
+      const normalizedRepo = aggregate.repo.toLowerCase();
+      seenSlugs.add(normalizedRepo);
+      if (filterEnabled && !sampleSlugs.has(normalizedRepo)) {
+        continue;
+      }
       aggregates.push(aggregate);
     }
   }
@@ -273,6 +306,18 @@ async function run() {
   aggregates.sort((a, b) => a.repo.localeCompare(b.repo));
 
   await fs.ensureDir(outputDir);
+  if (filterEnabled) {
+    const missing = Array.from(sampleSlugs.values()).filter((slug) => !seenSlugs.has(slug));
+    if (missing.length > 0) {
+      console.warn(`⚠️  ${missing.length} repos from sample missing cached data:`);
+      for (const slug of missing.slice(0, 10)) {
+        console.warn(`   • ${slug}`);
+      }
+      if (missing.length > 10) {
+        console.warn("   …");
+      }
+    }
+  }
   const csvPath = path.join(outputDir, "metrics-summary.csv");
   const jsonPath = path.join(outputDir, "metrics-summary.json");
 

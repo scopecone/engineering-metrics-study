@@ -1,0 +1,1444 @@
+{
+  "generatedAt": "2025-10-05T09:00:50.967Z",
+  "repoCount": 280,
+  "languageSummary": [
+    {
+      "language": "Go",
+      "repoCount": 68,
+      "deployObservations": 68,
+      "prObservations": 67,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1.125,
+      "deployP85": 2,
+      "deployP95": 5.299999999999997,
+      "prMedian": 23.41583333333333,
+      "prMedianCI": {
+        "lower": 17.474305555555556,
+        "upper": 44.74513888888889
+      },
+      "prP75": 72.67270833333333,
+      "prP85": 118.07744444444444,
+      "prP95": 222.13058333333308
+    },
+    {
+      "language": "TypeScript",
+      "repoCount": 57,
+      "deployObservations": 57,
+      "prObservations": 54,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1.5
+      },
+      "deployP75": 2,
+      "deployP85": 4,
+      "deployP95": 15.999999999999979,
+      "prMedian": 5.99875,
+      "prMedianCI": {
+        "lower": 4.499444444444444,
+        "upper": 12.517083333333332
+      },
+      "prP75": 19.141666666666666,
+      "prP85": 31.01838888888887,
+      "prP95": 92.65469444444435
+    },
+    {
+      "language": "Python",
+      "repoCount": 46,
+      "deployObservations": 46,
+      "prObservations": 44,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 2.75,
+      "deployP85": 5,
+      "deployP95": 28.375,
+      "prMedian": 14.172222222222222,
+      "prMedianCI": {
+        "lower": 10.811388888888889,
+        "upper": 20.608888888888888
+      },
+      "prP75": 22.618194444444445,
+      "prP85": 35.85629166666662,
+      "prP95": 171.97502083333336
+    },
+    {
+      "language": "Java",
+      "repoCount": 23,
+      "deployObservations": 23,
+      "prObservations": 20,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 2,
+      "deployP85": 2,
+      "deployP95": 3.8999999999999986,
+      "prMedian": 26.510555555555555,
+      "prMedianCI": {
+        "lower": 21.418055555555554,
+        "upper": 47.80777777777778
+      },
+      "prP75": 47.96513888888889,
+      "prP85": 49.16591666666666,
+      "prP95": 66.6459513888889
+    },
+    {
+      "language": "C++",
+      "repoCount": 15,
+      "deployObservations": 15,
+      "prObservations": 14,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 1.5,
+      "deployP85": 2.9000000000000004,
+      "deployP95": 8.499999999999984,
+      "prMedian": 25.97138888888889,
+      "prMedianCI": {
+        "lower": 18.915555555555557,
+        "upper": 54.646388888888886
+      },
+      "prP75": 52.27979166666667,
+      "prP85": 57.54459027777778,
+      "prP95": 64.99743749999999
+    },
+    {
+      "language": "JavaScript",
+      "repoCount": 12,
+      "deployObservations": 12,
+      "prObservations": 12,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 6
+      },
+      "deployP75": 5.25,
+      "deployP85": 6.35,
+      "deployP95": 12.399999999999991,
+      "prMedian": 15.398263888888888,
+      "prMedianCI": {
+        "lower": 4.705277777777778,
+        "upper": 25.678333333333335
+      },
+      "prP75": 24.6884375,
+      "prP85": 43.475590277777755,
+      "prP95": 97.06432638888886
+    },
+    {
+      "language": "Rust",
+      "repoCount": 12,
+      "deployObservations": 12,
+      "prObservations": 12,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 2.349999999999998,
+      "prMedian": 21.40965277777778,
+      "prMedianCI": {
+        "lower": 2.305833333333333,
+        "upper": 30.963472222222222
+      },
+      "prP75": 30.65545138888889,
+      "prP85": 31.407534722222223,
+      "prP95": 65.84165972222218
+    },
+    {
+      "language": "PHP",
+      "repoCount": 9,
+      "deployObservations": 9,
+      "prObservations": 8,
+      "deployMedian": 2,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2.5
+      },
+      "deployP75": 2,
+      "deployP85": 2.4,
+      "deployP95": 2.8,
+      "prMedian": 17.03798611111111,
+      "prMedianCI": {
+        "lower": 1.5686111111111112,
+        "upper": 1199.1415277777778
+      },
+      "prP75": 333.34288194444446,
+      "prP85": 1141.4216180555559,
+      "prP95": 2159.344729166666
+    },
+    {
+      "language": "Kotlin",
+      "repoCount": 6,
+      "deployObservations": 6,
+      "prObservations": 5,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 0,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 14.560277777777777,
+      "prMedianCI": {
+        "lower": 7.857222222222222,
+        "upper": 337.45222222222225
+      },
+      "prP75": 174.9736111111111,
+      "prP85": 239.96505555555552,
+      "prP95": 304.9565
+    },
+    {
+      "language": "C#",
+      "repoCount": 5,
+      "deployObservations": 5,
+      "prObservations": 5,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1.5
+      },
+      "deployP75": 1,
+      "deployP85": 1.2,
+      "deployP95": 1.4,
+      "prMedian": 20.60013888888889,
+      "prMedianCI": {
+        "lower": 0.9894444444444443,
+        "upper": 42.557361111111106
+      },
+      "prP75": 28.034444444444446,
+      "prP85": 33.84361111111111,
+      "prP95": 39.65277777777777
+    },
+    {
+      "language": "C",
+      "repoCount": 5,
+      "deployObservations": 5,
+      "prObservations": 5,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 3
+      },
+      "deployP75": 1,
+      "deployP85": 1.7999999999999998,
+      "deployP95": 2.5999999999999996,
+      "prMedian": 9.345277777777778,
+      "prMedianCI": {
+        "lower": 0.0030555555555555557,
+        "upper": 265.6934722222222
+      },
+      "prP75": 80.42972222222222,
+      "prP85": 154.53522222222222,
+      "prP95": 228.64072222222222
+    },
+    {
+      "language": "Ruby",
+      "repoCount": 3,
+      "deployObservations": 3,
+      "prObservations": 3,
+      "deployMedian": 2.5,
+      "deployMedianCI": {
+        "lower": 2,
+        "upper": 44
+      },
+      "deployP75": 23.25,
+      "deployP85": 31.549999999999997,
+      "deployP95": 39.849999999999994,
+      "prMedian": 14.504305555555556,
+      "prMedianCI": {
+        "lower": 4.799861111111111,
+        "upper": 65.37944444444445
+      },
+      "prP75": 39.941875,
+      "prP85": 50.116902777777774,
+      "prP95": 60.29193055555555
+    },
+    {
+      "language": "Swift",
+      "repoCount": 3,
+      "deployObservations": 3,
+      "prObservations": 2,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 1.5,
+      "deployP85": 1.7,
+      "deployP95": 1.9,
+      "prMedian": 2291.3141666666666,
+      "prMedianCI": {
+        "lower": 31.608333333333334,
+        "upper": 4551.02
+      },
+      "prP75": 3421.1670833333333,
+      "prP85": 3873.1082499999998,
+      "prP95": 4325.049416666667
+    },
+    {
+      "language": "Lua",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 49.5,
+      "deployMedianCI": {
+        "lower": 8,
+        "upper": 91
+      },
+      "deployP75": 70.25,
+      "deployP85": 78.55,
+      "deployP95": 86.85,
+      "prMedian": 62.03409722222222,
+      "prMedianCI": {
+        "lower": 57.84527777777778,
+        "upper": 66.22291666666666
+      },
+      "prP75": 64.12850694444444,
+      "prP85": 64.96627083333333,
+      "prP95": 65.80403472222221
+    },
+    {
+      "language": "Dart",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 14.317499999999999,
+      "prMedianCI": {
+        "lower": 4.2275,
+        "upper": 24.4075
+      },
+      "prP75": 19.3625,
+      "prP85": 21.380499999999998,
+      "prP95": 23.3985
+    },
+    {
+      "language": "Shell",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 1.5,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 1.75,
+      "deployP85": 1.85,
+      "deployP95": 1.95,
+      "prMedian": 9.305694444444445,
+      "prMedianCI": {
+        "lower": 7.695,
+        "upper": 10.91638888888889
+      },
+      "prP75": 10.111041666666667,
+      "prP85": 10.433180555555555,
+      "prP95": 10.755319444444444
+    },
+    {
+      "language": "Elixir",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 3,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 5
+      },
+      "deployP75": 4,
+      "deployP85": 4.4,
+      "deployP95": 4.8,
+      "prMedian": 5.092361111111111,
+      "prMedianCI": {
+        "lower": 4.373888888888889,
+        "upper": 5.810833333333333
+      },
+      "prP75": 5.451597222222222,
+      "prP85": 5.595291666666666,
+      "prP95": 5.738986111111111
+    },
+    {
+      "language": "Jupyter Notebook",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 1,
+      "deployMedian": 10,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 19
+      },
+      "deployP75": 14.5,
+      "deployP85": 16.299999999999997,
+      "deployP95": 18.099999999999998,
+      "prMedian": 1.0425,
+      "prMedianCI": null,
+      "prP75": 1.0425,
+      "prP85": 1.0425,
+      "prP95": 1.0425
+    },
+    {
+      "language": "HTML",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 15,
+      "deployMedianCI": null,
+      "deployP75": 15,
+      "deployP85": 15,
+      "deployP95": 15,
+      "prMedian": 2.7408333333333332,
+      "prMedianCI": null,
+      "prP75": 2.7408333333333332,
+      "prP85": 2.7408333333333332,
+      "prP95": 2.7408333333333332
+    },
+    {
+      "language": "Scala",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 0,
+      "deployMedian": 1.5,
+      "deployMedianCI": null,
+      "deployP75": 1.5,
+      "deployP85": 1.5,
+      "deployP95": 1.5,
+      "prMedian": null,
+      "prMedianCI": null,
+      "prP75": null,
+      "prP85": null,
+      "prP95": null
+    },
+    {
+      "language": "Blade",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 1,
+      "deployMedianCI": null,
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 6.089305555555555,
+      "prMedianCI": null,
+      "prP75": 6.089305555555555,
+      "prP85": 6.089305555555555,
+      "prP95": 6.089305555555555
+    },
+    {
+      "language": "Clojure",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 2,
+      "deployMedianCI": null,
+      "deployP75": 2,
+      "deployP85": 2,
+      "deployP95": 2,
+      "prMedian": 26.419444444444444,
+      "prMedianCI": null,
+      "prP75": 26.419444444444444,
+      "prP85": 26.419444444444444,
+      "prP95": 26.419444444444444
+    },
+    {
+      "language": "Svelte",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 2.5,
+      "deployMedianCI": null,
+      "deployP75": 2.5,
+      "deployP85": 2.5,
+      "deployP95": 2.5,
+      "prMedian": 35.35541666666667,
+      "prMedianCI": null,
+      "prP75": 35.35541666666667,
+      "prP85": 35.35541666666667,
+      "prP95": 35.35541666666667
+    },
+    {
+      "language": "Unknown",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 0,
+      "deployMedianCI": null,
+      "deployP75": 0,
+      "deployP85": 0,
+      "deployP95": 0,
+      "prMedian": 7.060972222222222,
+      "prMedianCI": null,
+      "prP75": 7.060972222222222,
+      "prP85": 7.060972222222222,
+      "prP95": 7.060972222222222
+    }
+  ],
+  "languageSizeSummary": [
+    {
+      "language": "Go",
+      "sizeTier": "small",
+      "repoCount": 41,
+      "deployObservations": 41,
+      "prObservations": 40,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1.5,
+      "deployP85": 2,
+      "deployP95": 6,
+      "prMedian": 38.445208333333326,
+      "prMedianCI": {
+        "lower": 15.6375,
+        "upper": 67.74583333333334
+      },
+      "prP75": 105.40843749999999,
+      "prP85": 160.539875,
+      "prP95": 246.00329166666637
+    },
+    {
+      "language": "Python",
+      "sizeTier": "small",
+      "repoCount": 31,
+      "deployObservations": 31,
+      "prObservations": 29,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 2.5,
+      "deployP85": 4.5,
+      "deployP95": 18.5,
+      "prMedian": 19.32875,
+      "prMedianCI": {
+        "lower": 10.811388888888889,
+        "upper": 22.52
+      },
+      "prP75": 27.723194444444445,
+      "prP85": 127.46200000000007,
+      "prP95": 199.23483333333326
+    },
+    {
+      "language": "TypeScript",
+      "sizeTier": "small",
+      "repoCount": 28,
+      "deployObservations": 28,
+      "prObservations": 25,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 2.25,
+      "deployP85": 4,
+      "deployP95": 6.649999999999999,
+      "prMedian": 5.705277777777778,
+      "prMedianCI": {
+        "lower": 2.9908333333333332,
+        "upper": 24.49958333333333
+      },
+      "prP75": 30.691666666666666,
+      "prP85": 76.02455555555554,
+      "prP95": 300.2563333333327
+    },
+    {
+      "language": "Go",
+      "sizeTier": "medium",
+      "repoCount": 25,
+      "deployObservations": 25,
+      "prObservations": 25,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 2,
+      "deployP95": 3,
+      "prMedian": 23.25416666666667,
+      "prMedianCI": {
+        "lower": 12.014444444444445,
+        "upper": 41.83138888888889
+      },
+      "prP75": 56.285694444444445,
+      "prP85": 82.45027777777774,
+      "prP95": 117.66830555555553
+    },
+    {
+      "language": "TypeScript",
+      "sizeTier": "medium",
+      "repoCount": 21,
+      "deployObservations": 21,
+      "prObservations": 21,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 2,
+      "deployP85": 4,
+      "deployP95": 15,
+      "prMedian": 8.992083333333333,
+      "prMedianCI": {
+        "lower": 4.235277777777778,
+        "upper": 15.329722222222223
+      },
+      "prP75": 15.329722222222223,
+      "prP85": 20.480833333333333,
+      "prP95": 37.22611111111111
+    },
+    {
+      "language": "Java",
+      "sizeTier": "small",
+      "repoCount": 15,
+      "deployObservations": 15,
+      "prObservations": 12,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 2,
+      "deployP85": 2,
+      "deployP95": 3.299999999999999,
+      "prMedian": 32.526250000000005,
+      "prMedianCI": {
+        "lower": 9.380833333333333,
+        "upper": 48.437222222222225
+      },
+      "prP75": 47.96513888888889,
+      "prP85": 54.62604861111111,
+      "prP95": 70.85689583333333
+    },
+    {
+      "language": "JavaScript",
+      "sizeTier": "small",
+      "repoCount": 11,
+      "deployObservations": 11,
+      "prObservations": 11,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 5
+      },
+      "deployP75": 3.75,
+      "deployP85": 5.5,
+      "deployP95": 6.5,
+      "prMedian": 14.893055555555556,
+      "prMedianCI": {
+        "lower": 1.2415277777777778,
+        "upper": 25.678333333333335
+      },
+      "prP75": 25.01840277777778,
+      "prP85": 51.10298611111111,
+      "prP95": 99.34618055555555
+    },
+    {
+      "language": "C++",
+      "sizeTier": "small",
+      "repoCount": 11,
+      "deployObservations": 11,
+      "prObservations": 10,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 0,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 2.5,
+      "deployP95": 11.5,
+      "prMedian": 25.97138888888889,
+      "prMedianCI": {
+        "lower": 0.9236111111111112,
+        "upper": 57.53388888888889
+      },
+      "prP75": 43.640208333333334,
+      "prP85": 53.21002777777777,
+      "prP95": 57.651604166666665
+    },
+    {
+      "language": "Python",
+      "sizeTier": "medium",
+      "repoCount": 11,
+      "deployObservations": 11,
+      "prObservations": 11,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 1.75,
+      "deployP85": 2,
+      "deployP95": 2.5,
+      "prMedian": 8.374444444444444,
+      "prMedianCI": {
+        "lower": 3.0741666666666667,
+        "upper": 21.399027777777775
+      },
+      "prP75": 21.00395833333333,
+      "prP85": 22.155902777777776,
+      "prP95": 32.70347222222222
+    },
+    {
+      "language": "Rust",
+      "sizeTier": "small",
+      "repoCount": 8,
+      "deployObservations": 8,
+      "prObservations": 8,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 2.9499999999999984,
+      "prMedian": 22.49791666666667,
+      "prMedianCI": {
+        "lower": 2.305833333333333,
+        "upper": 32.23222222222223
+      },
+      "prP75": 31.280659722222225,
+      "prP85": 32.16878472222223,
+      "prP95": 80.77918749999998
+    },
+    {
+      "language": "TypeScript",
+      "sizeTier": "large",
+      "repoCount": 8,
+      "deployObservations": 8,
+      "prObservations": 8,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 5
+      },
+      "deployP75": 3.875,
+      "deployP85": 4.925000000000001,
+      "deployP95": 70.32499999999995,
+      "prMedian": 3.775138888888889,
+      "prMedianCI": {
+        "lower": 2.876388888888889,
+        "upper": 7.9494444444444445
+      },
+      "prP75": 6.248923611111111,
+      "prP85": 7.836076388888889,
+      "prP95": 15.258333333333326
+    },
+    {
+      "language": "PHP",
+      "sizeTier": "small",
+      "repoCount": 7,
+      "deployObservations": 7,
+      "prObservations": 6,
+      "deployMedian": 2,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2.5
+      },
+      "deployP75": 2.25,
+      "deployP85": 2.55,
+      "deployP95": 2.8499999999999996,
+      "prMedian": 34.35604166666667,
+      "prMedianCI": {
+        "lower": 1.5686111111111112,
+        "upper": 2676.3772222222224
+      },
+      "prP75": 910.5419791666667,
+      "prP85": 1568.450451388889,
+      "prP95": 2307.0682986111115
+    },
+    {
+      "language": "Java",
+      "sizeTier": "medium",
+      "repoCount": 6,
+      "deployObservations": 6,
+      "prObservations": 6,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 5
+      },
+      "deployP75": 1.75,
+      "deployP85": 2.75,
+      "deployP95": 4.25,
+      "prMedian": 26.249375,
+      "prMedianCI": {
+        "lower": 23.33888888888889,
+        "upper": 52.26888888888889
+      },
+      "prP75": 30.8165625,
+      "prP85": 36.82347222222222,
+      "prP95": 47.12041666666667
+    },
+    {
+      "language": "Kotlin",
+      "sizeTier": "small",
+      "repoCount": 6,
+      "deployObservations": 6,
+      "prObservations": 5,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 0,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 14.560277777777777,
+      "prMedianCI": {
+        "lower": 7.857222222222222,
+        "upper": 337.45222222222225
+      },
+      "prP75": 174.9736111111111,
+      "prP85": 239.96505555555552,
+      "prP95": 304.9565
+    },
+    {
+      "language": "C#",
+      "sizeTier": "small",
+      "repoCount": 4,
+      "deployObservations": 4,
+      "prObservations": 4,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1.5
+      },
+      "deployP75": 1.125,
+      "deployP85": 1.275,
+      "deployP95": 1.4249999999999998,
+      "prMedian": 12.471875,
+      "prMedianCI": {
+        "lower": 0.9894444444444443,
+        "upper": 28.034444444444446
+      },
+      "prP75": 22.458715277777777,
+      "prP85": 24.689006944444444,
+      "prP95": 26.91929861111111
+    },
+    {
+      "language": "Python",
+      "sizeTier": "large",
+      "repoCount": 4,
+      "deployObservations": 4,
+      "prObservations": 4,
+      "deployMedian": 115,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 320
+      },
+      "deployP75": 248.75,
+      "deployP85": 277.25,
+      "deployP95": 305.75,
+      "prMedian": 13.378333333333334,
+      "prMedianCI": {
+        "lower": 2.9316666666666666,
+        "upper": 14.637222222222222
+      },
+      "prP75": 13.939722222222223,
+      "prP85": 14.218722222222222,
+      "prP95": 14.497722222222222
+    },
+    {
+      "language": "C++",
+      "sizeTier": "medium",
+      "repoCount": 4,
+      "deployObservations": 4,
+      "prObservations": 4,
+      "deployMedian": 1.5,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 3
+      },
+      "deployP75": 2.25,
+      "deployP85": 2.55,
+      "deployP95": 2.8499999999999996,
+      "prMedian": 37.00208333333333,
+      "prMedianCI": {
+        "lower": 18.915555555555557,
+        "upper": 78.46083333333334
+      },
+      "prP75": 60.6,
+      "prP85": 67.74433333333333,
+      "prP95": 74.88866666666667
+    },
+    {
+      "language": "Swift",
+      "sizeTier": "small",
+      "repoCount": 3,
+      "deployObservations": 3,
+      "prObservations": 2,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 1.5,
+      "deployP85": 1.7,
+      "deployP95": 1.9,
+      "prMedian": 2291.3141666666666,
+      "prMedianCI": {
+        "lower": 31.608333333333334,
+        "upper": 4551.02
+      },
+      "prP75": 3421.1670833333333,
+      "prP85": 3873.1082499999998,
+      "prP95": 4325.049416666667
+    },
+    {
+      "language": "C",
+      "sizeTier": "small",
+      "repoCount": 3,
+      "deployObservations": 3,
+      "prObservations": 3,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 3
+      },
+      "deployP75": 2,
+      "deployP85": 2.4,
+      "deployP95": 2.8,
+      "prMedian": 9.345277777777778,
+      "prMedianCI": {
+        "lower": 0.0030555555555555557,
+        "upper": 265.6934722222222
+      },
+      "prP75": 137.519375,
+      "prP85": 188.7890138888889,
+      "prP95": 240.05865277777775
+    },
+    {
+      "language": "Rust",
+      "sizeTier": "medium",
+      "repoCount": 3,
+      "deployObservations": 3,
+      "prObservations": 3,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 21.655972222222225,
+      "prMedianCI": {
+        "lower": 14.870555555555555,
+        "upper": 30.552777777777777
+      },
+      "prP75": 26.104375,
+      "prP85": 27.883736111111112,
+      "prP95": 29.66309722222222
+    },
+    {
+      "language": "Ruby",
+      "sizeTier": "medium",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 23,
+      "deployMedianCI": {
+        "lower": 2,
+        "upper": 44
+      },
+      "deployP75": 33.5,
+      "deployP85": 37.699999999999996,
+      "deployP95": 41.9,
+      "prMedian": 39.941875,
+      "prMedianCI": {
+        "lower": 14.504305555555556,
+        "upper": 65.37944444444445
+      },
+      "prP75": 52.66065972222222,
+      "prP85": 57.74817361111111,
+      "prP95": 62.8356875
+    },
+    {
+      "language": "Lua",
+      "sizeTier": "small",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 49.5,
+      "deployMedianCI": {
+        "lower": 8,
+        "upper": 91
+      },
+      "deployP75": 70.25,
+      "deployP85": 78.55,
+      "deployP95": 86.85,
+      "prMedian": 62.03409722222222,
+      "prMedianCI": {
+        "lower": 57.84527777777778,
+        "upper": 66.22291666666666
+      },
+      "prP75": 64.12850694444444,
+      "prP85": 64.96627083333333,
+      "prP95": 65.80403472222221
+    },
+    {
+      "language": "Java",
+      "sizeTier": "large",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 36.69909722222222,
+      "prMedianCI": {
+        "lower": 24.77986111111111,
+        "upper": 48.61833333333333
+      },
+      "prP75": 42.65871527777777,
+      "prP85": 45.0425625,
+      "prP95": 47.42640972222222
+    },
+    {
+      "language": "Dart",
+      "sizeTier": "small",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 14.317499999999999,
+      "prMedianCI": {
+        "lower": 4.2275,
+        "upper": 24.4075
+      },
+      "prP75": 19.3625,
+      "prP85": 21.380499999999998,
+      "prP95": 23.3985
+    },
+    {
+      "language": "Go",
+      "sizeTier": "large",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 17.4725,
+      "prMedianCI": {
+        "lower": 16.477222222222224,
+        "upper": 18.467777777777776
+      },
+      "prP75": 17.97013888888889,
+      "prP85": 18.169194444444443,
+      "prP95": 18.36825
+    },
+    {
+      "language": "Shell",
+      "sizeTier": "small",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 1.5,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 2
+      },
+      "deployP75": 1.75,
+      "deployP85": 1.85,
+      "deployP95": 1.95,
+      "prMedian": 9.305694444444445,
+      "prMedianCI": {
+        "lower": 7.695,
+        "upper": 10.91638888888889
+      },
+      "prP75": 10.111041666666667,
+      "prP85": 10.433180555555555,
+      "prP95": 10.755319444444444
+    },
+    {
+      "language": "C",
+      "sizeTier": "medium",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 2,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 40.99923611111112,
+      "prMedianCI": {
+        "lower": 1.56875,
+        "upper": 80.42972222222222
+      },
+      "prP75": 60.71447916666667,
+      "prP85": 68.60057638888888,
+      "prP95": 76.48667361111112
+    },
+    {
+      "language": "Jupyter Notebook",
+      "sizeTier": "small",
+      "repoCount": 2,
+      "deployObservations": 2,
+      "prObservations": 1,
+      "deployMedian": 10,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 19
+      },
+      "deployP75": 14.5,
+      "deployP85": 16.299999999999997,
+      "deployP95": 18.099999999999998,
+      "prMedian": 1.0425,
+      "prMedianCI": null,
+      "prP75": 1.0425,
+      "prP85": 1.0425,
+      "prP95": 1.0425
+    },
+    {
+      "language": "C#",
+      "sizeTier": "medium",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 1,
+      "deployMedianCI": null,
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 42.557361111111106,
+      "prMedianCI": null,
+      "prP75": 42.557361111111106,
+      "prP85": 42.557361111111106,
+      "prP95": 42.557361111111106
+    },
+    {
+      "language": "HTML",
+      "sizeTier": "small",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 15,
+      "deployMedianCI": null,
+      "deployP75": 15,
+      "deployP85": 15,
+      "deployP95": 15,
+      "prMedian": 2.7408333333333332,
+      "prMedianCI": null,
+      "prP75": 2.7408333333333332,
+      "prP85": 2.7408333333333332,
+      "prP95": 2.7408333333333332
+    },
+    {
+      "language": "PHP",
+      "sizeTier": "medium",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 2,
+      "deployMedianCI": null,
+      "deployP75": 2,
+      "deployP85": 2,
+      "deployP95": 2,
+      "prMedian": 7.543333333333333,
+      "prMedianCI": null,
+      "prP75": 7.543333333333333,
+      "prP85": 7.543333333333333,
+      "prP95": 7.543333333333333
+    },
+    {
+      "language": "Elixir",
+      "sizeTier": "large",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 1,
+      "deployMedianCI": null,
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 4.373888888888889,
+      "prMedianCI": null,
+      "prP75": 4.373888888888889,
+      "prP85": 4.373888888888889,
+      "prP95": 4.373888888888889
+    },
+    {
+      "language": "Scala",
+      "sizeTier": "small",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 0,
+      "deployMedian": 1.5,
+      "deployMedianCI": null,
+      "deployP75": 1.5,
+      "deployP85": 1.5,
+      "deployP95": 1.5,
+      "prMedian": null,
+      "prMedianCI": null,
+      "prP75": null,
+      "prP85": null,
+      "prP95": null
+    },
+    {
+      "language": "PHP",
+      "sizeTier": "large",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 2,
+      "deployMedianCI": null,
+      "deployP75": 2,
+      "deployP85": 2,
+      "deployP95": 2,
+      "prMedian": 10.107222222222223,
+      "prMedianCI": null,
+      "prP75": 10.107222222222223,
+      "prP85": 10.107222222222223,
+      "prP95": 10.107222222222223
+    },
+    {
+      "language": "Blade",
+      "sizeTier": "small",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 1,
+      "deployMedianCI": null,
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 6.089305555555555,
+      "prMedianCI": null,
+      "prP75": 6.089305555555555,
+      "prP85": 6.089305555555555,
+      "prP95": 6.089305555555555
+    },
+    {
+      "language": "Clojure",
+      "sizeTier": "large",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 2,
+      "deployMedianCI": null,
+      "deployP75": 2,
+      "deployP85": 2,
+      "deployP95": 2,
+      "prMedian": 26.419444444444444,
+      "prMedianCI": null,
+      "prP75": 26.419444444444444,
+      "prP85": 26.419444444444444,
+      "prP95": 26.419444444444444
+    },
+    {
+      "language": "Ruby",
+      "sizeTier": "small",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 2.5,
+      "deployMedianCI": null,
+      "deployP75": 2.5,
+      "deployP85": 2.5,
+      "deployP95": 2.5,
+      "prMedian": 4.799861111111111,
+      "prMedianCI": null,
+      "prP75": 4.799861111111111,
+      "prP85": 4.799861111111111,
+      "prP95": 4.799861111111111
+    },
+    {
+      "language": "Svelte",
+      "sizeTier": "small",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 2.5,
+      "deployMedianCI": null,
+      "deployP75": 2.5,
+      "deployP85": 2.5,
+      "deployP95": 2.5,
+      "prMedian": 35.35541666666667,
+      "prMedianCI": null,
+      "prP75": 35.35541666666667,
+      "prP85": 35.35541666666667,
+      "prP95": 35.35541666666667
+    },
+    {
+      "language": "Elixir",
+      "sizeTier": "medium",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 5,
+      "deployMedianCI": null,
+      "deployP75": 5,
+      "deployP85": 5,
+      "deployP95": 5,
+      "prMedian": 5.810833333333333,
+      "prMedianCI": null,
+      "prP75": 5.810833333333333,
+      "prP85": 5.810833333333333,
+      "prP95": 5.810833333333333
+    },
+    {
+      "language": "Rust",
+      "sizeTier": "large",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 1,
+      "deployMedianCI": null,
+      "deployP75": 1,
+      "deployP85": 1,
+      "deployP95": 1,
+      "prMedian": 1.2844444444444445,
+      "prMedianCI": null,
+      "prP75": 1.2844444444444445,
+      "prP85": 1.2844444444444445,
+      "prP95": 1.2844444444444445
+    },
+    {
+      "language": "JavaScript",
+      "sizeTier": "large",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 19,
+      "deployMedianCI": null,
+      "deployP75": 19,
+      "deployP85": 19,
+      "deployP95": 19,
+      "prMedian": 15.903472222222222,
+      "prMedianCI": null,
+      "prP75": 15.903472222222222,
+      "prP85": 15.903472222222222,
+      "prP95": 15.903472222222222
+    },
+    {
+      "language": "Unknown",
+      "sizeTier": "small",
+      "repoCount": 1,
+      "deployObservations": 1,
+      "prObservations": 1,
+      "deployMedian": 0,
+      "deployMedianCI": null,
+      "deployP75": 0,
+      "deployP85": 0,
+      "deployP95": 0,
+      "prMedian": 7.060972222222222,
+      "prMedianCI": null,
+      "prP75": 7.060972222222222,
+      "prP85": 7.060972222222222,
+      "prP95": 7.060972222222222
+    }
+  ],
+  "sizeSummary": [
+    {
+      "sizeTier": "small",
+      "repoCount": 182,
+      "deployObservations": 182,
+      "prObservations": 167,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 2,
+      "deployP85": 3.924999999999997,
+      "deployP95": 7,
+      "prMedian": 19.559722222222224,
+      "prMedianCI": {
+        "lower": 14.065555555555555,
+        "upper": 23.96875
+      },
+      "prP75": 48.1225,
+      "prP85": 104.19748611111109,
+      "prP95": 315.92459722222145
+    },
+    {
+      "sizeTier": "medium",
+      "repoCount": 77,
+      "deployObservations": 77,
+      "prObservations": 77,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 1
+      },
+      "deployP75": 2,
+      "deployP85": 2.5999999999999943,
+      "deployP95": 5.6000000000000085,
+      "prMedian": 18.915555555555557,
+      "prMedianCI": {
+        "lower": 11.262222222222222,
+        "upper": 21.655972222222225
+      },
+      "prP75": 30.552777777777777,
+      "prP85": 49.62911111111107,
+      "prP95": 83.72466666666672
+    },
+    {
+      "sizeTier": "large",
+      "repoCount": 21,
+      "deployObservations": 21,
+      "prObservations": 21,
+      "deployMedian": 1,
+      "deployMedianCI": {
+        "lower": 1,
+        "upper": 3.5
+      },
+      "deployP75": 5,
+      "deployP85": 19,
+      "deployP95": 225,
+      "prMedian": 10.107222222222223,
+      "prMedianCI": {
+        "lower": 3.0508333333333333,
+        "upper": 15.903472222222222
+      },
+      "prP75": 16.477222222222224,
+      "prP85": 19.193888888888885,
+      "prP95": 26.419444444444444
+    }
+  ]
+}

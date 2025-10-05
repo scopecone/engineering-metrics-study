@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-05T08:22:18.733Z",
+  "generatedAt": "2025-10-05T08:59:02.625Z",
   "rows": [
     {
       "repo": "18F/identity-idp",
@@ -112,22 +112,6 @@
       "prCycleTimeHoursP95": null,
       "sampleWindowStart": "2025-09-18T21:41:34Z",
       "sampleWindowEnd": "2025-09-18T21:42:18Z"
-    },
-    {
-      "repo": "alibaba/nacos",
-      "language": "Java",
-      "topics": "a2a-registry|ai-registry|alibaba|config|configuration-management|distributed-configuration|dns|dubbo|istio|kubernetes|mcp|mcp-management|mcp-registry|microservices|nacos|service-discovery|service-mesh|spring-cloud",
-      "defaultBranch": "develop",
-      "deployCount": 9,
-      "prCount": 5,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1.6499999999999995,
-      "prCycleTimeHoursMedian": 3.8055555555555554,
-      "prCycleTimeHoursP85": 16.806333333333335,
-      "prCycleTimeHoursP95": 18.894333333333332,
-      "sampleWindowStart": "2024-10-12T06:55:33Z",
-      "sampleWindowEnd": "2025-09-30T09:52:03Z"
     },
     {
       "repo": "AlistGo/alist",
@@ -626,22 +610,6 @@
       "sampleWindowEnd": "2025-10-02T18:23:17Z"
     },
     {
-      "repo": "backstage/backstage",
-      "language": "TypeScript",
-      "topics": "backstage|cncf|developer-experience|developer-portal|dx|infrastructure|microservices|self-service-portal",
-      "defaultBranch": "master",
-      "deployCount": 45,
-      "prCount": 274,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 3,
-      "deploymentsPerWeekP95": 3.75,
-      "prCycleTimeHoursMedian": 71.92333333333333,
-      "prCycleTimeHoursP85": 606.7651666666663,
-      "prCycleTimeHoursP95": 1310.91531944444,
-      "sampleWindowStart": "2024-10-03T15:06:56Z",
-      "sampleWindowEnd": "2025-10-02T15:12:14Z"
-    },
-    {
       "repo": "bagisto/bagisto",
       "language": "PHP",
       "topics": "blockchain-ecommerce|ecommerce|ecommerce-framework|ecommerce-platform|hacktoberfest|headless-commerce|laravel|laravel-application|laravel-ecommerce|laravel-package|multi-tenancy-plugin|multi-tenant|multivendor-ecommerce|nft-marketplace|open-source|opensource-ecommerce|opensource-ecommerce-framework|php|php-ecommerce",
@@ -706,38 +674,6 @@
       "sampleWindowEnd": "2025-10-03T18:55:27Z"
     },
     {
-      "repo": "bitnami-labs/sealed-secrets",
-      "language": "Go",
-      "topics": "devops-workflow|encrypt-secrets|gitops|kubernetes|kubernetes-secrets",
-      "defaultBranch": "main",
-      "deployCount": 18,
-      "prCount": 45,
-      "deploymentsPerWeekMedian": 2,
-      "deploymentsPerWeekP85": 2,
-      "deploymentsPerWeekP95": 3.1999999999999993,
-      "prCycleTimeHoursMedian": 1.2980555555555555,
-      "prCycleTimeHoursP85": 237.61077777777777,
-      "prCycleTimeHoursP95": 509.68816666666646,
-      "sampleWindowStart": "2024-10-04T06:22:44Z",
-      "sampleWindowEnd": "2025-09-15T09:42:45Z"
-    },
-    {
-      "repo": "bluewave-labs/Checkmate",
-      "language": "JavaScript",
-      "topics": "good-first-contribution|good-first-issue|good-first-project|hacktoberfest|help-wanted|incident|infrastructure|infrastructure-monitoring|mui|mui-material|server-monitor|server-monitoring|server-monitoring-tools|statuspage|uptime|uptime-checker|uptime-monitor|uptime-monitoring|uptime-status|uptimerobot",
-      "defaultBranch": "develop",
-      "deployCount": 20,
-      "prCount": 928,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 2,
-      "deploymentsPerWeekP95": 2.3499999999999996,
-      "prCycleTimeHoursMedian": 2.523472222222222,
-      "prCycleTimeHoursP85": 50.196083333333284,
-      "prCycleTimeHoursP95": 117.36391666666663,
-      "sampleWindowStart": "2024-10-07T03:07:37Z",
-      "sampleWindowEnd": "2025-10-02T20:35:41Z"
-    },
-    {
       "repo": "Budibase/budibase",
       "language": "TypeScript",
       "topics": "ai-app-builder|ai-applications|crud-app|crud-application|data-application|data-apps|internal-tools|it-workflows|low-code|low-code-no-code|low-code-platform|no-code|no-code-platform|open-source|rest-api-framework|sql-gui|workflow-apps|workflow-automation|workflow-engine",
@@ -786,22 +722,6 @@
       "sampleWindowEnd": "2025-07-18T16:24:54Z"
     },
     {
-      "repo": "bytebase/bytebase",
-      "language": "Go",
-      "topics": "cicd|data-masking|data-security|database-access|dbeaver|devsecops|flyway|gitops|liquibase|mongodb|mysql|oracle|pam|postgresql|schema-migrations|security|snowflake|sql-client|sqlserver|tidb",
-      "defaultBranch": "main",
-      "deployCount": 26,
-      "prCount": 236,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": 0.2663888888888889,
-      "prCycleTimeHoursP85": 4.155555555555555,
-      "prCycleTimeHoursP95": 18.72701388888889,
-      "sampleWindowStart": "2024-10-10T06:17:16Z",
-      "sampleWindowEnd": "2025-10-02T21:05:28Z"
-    },
-    {
       "repo": "cake-build/cake",
       "language": "C#",
       "topics": "build-automation|build-automation-tool|build-tool|c-sharp|cake|cake-build|continuous-integration|dotnet|dotnetcore|hacktoberfest|nuget|nunit|orchestration|unit-testing|xunit",
@@ -816,22 +736,6 @@
       "prCycleTimeHoursP95": 34.40080555555552,
       "sampleWindowStart": "2024-10-22T18:42:54Z",
       "sampleWindowEnd": "2025-08-26T23:40:26Z"
-    },
-    {
-      "repo": "canonical/microk8s",
-      "language": "Python",
-      "topics": "cicd|developer-workstations|hacktoberfest|iot|k8s|kubernetes|snap",
-      "defaultBranch": "master",
-      "deployCount": 3,
-      "prCount": 57,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": 18.16111111111111,
-      "prCycleTimeHoursP85": 132.0322777777778,
-      "prCycleTimeHoursP95": 237.691388888888,
-      "sampleWindowStart": "2024-10-22T15:10:07Z",
-      "sampleWindowEnd": "2025-09-12T09:12:53Z"
     },
     {
       "repo": "chakra-ui/chakra-ui",
@@ -1074,38 +978,6 @@
       "sampleWindowEnd": "2025-09-23T07:21:53Z"
     },
     {
-      "repo": "coroot/coroot",
-      "language": "Go",
-      "topics": "ai|alerting|apm|dashboard|database-monitoring|distributed-tracing|ebpf|metrics|microservice|monitoring|observability|prometheus|service-map|slo|sre|tracing",
-      "defaultBranch": "main",
-      "deployCount": 77,
-      "prCount": 191,
-      "deploymentsPerWeekMedian": 2,
-      "deploymentsPerWeekP85": 3,
-      "deploymentsPerWeekP95": 4,
-      "prCycleTimeHoursMedian": 0.07027777777777777,
-      "prCycleTimeHoursP85": 0.6183333333333333,
-      "prCycleTimeHoursP95": 13.719999999999999,
-      "sampleWindowStart": "2024-10-03T09:18:13Z",
-      "sampleWindowEnd": "2025-10-02T10:22:27Z"
-    },
-    {
-      "repo": "crossplane/crossplane",
-      "language": "Go",
-      "topics": "cloud-computing|cloud-management|cloud-native|cncf|containers|control-plane|infrastructure|infrastructure-as-code|kubernetes|multicloud|serverless",
-      "defaultBranch": "main",
-      "deployCount": 24,
-      "prCount": 155,
-      "deploymentsPerWeekMedian": 3,
-      "deploymentsPerWeekP85": 3,
-      "deploymentsPerWeekP95": 3,
-      "prCycleTimeHoursMedian": 34.38055555555555,
-      "prCycleTimeHoursP85": 299.6170555555556,
-      "prCycleTimeHoursP95": 1429.1707499999957,
-      "sampleWindowStart": "2024-10-25T09:31:23Z",
-      "sampleWindowEnd": "2025-10-02T17:43:11Z"
-    },
-    {
       "repo": "datahub-project/datahub",
       "language": "Java",
       "topics": "data-catalog|data-discovery|data-governance|datahub|metadata",
@@ -1138,22 +1010,6 @@
       "sampleWindowEnd": "2025-10-03T08:57:23Z"
     },
     {
-      "repo": "derailed/k9s",
-      "language": "Go",
-      "topics": "go|golang|k8s|k8s-cluster|k9s|kubernetes|kubernetes-cli|kubernetes-clusters",
-      "defaultBranch": "master",
-      "deployCount": 27,
-      "prCount": 11,
-      "deploymentsPerWeekMedian": 1.5,
-      "deploymentsPerWeekP85": 3.049999999999999,
-      "deploymentsPerWeekP95": 4,
-      "prCycleTimeHoursMedian": 154.59694444444443,
-      "prCycleTimeHoursP85": 504.5397222222222,
-      "prCycleTimeHoursP95": 711.9254166666667,
-      "sampleWindowStart": "2024-11-10T17:10:10Z",
-      "sampleWindowEnd": "2025-09-27T15:44:56Z"
-    },
-    {
       "repo": "devtron-labs/devtron",
       "language": "Go",
       "topics": "aks|appops|argocd|continuous-deployment|dashboard|deployment|deployment-automation|deployment-pipeline|deployment-strategy|devtron|eks|gitops|gke|hacktoberfest|kubectl|kubernetes|kubernetes-dashboard|kubernetes-deployment|release-automation|workflow-engine",
@@ -1184,22 +1040,6 @@
       "prCycleTimeHoursP95": 1053.6468055555556,
       "sampleWindowStart": "2025-02-19T13:17:23Z",
       "sampleWindowEnd": "2025-09-18T13:45:59Z"
-    },
-    {
-      "repo": "dgtlmoon/changedetection.io",
-      "language": "Python",
-      "topics": "back-in-stock|change-alert|change-detection|change-monitoring|monitoring|notifications|restock-monitor|rss|self-hosted|url-monitor|web-scraping|website-change-detection|website-change-detector|website-change-monitor|website-change-notification|website-change-tracker|website-defacement-monitoring|website-monitor|website-monitoring|website-watcher",
-      "defaultBranch": "master",
-      "deployCount": 47,
-      "prCount": 96,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 2,
-      "deploymentsPerWeekP95": 3,
-      "prCycleTimeHoursMedian": 2.705,
-      "prCycleTimeHoursP85": 76.8248611111111,
-      "prCycleTimeHoursP95": 469.17125,
-      "sampleWindowStart": "2024-10-11T11:04:56Z",
-      "sampleWindowEnd": "2025-10-01T10:39:57Z"
     },
     {
       "repo": "digitalocean/doctl",
@@ -1296,22 +1136,6 @@
       "prCycleTimeHoursP95": 70.91977777777777,
       "sampleWindowStart": "2024-10-06T02:50:15Z",
       "sampleWindowEnd": "2025-09-23T17:45:06Z"
-    },
-    {
-      "repo": "dotnet/aspnetcore",
-      "language": "C#",
-      "topics": "aspnetcore|dotnet|hacktoberfest|help-wanted",
-      "defaultBranch": "main",
-      "deployCount": 3,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": 3,
-      "deploymentsPerWeekP85": 3,
-      "deploymentsPerWeekP95": 3,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": "2025-08-20T08:01:20Z",
-      "sampleWindowEnd": "2025-09-09T20:01:52Z"
     },
     {
       "repo": "duixcom/Duix-Mobile",
@@ -1600,22 +1424,6 @@
       "prCycleTimeHoursP95": 523.3533472222213,
       "sampleWindowStart": "2024-10-09T15:50:50Z",
       "sampleWindowEnd": "2025-10-03T09:57:16Z"
-    },
-    {
-      "repo": "fluxcd/flux2",
-      "language": "Go",
-      "topics": "continuous-delivery|gitops|gitops-toolkit|helm|kubernetes|kustomize",
-      "defaultBranch": "main",
-      "deployCount": 11,
-      "prCount": 48,
-      "deploymentsPerWeekMedian": 11,
-      "deploymentsPerWeekP85": 11,
-      "deploymentsPerWeekP95": 11,
-      "prCycleTimeHoursMedian": 1.4859722222222222,
-      "prCycleTimeHoursP85": 166.64993055555536,
-      "prCycleTimeHoursP95": 1600.469013888888,
-      "sampleWindowStart": "2025-02-23T04:32:34Z",
-      "sampleWindowEnd": "2025-10-01T10:02:59Z"
     },
     {
       "repo": "flyteorg/flyte",
@@ -2114,22 +1922,6 @@
       "sampleWindowEnd": "2025-10-04T09:02:13Z"
     },
     {
-      "repo": "HumanSignal/label-studio",
-      "language": "JavaScript",
-      "topics": "annotation|annotation-tool|annotations|boundingbox|computer-vision|data-labeling|dataset|datasets|deep-learning|image-annotation|image-classification|image-labeling|image-labelling-tool|label-studio|labeling|labeling-tool|mlops|semantic-segmentation|text-annotation|yolo",
-      "defaultBranch": "develop",
-      "deployCount": 9,
-      "prCount": 77,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": 21.176388888888887,
-      "prCycleTimeHoursP85": 133.51094444444433,
-      "prCycleTimeHoursP95": 218.5347222222223,
-      "sampleWindowStart": "2024-10-24T20:53:57Z",
-      "sampleWindowEnd": "2025-10-02T20:20:30Z"
-    },
-    {
       "repo": "hypermodeinc/dgraph",
       "language": "Go",
       "topics": "database|distributed|go|knowledge-graph",
@@ -2208,22 +2000,6 @@
       "prCycleTimeHoursP95": 183.79677777777766,
       "sampleWindowStart": "2025-04-30T20:43:21Z",
       "sampleWindowEnd": "2025-10-03T01:57:11Z"
-    },
-    {
-      "repo": "influxdata/influxdb",
-      "language": "Rust",
-      "topics": "database|go|influxdb|metrics|monitoring|react|rust|time-series",
-      "defaultBranch": "main",
-      "deployCount": 8,
-      "prCount": 235,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 2,
-      "deploymentsPerWeekP95": 2,
-      "prCycleTimeHoursMedian": 2.8516666666666666,
-      "prCycleTimeHoursP85": 54.615277777777784,
-      "prCycleTimeHoursP95": 219.88027777777737,
-      "sampleWindowStart": "2024-11-26T18:06:07Z",
-      "sampleWindowEnd": "2025-10-02T02:52:18Z"
     },
     {
       "repo": "intel/pcm",
@@ -2594,22 +2370,6 @@
       "sampleWindowEnd": "2025-10-02T17:12:49Z"
     },
     {
-      "repo": "langfuse/langfuse",
-      "language": "TypeScript",
-      "topics": "analytics|autogen|evaluation|langchain|large-language-models|llama-index|llm|llm-evaluation|llm-observability|llmops|monitoring|observability|open-source|openai|playground|prompt-engineering|prompt-management|self-hosted|ycombinator",
-      "defaultBranch": "main",
-      "deployCount": 223,
-      "prCount": 1513,
-      "deploymentsPerWeekMedian": 4,
-      "deploymentsPerWeekP85": 7,
-      "deploymentsPerWeekP95": 9,
-      "prCycleTimeHoursMedian": 0.6230555555555556,
-      "prCycleTimeHoursP85": 23.53394444444446,
-      "prCycleTimeHoursP95": 122.88561111111109,
-      "sampleWindowStart": "2024-10-04T05:35:10Z",
-      "sampleWindowEnd": "2025-10-02T20:33:43Z"
-    },
-    {
       "repo": "langgenius/dify",
       "language": "TypeScript",
       "topics": "agent|agentic-ai|agentic-framework|agentic-workflow|ai|automation|gemini|genai|gpt|gpt-4|llm|low-code|mcp|nextjs|no-code|openai|orchestration|python|rag|workflow",
@@ -2738,38 +2498,6 @@
       "sampleWindowEnd": "2025-07-24T05:50:12Z"
     },
     {
-      "repo": "loft-sh/vcluster",
-      "language": "Go",
-      "topics": "cloud-native|helm|k3s|k8s|kubectl|kubernetes|multi-tenancy|platform-engineering|vcluster|virtual-clusters",
-      "defaultBranch": "main",
-      "deployCount": 40,
-      "prCount": 456,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 3,
-      "deploymentsPerWeekP95": 3.8999999999999986,
-      "prCycleTimeHoursMedian": 6.332222222222223,
-      "prCycleTimeHoursP85": 162.8865972222222,
-      "prCycleTimeHoursP95": 518.0161805555556,
-      "sampleWindowStart": "2024-10-22T11:26:38Z",
-      "sampleWindowEnd": "2025-10-02T09:34:32Z"
-    },
-    {
-      "repo": "louislam/uptime-kuma",
-      "language": "JavaScript",
-      "topics": "docker|monitor|monitoring|responsive|self-hosted|selfhosted|single-page-app|socket-io|uptime|uptime-monitoring|webapp|websocket",
-      "defaultBranch": "master",
-      "deployCount": 1,
-      "prCount": 63,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": 19.50861111111111,
-      "prCycleTimeHoursP85": 616.7569999999996,
-      "prCycleTimeHoursP95": 3135.419361111109,
-      "sampleWindowStart": "2024-10-18T20:30:58Z",
-      "sampleWindowEnd": "2025-10-01T17:20:32Z"
-    },
-    {
       "repo": "ly525/luban-h5",
       "language": "JavaScript",
       "topics": "ant-design|design-tool|editor|h5|mobile-page-maker|page-builder|page-editor|page-generator|page-maker|strapi|vue|vuejs|vuejs2|web-design|web-design-framework|webflow",
@@ -2850,22 +2578,6 @@
       "sampleWindowEnd": "2025-10-03T07:12:16Z"
     },
     {
-      "repo": "meshery/meshery",
-      "language": "JavaScript",
-      "topics": "cloud-native|cncf|control-plane|docker|gitops|golang|gsoc|hacktoberfest|infrastructure-as-code|internal-developer-platform|kubernetes|kubernetes-operator|management-plane|meshery|opa|platform-engineering|reactjs|visualization|wasm|webassembly",
-      "defaultBranch": "master",
-      "deployCount": 196,
-      "prCount": 91,
-      "deploymentsPerWeekMedian": 3.5,
-      "deploymentsPerWeekP85": 7,
-      "deploymentsPerWeekP95": 8.549999999999997,
-      "prCycleTimeHoursMedian": 10.218333333333334,
-      "prCycleTimeHoursP85": 95.96000000000001,
-      "prCycleTimeHoursP95": 236.14680555555555,
-      "sampleWindowStart": "2024-10-04T19:03:00Z",
-      "sampleWindowEnd": "2025-10-02T14:34:54Z"
-    },
-    {
       "repo": "metabase/metabase",
       "language": "Clojure",
       "topics": "analytics|bi|business-intelligence|businessintelligence|clojure|dashboard|data|data-analysis|data-visualization|database|metabase|mysql|postgres|postgresql|reporting|slack|sql-editor|visualization",
@@ -2928,22 +2640,6 @@
       "prCycleTimeHoursP95": 538.178208333333,
       "sampleWindowStart": "2024-10-08T03:53:20Z",
       "sampleWindowEnd": "2025-09-30T15:19:52Z"
-    },
-    {
-      "repo": "minio/minio",
-      "language": "Go",
-      "topics": "amazon-s3|cloud|cloudnative|cloudstorage|go|k8s|kubernetes|multi-cloud|multi-cloud-kubernetes|objectstorage|s3|storage",
-      "defaultBranch": "master",
-      "deployCount": 20,
-      "prCount": 3,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1.0999999999999979,
-      "prCycleTimeHoursMedian": 20.650833333333335,
-      "prCycleTimeHoursP85": 25.236805555555556,
-      "prCycleTimeHoursP95": 26.547083333333333,
-      "sampleWindowStart": "2024-10-13T14:05:35Z",
-      "sampleWindowEnd": "2025-10-01T06:06:01Z"
     },
     {
       "repo": "Mintplex-Labs/anything-llm",
@@ -3186,38 +2882,6 @@
       "sampleWindowEnd": "2025-09-28T05:38:40Z"
     },
     {
-      "repo": "nicolargo/glances",
-      "language": "Python",
-      "topics": "monitoring|multi-platform|python|restful|restful-api|system|terminal|web",
-      "defaultBranch": "develop",
-      "deployCount": 8,
-      "prCount": 33,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1.5,
-      "deploymentsPerWeekP95": 2.5,
-      "prCycleTimeHoursMedian": 37.733333333333334,
-      "prCycleTimeHoursP85": 108.58744444444444,
-      "prCycleTimeHoursP95": 137.05561111111112,
-      "sampleWindowStart": "2024-10-20T16:02:38Z",
-      "sampleWindowEnd": "2025-09-28T12:17:24Z"
-    },
-    {
-      "repo": "nuke-build/nuke",
-      "language": "C#",
-      "topics": "build-automation|continuous-integration|nuke|orchestration",
-      "defaultBranch": "develop",
-      "deployCount": 0,
-      "prCount": 5,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": 726.0241666666667,
-      "prCycleTimeHoursP85": 879.4826666666667,
-      "prCycleTimeHoursP95": 998.7986666666666,
-      "sampleWindowStart": "2024-12-02T18:48:25Z",
-      "sampleWindowEnd": "2025-01-15T21:23:40Z"
-    },
-    {
       "repo": "oegedijk/explainerdashboard",
       "language": "Python",
       "topics": "dash|dashboard|data-scientists|explainer|inner-workings|interactive-dashboards|interactive-plots|model-predictions|permutation-importances|plotly|shap|shap-values|xai|xai-library",
@@ -3330,38 +2994,6 @@
       "sampleWindowEnd": "2025-10-04T10:24:28Z"
     },
     {
-      "repo": "openfaas/faas",
-      "language": "Go",
-      "topics": "docker|faas|functions|functions-as-a-service|gitops|golang|k8s|kubernetes|lambda|nodejs|paas|prometheus|serverless|serverless-functions",
-      "defaultBranch": "master",
-      "deployCount": 4,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": "2024-11-18T21:47:17Z",
-      "sampleWindowEnd": "2025-08-29T14:25:49Z"
-    },
-    {
-      "repo": "openobserve/openobserve",
-      "language": "Rust",
-      "topics": "analytics|apm|datadog|elasticsearch|grafana|jaeger|kibana|log-analytics|log-management|log-search|logs|metrics|monitoring|observability|openobserve|opentelemetry|prometheus|rust-lang|splunk|traces",
-      "defaultBranch": "main",
-      "deployCount": 46,
-      "prCount": 1404,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 3,
-      "deploymentsPerWeekP95": 3.6999999999999993,
-      "prCycleTimeHoursMedian": 6.589583333333334,
-      "prCycleTimeHoursP85": 94.9078333333333,
-      "prCycleTimeHoursP95": 310.8603749999998,
-      "sampleWindowStart": "2024-10-23T12:46:44Z",
-      "sampleWindowEnd": "2025-10-01T13:20:05Z"
-    },
-    {
       "repo": "openreplay/openreplay",
       "language": "TypeScript",
       "topics": "analytics|angular|devtools|feature-flags|ios|javascript|nextjs|product-analytics|react|react-native|real-user-monitoring|session-replay|svelte|typescript|vue|web-vitals",
@@ -3376,22 +3008,6 @@
       "prCycleTimeHoursP95": 51.85513888888888,
       "sampleWindowStart": "2025-06-13T15:45:38Z",
       "sampleWindowEnd": "2025-10-03T13:22:03Z"
-    },
-    {
-      "repo": "openresty/openresty",
-      "language": "C",
-      "topics": "",
-      "defaultBranch": "master",
-      "deployCount": 0,
-      "prCount": 3,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": 706.0677777777778,
-      "prCycleTimeHoursP85": 1386.4913055555553,
-      "prCycleTimeHoursP95": 1580.8980277777775,
-      "sampleWindowStart": "2025-06-28T16:46:51Z",
-      "sampleWindowEnd": "2025-09-12T03:22:12Z"
     },
     {
       "repo": "opensearch-project/OpenSearch",
@@ -3554,22 +3170,6 @@
       "sampleWindowEnd": "2025-10-03T15:02:10Z"
     },
     {
-      "repo": "portainer/portainer",
-      "language": "TypeScript",
-      "topics": "docker|docker-compose|docker-container|docker-deployment|docker-image|docker-swarm|docker-ui|dockerfile|hacktoberfest|kubernetes|moby|portainer|ui",
-      "defaultBranch": "develop",
-      "deployCount": 36,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 2,
-      "deploymentsPerWeekP95": 2,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": "2024-10-07T19:34:13Z",
-      "sampleWindowEnd": "2025-09-25T03:07:58Z"
-    },
-    {
       "repo": "PostHog/posthog",
       "language": "Python",
       "topics": "ab-testing|ai-analytics|analytics|cdp|data-warehouse|experiments|feature-flags|javascript|product-analytics|python|react|session-replay|surveys|typescript|web-analytics",
@@ -3616,22 +3216,6 @@
       "prCycleTimeHoursP95": 1152.648888888889,
       "sampleWindowStart": "2024-10-14T15:44:41Z",
       "sampleWindowEnd": "2025-10-02T10:38:54Z"
-    },
-    {
-      "repo": "promptfoo/promptfoo",
-      "language": "TypeScript",
-      "topics": "ci|ci-cd|cicd|evaluation|evaluation-framework|llm|llm-eval|llm-evaluation|llm-evaluation-framework|llmops|pentesting|prompt-engineering|prompt-testing|prompts|rag|red-teaming|testing|vulnerability-scanners",
-      "defaultBranch": "main",
-      "deployCount": 143,
-      "prCount": 805,
-      "deploymentsPerWeekMedian": 2,
-      "deploymentsPerWeekP85": 5,
-      "deploymentsPerWeekP95": 5,
-      "prCycleTimeHoursMedian": 5.881944444444445,
-      "prCycleTimeHoursP85": 99.90333333333328,
-      "prCycleTimeHoursP95": 338.07344444444436,
-      "sampleWindowStart": "2024-10-04T15:33:56Z",
-      "sampleWindowEnd": "2025-10-02T17:27:52Z"
     },
     {
       "repo": "pulumi/pulumi",
@@ -3810,22 +3394,6 @@
       "sampleWindowEnd": "2025-10-03T15:22:03Z"
     },
     {
-      "repo": "refinedev/refine",
-      "language": "TypeScript",
-      "topics": "admin|admin-ui|ant-design|crud|developer-tools|frontend-framework|good-first-issue|graphql|hacktoberfest|headless|internal-tools|javascript|low-code|nestjs|nextjs|open-source-project|react|react-framework|react-hooks|typescript",
-      "defaultBranch": "main",
-      "deployCount": 104,
-      "prCount": 189,
-      "deploymentsPerWeekMedian": 14.5,
-      "deploymentsPerWeekP85": 21.25,
-      "deploymentsPerWeekP95": 33.75,
-      "prCycleTimeHoursMedian": 6.917222222222223,
-      "prCycleTimeHoursP85": 95.61199999999998,
-      "prCycleTimeHoursP95": 306.6019444444444,
-      "sampleWindowStart": "2024-11-25T07:52:06Z",
-      "sampleWindowEnd": "2025-10-02T08:22:22Z"
-    },
-    {
       "repo": "release-it/release-it",
       "language": "JavaScript",
       "topics": "automation|bump|changelog|ci-mode|cli|continuous-delivery|git|github|gitlab|gitlab-releases|hooks|npm|publish|release|release-automation|release-helper|semver|tool|version",
@@ -3904,22 +3472,6 @@
       "prCycleTimeHoursP95": 165.28938888888888,
       "sampleWindowStart": "2024-10-04T05:20:35Z",
       "sampleWindowEnd": "2025-10-03T00:32:02Z"
-    },
-    {
-      "repo": "runatlantis/atlantis",
-      "language": "Go",
-      "topics": "atlantis|automation|devops|go|golang|hacktoberfest|sre|tacos|terraform",
-      "defaultBranch": "main",
-      "deployCount": 7,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": "2024-11-22T01:02:25Z",
-      "sampleWindowEnd": "2025-09-18T16:00:07Z"
     },
     {
       "repo": "rustdesk/rustdesk",
@@ -4048,22 +3600,6 @@
       "prCycleTimeHoursP95": 442.4051388888889,
       "sampleWindowStart": "2024-11-12T17:38:19Z",
       "sampleWindowEnd": "2025-10-02T18:34:11Z"
-    },
-    {
-      "repo": "semaphoreui/semaphore",
-      "language": "Go",
-      "topics": "ansible|awx|ci|cicd|devops|docker|docker-ui|go|golang|jenkins|opentofu|pulumi|terraform|terraform-ui|terragrunt",
-      "defaultBranch": "develop",
-      "deployCount": 53,
-      "prCount": 31,
-      "deploymentsPerWeekMedian": 2,
-      "deploymentsPerWeekP85": 3,
-      "deploymentsPerWeekP95": 4.899999999999999,
-      "prCycleTimeHoursMedian": 37.000277777777775,
-      "prCycleTimeHoursP85": 414.1716666666666,
-      "prCycleTimeHoursP95": 543.20875,
-      "sampleWindowStart": "2024-10-15T09:40:14Z",
-      "sampleWindowEnd": "2025-09-27T16:51:48Z"
     },
     {
       "repo": "serverless/serverless",
@@ -4224,22 +3760,6 @@
       "prCycleTimeHoursP95": 11.13125,
       "sampleWindowStart": "2025-08-16T08:30:39Z",
       "sampleWindowEnd": "2025-10-03T17:41:45Z"
-    },
-    {
-      "repo": "stan-smith/FossFLOW",
-      "language": "TypeScript",
-      "topics": "devops|infra|infrastructure",
-      "defaultBranch": "master",
-      "deployCount": 18,
-      "prCount": 38,
-      "deploymentsPerWeekMedian": 3,
-      "deploymentsPerWeekP85": 4.8,
-      "deploymentsPerWeekP95": 5.6,
-      "prCycleTimeHoursMedian": 0.8029166666666667,
-      "prCycleTimeHoursP85": 59.178597222222216,
-      "prCycleTimeHoursP95": 102.75980555555553,
-      "sampleWindowStart": "2025-07-01T15:23:01Z",
-      "sampleWindowEnd": "2025-10-01T22:09:57Z"
     },
     {
       "repo": "storybookjs/storybook",
@@ -4418,22 +3938,6 @@
       "sampleWindowEnd": "2025-09-22T13:23:00Z"
     },
     {
-      "repo": "taosdata/TDengine",
-      "language": "C",
-      "topics": "bigdata|cloud-native|cluster|connected-vehicles|database|distributed|financial-analysis|industrial-iot|iot|metrics|monitoring|scalability|sql|tdengine|time-series|time-series-database|tsdb",
-      "defaultBranch": "main",
-      "deployCount": 14,
-      "prCount": 1081,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": 6.743333333333333,
-      "prCycleTimeHoursP85": 66.83916666666667,
-      "prCycleTimeHoursP95": 167.81666666666666,
-      "sampleWindowStart": "2024-09-30T02:26:03Z",
-      "sampleWindowEnd": "2025-10-01T04:06:54Z"
-    },
-    {
       "repo": "tauri-apps/tauri",
       "language": "Rust",
       "topics": "desktop-app|high-performance|mobile-app|native-app|rust|web-frontend|webview",
@@ -4530,22 +4034,6 @@
       "sampleWindowEnd": "2025-10-03T07:36:41Z"
     },
     {
-      "repo": "ToolJet/ToolJet",
-      "language": "JavaScript",
-      "topics": "ai-app-builder|docker|hacktoberfest|internal-applications|internal-project|internal-tool|internal-tools|javascript|kubernetes|low-code|low-code-development-platform|low-code-framework|no-code|nodejs|reactjs|self-hosted|typescript|web-development-tools|workflow-automation",
-      "defaultBranch": "develop",
-      "deployCount": 93,
-      "prCount": 178,
-      "deploymentsPerWeekMedian": 2,
-      "deploymentsPerWeekP85": 6,
-      "deploymentsPerWeekP95": 7,
-      "prCycleTimeHoursMedian": 1.8070833333333334,
-      "prCycleTimeHoursP85": 274.0621666666664,
-      "prCycleTimeHoursP95": 820.8636250000003,
-      "sampleWindowStart": "2024-10-09T15:50:43Z",
-      "sampleWindowEnd": "2025-10-01T16:17:20Z"
-    },
-    {
       "repo": "traefik/traefik",
       "language": "Go",
       "topics": "consul|docker|etcd|go|golang|kubernetes|letsencrypt|load-balancer|marathon|mesos|microservice|reverse-proxy|traefik|zookeeper",
@@ -4626,22 +4114,6 @@
       "sampleWindowEnd": "2025-10-01T21:44:55Z"
     },
     {
-      "repo": "Unitech/pm2",
-      "language": "JavaScript",
-      "topics": "command-line|command-line-tool|deploy|load-balancer|monitoring|node|nodejs|pm2|process-manager|production",
-      "defaultBranch": "master",
-      "deployCount": 9,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": 1.5,
-      "deploymentsPerWeekP85": 2,
-      "deploymentsPerWeekP95": 2,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": "2025-03-11T09:16:42Z",
-      "sampleWindowEnd": "2025-09-22T09:02:56Z"
-    },
-    {
       "repo": "Unleash/unleash",
       "language": "TypeScript",
       "topics": "activation-strategies|collaboration|continuous-delivery|continuous-deployment|devops|devtool|experiments|feature|feature-flags|feature-toggle|feature-toggles|feature-toggling|hacktoberfest|integration|platform-engineering|sdk|toggles|unleash|variants",
@@ -4690,22 +4162,6 @@
       "sampleWindowEnd": "2025-08-11T11:16:49Z"
     },
     {
-      "repo": "vectordotdev/vector",
-      "language": "Rust",
-      "topics": "events|forwarder|hacktoberfest|logs|metrics|observability|parser|pipeline|router|rust|stream-processing|vector",
-      "defaultBranch": "master",
-      "deployCount": 12,
-      "prCount": 183,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": 2.9163888888888887,
-      "prCycleTimeHoursP85": 222.09983333333332,
-      "prCycleTimeHoursP95": 738.8576388888893,
-      "sampleWindowStart": "2024-10-21T14:08:49Z",
-      "sampleWindowEnd": "2025-10-02T22:14:02Z"
-    },
-    {
       "repo": "vercel/next.js",
       "language": "JavaScript",
       "topics": "blog|browser|compiler|components|hybrid|nextjs|node|react|server-rendering|ssg|static|static-site-generator|universal|vercel",
@@ -4720,22 +4176,6 @@
       "prCycleTimeHoursP95": 442.3522222222221,
       "sampleWindowStart": "2024-12-05T15:37:14Z",
       "sampleWindowEnd": "2025-10-03T10:09:12Z"
-    },
-    {
-      "repo": "VictoriaMetrics/VictoriaMetrics",
-      "language": "Go",
-      "topics": "database|grafana|graphite|influxdb|kubernetes|monitoring|observability|opentelemetry|opentsdb|prometheus|promql|thanos|tsdb",
-      "defaultBranch": "master",
-      "deployCount": 124,
-      "prCount": 31,
-      "deploymentsPerWeekMedian": 2,
-      "deploymentsPerWeekP85": 4,
-      "deploymentsPerWeekP95": 5.799999999999997,
-      "prCycleTimeHoursMedian": 122.60305555555556,
-      "prCycleTimeHoursP85": 400.8931944444445,
-      "prCycleTimeHoursP95": 450.45194444444445,
-      "sampleWindowStart": "2024-10-08T10:23:25Z",
-      "sampleWindowEnd": "2025-10-02T19:04:20Z"
     },
     {
       "repo": "vitessio/vitess",
@@ -4864,22 +4304,6 @@
       "prCycleTimeHoursP95": 673.8063472222219,
       "sampleWindowStart": "2024-10-17T07:22:27Z",
       "sampleWindowEnd": "2025-10-01T13:47:29Z"
-    },
-    {
-      "repo": "weaviate/weaviate",
-      "language": "Go",
-      "topics": "approximate-nearest-neighbor-search|generative-search|grpc|hnsw|hybrid-search|image-search|information-retrieval|mlops|nearest-neighbor-search|neural-search|recommender-system|search-engine|semantic-search|semantic-search-engine|similarity-search|vector-database|vector-search|vector-search-engine|vectors|weaviate",
-      "defaultBranch": "main",
-      "deployCount": 134,
-      "prCount": 206,
-      "deploymentsPerWeekMedian": 2,
-      "deploymentsPerWeekP85": 4,
-      "deploymentsPerWeekP95": 5,
-      "prCycleTimeHoursMedian": 4.448888888888889,
-      "prCycleTimeHoursP85": 149.166875,
-      "prCycleTimeHoursP95": 477.764375,
-      "sampleWindowStart": "2024-10-08T12:55:34Z",
-      "sampleWindowEnd": "2025-10-02T08:16:42Z"
     },
     {
       "repo": "webstudio-is/webstudio",
