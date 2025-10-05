@@ -67,6 +67,12 @@ interface RepoAggregateRow {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, "..");
+
+// NOTE: Deployment metrics use a single preferred source per repo (actions/deployments/releases)
+// configured in config/repos.sample.json. The collector persists everything into one payload and
+// this aggregator emits exactly one row per repo. If a repo needs a different data source, update
+// its config entry rather than merging multiple sources here—avoids double counting and keeps the
+// audit trail straightforward.
 const DEFAULT_INPUT_DIR = path.join(PROJECT_ROOT, "data", "raw");
 const DEFAULT_OUTPUT_DIR = path.join(PROJECT_ROOT, "output");
 const DEFAULT_SAMPLE_PATH = path.join(PROJECT_ROOT, "config", "repos.sample.json");

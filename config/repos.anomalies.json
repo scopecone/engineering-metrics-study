@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "ClickHouse/ClickHouse",
+    "flags": [
+      "mttr_cfr_exceeds_one",
+      "mttr_manual_review"
+    ],
+    "note": "70 revert commits in 120d; CFR > 100% likely due to backport-style reverts. Keep out of aggregate CFR medians until classified."
+  },
+  {
+    "slug": "metabase/metabase",
+    "flags": [
+      "mttr_high_cfr",
+      "mttr_manual_review"
+    ],
+    "note": "Median MTTR 152h with ~76% CFR; investigate weekly release cadence before storytelling."
+  },
+  {
+    "slug": "vercel/next.js",
+    "flags": [
+      "mttr_high_cfr",
+      "deploy_volume_subweekly"
+    ],
+    "note": "<1 deploy/week in 120d slice and 5 reversions; treat CFR as exploratory only."
+  },
+  {
+    "slug": "envoyproxy/envoy",
+    "flags": [
+      "mttr_high_cfr"
+    ],
+    "note": "12 reverts / ~17.3 scaled deploys = 69% CFR. Reverts are genuine production rollbacks, but low deploy volume (1/week in 120d) inflates the ratio. Exclude from CFR median."
+  },
+  {
+    "slug": "hashicorp/vault",
+    "flags": [
+      "mttr_cfr_exceeds_one",
+      "deploy_volume_subweekly"
+    ],
+    "note": "8 reverts / ~5.8 scaled deploys = 138% raw CFR (capped at 100%). Sub-weekly deploy rate (0.34/week) with 3 reverts missing originalDate suggests backport cleanup. Exclude from CFR median."
+  },
+  {
+    "slug": "hashicorp/terraform",
+    "flags": [
+      "deploy_volume_subweekly"
+    ],
+    "note": "3 reverts / ~6.5 scaled deploys = 46% CFR. Sub-weekly deploy rate (0.38/week). Reverts are genuine but sparse deploys inflate CFR. Exclude from CFR median."
+  },
+  {
+    "slug": "temporalio/temporal",
+    "flags": [
+      "deploy_volume_subweekly",
+      "deploy_coverage_sparse"
+    ],
+    "note": "1 revert / ~3.4 scaled deploys = 30% CFR. Sub-weekly deploy rate (0.20/week) with 321 merged PRs suggests deploy detection is incomplete. Exclude from CFR median."
+  },
+  {
+    "slug": "iina/iina",
+    "flags": [
+      "pr_cycle_low_throughput",
+      "pr_volume_sparse"
+    ],
+    "note": "Only 3 PRs merged in 365 days with 138–264 day cycle times; reflects maintainer scarcity rather than workflow speed. Exclude from PR-cycle comparisons."
+  },
+  {
+    "slug": "wallabag/wallabag",
+    "flags": [
+      "pr_cycle_low_throughput",
+      "pr_volume_sparse"
+    ],
+    "note": "Three merged PRs (296d, 112d, 2h bot); low maintainer capacity and translation bot skew median. Exclude from PR-cycle comparisons."
+  }
+]

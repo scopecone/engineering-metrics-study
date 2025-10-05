@@ -200,7 +200,25 @@ async function fetchIncidentIssues(
   repo: string,
   sinceIso: string
 ): Promise<Array<{ number: number; title: string; url: string; createdAt: string }>> {
-  const labels = ["incident", "rollback", "postmortem", "outage"];
+  const labels = [
+    "incident",
+    "incidents",
+    "rollback",
+    "postmortem",
+    "post-mortem",
+    "outage",
+    "incident-report",
+    "production-incident",
+    "sev1",
+    "sev2",
+    "sev",
+    "severity",
+    "downtime",
+    "service-disruption",
+    "hotfix",
+    "rca",
+    "root-cause"
+  ];
   const incidents: Array<{ number: number; title: string; url: string; createdAt: string }> = [];
 
   for (const label of labels) {
