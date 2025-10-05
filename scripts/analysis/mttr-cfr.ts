@@ -17,6 +17,8 @@ interface RepoResult {
   repo: string;
   windowDays: number;
   deployCount?: number | null;
+  deployCountWindow?: number | null;
+  deploysPerWeekWindow?: number | null;
   prCount?: number | null;
   revertCount: number;
   revertMedianHours: number | null;
@@ -26,15 +28,30 @@ interface RepoResult {
   incidentCount: number;
   incidentIssues: Array<{ number: number; title: string; url: string; createdAt: string }>;
   changeFailureRate: number | null;
+  changeFailureRateRaw: number | null;
+  changeFailureRatePerPR: number | null;
+  flags: string[];
 }
 
 interface MetricsSummaryRow {
   repo: string;
   deployCount?: number | null;
   prCount?: number | null;
+  sampleWindowStart?: string | null;
+  sampleWindowEnd?: string | null;
+  sampleWindowDays?: number | null;
 }
 
 const program = new Command();
+
+const defaultConcurrency = (() => {
+  const fromEnv = process.env.MTTR_CONCURRENCY;
+  if (!fromEnv) {
+    return 1;
+  }
+  const parsed = Number.parseInt(fromEnv, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
+})();
 
 program
   .description("Prototype MTTR/CFR heuristics based on revert commits and incident issues")
@@ -45,6 +62,18 @@ program
   .option("--days <number>", "Lookback window in days", (value) => Number.parseInt(value, 10), 90)
   .option("--output <path>", "Optional JSON output file", path.resolve(process.cwd(), "output/metrics-mttr-cfr.json"))
   .option("--summary <path>", "Path to metrics-summary.json", path.resolve(process.cwd(), "output/metrics-summary.json"))
+  .option(
+    "--concurrency <number>",
+    "Number of repositories to analyse in parallel",
+    (value) => {
+      const parsed = Number.parseInt(value, 10);
+      if (!Number.isFinite(parsed) || parsed <= 0) {
+        throw new Error("--concurrency must be a positive integer");
+      }
+      return parsed;
+    },
+    defaultConcurrency
+  )
   .parse(process.argv);
 
 function ensureToken(): string {
@@ -67,10 +96,21 @@ async function loadMetricsSummary(summaryPath: string): Promise<Map<string, Metr
   const map = new Map<string, MetricsSummaryRow>();
   for (const row of data.rows) {
     if (row && typeof row.repo === "string") {
+      let sampleWindowDays: number | null = null;
+      if (typeof row.sampleWindowStart === "string" && typeof row.sampleWindowEnd === "string") {
+        const start = Date.parse(row.sampleWindowStart);
+        const end = Date.parse(row.sampleWindowEnd);
+        if (Number.isFinite(start) && Number.isFinite(end) && end > start) {
+          sampleWindowDays = Math.max(1, Math.round((end - start) / (1000 * 60 * 60 * 24)));
+        }
+      }
       map.set(row.repo.toLowerCase(), {
         repo: row.repo,
         deployCount: row.deployCount ?? null,
         prCount: row.prCount ?? null,
+        sampleWindowStart: typeof row.sampleWindowStart === "string" ? row.sampleWindowStart : null,
+        sampleWindowEnd: typeof row.sampleWindowEnd === "string" ? row.sampleWindowEnd : null,
+        sampleWindowDays,
       });
     }
   }
@@ -217,13 +257,49 @@ async function analyseRepo(
 
   const row = metricsMap.get(repoSlug.toLowerCase());
   const deployCount = row?.deployCount ?? null;
-  const changeFailureRate = deployCount && deployCount > 0 ? revertCommits.length / deployCount : null;
+  let deployCountWindow: number | null = null;
+  if (deployCount !== null && deployCount > 0) {
+    const sampleWindowDays = row?.sampleWindowDays ?? null;
+    if (sampleWindowDays && sampleWindowDays > 0) {
+      deployCountWindow = (deployCount * days) / sampleWindowDays;
+    } else {
+      deployCountWindow = deployCount;
+    }
+  }
+  const prCount = row?.prCount ?? null;
+  const changeFailureRateRaw = deployCountWindow && deployCountWindow > 0 ? revertCommits.length / deployCountWindow : null;
+  const changeFailureRate = changeFailureRateRaw !== null ? Math.min(changeFailureRateRaw, 1) : null;
+  const changeFailureRatePerPR = prCount && prCount > 0 ? revertCommits.length / prCount : null;
+
+  const flags: string[] = [];
+  const deploysPerWeekWindow = deployCountWindow && deployCountWindow > 0 ? deployCountWindow / (days / 7) : null;
+  if (deployCountWindow === null) {
+    flags.push("missing_deploy_window");
+  } else {
+    if (deployCountWindow < 1) {
+      flags.push("low_deploy_volume");
+    }
+    if (deploysPerWeekWindow !== null && deploysPerWeekWindow < 1) {
+      flags.push("subweekly_deploy_rate");
+    }
+  }
+  if (deployCount !== null && prCount !== null && prCount > 0 && deployCount / prCount < 0.05) {
+    flags.push("deploy_coverage_sparse");
+  }
+  if (changeFailureRateRaw !== null && changeFailureRateRaw >= 0.5) {
+    flags.push("high_cfr_outlier");
+  }
+  if (changeFailureRateRaw !== null && changeFailureRateRaw > 1) {
+    flags.push("cfr_exceeds_one");
+  }
 
   return {
     repo: repoSlug,
     windowDays: days,
     deployCount,
-    prCount: row?.prCount ?? null,
+    deployCountWindow,
+    deploysPerWeekWindow,
+    prCount,
     revertCount: revertCommits.length,
     revertMedianHours: percentile(recoveryDurations, 0.5),
     revertP85Hours: percentile(recoveryDurations, 0.85),
@@ -232,6 +308,9 @@ async function analyseRepo(
     incidentCount: incidentIssues.length,
     incidentIssues,
     changeFailureRate,
+    changeFailureRateRaw,
+    changeFailureRatePerPR,
+    flags,
   };
 }
 
@@ -241,6 +320,7 @@ async function main() {
     days: number;
     output: string;
     summary: string;
+    concurrency: number;
   }>();
 
   const repos = options.repo ?? [];
@@ -252,15 +332,26 @@ async function main() {
   const octokit = new Octokit({ auth: token });
   const metricsMap = await loadMetricsSummary(options.summary);
 
-  const results: RepoResult[] = [];
-  for (const repo of repos) {
-    console.log(`\n🔍 Analysing ${repo} (last ${options.days} days)…`);
-    const result = await analyseRepo(octokit, repo, options.days, metricsMap);
-    results.push(result);
-    console.log(
-      `  Reverts: ${result.revertCount}, MTTR median: ${result.revertMedianHours?.toFixed(1) ?? "n/a"}h, incidents: ${result.incidentCount}`
+  const concurrency = Math.max(1, Math.min(10, options.concurrency ?? 1));
+  const orderedResults: RepoResult[] = new Array(repos.length);
+  for (let index = 0; index < repos.length; index += concurrency) {
+    const slice = repos.slice(index, index + concurrency);
+    const chunkResults = await Promise.all(
+      slice.map(async (repo, offset) => {
+        console.log(`\n🔍 Analysing ${repo} (last ${options.days} days)…`);
+        const result = await analyseRepo(octokit, repo, options.days, metricsMap);
+        console.log(
+          `  Reverts: ${result.revertCount}, MTTR median: ${result.revertMedianHours?.toFixed(1) ?? "n/a"}h, incidents: ${result.incidentCount}`
+        );
+        return { repoIndex: index + offset, result };
+      })
     );
+    for (const item of chunkResults) {
+      orderedResults[item.repoIndex] = item.result;
+    }
   }
+
+  const results = orderedResults.filter((r): r is RepoResult => Boolean(r));
 
   const outputPayload = {
     generatedAt: new Date().toISOString(),

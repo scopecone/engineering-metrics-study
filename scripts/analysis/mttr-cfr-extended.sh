@@ -4,10 +4,14 @@ OUTPUT="${1:-output/metrics-mttr-cfr-extended.json}"
 shift || true
 
 PARTS=()
+CONCURRENCY="${MTTR_CONCURRENCY:-4}"
+if [[ "$CONCURRENCY" -lt 1 ]]; then
+  CONCURRENCY=1
+fi
 run_batch() {
   local out="$1"
   shift
-  npm run mttr-cfr -- --days 120 --output "$out" "$@"
+  npm run mttr-cfr -- --days 120 --concurrency "$CONCURRENCY" --output "$out" "$@"
   PARTS+=("$out")
 }
 
@@ -29,10 +33,10 @@ run_batch "$OUTPUT.part2.json" \
   --repo ClickHouse/ClickHouse \
   --repo vercel/next.js \
   --repo toeverything/AFFiNE \
-  --repo lumakedr/promptfoo
+  --repo promptfoo/promptfoo
 
-node - <<'NODE'
-const fs = require('fs');
+node --input-type=module - "$OUTPUT" "${PARTS[@]}" <<'NODE'
+import fs from 'fs';
 const output = process.argv[2];
 const parts = process.argv.slice(3);
 const repos = [];
@@ -51,4 +55,4 @@ fs.writeFileSync(output, JSON.stringify(merged, null, 2) + '\n');
 for (const part of parts) {
   fs.unlinkSync(part);
 }
-NODE "$OUTPUT" "${PARTS[@]}"
+NODE

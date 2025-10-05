@@ -1,6 +1,7 @@
 # Generated API payloads and intermediate caches
 /data/raw/
 /tmp/
+output/metrics-mttr-cfr.json
 
 # Local environment files
 .env

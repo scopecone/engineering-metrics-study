@@ -1,764 +1,13 @@
 {
-  "generatedAt": "2025-10-05T12:42:16.884Z",
+  "generatedAt": "2025-10-05T13:38:00.486Z",
   "windowDays": 120,
   "repos": [
-    {
-      "repo": "18F/identity-idp",
-      "windowDays": 120,
-      "deployCount": 108,
-      "prCount": 277,
-      "revertCount": 4,
-      "revertMedianHours": 130.09402777777777,
-      "revertP85Hours": 2229.1420277777775,
-      "revertP95Hours": 3339.5008611111098,
-      "revertEvents": [
-        {
-          "revertSha": "b68b7472163bfc728ea44e46c30feab7f090ce09",
-          "revertedSha": "006fa181421168507fd2b808d26d2d98ea322731",
-          "revertDate": "2025-10-02T23:39:27Z",
-          "originalDate": "2025-04-23T16:58:38Z",
-          "recoveryHours": 3894.680277777778
-        },
-        {
-          "revertSha": "2f80fe6944ba6bf43c8e509a3253e15f2f8d4fe9",
-          "revertedSha": "89cec038a2d180bd5e0557de013c5020d6a0b921",
-          "revertDate": "2025-07-24T16:30:52Z",
-          "originalDate": "2025-07-16T15:01:49Z",
-          "recoveryHours": 193.48416666666665
-        },
-        {
-          "revertSha": "4e05396cace0534250bd125a46bafb509a1829fb",
-          "revertedSha": "53d9044081d6c5b758ffaed3229754938fd6b64e",
-          "revertDate": "2025-06-30T17:42:08Z",
-          "originalDate": "2025-06-30T13:00:47Z",
-          "recoveryHours": 4.689166666666667
-        },
-        {
-          "revertSha": "8303c3e2264562ce8f4495aedad55267afaca967",
-          "revertedSha": "8ffd1929019daf518e5950ad8d249191d88cd316",
-          "revertDate": "2025-06-30T16:39:39Z",
-          "originalDate": "2025-06-27T21:57:25Z",
-          "recoveryHours": 66.70388888888888
-        }
-      ],
-      "incidentCount": 0,
-      "incidentIssues": [],
-      "changeFailureRate": 0.037037037037037035
-    },
-    {
-      "repo": "Budibase/budibase",
-      "windowDays": 120,
-      "deployCount": 228,
-      "prCount": 948,
-      "revertCount": 17,
-      "revertMedianHours": 26.819027777777777,
-      "revertP85Hours": 79.82201388888889,
-      "revertP95Hours": 125.35215277777777,
-      "revertEvents": [
-        {
-          "revertSha": "4f32c687082df10d129b8107d235676514c7f6a8",
-          "revertedSha": "a934767c9a89cf71ecd3aa4e8662e96ecf3d23ac",
-          "revertDate": "2025-09-29T15:26:19Z",
-          "originalDate": "2025-09-29T14:46:30Z",
-          "recoveryHours": 0.6636111111111112
-        },
-        {
-          "revertSha": "7989a7293dd67c88c6be0412ed24cf484a794cb5",
-          "revertedSha": "d1bae6f33fed8ed7604bbec7b42cb92857107fb3",
-          "revertDate": "2025-09-29T12:26:56Z",
-          "originalDate": null,
-          "recoveryHours": null
-        },
-        {
-          "revertSha": "f21a2c4c0bdc8d769bce38f7f3d716d8e3123ee1",
-          "revertedSha": "e9093fd41f424b212f73d93b6c4fc0f26a00af61",
-          "revertDate": "2025-09-29T12:26:14Z",
-          "originalDate": "2025-09-29T09:48:09Z",
-          "recoveryHours": 2.6347222222222224
-        },
-        {
-          "revertSha": "aea26dcd5f4f67a15e04fece4119a65c309fcaca",
-          "revertedSha": "6245ad6c664eb525d464b33f47fe31b9246c819e",
-          "revertDate": "2025-09-29T14:32:21Z",
-          "originalDate": "2025-09-29T14:05:20Z",
-          "recoveryHours": 0.4502777777777778
-        },
-        {
-          "revertSha": "c23894995612b0c272930f19cfc781be216606c1",
-          "revertedSha": "695e5d866c24049c0fd6f1e182a4f2b8be18f700",
-          "revertDate": "2025-09-29T13:22:40Z",
-          "originalDate": "2025-09-29T13:20:19Z",
-          "recoveryHours": 0.03916666666666667
-        },
-        {
-          "revertSha": "c49f5b0a025605043657d394895b82a6c5a21676",
-          "revertedSha": "d1f93b4f2ddaf44c086a0d761a825996efaa4893",
-          "revertDate": "2025-09-29T10:53:18Z",
-          "originalDate": "2025-09-25T23:11:08Z",
-          "recoveryHours": 83.70277777777778
-        },
-        {
-          "revertSha": "e1a3047769eb40799041b3101650c92710e25634",
-          "revertedSha": "9750a6ba16a2dbdc6f7d422eaad981b46f88b09d",
-          "revertDate": "2025-09-25T12:30:32Z",
-          "originalDate": "2025-09-24T14:51:11Z",
-          "recoveryHours": 21.655833333333334
-        },
-        {
-          "revertSha": "1916cc28a4237341f8d6a95a96101cba135c2cc3",
-          "revertedSha": "08463fc47d9bc51e960ebae7e050502d48c6b031",
-          "revertDate": "2025-09-22T09:55:20Z",
-          "originalDate": "2025-09-22T09:18:22Z",
-          "recoveryHours": 0.6161111111111112
-        },
-        {
-          "revertSha": "fe048cf829aecc3fdf91f89e1b8c7079905d44a3",
-          "revertedSha": "d818792b747f2818261bd20cad68f39e0f5d86ff",
-          "revertDate": "2025-09-10T20:42:07Z",
-          "originalDate": "2025-09-09T10:47:14Z",
-          "recoveryHours": 33.914722222222224
-        },
-        {
-          "revertSha": "6586252790a4984b264c3717b38178d0bf0b6bcd",
-          "revertedSha": "c18f3bb1bf121dc97e33ec865941b092685c3367",
-          "revertDate": "2025-09-01T10:12:23Z",
-          "originalDate": "2025-08-29T21:30:13Z",
-          "recoveryHours": 60.702777777777776
-        },
-        {
-          "revertSha": "43b56471abff3ca3ff7c53d3c7efa9bbae2a13f5",
-          "revertedSha": "ad9db3ccb980c4ba62ad2460881d9b2943244c42",
-          "revertDate": "2025-09-01T08:03:12Z",
-          "originalDate": "2025-08-27T15:01:03Z",
-          "recoveryHours": 113.03583333333333
-        },
-        {
-          "revertSha": "737565541627d8d689b055092daea699e4b7c537",
-          "revertedSha": "82debdfc81240b1cb6db963d5376fcc8753adbcf",
-          "revertDate": "2025-08-15T09:58:19Z",
-          "originalDate": "2025-08-08T15:40:15Z",
-          "recoveryHours": 162.3011111111111
-        },
-        {
-          "revertSha": "65cb518566c5eb201c315c5ea4233e1eaf14ec6c",
-          "revertedSha": "51a98de2f1c05acf3c8d2db9b8d7d84dd827f867",
-          "revertDate": "2025-08-13T09:10:42Z",
-          "originalDate": "2025-08-12T17:06:44Z",
-          "recoveryHours": 16.066111111111113
-        },
-        {
-          "revertSha": "350fc51e56372a69c7e826dba70776e2e381323a",
-          "revertedSha": "640f4bbf85bb89576e638101daba4a3ae24813d9",
-          "revertDate": "2025-08-12T18:48:39Z",
-          "originalDate": "2025-08-11T21:09:39Z",
-          "recoveryHours": 21.65
-        },
-        {
-          "revertSha": "f03296f0c2afd78abb4a7686a3c3c7aa5ea3d558",
-          "revertedSha": "0d730915f63a80fb97f5b6e6d23ab25f476694fc",
-          "revertDate": "2025-06-11T09:12:11Z",
-          "originalDate": "2025-06-09T11:54:53Z",
-          "recoveryHours": 45.288333333333334
-        },
-        {
-          "revertSha": "8285046c52a4b4f9397185bc3454ddcf80d6bbea",
-          "revertedSha": "60de75340460afe698764ab31e92302debb0fc66",
-          "revertDate": "2025-06-10T20:08:45Z",
-          "originalDate": "2025-06-09T12:09:49Z",
-          "recoveryHours": 31.982222222222223
-        },
-        {
-          "revertSha": "a0dbd9315b199673be0122e9a6772799871c64b8",
-          "revertedSha": "4df6e1e3f2c9bbff203c7afd2da4e54554661b13",
-          "revertDate": "2025-06-09T10:55:21Z",
-          "originalDate": "2025-06-06T14:44:34Z",
-          "recoveryHours": 68.17972222222222
-        }
-      ],
-      "incidentCount": 1,
-      "incidentIssues": [
-        {
-          "number": 16298,
-          "title": "Postmortem: Q1 2025 Engineering Strategy",
-          "url": "https://github.com/Budibase/budibase/issues/16298",
-          "createdAt": "2025-06-09T10:55:43Z"
-        }
-      ],
-      "changeFailureRate": 0.07456140350877193
-    },
-    {
-      "repo": "ClickHouse/ClickHouse",
-      "windowDays": 120,
-      "deployCount": 100,
-      "prCount": 154,
-      "revertCount": 70,
-      "revertMedianHours": 25.34847222222222,
-      "revertP85Hours": 253.68924999999996,
-      "revertP95Hours": 2931.16518055555,
-      "revertEvents": [
-        {
-          "revertSha": "ba850b6c893bce9c5ff6b6fe3f8aefa305028a2e",
-          "revertedSha": "40457805ff8f6334a1c4c7cf96568b79e53f0321",
-          "revertDate": "2025-10-01T12:51:27Z",
-          "originalDate": "2025-10-01T12:48:00Z",
-          "recoveryHours": 0.0575
-        },
-        {
-          "revertSha": "4a5a25a74baca82d325e269c9e24ecec58661c53",
-          "revertedSha": "6b85495ab220b76c4c7403bbac8c19edd67b86d7",
-          "revertDate": "2025-09-30T22:16:37Z",
-          "originalDate": "2025-09-29T20:57:44Z",
-          "recoveryHours": 25.314722222222223
-        },
-        {
-          "revertSha": "39c68f4d31bb670dbab21f6e999c3b72d126067e",
-          "revertedSha": "94ed5575f4c9afb4913603c186c95dad49358561",
-          "revertDate": "2025-09-26T06:45:00Z",
-          "originalDate": "2025-08-28T13:20:29Z",
-          "recoveryHours": 689.4086111111111
-        },
-        {
-          "revertSha": "2feb6ccff1c0a04dc7134573ba15e8364d5f6e1a",
-          "revertedSha": "3d5f1d86917578cf061798575ef0e44cd596bb68",
-          "revertDate": "2025-09-23T15:24:50Z",
-          "originalDate": "2025-09-23T14:12:14Z",
-          "recoveryHours": 1.21
-        },
-        {
-          "revertSha": "7cffa6c16572da57eda3dd0dc84030eed1fec925",
-          "revertedSha": "2f1eb10b5488356b53deb7ed6d6d9fb23de89a71",
-          "revertDate": "2025-09-23T13:18:01Z",
-          "originalDate": "2025-08-26T01:29:52Z",
-          "recoveryHours": 683.8025
-        },
-        {
-          "revertSha": "ae833f3ab95069d3c1790b4e0b720457db77f8aa",
-          "revertedSha": "21aaed1c4e89ef3b6a3dcddfc9c3c3ee6f37926e",
-          "revertDate": "2025-09-23T13:17:38Z",
-          "originalDate": "2025-08-23T04:18:42Z",
-          "recoveryHours": 752.9822222222223
-        },
-        {
-          "revertSha": "2487a291687d7c3a3b9c0c5ffe42d8417533aaac",
-          "revertedSha": "a63805cfe1c6fe818b33a3b627b5ce2e21e42f3a",
-          "revertDate": "2025-09-23T13:17:30Z",
-          "originalDate": "2025-09-16T16:30:52Z",
-          "recoveryHours": 164.77722222222224
-        },
-        {
-          "revertSha": "7ae7afa7dcceebba5a1ab65c09712eec257d0539",
-          "revertedSha": "557014a7c0b810ca30f6f4fa900473107b47a8d4",
-          "revertDate": "2025-09-23T13:17:24Z",
-          "originalDate": "2025-09-16T17:58:44Z",
-          "recoveryHours": 163.3111111111111
-        },
-        {
-          "revertSha": "2f1eb10b5488356b53deb7ed6d6d9fb23de89a71",
-          "revertedSha": "827bd3703f9da1965165c99f5f29ab344c89c236",
-          "revertDate": "2025-08-26T01:29:52Z",
-          "originalDate": "2025-08-21T09:08:23Z",
-          "recoveryHours": 112.35805555555555
-        },
-        {
-          "revertSha": "c4d573912bb63763b97008f10f53c5643b908501",
-          "revertedSha": "6b5b8fc57220e50382ed9c53fab70d73efefdf99",
-          "revertDate": "2025-09-14T20:43:11Z",
-          "originalDate": "2025-09-04T22:22:02Z",
-          "recoveryHours": 238.3525
-        },
-        {
-          "revertSha": "a4c8f4f2af8d6d440a5d46d4e6c17480c05dd45c",
-          "revertedSha": "e922b7eeeb4bec04ca671f186e9a7cc17d791142",
-          "revertDate": "2025-09-14T20:42:25Z",
-          "originalDate": "2025-09-11T13:04:16Z",
-          "recoveryHours": 79.63583333333334
-        },
-        {
-          "revertSha": "bc47677aa0c6d6ea028f57b8707041fe56473b3e",
-          "revertedSha": "23b3fd535467b7b66eca529159f6b5d4a0c3fc64",
-          "revertDate": "2025-09-11T18:02:34Z",
-          "originalDate": "2025-09-11T17:53:36Z",
-          "recoveryHours": 0.14944444444444444
-        },
-        {
-          "revertSha": "59c10d13be8460089a4b8a7c0ab3219e9a5fa3bd",
-          "revertedSha": "aec86451c82e5b34871d24cd52150510a3eba502",
-          "revertDate": "2025-09-05T07:49:18Z",
-          "originalDate": "2025-09-04T15:17:51Z",
-          "recoveryHours": 16.524166666666666
-        },
-        {
-          "revertSha": "1bab1983614a84442516c2093066e37f7ba9f8a9",
-          "revertedSha": "bd81c7da2e68cd6cc500dfc2c1a2125293341292",
-          "revertDate": "2025-09-03T10:13:13Z",
-          "originalDate": "2025-09-02T15:59:06Z",
-          "recoveryHours": 18.235277777777778
-        },
-        {
-          "revertSha": "ea199f58c85e5a9ca90e44e30aa2c7ade57bd674",
-          "revertedSha": "47d2519bf49862f4e487eaa60d0abb425d3da135",
-          "revertDate": "2025-09-03T05:27:37Z",
-          "originalDate": "2025-09-02T18:04:28Z",
-          "recoveryHours": 11.385833333333334
-        },
-        {
-          "revertSha": "eb07a62d8ba3836461debc51b6a06c89dc7356ed",
-          "revertedSha": "a970bd56990e9598133959310b30a9fcfe8bc9d6",
-          "revertDate": "2025-08-30T03:33:42Z",
-          "originalDate": "2025-08-30T02:30:28Z",
-          "recoveryHours": 1.0538888888888889
-        },
-        {
-          "revertSha": "01a0b5cb39e8718186f501def8b658d5765654fe",
-          "revertedSha": "e2e17cdc59eb58229128f9681937ae3be5abdf58",
-          "revertDate": "2025-08-27T14:34:42Z",
-          "originalDate": "2025-08-27T01:02:53Z",
-          "recoveryHours": 13.530277777777778
-        },
-        {
-          "revertSha": "827bd3703f9da1965165c99f5f29ab344c89c236",
-          "revertedSha": "1f2ae829274380d0a2f7117ad8aebce6b5727e3a",
-          "revertDate": "2025-08-21T09:08:23Z",
-          "originalDate": "2025-08-13T21:08:17Z",
-          "recoveryHours": 180.00166666666667
-        },
-        {
-          "revertSha": "935c99e8d353673ea17a7fbccc2b6e07d4cdc072",
-          "revertedSha": "48e027c8ba999ea866cd507d1018bfc4c4ab9d73",
-          "revertDate": "2025-08-19T11:31:37Z",
-          "originalDate": "2025-08-19T10:29:57Z",
-          "recoveryHours": 1.0277777777777777
-        },
-        {
-          "revertSha": "6e2cb443cabd2b15c501e099d216bbf4596b2d65",
-          "revertedSha": "73873283ff65db0bf78ac8be97dea68da062a379",
-          "revertDate": "2025-08-18T21:32:10Z",
-          "originalDate": "2025-08-13T17:56:16Z",
-          "recoveryHours": 123.59833333333333
-        },
-        {
-          "revertSha": "8b4ffb32906fdb1966bb92016f5abf42b6ac4a29",
-          "revertedSha": "856ed0fc3129412f22ecc9ebfc356e3847e93b1f",
-          "revertDate": "2025-08-18T02:47:16Z",
-          "originalDate": "2025-08-16T04:07:59Z",
-          "recoveryHours": 46.65472222222222
-        },
-        {
-          "revertSha": "88fc5d24925077ff46a83e7705f3750a19cc5795",
-          "revertedSha": "f0fa8b73616fb66aec036e84cfcae4c9b67ee6de",
-          "revertDate": "2025-08-15T12:29:27Z",
-          "originalDate": "2025-08-14T12:42:47Z",
-          "recoveryHours": 23.77777777777778
-        },
-        {
-          "revertSha": "146356238d04500be7f74045b86d4b0bfc0a47df",
-          "revertedSha": "7a2e15e29b8a62de1da4037384400228f83eea16",
-          "revertDate": "2025-08-11T09:03:56Z",
-          "originalDate": "2025-08-08T09:34:27Z",
-          "recoveryHours": 71.49138888888889
-        },
-        {
-          "revertSha": "8fa84c38bf6fb83916020baf65ec47ac47302a65",
-          "revertedSha": "3ca813b7a350ba56b933c73e346f5d71d2dc5d06",
-          "revertDate": "2025-08-10T12:45:04Z",
-          "originalDate": "2025-08-10T12:44:44Z",
-          "recoveryHours": 0.005555555555555556
-        },
-        {
-          "revertSha": "9196b002f06f08a56a869a25f57807c76bc202d8",
-          "revertedSha": "f3e31378ffb69879babb8c8e074c88481a8e3a30",
-          "revertDate": "2025-08-08T05:31:26Z",
-          "originalDate": "2025-07-28T07:34:35Z",
-          "recoveryHours": 261.9475
-        },
-        {
-          "revertSha": "475398c1faac481da60ba14bae87508669f22f24",
-          "revertedSha": "8d71999a949a3bc8c75baa09be4aded68685b40b",
-          "revertDate": "2025-08-06T15:14:52Z",
-          "originalDate": "2025-08-06T12:32:18Z",
-          "recoveryHours": 2.7094444444444443
-        },
-        {
-          "revertSha": "fc0792f0ec59662a00e4f7318ce3286b6360a39e",
-          "revertedSha": "6418e8a920b2e3d4d10679779cfb3f23c080d1d9",
-          "revertDate": "2025-08-04T16:30:03Z",
-          "originalDate": "2025-08-03T18:29:40Z",
-          "recoveryHours": 22.00638888888889
-        },
-        {
-          "revertSha": "2bc626066c90e737c926c67ecd705908dc94c3ed",
-          "revertedSha": "22a8181ac9206cdbb85d8736f27ebdb6973e2eec",
-          "revertDate": "2025-08-04T15:36:46Z",
-          "originalDate": "2025-02-13T20:35:41Z",
-          "recoveryHours": 4123.018055555555
-        },
-        {
-          "revertSha": "73d64374de26278da0bb2bf7e7327ab904aa2b0e",
-          "revertedSha": "a160df7d5601a3710c94e91c2059dac98bcc73dc",
-          "revertDate": "2025-08-04T15:36:43Z",
-          "originalDate": "2025-02-24T16:12:57Z",
-          "recoveryHours": 3863.396111111111
-        },
-        {
-          "revertSha": "8fc66a2f889e58379c787d2024911413c6a03616",
-          "revertedSha": "88d60b998c4caf848572495e3d76261aa7cc9166",
-          "revertDate": "2025-08-04T15:36:25Z",
-          "originalDate": "2025-02-25T15:36:05Z",
-          "recoveryHours": 3840.0055555555555
-        },
-        {
-          "revertSha": "41dc6fdeba6a0267921deaa343680c32bf8a626d",
-          "revertedSha": "27b1d1ef2a48e2e1162fd6ad87e6c9109f5d3089",
-          "revertDate": "2025-08-04T15:33:45Z",
-          "originalDate": "2025-08-04T15:29:03Z",
-          "recoveryHours": 0.07833333333333334
-        },
-        {
-          "revertSha": "6edb2cbe287f77cf2a1f59da2c8ec0b658db0da3",
-          "revertedSha": "81b2fe388ec9573fe643cf5101b32a32dd57932c",
-          "revertDate": "2025-07-30T13:34:02Z",
-          "originalDate": "2025-07-30T13:17:37Z",
-          "recoveryHours": 0.27361111111111114
-        },
-        {
-          "revertSha": "02cbedcb7c18fd30529ca22b20e008fc2d61a035",
-          "revertedSha": "df1c991fce9e1a6deda6f124877a0f310a4b29ff",
-          "revertDate": "2025-07-29T14:54:02Z",
-          "originalDate": "2025-07-27T00:18:43Z",
-          "recoveryHours": 62.58861111111111
-        },
-        {
-          "revertSha": "1e4c727dc0fa6a9646602d9dead52041c08684cc",
-          "revertedSha": "29032aedc27fbddabb5dcec1deb6bd2ec5cd6a77",
-          "revertDate": "2025-07-24T09:53:40Z",
-          "originalDate": "2025-07-02T14:18:31Z",
-          "recoveryHours": 523.5858333333333
-        },
-        {
-          "revertSha": "f86af41879dc783afabe897a45d6c4e17934824a",
-          "revertedSha": "9df775a766ca5da584db7db23a904c83b629c2e7",
-          "revertDate": "2025-07-23T16:03:12Z",
-          "originalDate": "2025-07-23T15:26:42Z",
-          "recoveryHours": 0.6083333333333333
-        },
-        {
-          "revertSha": "5cc2531c7cbe034108229dd88b7d876da6dd9322",
-          "revertedSha": "d50a60a8cc0e4e5db191b5ea2d39690150434469",
-          "revertDate": "2025-07-22T23:54:42Z",
-          "originalDate": "2025-07-22T23:51:39Z",
-          "recoveryHours": 0.050833333333333335
-        },
-        {
-          "revertSha": "0014990937833a75223592dfa7df7b5795dc80ec",
-          "revertedSha": "9d943878f92eef5d36aa3fd0dd50029821201cd1",
-          "revertDate": "2025-07-21T14:37:31Z",
-          "originalDate": "2025-07-21T14:02:52Z",
-          "recoveryHours": 0.5775
-        },
-        {
-          "revertSha": "6a8fd27211eeab7431a2cba1102a669b51caa0d5",
-          "revertedSha": "2dbbc823c6995366b74c79ec71e7c99ee3565588",
-          "revertDate": "2025-07-21T13:28:50Z",
-          "originalDate": "2025-07-17T19:04:08Z",
-          "recoveryHours": 90.41166666666666
-        },
-        {
-          "revertSha": "25bc93bf6d47ad38c57fdd9be9b0bdef31f24ad9",
-          "revertedSha": "f99cf3b995b46b30ead8c040136b80931ed91c20",
-          "revertDate": "2025-07-21T13:28:39Z",
-          "originalDate": "2025-07-18T09:59:20Z",
-          "recoveryHours": 75.48861111111111
-        },
-        {
-          "revertSha": "b2c3b77ffc01beb66b8aa0479545da2f3a60ec1e",
-          "revertedSha": "4b28d303fb1a0c473f01a8bc35ad6ccf3c999fd6",
-          "revertDate": "2025-07-17T18:09:02Z",
-          "originalDate": "2025-07-16T16:54:18Z",
-          "recoveryHours": 25.245555555555555
-        },
-        {
-          "revertSha": "c08ea06112486d9cf124295a52277a3c4e88f77e",
-          "revertedSha": "7ef4050cf928e2c38f3175b6e78a4b5b4c6b6a23",
-          "revertDate": "2025-07-16T12:42:58Z",
-          "originalDate": "2025-05-01T16:21:21Z",
-          "recoveryHours": 1820.3602777777778
-        },
-        {
-          "revertSha": "e9c74610fc97d8dbb90de7906e1f6e8b1c4b2976",
-          "revertedSha": "a3cae01ef319b8eb32145a202682e5250fc262d4",
-          "revertDate": "2025-07-16T09:19:00Z",
-          "originalDate": "2025-07-15T15:43:00Z",
-          "recoveryHours": 17.6
-        },
-        {
-          "revertSha": "08438fc5a65a69f5db9d3ee63e832d01c15cc343",
-          "revertedSha": "6dab2758ec8deb273bd716c8f7fa298b92c86b63",
-          "revertDate": "2025-07-15T17:11:08Z",
-          "originalDate": "2025-07-15T17:03:06Z",
-          "recoveryHours": 0.1338888888888889
-        },
-        {
-          "revertSha": "a3cae01ef319b8eb32145a202682e5250fc262d4",
-          "revertedSha": "fe6e511a733a65ccf0448ef14821e4249b5922d3",
-          "revertDate": "2025-07-15T15:43:00Z",
-          "originalDate": "2025-07-15T10:11:10Z",
-          "recoveryHours": 5.530555555555556
-        },
-        {
-          "revertSha": "215c9344db03c0b863970e48c461c2d38d8b81f0",
-          "revertedSha": "aec0d174a62577c068035c9649cbecba134f90f7",
-          "revertDate": "2025-07-15T13:17:05Z",
-          "originalDate": "2025-07-14T11:54:09Z",
-          "recoveryHours": 25.38222222222222
-        },
-        {
-          "revertSha": "37e000e245b2267c1369d73d19d5a84e06c17df9",
-          "revertedSha": "f54f8180aebc48ff82d7eba1acd8f7faf86380bf",
-          "revertDate": "2025-07-15T08:07:41Z",
-          "originalDate": "2025-07-14T22:29:50Z",
-          "recoveryHours": 9.630833333333333
-        },
-        {
-          "revertSha": "cda6bb49ee435ca26c6ef427e2bf5fc3c675c419",
-          "revertedSha": "26cb916ad00ce04e516e75169f188327913f4f34",
-          "revertDate": "2025-07-12T22:20:57Z",
-          "originalDate": "2025-07-10T14:24:49Z",
-          "recoveryHours": 55.93555555555555
-        },
-        {
-          "revertSha": "9e4afd218e2f8d9cca11a790706d3bd3a34877d8",
-          "revertedSha": "08237ea032222188c799cf6454f2c788efd2186b",
-          "revertDate": "2025-07-12T22:20:51Z",
-          "originalDate": "2025-07-10T15:33:08Z",
-          "recoveryHours": 54.79527777777778
-        },
-        {
-          "revertSha": "b5b9251c5cdca43719931bf847aee6ba79298be4",
-          "revertedSha": "24b44b6c647a8f4016d1c7e5035e936e3ca79721",
-          "revertDate": "2025-07-12T14:26:56Z",
-          "originalDate": "2025-07-12T14:22:00Z",
-          "recoveryHours": 0.08222222222222222
-        },
-        {
-          "revertSha": "4adbae9872395eaba325497a4f10d2a04251801b",
-          "revertedSha": "fec94068e920d794a8f6bee95210ed4e",
-          "revertDate": "2025-07-11T09:00:03Z",
-          "originalDate": "2025-07-11T06:05:13Z",
-          "recoveryHours": 2.9138888888888888
-        },
-        {
-          "revertSha": "466bcc5629bc56780f3726dbec205353a42a122c",
-          "revertedSha": "49d7324abd2c6594be87684a02588bc9a216a74b",
-          "revertDate": "2025-07-09T18:54:12Z",
-          "originalDate": "2025-07-09T18:06:24Z",
-          "recoveryHours": 0.7966666666666666
-        },
-        {
-          "revertSha": "7cf1e696ef4ccb17826ec29e4d1421309d21e52a",
-          "revertedSha": "146eaf90b3e5a168639564c045a594ba7d9f3dda",
-          "revertDate": "2025-07-09T18:14:22Z",
-          "originalDate": "2025-07-01T23:51:29Z",
-          "recoveryHours": 186.3813888888889
-        },
-        {
-          "revertSha": "5ecee9f134ce8e17ae7b7a6b7f488b0fd9b37c6f",
-          "revertedSha": "6c2ac55db955e10c286cf1a60ee7b9ed87fb9b93",
-          "revertDate": "2025-07-09T09:54:32Z",
-          "originalDate": "2025-07-08T19:35:06Z",
-          "recoveryHours": 14.323888888888888
-        },
-        {
-          "revertSha": "ff1c49352549e56523ac3c6d8d6cd576af1f32ff",
-          "revertedSha": "7085225e674d3d0f33904eb18e4d4abbc5455011",
-          "revertDate": "2025-07-08T14:33:29Z",
-          "originalDate": "2025-07-04T17:40:17Z",
-          "recoveryHours": 92.88666666666667
-        },
-        {
-          "revertSha": "6d9936de276deeb4c40f72fa7d866e531bf43a42",
-          "revertedSha": "286206d43a3d8c2a5e386b7dceabd81cbeb71c9e",
-          "revertDate": "2025-07-06T03:58:14Z",
-          "originalDate": "2025-07-06T02:35:25Z",
-          "recoveryHours": 1.3802777777777777
-        },
-        {
-          "revertSha": "2138aa564c68b0b4c33d5b55b19a05b7358962d1",
-          "revertedSha": "e4882071cee327724bfe0d0c90e4f7d590d5b492",
-          "revertDate": "2025-07-04T20:24:28Z",
-          "originalDate": "2024-07-12T12:08:53Z",
-          "recoveryHours": 8576.259722222223
-        },
-        {
-          "revertSha": "2407621d3793f3e91fe3bb2d4d40b11ee29b82a4",
-          "revertedSha": "f046b4db54080f0b022cc27f9611464727327e8e",
-          "revertDate": "2025-07-03T17:39:46Z",
-          "originalDate": "2025-07-03T16:52:32Z",
-          "recoveryHours": 0.7872222222222223
-        },
-        {
-          "revertSha": "9fcd69c152e1d6fa0ddcbb5eb1d175e251dfdd9f",
-          "revertedSha": "1443e43bcdf369f387a83cef8abb8d48518cf15d",
-          "revertDate": "2025-07-02T15:01:49Z",
-          "originalDate": "2025-07-01T17:52:05Z",
-          "recoveryHours": 21.162222222222223
-        },
-        {
-          "revertSha": "c0d5971a77126e91bfa95be268ccd2f1e07cbad2",
-          "revertedSha": "80b3de5a2c5bf04a0cb558fed38316e6b190ec48",
-          "revertDate": "2025-07-02T10:32:07Z",
-          "originalDate": "2025-06-30T10:21:36Z",
-          "recoveryHours": 48.17527777777778
-        },
-        {
-          "revertSha": "822452573265f668aaa8c1653cfece07735f96b1",
-          "revertedSha": "9210fe2d5105e93b8bd2a29748767f04f35c6bc0",
-          "revertDate": "2025-07-02T08:09:29Z",
-          "originalDate": "2025-07-02T04:14:27Z",
-          "recoveryHours": 3.917222222222222
-        },
-        {
-          "revertSha": "653cd0509e12f8fa15f7da0615c227f60df3e2a3",
-          "revertedSha": "b301e1262a80d19f46bb8c3e813461f882053b75",
-          "revertDate": "2025-07-01T23:50:08Z",
-          "originalDate": "2025-06-11T09:34:17Z",
-          "recoveryHours": 494.26416666666665
-        },
-        {
-          "revertSha": "77fbb7b56b64c98371aa2c3906245d5af3b1bc7f",
-          "revertedSha": "1f28e8bbd00a340704d9696343269f223493d4d8",
-          "revertDate": "2025-06-30T16:53:52Z",
-          "originalDate": "2025-06-30T15:34:05Z",
-          "recoveryHours": 1.3297222222222222
-        },
-        {
-          "revertSha": "80b3de5a2c5bf04a0cb558fed38316e6b190ec48",
-          "revertedSha": "6c95be25ac1f6060ed43d266189b3d55cf65104e",
-          "revertDate": "2025-06-30T10:21:36Z",
-          "originalDate": "2025-06-26T14:16:53Z",
-          "recoveryHours": 92.07861111111112
-        },
-        {
-          "revertSha": "6b0f84aa28918c1054df3311a21b0589f65946c7",
-          "revertedSha": "8a5593d797d0ed14f5858487cca3d7fa372db0c6",
-          "revertDate": "2025-06-29T04:41:24Z",
-          "originalDate": "2025-06-26T15:15:44Z",
-          "recoveryHours": 61.42777777777778
-        },
-        {
-          "revertSha": "82c541d94d32ac6a4c8b9df5e7b67290f9996165",
-          "revertedSha": "7c806c2a3f1cb8ba19b36286bd5c72fb2b301a4d",
-          "revertDate": "2025-06-29T04:41:07Z",
-          "originalDate": "2025-06-27T10:02:16Z",
-          "recoveryHours": 42.6475
-        },
-        {
-          "revertSha": "174ca13cdc11761b629b1ff48dabf10d3d80ca66",
-          "revertedSha": "5d0aa96041a6339f910569713706ea8926b8d1a0",
-          "revertDate": "2025-06-26T00:44:00Z",
-          "originalDate": "2025-06-25T13:36:02Z",
-          "recoveryHours": 11.132777777777777
-        },
-        {
-          "revertSha": "0810984fbcae5dcda5934da443f19bea7295371e",
-          "revertedSha": "8bd98582283ec31742aba908ffb1fa717cbe57d5",
-          "revertDate": "2025-06-23T12:45:47Z",
-          "originalDate": "2025-06-18T05:03:03Z",
-          "recoveryHours": 127.71222222222222
-        },
-        {
-          "revertSha": "ca618a5e4021f78fb51eefbdcec57f3cbba7eb2a",
-          "revertedSha": "bbf2b7ca09d3f1b0a641b9305f276ccba9a68561",
-          "revertDate": "2025-06-23T15:17:29Z",
-          "originalDate": "2025-06-20T13:34:11Z",
-          "recoveryHours": 73.72166666666666
-        },
-        {
-          "revertSha": "928a748d9d60612c599d78caee125f7ae97e0f77",
-          "revertedSha": "a5fa71cf7a3132146d6b7ae4e8ef9933ad65544d",
-          "revertDate": "2025-06-17T11:40:00Z",
-          "originalDate": "2025-06-17T02:24:07Z",
-          "recoveryHours": 9.264722222222222
-        },
-        {
-          "revertSha": "2a5ea690b099491bfd489b71451b7e7bd10f6862",
-          "revertedSha": "205eec6629c913ddf0861b8143f7ebe2b5098e03",
-          "revertDate": "2025-06-10T20:48:23Z",
-          "originalDate": "2025-06-07T00:33:36Z",
-          "recoveryHours": 92.24638888888889
-        }
-      ],
-      "incidentCount": 0,
-      "incidentIssues": [],
-      "changeFailureRate": 0.7
-    },
-    {
-      "repo": "PostHog/posthog",
-      "windowDays": 120,
-      "deployCount": 981,
-      "prCount": 658,
-      "revertCount": 0,
-      "revertMedianHours": null,
-      "revertP85Hours": null,
-      "revertP95Hours": null,
-      "revertEvents": [],
-      "incidentCount": 0,
-      "incidentIssues": [],
-      "changeFailureRate": 0
-    },
-    {
-      "repo": "TobikoData/sqlmesh",
-      "windowDays": 120,
-      "deployCount": 217,
-      "prCount": 1515,
-      "revertCount": 1,
-      "revertMedianHours": 0.01638888888888889,
-      "revertP85Hours": 0.01638888888888889,
-      "revertP95Hours": 0.01638888888888889,
-      "revertEvents": [
-        {
-          "revertSha": "5aacaa89ed715b770cec43fb136c8dd89e490ea2",
-          "revertedSha": "bed9f2e03ddf25d760e857b9d5f22195f9990fc6",
-          "revertDate": "2025-08-13T16:08:20Z",
-          "originalDate": "2025-08-13T16:07:21Z",
-          "recoveryHours": 0.01638888888888889
-        }
-      ],
-      "incidentCount": 0,
-      "incidentIssues": [],
-      "changeFailureRate": 0.004608294930875576
-    },
-    {
-      "repo": "Unleash/unleash",
-      "windowDays": 120,
-      "deployCount": 29,
-      "prCount": 1397,
-      "revertCount": 0,
-      "revertMedianHours": null,
-      "revertP85Hours": null,
-      "revertP95Hours": null,
-      "revertEvents": [],
-      "incidentCount": 0,
-      "incidentIssues": [],
-      "changeFailureRate": 0
-    },
-    {
-      "repo": "chakra-ui/chakra-ui",
-      "windowDays": 120,
-      "deployCount": 171,
-      "prCount": 202,
-      "revertCount": 0,
-      "revertMedianHours": null,
-      "revertP85Hours": null,
-      "revertP95Hours": null,
-      "revertEvents": [],
-      "incidentCount": 0,
-      "incidentIssues": [],
-      "changeFailureRate": 0
-    },
     {
       "repo": "getsentry/sentry",
       "windowDays": 120,
       "deployCount": 16394,
+      "deployCountWindow": 5389.808219178082,
+      "deploysPerWeekWindow": 314.4054794520548,
       "prCount": 1635,
       "revertCount": 108,
       "revertMedianHours": 2.676111111111111,
@@ -1524,12 +773,17 @@
       ],
       "incidentCount": 0,
       "incidentIssues": [],
-      "changeFailureRate": 0.006587776015615469
+      "changeFailureRate": 0.020037818714163717,
+      "changeFailureRateRaw": 0.020037818714163717,
+      "changeFailureRatePerPR": 0.06605504587155964,
+      "flags": []
     },
     {
       "repo": "growthbook/growthbook",
       "windowDays": 120,
       "deployCount": 4648,
+      "deployCountWindow": 1626.1224489795918,
+      "deploysPerWeekWindow": 94.85714285714286,
       "prCount": 553,
       "revertCount": 2,
       "revertMedianHours": 32.95805555555556,
@@ -1553,12 +807,197 @@
       ],
       "incidentCount": 0,
       "incidentIssues": [],
-      "changeFailureRate": 0.0004302925989672978
+      "changeFailureRate": 0.0012299196787148594,
+      "changeFailureRateRaw": 0.0012299196787148594,
+      "changeFailureRatePerPR": 0.003616636528028933,
+      "flags": []
+    },
+    {
+      "repo": "openstatusHQ/openstatus",
+      "windowDays": 120,
+      "deployCount": 2661,
+      "deployCountWindow": 874.8493150684932,
+      "deploysPerWeekWindow": 51.03287671232877,
+      "prCount": 137,
+      "revertCount": 2,
+      "revertMedianHours": 0.035138888888888886,
+      "revertP85Hours": 0.050597222222222224,
+      "revertP95Hours": 0.05501388888888889,
+      "revertEvents": [
+        {
+          "revertSha": "ed3a8152517e272ca1623087558b94adc4a8d4b4",
+          "revertedSha": "fdacaad8e155f396b18065ab8b6d81ae676dc437",
+          "revertDate": "2025-09-19T09:37:11Z",
+          "originalDate": "2025-09-19T09:33:45Z",
+          "recoveryHours": 0.05722222222222222
+        },
+        {
+          "revertSha": "866f96ca5fb107bc9b086cd629c7fe2df158b487",
+          "revertedSha": "9930df79368efe78e9a4c891d2c24606d67fe687",
+          "revertDate": "2025-07-10T15:37:44Z",
+          "originalDate": "2025-07-10T15:36:57Z",
+          "recoveryHours": 0.013055555555555556
+        }
+      ],
+      "incidentCount": 0,
+      "incidentIssues": [],
+      "changeFailureRate": 0.0022861079794563445,
+      "changeFailureRateRaw": 0.0022861079794563445,
+      "changeFailureRatePerPR": 0.014598540145985401,
+      "flags": []
+    },
+    {
+      "repo": "Budibase/budibase",
+      "windowDays": 120,
+      "deployCount": 228,
+      "deployCountWindow": 75.78947368421052,
+      "deploysPerWeekWindow": 4.421052631578947,
+      "prCount": 948,
+      "revertCount": 17,
+      "revertMedianHours": 26.819027777777777,
+      "revertP85Hours": 79.82201388888889,
+      "revertP95Hours": 125.35215277777777,
+      "revertEvents": [
+        {
+          "revertSha": "4f32c687082df10d129b8107d235676514c7f6a8",
+          "revertedSha": "a934767c9a89cf71ecd3aa4e8662e96ecf3d23ac",
+          "revertDate": "2025-09-29T15:26:19Z",
+          "originalDate": "2025-09-29T14:46:30Z",
+          "recoveryHours": 0.6636111111111112
+        },
+        {
+          "revertSha": "7989a7293dd67c88c6be0412ed24cf484a794cb5",
+          "revertedSha": "d1bae6f33fed8ed7604bbec7b42cb92857107fb3",
+          "revertDate": "2025-09-29T12:26:56Z",
+          "originalDate": null,
+          "recoveryHours": null
+        },
+        {
+          "revertSha": "f21a2c4c0bdc8d769bce38f7f3d716d8e3123ee1",
+          "revertedSha": "e9093fd41f424b212f73d93b6c4fc0f26a00af61",
+          "revertDate": "2025-09-29T12:26:14Z",
+          "originalDate": "2025-09-29T09:48:09Z",
+          "recoveryHours": 2.6347222222222224
+        },
+        {
+          "revertSha": "aea26dcd5f4f67a15e04fece4119a65c309fcaca",
+          "revertedSha": "6245ad6c664eb525d464b33f47fe31b9246c819e",
+          "revertDate": "2025-09-29T14:32:21Z",
+          "originalDate": "2025-09-29T14:05:20Z",
+          "recoveryHours": 0.4502777777777778
+        },
+        {
+          "revertSha": "c23894995612b0c272930f19cfc781be216606c1",
+          "revertedSha": "695e5d866c24049c0fd6f1e182a4f2b8be18f700",
+          "revertDate": "2025-09-29T13:22:40Z",
+          "originalDate": "2025-09-29T13:20:19Z",
+          "recoveryHours": 0.03916666666666667
+        },
+        {
+          "revertSha": "c49f5b0a025605043657d394895b82a6c5a21676",
+          "revertedSha": "d1f93b4f2ddaf44c086a0d761a825996efaa4893",
+          "revertDate": "2025-09-29T10:53:18Z",
+          "originalDate": "2025-09-25T23:11:08Z",
+          "recoveryHours": 83.70277777777778
+        },
+        {
+          "revertSha": "e1a3047769eb40799041b3101650c92710e25634",
+          "revertedSha": "9750a6ba16a2dbdc6f7d422eaad981b46f88b09d",
+          "revertDate": "2025-09-25T12:30:32Z",
+          "originalDate": "2025-09-24T14:51:11Z",
+          "recoveryHours": 21.655833333333334
+        },
+        {
+          "revertSha": "1916cc28a4237341f8d6a95a96101cba135c2cc3",
+          "revertedSha": "08463fc47d9bc51e960ebae7e050502d48c6b031",
+          "revertDate": "2025-09-22T09:55:20Z",
+          "originalDate": "2025-09-22T09:18:22Z",
+          "recoveryHours": 0.6161111111111112
+        },
+        {
+          "revertSha": "fe048cf829aecc3fdf91f89e1b8c7079905d44a3",
+          "revertedSha": "d818792b747f2818261bd20cad68f39e0f5d86ff",
+          "revertDate": "2025-09-10T20:42:07Z",
+          "originalDate": "2025-09-09T10:47:14Z",
+          "recoveryHours": 33.914722222222224
+        },
+        {
+          "revertSha": "6586252790a4984b264c3717b38178d0bf0b6bcd",
+          "revertedSha": "c18f3bb1bf121dc97e33ec865941b092685c3367",
+          "revertDate": "2025-09-01T10:12:23Z",
+          "originalDate": "2025-08-29T21:30:13Z",
+          "recoveryHours": 60.702777777777776
+        },
+        {
+          "revertSha": "43b56471abff3ca3ff7c53d3c7efa9bbae2a13f5",
+          "revertedSha": "ad9db3ccb980c4ba62ad2460881d9b2943244c42",
+          "revertDate": "2025-09-01T08:03:12Z",
+          "originalDate": "2025-08-27T15:01:03Z",
+          "recoveryHours": 113.03583333333333
+        },
+        {
+          "revertSha": "737565541627d8d689b055092daea699e4b7c537",
+          "revertedSha": "82debdfc81240b1cb6db963d5376fcc8753adbcf",
+          "revertDate": "2025-08-15T09:58:19Z",
+          "originalDate": "2025-08-08T15:40:15Z",
+          "recoveryHours": 162.3011111111111
+        },
+        {
+          "revertSha": "65cb518566c5eb201c315c5ea4233e1eaf14ec6c",
+          "revertedSha": "51a98de2f1c05acf3c8d2db9b8d7d84dd827f867",
+          "revertDate": "2025-08-13T09:10:42Z",
+          "originalDate": "2025-08-12T17:06:44Z",
+          "recoveryHours": 16.066111111111113
+        },
+        {
+          "revertSha": "350fc51e56372a69c7e826dba70776e2e381323a",
+          "revertedSha": "640f4bbf85bb89576e638101daba4a3ae24813d9",
+          "revertDate": "2025-08-12T18:48:39Z",
+          "originalDate": "2025-08-11T21:09:39Z",
+          "recoveryHours": 21.65
+        },
+        {
+          "revertSha": "f03296f0c2afd78abb4a7686a3c3c7aa5ea3d558",
+          "revertedSha": "0d730915f63a80fb97f5b6e6d23ab25f476694fc",
+          "revertDate": "2025-06-11T09:12:11Z",
+          "originalDate": "2025-06-09T11:54:53Z",
+          "recoveryHours": 45.288333333333334
+        },
+        {
+          "revertSha": "8285046c52a4b4f9397185bc3454ddcf80d6bbea",
+          "revertedSha": "60de75340460afe698764ab31e92302debb0fc66",
+          "revertDate": "2025-06-10T20:08:45Z",
+          "originalDate": "2025-06-09T12:09:49Z",
+          "recoveryHours": 31.982222222222223
+        },
+        {
+          "revertSha": "a0dbd9315b199673be0122e9a6772799871c64b8",
+          "revertedSha": "4df6e1e3f2c9bbff203c7afd2da4e54554661b13",
+          "revertDate": "2025-06-09T10:55:21Z",
+          "originalDate": "2025-06-06T14:44:34Z",
+          "recoveryHours": 68.17972222222222
+        }
+      ],
+      "incidentCount": 1,
+      "incidentIssues": [
+        {
+          "number": 16298,
+          "title": "Postmortem: Q1 2025 Engineering Strategy",
+          "url": "https://github.com/Budibase/budibase/issues/16298",
+          "createdAt": "2025-06-09T10:55:43Z"
+        }
+      ],
+      "changeFailureRate": 0.22430555555555556,
+      "changeFailureRateRaw": 0.22430555555555556,
+      "changeFailureRatePerPR": 0.017932489451476793,
+      "flags": []
     },
     {
       "repo": "langfuse/langfuse",
       "windowDays": 120,
       "deployCount": null,
+      "deployCountWindow": null,
+      "deploysPerWeekWindow": null,
       "prCount": null,
       "revertCount": 10,
       "revertMedianHours": 33.098055555555554,
@@ -1638,12 +1077,135 @@
       ],
       "incidentCount": 0,
       "incidentIssues": [],
-      "changeFailureRate": null
+      "changeFailureRate": null,
+      "changeFailureRateRaw": null,
+      "changeFailureRatePerPR": null,
+      "flags": [
+        "missing_deploy_window"
+      ]
+    },
+    {
+      "repo": "Unleash/unleash",
+      "windowDays": 120,
+      "deployCount": 29,
+      "deployCountWindow": 10.145772594752186,
+      "deploysPerWeekWindow": 0.5918367346938775,
+      "prCount": 1397,
+      "revertCount": 0,
+      "revertMedianHours": null,
+      "revertP85Hours": null,
+      "revertP95Hours": null,
+      "revertEvents": [],
+      "incidentCount": 0,
+      "incidentIssues": [],
+      "changeFailureRate": 0,
+      "changeFailureRateRaw": 0,
+      "changeFailureRatePerPR": 0,
+      "flags": [
+        "subweekly_deploy_rate",
+        "deploy_coverage_sparse"
+      ]
+    },
+    {
+      "repo": "TobikoData/sqlmesh",
+      "windowDays": 120,
+      "deployCount": 217,
+      "deployCountWindow": 71.34246575342466,
+      "deploysPerWeekWindow": 4.161643835616439,
+      "prCount": 1515,
+      "revertCount": 1,
+      "revertMedianHours": 0.01638888888888889,
+      "revertP85Hours": 0.01638888888888889,
+      "revertP95Hours": 0.01638888888888889,
+      "revertEvents": [
+        {
+          "revertSha": "5aacaa89ed715b770cec43fb136c8dd89e490ea2",
+          "revertedSha": "bed9f2e03ddf25d760e857b9d5f22195f9990fc6",
+          "revertDate": "2025-08-13T16:08:20Z",
+          "originalDate": "2025-08-13T16:07:21Z",
+          "recoveryHours": 0.01638888888888889
+        }
+      ],
+      "incidentCount": 0,
+      "incidentIssues": [],
+      "changeFailureRate": 0.01401689708141321,
+      "changeFailureRateRaw": 0.01401689708141321,
+      "changeFailureRatePerPR": 0.0006600660066006601,
+      "flags": []
+    },
+    {
+      "repo": "PostHog/posthog",
+      "windowDays": 120,
+      "deployCount": 981,
+      "deployCountWindow": 325.1933701657459,
+      "deploysPerWeekWindow": 18.96961325966851,
+      "prCount": 658,
+      "revertCount": 0,
+      "revertMedianHours": null,
+      "revertP85Hours": null,
+      "revertP95Hours": null,
+      "revertEvents": [],
+      "incidentCount": 0,
+      "incidentIssues": [],
+      "changeFailureRate": 0,
+      "changeFailureRateRaw": 0,
+      "changeFailureRatePerPR": 0,
+      "flags": []
+    },
+    {
+      "repo": "18F/identity-idp",
+      "windowDays": 120,
+      "deployCount": 108,
+      "deployCountWindow": 36,
+      "deploysPerWeekWindow": 2.1,
+      "prCount": 277,
+      "revertCount": 4,
+      "revertMedianHours": 130.09402777777777,
+      "revertP85Hours": 2229.1420277777775,
+      "revertP95Hours": 3339.5008611111098,
+      "revertEvents": [
+        {
+          "revertSha": "b68b7472163bfc728ea44e46c30feab7f090ce09",
+          "revertedSha": "006fa181421168507fd2b808d26d2d98ea322731",
+          "revertDate": "2025-10-02T23:39:27Z",
+          "originalDate": "2025-04-23T16:58:38Z",
+          "recoveryHours": 3894.680277777778
+        },
+        {
+          "revertSha": "2f80fe6944ba6bf43c8e509a3253e15f2f8d4fe9",
+          "revertedSha": "89cec038a2d180bd5e0557de013c5020d6a0b921",
+          "revertDate": "2025-07-24T16:30:52Z",
+          "originalDate": "2025-07-16T15:01:49Z",
+          "recoveryHours": 193.48416666666665
+        },
+        {
+          "revertSha": "4e05396cace0534250bd125a46bafb509a1829fb",
+          "revertedSha": "53d9044081d6c5b758ffaed3229754938fd6b64e",
+          "revertDate": "2025-06-30T17:42:08Z",
+          "originalDate": "2025-06-30T13:00:47Z",
+          "recoveryHours": 4.689166666666667
+        },
+        {
+          "revertSha": "8303c3e2264562ce8f4495aedad55267afaca967",
+          "revertedSha": "8ffd1929019daf518e5950ad8d249191d88cd316",
+          "revertDate": "2025-06-30T16:39:39Z",
+          "originalDate": "2025-06-27T21:57:25Z",
+          "recoveryHours": 66.70388888888888
+        }
+      ],
+      "incidentCount": 0,
+      "incidentIssues": [],
+      "changeFailureRate": 0.1111111111111111,
+      "changeFailureRateRaw": 0.1111111111111111,
+      "changeFailureRatePerPR": 0.01444043321299639,
+      "flags": []
     },
     {
       "repo": "metabase/metabase",
       "windowDays": 120,
       "deployCount": 117,
+      "deployCountWindow": 39.21787709497207,
+      "deploysPerWeekWindow": 2.287709497206704,
       "prCount": 705,
       "revertCount": 30,
       "revertMedianHours": 152.06708333333333,
@@ -1863,42 +1425,20 @@
       ],
       "incidentCount": 0,
       "incidentIssues": [],
-      "changeFailureRate": 0.2564102564102564
+      "changeFailureRate": 0.7649572649572649,
+      "changeFailureRateRaw": 0.7649572649572649,
+      "changeFailureRatePerPR": 0.0425531914893617,
+      "flags": [
+        "high_cfr_outlier"
+      ]
     },
     {
-      "repo": "openstatusHQ/openstatus",
+      "repo": "chakra-ui/chakra-ui",
       "windowDays": 120,
-      "deployCount": 2661,
-      "prCount": 137,
-      "revertCount": 2,
-      "revertMedianHours": 0.035138888888888886,
-      "revertP85Hours": 0.050597222222222224,
-      "revertP95Hours": 0.05501388888888889,
-      "revertEvents": [
-        {
-          "revertSha": "ed3a8152517e272ca1623087558b94adc4a8d4b4",
-          "revertedSha": "fdacaad8e155f396b18065ab8b6d81ae676dc437",
-          "revertDate": "2025-09-19T09:37:11Z",
-          "originalDate": "2025-09-19T09:33:45Z",
-          "recoveryHours": 0.05722222222222222
-        },
-        {
-          "revertSha": "866f96ca5fb107bc9b086cd629c7fe2df158b487",
-          "revertedSha": "9930df79368efe78e9a4c891d2c24606d67fe687",
-          "revertDate": "2025-07-10T15:37:44Z",
-          "originalDate": "2025-07-10T15:36:57Z",
-          "recoveryHours": 0.013055555555555556
-        }
-      ],
-      "incidentCount": 0,
-      "incidentIssues": [],
-      "changeFailureRate": 0.000751597143930853
-    },
-    {
-      "repo": "toeverything/AFFiNE",
-      "windowDays": 120,
-      "deployCount": 34,
-      "prCount": 3073,
+      "deployCount": 171,
+      "deployCountWindow": 57.15877437325905,
+      "deploysPerWeekWindow": 3.3342618384401113,
+      "prCount": 202,
       "revertCount": 0,
       "revertMedianHours": null,
       "revertP85Hours": null,
@@ -1906,12 +1446,530 @@
       "revertEvents": [],
       "incidentCount": 0,
       "incidentIssues": [],
-      "changeFailureRate": 0
+      "changeFailureRate": 0,
+      "changeFailureRateRaw": 0,
+      "changeFailureRatePerPR": 0,
+      "flags": []
+    },
+    {
+      "repo": "ClickHouse/ClickHouse",
+      "windowDays": 120,
+      "deployCount": 100,
+      "deployCountWindow": 33.333333333333336,
+      "deploysPerWeekWindow": 1.9444444444444446,
+      "prCount": 154,
+      "revertCount": 70,
+      "revertMedianHours": 25.34847222222222,
+      "revertP85Hours": 253.68924999999996,
+      "revertP95Hours": 2931.16518055555,
+      "revertEvents": [
+        {
+          "revertSha": "ba850b6c893bce9c5ff6b6fe3f8aefa305028a2e",
+          "revertedSha": "40457805ff8f6334a1c4c7cf96568b79e53f0321",
+          "revertDate": "2025-10-01T12:51:27Z",
+          "originalDate": "2025-10-01T12:48:00Z",
+          "recoveryHours": 0.0575
+        },
+        {
+          "revertSha": "4a5a25a74baca82d325e269c9e24ecec58661c53",
+          "revertedSha": "6b85495ab220b76c4c7403bbac8c19edd67b86d7",
+          "revertDate": "2025-09-30T22:16:37Z",
+          "originalDate": "2025-09-29T20:57:44Z",
+          "recoveryHours": 25.314722222222223
+        },
+        {
+          "revertSha": "39c68f4d31bb670dbab21f6e999c3b72d126067e",
+          "revertedSha": "94ed5575f4c9afb4913603c186c95dad49358561",
+          "revertDate": "2025-09-26T06:45:00Z",
+          "originalDate": "2025-08-28T13:20:29Z",
+          "recoveryHours": 689.4086111111111
+        },
+        {
+          "revertSha": "2feb6ccff1c0a04dc7134573ba15e8364d5f6e1a",
+          "revertedSha": "3d5f1d86917578cf061798575ef0e44cd596bb68",
+          "revertDate": "2025-09-23T15:24:50Z",
+          "originalDate": "2025-09-23T14:12:14Z",
+          "recoveryHours": 1.21
+        },
+        {
+          "revertSha": "7cffa6c16572da57eda3dd0dc84030eed1fec925",
+          "revertedSha": "2f1eb10b5488356b53deb7ed6d6d9fb23de89a71",
+          "revertDate": "2025-09-23T13:18:01Z",
+          "originalDate": "2025-08-26T01:29:52Z",
+          "recoveryHours": 683.8025
+        },
+        {
+          "revertSha": "ae833f3ab95069d3c1790b4e0b720457db77f8aa",
+          "revertedSha": "21aaed1c4e89ef3b6a3dcddfc9c3c3ee6f37926e",
+          "revertDate": "2025-09-23T13:17:38Z",
+          "originalDate": "2025-08-23T04:18:42Z",
+          "recoveryHours": 752.9822222222223
+        },
+        {
+          "revertSha": "2487a291687d7c3a3b9c0c5ffe42d8417533aaac",
+          "revertedSha": "a63805cfe1c6fe818b33a3b627b5ce2e21e42f3a",
+          "revertDate": "2025-09-23T13:17:30Z",
+          "originalDate": "2025-09-16T16:30:52Z",
+          "recoveryHours": 164.77722222222224
+        },
+        {
+          "revertSha": "7ae7afa7dcceebba5a1ab65c09712eec257d0539",
+          "revertedSha": "557014a7c0b810ca30f6f4fa900473107b47a8d4",
+          "revertDate": "2025-09-23T13:17:24Z",
+          "originalDate": "2025-09-16T17:58:44Z",
+          "recoveryHours": 163.3111111111111
+        },
+        {
+          "revertSha": "2f1eb10b5488356b53deb7ed6d6d9fb23de89a71",
+          "revertedSha": "827bd3703f9da1965165c99f5f29ab344c89c236",
+          "revertDate": "2025-08-26T01:29:52Z",
+          "originalDate": "2025-08-21T09:08:23Z",
+          "recoveryHours": 112.35805555555555
+        },
+        {
+          "revertSha": "c4d573912bb63763b97008f10f53c5643b908501",
+          "revertedSha": "6b5b8fc57220e50382ed9c53fab70d73efefdf99",
+          "revertDate": "2025-09-14T20:43:11Z",
+          "originalDate": "2025-09-04T22:22:02Z",
+          "recoveryHours": 238.3525
+        },
+        {
+          "revertSha": "a4c8f4f2af8d6d440a5d46d4e6c17480c05dd45c",
+          "revertedSha": "e922b7eeeb4bec04ca671f186e9a7cc17d791142",
+          "revertDate": "2025-09-14T20:42:25Z",
+          "originalDate": "2025-09-11T13:04:16Z",
+          "recoveryHours": 79.63583333333334
+        },
+        {
+          "revertSha": "bc47677aa0c6d6ea028f57b8707041fe56473b3e",
+          "revertedSha": "23b3fd535467b7b66eca529159f6b5d4a0c3fc64",
+          "revertDate": "2025-09-11T18:02:34Z",
+          "originalDate": "2025-09-11T17:53:36Z",
+          "recoveryHours": 0.14944444444444444
+        },
+        {
+          "revertSha": "59c10d13be8460089a4b8a7c0ab3219e9a5fa3bd",
+          "revertedSha": "aec86451c82e5b34871d24cd52150510a3eba502",
+          "revertDate": "2025-09-05T07:49:18Z",
+          "originalDate": "2025-09-04T15:17:51Z",
+          "recoveryHours": 16.524166666666666
+        },
+        {
+          "revertSha": "1bab1983614a84442516c2093066e37f7ba9f8a9",
+          "revertedSha": "bd81c7da2e68cd6cc500dfc2c1a2125293341292",
+          "revertDate": "2025-09-03T10:13:13Z",
+          "originalDate": "2025-09-02T15:59:06Z",
+          "recoveryHours": 18.235277777777778
+        },
+        {
+          "revertSha": "ea199f58c85e5a9ca90e44e30aa2c7ade57bd674",
+          "revertedSha": "47d2519bf49862f4e487eaa60d0abb425d3da135",
+          "revertDate": "2025-09-03T05:27:37Z",
+          "originalDate": "2025-09-02T18:04:28Z",
+          "recoveryHours": 11.385833333333334
+        },
+        {
+          "revertSha": "eb07a62d8ba3836461debc51b6a06c89dc7356ed",
+          "revertedSha": "a970bd56990e9598133959310b30a9fcfe8bc9d6",
+          "revertDate": "2025-08-30T03:33:42Z",
+          "originalDate": "2025-08-30T02:30:28Z",
+          "recoveryHours": 1.0538888888888889
+        },
+        {
+          "revertSha": "01a0b5cb39e8718186f501def8b658d5765654fe",
+          "revertedSha": "e2e17cdc59eb58229128f9681937ae3be5abdf58",
+          "revertDate": "2025-08-27T14:34:42Z",
+          "originalDate": "2025-08-27T01:02:53Z",
+          "recoveryHours": 13.530277777777778
+        },
+        {
+          "revertSha": "827bd3703f9da1965165c99f5f29ab344c89c236",
+          "revertedSha": "1f2ae829274380d0a2f7117ad8aebce6b5727e3a",
+          "revertDate": "2025-08-21T09:08:23Z",
+          "originalDate": "2025-08-13T21:08:17Z",
+          "recoveryHours": 180.00166666666667
+        },
+        {
+          "revertSha": "935c99e8d353673ea17a7fbccc2b6e07d4cdc072",
+          "revertedSha": "48e027c8ba999ea866cd507d1018bfc4c4ab9d73",
+          "revertDate": "2025-08-19T11:31:37Z",
+          "originalDate": "2025-08-19T10:29:57Z",
+          "recoveryHours": 1.0277777777777777
+        },
+        {
+          "revertSha": "6e2cb443cabd2b15c501e099d216bbf4596b2d65",
+          "revertedSha": "73873283ff65db0bf78ac8be97dea68da062a379",
+          "revertDate": "2025-08-18T21:32:10Z",
+          "originalDate": "2025-08-13T17:56:16Z",
+          "recoveryHours": 123.59833333333333
+        },
+        {
+          "revertSha": "8b4ffb32906fdb1966bb92016f5abf42b6ac4a29",
+          "revertedSha": "856ed0fc3129412f22ecc9ebfc356e3847e93b1f",
+          "revertDate": "2025-08-18T02:47:16Z",
+          "originalDate": "2025-08-16T04:07:59Z",
+          "recoveryHours": 46.65472222222222
+        },
+        {
+          "revertSha": "88fc5d24925077ff46a83e7705f3750a19cc5795",
+          "revertedSha": "f0fa8b73616fb66aec036e84cfcae4c9b67ee6de",
+          "revertDate": "2025-08-15T12:29:27Z",
+          "originalDate": "2025-08-14T12:42:47Z",
+          "recoveryHours": 23.77777777777778
+        },
+        {
+          "revertSha": "146356238d04500be7f74045b86d4b0bfc0a47df",
+          "revertedSha": "7a2e15e29b8a62de1da4037384400228f83eea16",
+          "revertDate": "2025-08-11T09:03:56Z",
+          "originalDate": "2025-08-08T09:34:27Z",
+          "recoveryHours": 71.49138888888889
+        },
+        {
+          "revertSha": "8fa84c38bf6fb83916020baf65ec47ac47302a65",
+          "revertedSha": "3ca813b7a350ba56b933c73e346f5d71d2dc5d06",
+          "revertDate": "2025-08-10T12:45:04Z",
+          "originalDate": "2025-08-10T12:44:44Z",
+          "recoveryHours": 0.005555555555555556
+        },
+        {
+          "revertSha": "9196b002f06f08a56a869a25f57807c76bc202d8",
+          "revertedSha": "f3e31378ffb69879babb8c8e074c88481a8e3a30",
+          "revertDate": "2025-08-08T05:31:26Z",
+          "originalDate": "2025-07-28T07:34:35Z",
+          "recoveryHours": 261.9475
+        },
+        {
+          "revertSha": "475398c1faac481da60ba14bae87508669f22f24",
+          "revertedSha": "8d71999a949a3bc8c75baa09be4aded68685b40b",
+          "revertDate": "2025-08-06T15:14:52Z",
+          "originalDate": "2025-08-06T12:32:18Z",
+          "recoveryHours": 2.7094444444444443
+        },
+        {
+          "revertSha": "fc0792f0ec59662a00e4f7318ce3286b6360a39e",
+          "revertedSha": "6418e8a920b2e3d4d10679779cfb3f23c080d1d9",
+          "revertDate": "2025-08-04T16:30:03Z",
+          "originalDate": "2025-08-03T18:29:40Z",
+          "recoveryHours": 22.00638888888889
+        },
+        {
+          "revertSha": "2bc626066c90e737c926c67ecd705908dc94c3ed",
+          "revertedSha": "22a8181ac9206cdbb85d8736f27ebdb6973e2eec",
+          "revertDate": "2025-08-04T15:36:46Z",
+          "originalDate": "2025-02-13T20:35:41Z",
+          "recoveryHours": 4123.018055555555
+        },
+        {
+          "revertSha": "73d64374de26278da0bb2bf7e7327ab904aa2b0e",
+          "revertedSha": "a160df7d5601a3710c94e91c2059dac98bcc73dc",
+          "revertDate": "2025-08-04T15:36:43Z",
+          "originalDate": "2025-02-24T16:12:57Z",
+          "recoveryHours": 3863.396111111111
+        },
+        {
+          "revertSha": "8fc66a2f889e58379c787d2024911413c6a03616",
+          "revertedSha": "88d60b998c4caf848572495e3d76261aa7cc9166",
+          "revertDate": "2025-08-04T15:36:25Z",
+          "originalDate": "2025-02-25T15:36:05Z",
+          "recoveryHours": 3840.0055555555555
+        },
+        {
+          "revertSha": "41dc6fdeba6a0267921deaa343680c32bf8a626d",
+          "revertedSha": "27b1d1ef2a48e2e1162fd6ad87e6c9109f5d3089",
+          "revertDate": "2025-08-04T15:33:45Z",
+          "originalDate": "2025-08-04T15:29:03Z",
+          "recoveryHours": 0.07833333333333334
+        },
+        {
+          "revertSha": "6edb2cbe287f77cf2a1f59da2c8ec0b658db0da3",
+          "revertedSha": "81b2fe388ec9573fe643cf5101b32a32dd57932c",
+          "revertDate": "2025-07-30T13:34:02Z",
+          "originalDate": "2025-07-30T13:17:37Z",
+          "recoveryHours": 0.27361111111111114
+        },
+        {
+          "revertSha": "02cbedcb7c18fd30529ca22b20e008fc2d61a035",
+          "revertedSha": "df1c991fce9e1a6deda6f124877a0f310a4b29ff",
+          "revertDate": "2025-07-29T14:54:02Z",
+          "originalDate": "2025-07-27T00:18:43Z",
+          "recoveryHours": 62.58861111111111
+        },
+        {
+          "revertSha": "1e4c727dc0fa6a9646602d9dead52041c08684cc",
+          "revertedSha": "29032aedc27fbddabb5dcec1deb6bd2ec5cd6a77",
+          "revertDate": "2025-07-24T09:53:40Z",
+          "originalDate": "2025-07-02T14:18:31Z",
+          "recoveryHours": 523.5858333333333
+        },
+        {
+          "revertSha": "f86af41879dc783afabe897a45d6c4e17934824a",
+          "revertedSha": "9df775a766ca5da584db7db23a904c83b629c2e7",
+          "revertDate": "2025-07-23T16:03:12Z",
+          "originalDate": "2025-07-23T15:26:42Z",
+          "recoveryHours": 0.6083333333333333
+        },
+        {
+          "revertSha": "5cc2531c7cbe034108229dd88b7d876da6dd9322",
+          "revertedSha": "d50a60a8cc0e4e5db191b5ea2d39690150434469",
+          "revertDate": "2025-07-22T23:54:42Z",
+          "originalDate": "2025-07-22T23:51:39Z",
+          "recoveryHours": 0.050833333333333335
+        },
+        {
+          "revertSha": "0014990937833a75223592dfa7df7b5795dc80ec",
+          "revertedSha": "9d943878f92eef5d36aa3fd0dd50029821201cd1",
+          "revertDate": "2025-07-21T14:37:31Z",
+          "originalDate": "2025-07-21T14:02:52Z",
+          "recoveryHours": 0.5775
+        },
+        {
+          "revertSha": "6a8fd27211eeab7431a2cba1102a669b51caa0d5",
+          "revertedSha": "2dbbc823c6995366b74c79ec71e7c99ee3565588",
+          "revertDate": "2025-07-21T13:28:50Z",
+          "originalDate": "2025-07-17T19:04:08Z",
+          "recoveryHours": 90.41166666666666
+        },
+        {
+          "revertSha": "25bc93bf6d47ad38c57fdd9be9b0bdef31f24ad9",
+          "revertedSha": "f99cf3b995b46b30ead8c040136b80931ed91c20",
+          "revertDate": "2025-07-21T13:28:39Z",
+          "originalDate": "2025-07-18T09:59:20Z",
+          "recoveryHours": 75.48861111111111
+        },
+        {
+          "revertSha": "b2c3b77ffc01beb66b8aa0479545da2f3a60ec1e",
+          "revertedSha": "4b28d303fb1a0c473f01a8bc35ad6ccf3c999fd6",
+          "revertDate": "2025-07-17T18:09:02Z",
+          "originalDate": "2025-07-16T16:54:18Z",
+          "recoveryHours": 25.245555555555555
+        },
+        {
+          "revertSha": "c08ea06112486d9cf124295a52277a3c4e88f77e",
+          "revertedSha": "7ef4050cf928e2c38f3175b6e78a4b5b4c6b6a23",
+          "revertDate": "2025-07-16T12:42:58Z",
+          "originalDate": "2025-05-01T16:21:21Z",
+          "recoveryHours": 1820.3602777777778
+        },
+        {
+          "revertSha": "e9c74610fc97d8dbb90de7906e1f6e8b1c4b2976",
+          "revertedSha": "a3cae01ef319b8eb32145a202682e5250fc262d4",
+          "revertDate": "2025-07-16T09:19:00Z",
+          "originalDate": "2025-07-15T15:43:00Z",
+          "recoveryHours": 17.6
+        },
+        {
+          "revertSha": "08438fc5a65a69f5db9d3ee63e832d01c15cc343",
+          "revertedSha": "6dab2758ec8deb273bd716c8f7fa298b92c86b63",
+          "revertDate": "2025-07-15T17:11:08Z",
+          "originalDate": "2025-07-15T17:03:06Z",
+          "recoveryHours": 0.1338888888888889
+        },
+        {
+          "revertSha": "a3cae01ef319b8eb32145a202682e5250fc262d4",
+          "revertedSha": "fe6e511a733a65ccf0448ef14821e4249b5922d3",
+          "revertDate": "2025-07-15T15:43:00Z",
+          "originalDate": "2025-07-15T10:11:10Z",
+          "recoveryHours": 5.530555555555556
+        },
+        {
+          "revertSha": "215c9344db03c0b863970e48c461c2d38d8b81f0",
+          "revertedSha": "aec0d174a62577c068035c9649cbecba134f90f7",
+          "revertDate": "2025-07-15T13:17:05Z",
+          "originalDate": "2025-07-14T11:54:09Z",
+          "recoveryHours": 25.38222222222222
+        },
+        {
+          "revertSha": "37e000e245b2267c1369d73d19d5a84e06c17df9",
+          "revertedSha": "f54f8180aebc48ff82d7eba1acd8f7faf86380bf",
+          "revertDate": "2025-07-15T08:07:41Z",
+          "originalDate": "2025-07-14T22:29:50Z",
+          "recoveryHours": 9.630833333333333
+        },
+        {
+          "revertSha": "cda6bb49ee435ca26c6ef427e2bf5fc3c675c419",
+          "revertedSha": "26cb916ad00ce04e516e75169f188327913f4f34",
+          "revertDate": "2025-07-12T22:20:57Z",
+          "originalDate": "2025-07-10T14:24:49Z",
+          "recoveryHours": 55.93555555555555
+        },
+        {
+          "revertSha": "9e4afd218e2f8d9cca11a790706d3bd3a34877d8",
+          "revertedSha": "08237ea032222188c799cf6454f2c788efd2186b",
+          "revertDate": "2025-07-12T22:20:51Z",
+          "originalDate": "2025-07-10T15:33:08Z",
+          "recoveryHours": 54.79527777777778
+        },
+        {
+          "revertSha": "b5b9251c5cdca43719931bf847aee6ba79298be4",
+          "revertedSha": "24b44b6c647a8f4016d1c7e5035e936e3ca79721",
+          "revertDate": "2025-07-12T14:26:56Z",
+          "originalDate": "2025-07-12T14:22:00Z",
+          "recoveryHours": 0.08222222222222222
+        },
+        {
+          "revertSha": "4adbae9872395eaba325497a4f10d2a04251801b",
+          "revertedSha": "fec94068e920d794a8f6bee95210ed4e",
+          "revertDate": "2025-07-11T09:00:03Z",
+          "originalDate": "2025-07-11T06:05:13Z",
+          "recoveryHours": 2.9138888888888888
+        },
+        {
+          "revertSha": "466bcc5629bc56780f3726dbec205353a42a122c",
+          "revertedSha": "49d7324abd2c6594be87684a02588bc9a216a74b",
+          "revertDate": "2025-07-09T18:54:12Z",
+          "originalDate": "2025-07-09T18:06:24Z",
+          "recoveryHours": 0.7966666666666666
+        },
+        {
+          "revertSha": "7cf1e696ef4ccb17826ec29e4d1421309d21e52a",
+          "revertedSha": "146eaf90b3e5a168639564c045a594ba7d9f3dda",
+          "revertDate": "2025-07-09T18:14:22Z",
+          "originalDate": "2025-07-01T23:51:29Z",
+          "recoveryHours": 186.3813888888889
+        },
+        {
+          "revertSha": "5ecee9f134ce8e17ae7b7a6b7f488b0fd9b37c6f",
+          "revertedSha": "6c2ac55db955e10c286cf1a60ee7b9ed87fb9b93",
+          "revertDate": "2025-07-09T09:54:32Z",
+          "originalDate": "2025-07-08T19:35:06Z",
+          "recoveryHours": 14.323888888888888
+        },
+        {
+          "revertSha": "ff1c49352549e56523ac3c6d8d6cd576af1f32ff",
+          "revertedSha": "7085225e674d3d0f33904eb18e4d4abbc5455011",
+          "revertDate": "2025-07-08T14:33:29Z",
+          "originalDate": "2025-07-04T17:40:17Z",
+          "recoveryHours": 92.88666666666667
+        },
+        {
+          "revertSha": "6d9936de276deeb4c40f72fa7d866e531bf43a42",
+          "revertedSha": "286206d43a3d8c2a5e386b7dceabd81cbeb71c9e",
+          "revertDate": "2025-07-06T03:58:14Z",
+          "originalDate": "2025-07-06T02:35:25Z",
+          "recoveryHours": 1.3802777777777777
+        },
+        {
+          "revertSha": "2138aa564c68b0b4c33d5b55b19a05b7358962d1",
+          "revertedSha": "e4882071cee327724bfe0d0c90e4f7d590d5b492",
+          "revertDate": "2025-07-04T20:24:28Z",
+          "originalDate": "2024-07-12T12:08:53Z",
+          "recoveryHours": 8576.259722222223
+        },
+        {
+          "revertSha": "2407621d3793f3e91fe3bb2d4d40b11ee29b82a4",
+          "revertedSha": "f046b4db54080f0b022cc27f9611464727327e8e",
+          "revertDate": "2025-07-03T17:39:46Z",
+          "originalDate": "2025-07-03T16:52:32Z",
+          "recoveryHours": 0.7872222222222223
+        },
+        {
+          "revertSha": "9fcd69c152e1d6fa0ddcbb5eb1d175e251dfdd9f",
+          "revertedSha": "1443e43bcdf369f387a83cef8abb8d48518cf15d",
+          "revertDate": "2025-07-02T15:01:49Z",
+          "originalDate": "2025-07-01T17:52:05Z",
+          "recoveryHours": 21.162222222222223
+        },
+        {
+          "revertSha": "c0d5971a77126e91bfa95be268ccd2f1e07cbad2",
+          "revertedSha": "80b3de5a2c5bf04a0cb558fed38316e6b190ec48",
+          "revertDate": "2025-07-02T10:32:07Z",
+          "originalDate": "2025-06-30T10:21:36Z",
+          "recoveryHours": 48.17527777777778
+        },
+        {
+          "revertSha": "822452573265f668aaa8c1653cfece07735f96b1",
+          "revertedSha": "9210fe2d5105e93b8bd2a29748767f04f35c6bc0",
+          "revertDate": "2025-07-02T08:09:29Z",
+          "originalDate": "2025-07-02T04:14:27Z",
+          "recoveryHours": 3.917222222222222
+        },
+        {
+          "revertSha": "653cd0509e12f8fa15f7da0615c227f60df3e2a3",
+          "revertedSha": "b301e1262a80d19f46bb8c3e813461f882053b75",
+          "revertDate": "2025-07-01T23:50:08Z",
+          "originalDate": "2025-06-11T09:34:17Z",
+          "recoveryHours": 494.26416666666665
+        },
+        {
+          "revertSha": "77fbb7b56b64c98371aa2c3906245d5af3b1bc7f",
+          "revertedSha": "1f28e8bbd00a340704d9696343269f223493d4d8",
+          "revertDate": "2025-06-30T16:53:52Z",
+          "originalDate": "2025-06-30T15:34:05Z",
+          "recoveryHours": 1.3297222222222222
+        },
+        {
+          "revertSha": "80b3de5a2c5bf04a0cb558fed38316e6b190ec48",
+          "revertedSha": "6c95be25ac1f6060ed43d266189b3d55cf65104e",
+          "revertDate": "2025-06-30T10:21:36Z",
+          "originalDate": "2025-06-26T14:16:53Z",
+          "recoveryHours": 92.07861111111112
+        },
+        {
+          "revertSha": "6b0f84aa28918c1054df3311a21b0589f65946c7",
+          "revertedSha": "8a5593d797d0ed14f5858487cca3d7fa372db0c6",
+          "revertDate": "2025-06-29T04:41:24Z",
+          "originalDate": "2025-06-26T15:15:44Z",
+          "recoveryHours": 61.42777777777778
+        },
+        {
+          "revertSha": "82c541d94d32ac6a4c8b9df5e7b67290f9996165",
+          "revertedSha": "7c806c2a3f1cb8ba19b36286bd5c72fb2b301a4d",
+          "revertDate": "2025-06-29T04:41:07Z",
+          "originalDate": "2025-06-27T10:02:16Z",
+          "recoveryHours": 42.6475
+        },
+        {
+          "revertSha": "174ca13cdc11761b629b1ff48dabf10d3d80ca66",
+          "revertedSha": "5d0aa96041a6339f910569713706ea8926b8d1a0",
+          "revertDate": "2025-06-26T00:44:00Z",
+          "originalDate": "2025-06-25T13:36:02Z",
+          "recoveryHours": 11.132777777777777
+        },
+        {
+          "revertSha": "0810984fbcae5dcda5934da443f19bea7295371e",
+          "revertedSha": "8bd98582283ec31742aba908ffb1fa717cbe57d5",
+          "revertDate": "2025-06-23T12:45:47Z",
+          "originalDate": "2025-06-18T05:03:03Z",
+          "recoveryHours": 127.71222222222222
+        },
+        {
+          "revertSha": "ca618a5e4021f78fb51eefbdcec57f3cbba7eb2a",
+          "revertedSha": "bbf2b7ca09d3f1b0a641b9305f276ccba9a68561",
+          "revertDate": "2025-06-23T15:17:29Z",
+          "originalDate": "2025-06-20T13:34:11Z",
+          "recoveryHours": 73.72166666666666
+        },
+        {
+          "revertSha": "928a748d9d60612c599d78caee125f7ae97e0f77",
+          "revertedSha": "a5fa71cf7a3132146d6b7ae4e8ef9933ad65544d",
+          "revertDate": "2025-06-17T11:40:00Z",
+          "originalDate": "2025-06-17T02:24:07Z",
+          "recoveryHours": 9.264722222222222
+        },
+        {
+          "revertSha": "2a5ea690b099491bfd489b71451b7e7bd10f6862",
+          "revertedSha": "205eec6629c913ddf0861b8143f7ebe2b5098e03",
+          "revertDate": "2025-06-10T20:48:23Z",
+          "originalDate": "2025-06-07T00:33:36Z",
+          "recoveryHours": 92.24638888888889
+        }
+      ],
+      "incidentCount": 0,
+      "incidentIssues": [],
+      "changeFailureRate": 1,
+      "changeFailureRateRaw": 2.0999999999999996,
+      "changeFailureRatePerPR": 0.45454545454545453,
+      "flags": [
+        "high_cfr_outlier",
+        "cfr_exceeds_one"
+      ]
     },
     {
       "repo": "vercel/next.js",
       "windowDays": 120,
       "deployCount": 19,
+      "deployCountWindow": 7.549668874172186,
+      "deploysPerWeekWindow": 0.4403973509933775,
       "prCount": 1148,
       "revertCount": 5,
       "revertMedianHours": 24.771944444444443,
@@ -1956,7 +2014,57 @@
       ],
       "incidentCount": 0,
       "incidentIssues": [],
-      "changeFailureRate": 0.2631578947368421
+      "changeFailureRate": 0.6622807017543859,
+      "changeFailureRateRaw": 0.6622807017543859,
+      "changeFailureRatePerPR": 0.004355400696864111,
+      "flags": [
+        "subweekly_deploy_rate",
+        "deploy_coverage_sparse",
+        "high_cfr_outlier"
+      ]
+    },
+    {
+      "repo": "toeverything/AFFiNE",
+      "windowDays": 120,
+      "deployCount": 34,
+      "deployCountWindow": 11.396648044692737,
+      "deploysPerWeekWindow": 0.664804469273743,
+      "prCount": 3073,
+      "revertCount": 0,
+      "revertMedianHours": null,
+      "revertP85Hours": null,
+      "revertP95Hours": null,
+      "revertEvents": [],
+      "incidentCount": 0,
+      "incidentIssues": [],
+      "changeFailureRate": 0,
+      "changeFailureRateRaw": 0,
+      "changeFailureRatePerPR": 0,
+      "flags": [
+        "subweekly_deploy_rate",
+        "deploy_coverage_sparse"
+      ]
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "windowDays": 120,
+      "deployCount": null,
+      "deployCountWindow": null,
+      "deploysPerWeekWindow": null,
+      "prCount": null,
+      "revertCount": 0,
+      "revertMedianHours": null,
+      "revertP85Hours": null,
+      "revertP95Hours": null,
+      "revertEvents": [],
+      "incidentCount": 0,
+      "incidentIssues": [],
+      "changeFailureRate": null,
+      "changeFailureRateRaw": null,
+      "changeFailureRatePerPR": null,
+      "flags": [
+        "missing_deploy_window"
+      ]
     }
   ]
 }
