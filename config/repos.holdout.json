@@ -114,5 +114,37 @@
   {
     "slug": "superstreamlabs/memphis",
     "reason": "stale_release_stream"
+  },
+  {
+    "slug": "adamcohenhillel/ADeus",
+    "reason": "no_pr_activity"
+  },
+  {
+    "slug": "CMU-Perceptual-Computing-Lab/openpose",
+    "reason": "stale_releases"
+  },
+  {
+    "slug": "FiloSottile/mkcert",
+    "reason": "stale_releases"
+  },
+  {
+    "slug": "garylab/MakeMoneyWithAI",
+    "reason": "no_pr_activity"
+  },
+  {
+    "slug": "Genymobile/scrcpy",
+    "reason": "non_default_pr_base"
+  },
+  {
+    "slug": "google-research/bert",
+    "reason": "archived"
+  },
+  {
+    "slug": "ksm26/Multi-AI-Agent-Systems-with-crewAI",
+    "reason": "no_pr_activity"
+  },
+  {
+    "slug": "LinShunKang/MyPerf4J",
+    "reason": "no_pr_activity"
   }
 ]

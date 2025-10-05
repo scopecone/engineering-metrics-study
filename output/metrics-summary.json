@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-05T08:09:10.535Z",
+  "generatedAt": "2025-10-05T08:22:18.733Z",
   "rows": [
     {
       "repo": "18F/identity-idp",
@@ -80,22 +80,6 @@
       "prCycleTimeHoursP95": null,
       "sampleWindowStart": "2024-10-09T15:41:29Z",
       "sampleWindowEnd": "2025-10-02T17:55:29Z"
-    },
-    {
-      "repo": "adamcohenhillel/ADeus",
-      "language": "TypeScript",
-      "topics": "ai|open|open-source-ai|wear|wearable|wearable-devices",
-      "defaultBranch": "main",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
     },
     {
       "repo": "Aider-AI/aider",
@@ -582,16 +566,16 @@
       "language": "Python",
       "topics": "ai|ai-art|deep-learning|diffusion|gradio|image-generation|image2image|img2img|pytorch|stable-diffusion|text2image|torch|txt2img|unstable|upscaling|web",
       "defaultBranch": "master",
-      "deployCount": 0,
+      "deployCount": 4,
       "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
+      "deploymentsPerWeekMedian": 4,
+      "deploymentsPerWeekP85": 4,
+      "deploymentsPerWeekP95": 4,
       "prCycleTimeHoursMedian": null,
       "prCycleTimeHoursP85": null,
       "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
+      "sampleWindowStart": "2024-12-22T10:50:11Z",
+      "sampleWindowEnd": "2024-12-22T10:54:51Z"
     },
     {
       "repo": "AvaloniaUI/Avalonia",
@@ -976,22 +960,6 @@
       "prCycleTimeHoursP95": 125.80345833333303,
       "sampleWindowStart": "2024-10-18T06:57:05Z",
       "sampleWindowEnd": "2025-09-21T07:56:18Z"
-    },
-    {
-      "repo": "CMU-Perceptual-Computing-Lab/openpose",
-      "language": "C++",
-      "topics": "caffe|computer-vision|cpp|cvpr-2017|deep-learning|face|foot-estimation|hand-estimation|human-behavior-understanding|human-pose|human-pose-estimation|keypoint-detection|keypoints|machine-learning|multi-person|opencv|openpose|pose|pose-estimation|real-time",
-      "defaultBranch": "master",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
     },
     {
       "repo": "codenotary/immudb",
@@ -1570,22 +1538,6 @@
       "sampleWindowEnd": "2025-10-03T14:43:37Z"
     },
     {
-      "repo": "FiloSottile/mkcert",
-      "language": "Go",
-      "topics": "certificates|chrome|firefox|https|ios|linux|local-development|localhost|macos|root-ca|tls|windows",
-      "defaultBranch": "master",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
-    },
-    {
       "repo": "firecracker-microvm/firecracker",
       "language": "Rust",
       "topics": "containers|minimalist|open-source|oversubscription|rust|sandbox|serverless|virtual-machine|virtualization",
@@ -1714,22 +1666,6 @@
       "sampleWindowEnd": "2025-10-01T06:39:25Z"
     },
     {
-      "repo": "garylab/MakeMoneyWithAI",
-      "language": "Python",
-      "topics": "ai|ai-agent|ai-agents|deepfake|llm|mcp|mcp-server|nlp|ocr|open-source|open-source-ai",
-      "defaultBranch": "main",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
-    },
-    {
       "repo": "gatling/gatling",
       "language": "Scala",
       "topics": "automation|cicd|gatling|java|javascript|kotlin|load-test|load-testing|load-tests|loadtest|loadtesting|loadtests|netty|performance-test|performance-test-gatling|performance-testing|performance-tests|scala|typescript",
@@ -1744,22 +1680,6 @@
       "prCycleTimeHoursP95": null,
       "sampleWindowStart": "2024-11-13T08:18:42Z",
       "sampleWindowEnd": "2025-09-23T11:08:59Z"
-    },
-    {
-      "repo": "Genymobile/scrcpy",
-      "language": "C",
-      "topics": "android|c|ffmpeg|libav|mirroring|recording|screen|sdl2",
-      "defaultBranch": "master",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
     },
     {
       "repo": "getgrav/grav",
@@ -1856,22 +1776,6 @@
       "prCycleTimeHoursP95": null,
       "sampleWindowStart": "2025-07-07T17:55:26Z",
       "sampleWindowEnd": "2025-10-03T18:18:09Z"
-    },
-    {
-      "repo": "google-research/bert",
-      "language": "Python",
-      "topics": "google|natural-language-processing|natural-language-understanding|nlp|tensorflow",
-      "defaultBranch": "master",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
     },
     {
       "repo": "goreleaser/goreleaser",
@@ -2246,16 +2150,16 @@
       "language": "Swift",
       "topics": "hacktoberfest|macos|mpv|swift|video|video-player",
       "defaultBranch": "develop",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
+      "deployCount": 2,
+      "prCount": 3,
+      "deploymentsPerWeekMedian": 2,
+      "deploymentsPerWeekP85": 2,
+      "deploymentsPerWeekP95": 2,
+      "prCycleTimeHoursMedian": 4551.02,
+      "prCycleTimeHoursP85": 5799.672416666666,
+      "prCycleTimeHoursP95": 6156.43025,
+      "sampleWindowStart": "2024-10-27T14:50:26Z",
+      "sampleWindowEnd": "2025-07-18T13:38:59Z"
     },
     {
       "repo": "immich-app/immich",
@@ -2471,15 +2375,15 @@
       "topics": "android|f-droid|jetpack-compose|kotlin|material-design|youtube-dl|youtube-downloader|yt-dlp",
       "defaultBranch": "main",
       "deployCount": 0,
-      "prCount": 0,
+      "prCount": 3,
       "deploymentsPerWeekMedian": null,
       "deploymentsPerWeekP85": null,
       "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
+      "prCycleTimeHoursMedian": 14.560277777777777,
+      "prCycleTimeHoursP85": 129.70133333333334,
+      "prCycleTimeHoursP95": 162.59877777777777,
+      "sampleWindowStart": "2024-10-18T04:49:55Z",
+      "sampleWindowEnd": "2024-11-29T15:25:10Z"
     },
     {
       "repo": "kanidm/kanidm",
@@ -2592,22 +2496,6 @@
       "prCycleTimeHoursP95": 514.5115555555554,
       "sampleWindowStart": "2025-01-29T20:06:22Z",
       "sampleWindowEnd": "2025-10-02T15:41:10Z"
-    },
-    {
-      "repo": "ksm26/Multi-AI-Agent-Systems-with-crewAI",
-      "language": "Jupyter Notebook",
-      "topics": "agent-cooperation|ai-agents|ai-memory|ai-workflow-optimization|business-process-automation|complex-task-management|crewai|custom-tools|customer-support-automation|error-handling|event-planning|financial-analysis|multi-agent-systems|natural-language-prompting|open-source-ai|resume-tailoring|role-playing|task-automation|technical-writing",
-      "defaultBranch": "main",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
     },
     {
       "repo": "kubeedge/kubeedge",
@@ -2768,22 +2656,6 @@
       "prCycleTimeHoursP95": 66.42738888888887,
       "sampleWindowStart": "2024-10-08T13:34:41Z",
       "sampleWindowEnd": "2025-10-02T07:30:14Z"
-    },
-    {
-      "repo": "LinShunKang/MyPerf4J",
-      "language": "Java",
-      "topics": "agent|apm|bytecode|diagnosis|java-agent|jvm-monitor|metrics|microservices|monitor|monitoring|monitoring-tool|observability|performance|performance-analysis|performance-metrics|performance-monitoring|performance-tuning|performance-visualization|profiler|profiling",
-      "defaultBranch": "develop",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
     },
     {
       "repo": "litmuschaos/litmus",
@@ -4230,16 +4102,16 @@
       "language": "Swift",
       "topics": "kcptun|macos|shadowsocks|shadowsocksx-ng|swift|v2ray-plugin",
       "defaultBranch": "develop",
-      "deployCount": 0,
-      "prCount": 0,
-      "deploymentsPerWeekMedian": null,
-      "deploymentsPerWeekP85": null,
-      "deploymentsPerWeekP95": null,
-      "prCycleTimeHoursMedian": null,
-      "prCycleTimeHoursP85": null,
-      "prCycleTimeHoursP95": null,
-      "sampleWindowStart": null,
-      "sampleWindowEnd": null
+      "deployCount": 1,
+      "prCount": 1,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 1,
+      "deploymentsPerWeekP95": 1,
+      "prCycleTimeHoursMedian": 31.608333333333334,
+      "prCycleTimeHoursP85": 31.608333333333334,
+      "prCycleTimeHoursP95": 31.608333333333334,
+      "sampleWindowStart": "2024-10-28T04:18:19Z",
+      "sampleWindowEnd": "2024-10-29T12:32:17Z"
     },
     {
       "repo": "siemens/meta-iot2050",

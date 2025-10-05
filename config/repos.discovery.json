@@ -25,17 +25,6 @@
     }
   },
   {
-    "slug": "adamcohenhillel/ADeus",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
-    }
-  },
-  {
     "slug": "Aider-AI/aider",
     "method": "deployments",
     "deployments": {
@@ -150,17 +139,6 @@
     }
   },
   {
-    "slug": "CMU-Perceptual-Computing-Lab/openpose",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
-    }
-  },
-  {
     "slug": "comfyanonymous/ComfyUI",
     "method": "releases",
     "releases": {}
@@ -217,17 +195,6 @@
     }
   },
   {
-    "slug": "FiloSottile/mkcert",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
-    }
-  },
-  {
     "slug": "firezone/firezone",
     "method": "releases",
     "releases": {
@@ -241,28 +208,6 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^[0-9]"
-    }
-  },
-  {
-    "slug": "garylab/MakeMoneyWithAI",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
-    }
-  },
-  {
-    "slug": "Genymobile/scrcpy",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
     }
   },
   {
@@ -290,17 +235,6 @@
     "deployments": {
       "environments": [
         "github-pages"
-      ]
-    }
-  },
-  {
-    "slug": "google-research/bert",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
       ]
     }
   },
@@ -421,17 +355,6 @@
     "releases": {
       "includePrereleases": true,
       "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "ksm26/Multi-AI-Agent-Systems-with-crewAI",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
     }
   },
   {
@@ -924,4 +847,3 @@
     "releases": {}
   }
 ]
-

@@ -41,17 +41,6 @@
     }
   },
   {
-    "slug": "adamcohenhillel/ADeus",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
-    }
-  },
-  {
     "slug": "Aider-AI/aider",
     "method": "deployments",
     "deployments": {
@@ -459,17 +448,6 @@
     "deployments": {}
   },
   {
-    "slug": "CMU-Perceptual-Computing-Lab/openpose",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
-    }
-  },
-  {
     "slug": "codenotary/immudb",
     "method": "releases",
     "releases": {
@@ -721,17 +699,6 @@
     }
   },
   {
-    "slug": "FiloSottile/mkcert",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
-    }
-  },
-  {
     "slug": "firecracker-microvm/firecracker",
     "method": "releases",
     "releases": {
@@ -788,17 +755,6 @@
     }
   },
   {
-    "slug": "garylab/MakeMoneyWithAI",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
-    }
-  },
-  {
     "slug": "gatling/gatling",
     "method": "actions",
     "actions": {
@@ -809,17 +765,6 @@
       ],
       "events": [
         "push"
-      ]
-    }
-  },
-  {
-    "slug": "Genymobile/scrcpy",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
       ]
     }
   },
@@ -876,17 +821,6 @@
     "deployments": {
       "environments": [
         "github-pages"
-      ]
-    }
-  },
-  {
-    "slug": "google-research/bert",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
       ]
     }
   },
@@ -1239,17 +1173,6 @@
     "releases": {
       "includePrereleases": true,
       "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "ksm26/Multi-AI-Agent-Systems-with-crewAI",
-    "method": "actions",
-    "actions": {
-      "workflowKeywords": [
-        "deploy",
-        "release",
-        "publish"
-      ]
     }
   },
   {
@@ -2479,4 +2402,3 @@
     "releases": {}
   }
 ]
-
