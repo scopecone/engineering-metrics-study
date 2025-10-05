@@ -24,11 +24,51 @@
     }
   },
   {
+    "slug": "absmach/supermq",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
     "slug": "activepieces/activepieces",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "adamcohenhillel/ADeus",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Aider-AI/aider",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "Alamofire/Alamofire",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
     }
   },
   {
@@ -44,6 +84,11 @@
         "push"
       ]
     }
+  },
+  {
+    "slug": "All-Hands-AI/OpenHands",
+    "method": "releases",
+    "releases": {}
   },
   {
     "slug": "AmruthPillai/Reactive-Resume",
@@ -254,6 +299,17 @@
     }
   },
   {
+    "slug": "AUTOMATIC1111/stable-diffusion-webui",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "AvaloniaUI/Avalonia",
     "method": "releases",
     "releases": {
@@ -403,6 +459,17 @@
     "deployments": {}
   },
   {
+    "slug": "CMU-Perceptual-Computing-Lab/openpose",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "codenotary/immudb",
     "method": "releases",
     "releases": {
@@ -417,6 +484,11 @@
       "includePrereleases": false,
       "tagPattern": "^v"
     }
+  },
+  {
+    "slug": "comfyanonymous/ComfyUI",
+    "method": "releases",
+    "releases": {}
   },
   {
     "slug": "commitizen-tools/commitizen",
@@ -440,6 +512,17 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "CorentinJ/Real-Time-Voice-Cloning",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
     }
   },
   {
@@ -638,6 +721,17 @@
     }
   },
   {
+    "slug": "FiloSottile/mkcert",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "firecracker-microvm/firecracker",
     "method": "releases",
     "releases": {
@@ -694,6 +788,17 @@
     }
   },
   {
+    "slug": "garylab/MakeMoneyWithAI",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "gatling/gatling",
     "method": "actions",
     "actions": {
@@ -704,6 +809,17 @@
       ],
       "events": [
         "push"
+      ]
+    }
+  },
+  {
+    "slug": "Genymobile/scrcpy",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
       ]
     }
   },
@@ -736,11 +852,42 @@
     }
   },
   {
+    "slug": "gkd-kit/gkd",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "go-gitea/gitea",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "google-ai-edge/mediapipe",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "google-research/bert",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
     }
   },
   {
@@ -890,12 +1037,26 @@
     }
   },
   {
+    "slug": "hiyouga/LLaMA-Factory",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "docker"
+      ]
+    }
+  },
+  {
     "slug": "httpie/cli",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^[0-9]"
     }
+  },
+  {
+    "slug": "huggingface/transformers",
+    "method": "releases",
+    "releases": {}
   },
   {
     "slug": "hypermodeinc/dgraph",
@@ -906,11 +1067,33 @@
     }
   },
   {
+    "slug": "iina/iina",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "immich-app/immich",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "infiniflow/ragflow",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
     }
   },
   {
@@ -930,6 +1113,17 @@
     }
   },
   {
+    "slug": "interpretml/interpret",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "ionic-team/ionic-framework",
     "method": "releases",
     "releases": {
@@ -943,6 +1137,17 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "jacobgil/pytorch-grad-cam",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
     }
   },
   {
@@ -970,6 +1175,22 @@
     }
   },
   {
+    "slug": "JetBrains/kotlin",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "JunkFood02/Seal",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "kanidm/kanidm",
     "method": "releases",
     "releases": {
@@ -989,6 +1210,11 @@
       "includePrereleases": false,
       "tagPattern": "^v"
     }
+  },
+  {
+    "slug": "keras-team/keras",
+    "method": "releases",
+    "releases": {}
   },
   {
     "slug": "keystonejs/keystone",
@@ -1013,6 +1239,28 @@
     "releases": {
       "includePrereleases": true,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "ksm26/Multi-AI-Agent-Systems-with-crewAI",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "kubeedge/kubeedge",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
     }
   },
   {
@@ -1098,6 +1346,11 @@
         "push"
       ]
     }
+  },
+  {
+    "slug": "lobehub/lobe-chat",
+    "method": "releases",
+    "releases": {}
   },
   {
     "slug": "localsend/localsend",
@@ -1252,11 +1505,32 @@
     }
   },
   {
+    "slug": "multimindlab/multimind-sdk",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "n8n-io/n8n",
     "method": "releases",
     "releases": {
       "includePrereleases": true,
       "tagPattern": "^n8n@"
+    }
+  },
+  {
+    "slug": "Narratium/Narratium.ai",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "Preview",
+        "Production"
+      ]
     }
   },
   {
@@ -1310,6 +1584,17 @@
     }
   },
   {
+    "slug": "oegedijk/explainerdashboard",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "ollama/ollama",
     "method": "releases",
     "releases": {
@@ -1350,6 +1635,17 @@
     }
   },
   {
+    "slug": "opencv/opencv",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "openreplay/openreplay",
     "method": "actions",
     "actions": {
@@ -1375,6 +1671,17 @@
     "slug": "openstatusHQ/openstatus",
     "method": "deployments",
     "deployments": {}
+  },
+  {
+    "slug": "openthread/ot-br-posix",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
   },
   {
     "slug": "openziti/ziti",
@@ -1406,6 +1713,17 @@
     "releases": {
       "includePrereleases": true,
       "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "photoprism/photoprism",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
     }
   },
   {
@@ -1463,6 +1781,16 @@
     }
   },
   {
+    "slug": "pytorch/pytorch",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "mergebot",
+        "upload-stats"
+      ]
+    }
+  },
+  {
     "slug": "qdrant/qdrant",
     "method": "releases",
     "releases": {
@@ -1477,6 +1805,22 @@
       "includePrereleases": false,
       "tagPattern": "^v"
     }
+  },
+  {
+    "slug": "rasbt/LLMs-from-scratch",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "ray-project/ray",
+    "method": "releases",
+    "releases": {}
   },
   {
     "slug": "reata/sqllineage",
@@ -1548,6 +1892,15 @@
     }
   },
   {
+    "slug": "roboflow/supervision",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
     "slug": "run-llama/llama_index",
     "method": "releases",
     "releases": {
@@ -1602,6 +1955,17 @@
     }
   },
   {
+    "slug": "SeldonIO/alibi",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "SeleniumHQ/selenium",
     "method": "releases",
     "releases": {
@@ -1640,6 +2004,28 @@
     }
   },
   {
+    "slug": "shadowsocks/ShadowsocksX-NG",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "siemens/meta-iot2050",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "SigNoz/signoz",
     "method": "releases",
     "releases": {
@@ -1675,6 +2061,28 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "square/leakcanary",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "square/okhttp",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
     }
   },
   {
@@ -1792,6 +2200,22 @@
     }
   },
   {
+    "slug": "tensorflow/tensorflow",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "thingsboard/thingsboard-gateway",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "TobikoData/sqlmesh",
     "method": "releases",
     "releases": {
@@ -1824,6 +2248,22 @@
     }
   },
   {
+    "slug": "ultralytics/ultralytics",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "ultralytics/yolov5",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "unionlabs/union",
     "method": "releases",
     "releases": {
@@ -1837,6 +2277,11 @@
       "includePrereleases": false,
       "tagPattern": "^v"
     }
+  },
+  {
+    "slug": "unslothai/unsloth",
+    "method": "releases",
+    "releases": {}
   },
   {
     "slug": "uptrace/uptrace",
@@ -1877,6 +2322,17 @@
     }
   },
   {
+    "slug": "voideditor/void",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "voxel51/fiftyone",
     "method": "releases",
     "releases": {
@@ -1898,6 +2354,17 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "WasmEdge/WasmEdge",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
     }
   },
   {
@@ -1941,6 +2408,17 @@
     }
   },
   {
+    "slug": "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
     "slug": "xonsh/xonsh",
     "method": "actions",
     "actions": {
@@ -1955,6 +2433,11 @@
     }
   },
   {
+    "slug": "xtekky/gpt4free",
+    "method": "releases",
+    "releases": {}
+  },
+  {
     "slug": "ydataai/ydata-profiling",
     "method": "actions",
     "actions": {
@@ -1967,5 +2450,33 @@
         "push"
       ]
     }
+  },
+  {
+    "slug": "yeongpin/cursor-free-vip",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "yuaotian/go-cursor-help",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "yuliskov/SmartTube",
+    "method": "releases",
+    "releases": {}
   }
 ]
+

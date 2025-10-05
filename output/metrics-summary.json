@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-04T07:02:00.163Z",
+  "generatedAt": "2025-10-05T08:09:10.535Z",
   "rows": [
     {
       "repo": "18F/identity-idp",
@@ -50,6 +50,22 @@
       "sampleWindowEnd": "2025-10-03T12:56:11Z"
     },
     {
+      "repo": "absmach/supermq",
+      "language": "Go",
+      "topics": "coap|distributed-systems|edge|edge-computing|golang|iiot|internet-of-things|iot|iot-cloud|iot-gateway|iot-platform|lora|lorawan|lwm2m|message-broker|messaging|mqtt|opc-ua|telecom|web-socket",
+      "defaultBranch": "main",
+      "deployCount": 36,
+      "prCount": 26,
+      "deploymentsPerWeekMedian": 2,
+      "deploymentsPerWeekP85": 3,
+      "deploymentsPerWeekP95": 5.399999999999999,
+      "prCycleTimeHoursMedian": 44.74513888888889,
+      "prCycleTimeHoursP85": 1465.8934027777777,
+      "prCycleTimeHoursP95": 2202.3131944444444,
+      "sampleWindowStart": "2024-10-16T09:13:45Z",
+      "sampleWindowEnd": "2025-10-02T14:15:13Z"
+    },
+    {
       "repo": "activepieces/activepieces",
       "language": "TypeScript",
       "topics": "ai-agent|ai-agent-tools|ai-agents|ai-agents-framework|mcp|mcp-server|mcp-tools|mcps|n8n-alternative|no-code-automation|workflow|workflow-automation|workflows",
@@ -64,6 +80,54 @@
       "prCycleTimeHoursP95": null,
       "sampleWindowStart": "2024-10-09T15:41:29Z",
       "sampleWindowEnd": "2025-10-02T17:55:29Z"
+    },
+    {
+      "repo": "adamcohenhillel/ADeus",
+      "language": "TypeScript",
+      "topics": "ai|open|open-source-ai|wear|wearable|wearable-devices",
+      "defaultBranch": "main",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
+    },
+    {
+      "repo": "Aider-AI/aider",
+      "language": "Python",
+      "topics": "anthropic|chatgpt|claude-3|cli|command-line|gemini|gpt-3|gpt-35-turbo|gpt-4|gpt-4o|llama|openai|sonnet",
+      "defaultBranch": "main",
+      "deployCount": 751,
+      "prCount": 46,
+      "deploymentsPerWeekMedian": 12,
+      "deploymentsPerWeekP85": 31.799999999999997,
+      "deploymentsPerWeekP95": 44.599999999999994,
+      "prCycleTimeHoursMedian": 3.353888888888889,
+      "prCycleTimeHoursP85": 250.18645833333335,
+      "prCycleTimeHoursP95": 1384.6906944444445,
+      "sampleWindowStart": "2024-10-05T19:30:04Z",
+      "sampleWindowEnd": "2025-10-04T12:19:48Z"
+    },
+    {
+      "repo": "Alamofire/Alamofire",
+      "language": "Swift",
+      "topics": "alamofire|carthage|certificate-pinning|cocoapods|httpurlresponse|networking|parameter-encoding|public-key-pinning|request|response|swift|swift-package-manager|urlrequest|urlsession|xcode",
+      "defaultBranch": "master",
+      "deployCount": 1,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 1,
+      "deploymentsPerWeekP95": 1,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": "2025-09-18T21:41:34Z",
+      "sampleWindowEnd": "2025-09-18T21:42:18Z"
     },
     {
       "repo": "alibaba/nacos",
@@ -96,6 +160,22 @@
       "prCycleTimeHoursP95": 208.8534444444442,
       "sampleWindowStart": "2025-04-10T14:55:44Z",
       "sampleWindowEnd": "2025-09-30T06:52:17Z"
+    },
+    {
+      "repo": "All-Hands-AI/OpenHands",
+      "language": "Python",
+      "topics": "agent|artificial-intelligence|chatgpt|claude-ai|cli|developer-tools|gpt|llm|openai",
+      "defaultBranch": "main",
+      "deployCount": 64,
+      "prCount": 2045,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 2,
+      "deploymentsPerWeekP95": 2,
+      "prCycleTimeHoursMedian": 13.707222222222223,
+      "prCycleTimeHoursP85": 141.23494444444427,
+      "prCycleTimeHoursP95": 439.6932222222222,
+      "sampleWindowStart": "2024-10-15T21:32:29Z",
+      "sampleWindowEnd": "2025-10-05T01:09:34Z"
     },
     {
       "repo": "AmruthPillai/Reactive-Resume",
@@ -498,6 +578,22 @@
       "sampleWindowEnd": "2025-10-02T12:57:57Z"
     },
     {
+      "repo": "AUTOMATIC1111/stable-diffusion-webui",
+      "language": "Python",
+      "topics": "ai|ai-art|deep-learning|diffusion|gradio|image-generation|image2image|img2img|pytorch|stable-diffusion|text2image|torch|txt2img|unstable|upscaling|web",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
+    },
+    {
       "repo": "AvaloniaUI/Avalonia",
       "language": "C#",
       "topics": "android|app-framework|avalonia|avaloniaui|browser|c-sharp|cross-platform|csharp|desktop|dotnet|gui|ios|linux|macos|mobile|mvvm|wasm|windows|xamarin|xaml",
@@ -882,6 +978,22 @@
       "sampleWindowEnd": "2025-09-21T07:56:18Z"
     },
     {
+      "repo": "CMU-Perceptual-Computing-Lab/openpose",
+      "language": "C++",
+      "topics": "caffe|computer-vision|cpp|cvpr-2017|deep-learning|face|foot-estimation|hand-estimation|human-behavior-understanding|human-pose|human-pose-estimation|keypoint-detection|keypoints|machine-learning|multi-person|opencv|openpose|pose|pose-estimation|real-time",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
+    },
+    {
       "repo": "codenotary/immudb",
       "language": "Go",
       "topics": "auditable|compliance|cryptographic|database|gdpr|go|immutable|immutable-database|key-value|merkle-tree|pci-dss|performance|sql|tamper-evident|tamperproof|timetravel|verification|verify|zero-trust",
@@ -912,6 +1024,22 @@
       "prCycleTimeHoursP95": 328.08255555555536,
       "sampleWindowStart": "2024-10-08T17:14:55Z",
       "sampleWindowEnd": "2025-10-03T15:20:06Z"
+    },
+    {
+      "repo": "comfyanonymous/ComfyUI",
+      "language": "Python",
+      "topics": "ai|comfy|comfyui|python|pytorch|stable-diffusion",
+      "defaultBranch": "master",
+      "deployCount": 19,
+      "prCount": 36,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 2.5,
+      "deploymentsPerWeekP95": 3.5,
+      "prCycleTimeHoursMedian": 10.811388888888889,
+      "prCycleTimeHoursP85": 69.15958333333333,
+      "prCycleTimeHoursP95": 149.9741666666667,
+      "sampleWindowStart": "2025-07-08T12:56:38Z",
+      "sampleWindowEnd": "2025-10-04T19:33:48Z"
     },
     {
       "repo": "commitizen-tools/commitizen",
@@ -960,6 +1088,22 @@
       "prCycleTimeHoursP95": 704.3213888888884,
       "sampleWindowStart": "2024-10-03T13:15:21Z",
       "sampleWindowEnd": "2025-10-03T08:32:17Z"
+    },
+    {
+      "repo": "CorentinJ/Real-Time-Voice-Cloning",
+      "language": "Python",
+      "topics": "deep-learning|python|pytorch|tensorflow|tts|voice-cloning",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 1,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 142.45583333333335,
+      "prCycleTimeHoursP85": 142.45583333333335,
+      "prCycleTimeHoursP95": 142.45583333333335,
+      "sampleWindowStart": "2025-09-17T08:54:32Z",
+      "sampleWindowEnd": "2025-09-23T07:21:53Z"
     },
     {
       "repo": "coroot/coroot",
@@ -1426,6 +1570,22 @@
       "sampleWindowEnd": "2025-10-03T14:43:37Z"
     },
     {
+      "repo": "FiloSottile/mkcert",
+      "language": "Go",
+      "topics": "certificates|chrome|firefox|https|ios|linux|local-development|localhost|macos|root-ca|tls|windows",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
+    },
+    {
       "repo": "firecracker-microvm/firecracker",
       "language": "Rust",
       "topics": "containers|minimalist|open-source|oversubscription|rust|sandbox|serverless|virtual-machine|virtualization",
@@ -1554,6 +1714,22 @@
       "sampleWindowEnd": "2025-10-01T06:39:25Z"
     },
     {
+      "repo": "garylab/MakeMoneyWithAI",
+      "language": "Python",
+      "topics": "ai|ai-agent|ai-agents|deepfake|llm|mcp|mcp-server|nlp|ocr|open-source|open-source-ai",
+      "defaultBranch": "main",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
+    },
+    {
       "repo": "gatling/gatling",
       "language": "Scala",
       "topics": "automation|cicd|gatling|java|javascript|kotlin|load-test|load-testing|load-tests|loadtest|loadtesting|loadtests|netty|performance-test|performance-test-gatling|performance-testing|performance-tests|scala|typescript",
@@ -1568,6 +1744,22 @@
       "prCycleTimeHoursP95": null,
       "sampleWindowStart": "2024-11-13T08:18:42Z",
       "sampleWindowEnd": "2025-09-23T11:08:59Z"
+    },
+    {
+      "repo": "Genymobile/scrcpy",
+      "language": "C",
+      "topics": "android|c|ffmpeg|libav|mirroring|recording|screen|sdl2",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
     },
     {
       "repo": "getgrav/grav",
@@ -1618,6 +1810,22 @@
       "sampleWindowEnd": "2025-10-03T11:03:47Z"
     },
     {
+      "repo": "gkd-kit/gkd",
+      "language": "Kotlin",
+      "topics": "accessibility|android|auto|click|compose|jetpack-compose|kotlin|kotlin-js|kotlin-multiplatform|webassembly",
+      "defaultBranch": "main",
+      "deployCount": 1,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 1,
+      "deploymentsPerWeekP95": 1,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": "2025-09-30T21:23:22Z",
+      "sampleWindowEnd": "2025-09-30T21:31:08Z"
+    },
+    {
       "repo": "go-gitea/gitea",
       "language": "Go",
       "topics": "bitbucket|cicd|devops|docker-registry-v2|git|git-gui|git-server|gitea|github|github-actions|gitlab|go|golang|hacktoberfest|maven-server|npm-registry|vue",
@@ -1632,6 +1840,38 @@
       "prCycleTimeHoursP95": 410.95354166666624,
       "sampleWindowStart": "2024-10-09T03:25:07Z",
       "sampleWindowEnd": "2025-10-03T06:51:57Z"
+    },
+    {
+      "repo": "google-ai-edge/mediapipe",
+      "language": "C++",
+      "topics": "android|audio-processing|c-plus-plus|calculator|computer-vision|deep-learning|framework|graph-based|graph-framework|inference|machine-learning|mediapipe|mobile-development|perception|pipeline-framework|stream-processing|video-processing",
+      "defaultBranch": "master",
+      "deployCount": 279,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": 19,
+      "deploymentsPerWeekP85": 30.799999999999997,
+      "deploymentsPerWeekP95": 37.59999999999999,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": "2025-07-07T17:55:26Z",
+      "sampleWindowEnd": "2025-10-03T18:18:09Z"
+    },
+    {
+      "repo": "google-research/bert",
+      "language": "Python",
+      "topics": "google|natural-language-processing|natural-language-understanding|nlp|tensorflow",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
     },
     {
       "repo": "goreleaser/goreleaser",
@@ -1922,6 +2162,22 @@
       "sampleWindowEnd": "2025-10-02T10:54:48Z"
     },
     {
+      "repo": "hiyouga/LLaMA-Factory",
+      "language": "Python",
+      "topics": "agent|ai|deepseek|fine-tuning|gemma|gpt|instruction-tuning|large-language-models|llama|llama3|llm|lora|moe|nlp|peft|qlora|quantization|qwen|rlhf|transformers",
+      "defaultBranch": "main",
+      "deployCount": 530,
+      "prCount": 88,
+      "deploymentsPerWeekMedian": 25,
+      "deploymentsPerWeekP85": 35.8,
+      "deploymentsPerWeekP95": 59.39999999999993,
+      "prCycleTimeHoursMedian": 1.023611111111111,
+      "prCycleTimeHoursP85": 52.16758333333337,
+      "prCycleTimeHoursP95": 636.3767638888835,
+      "sampleWindowStart": "2025-03-11T18:13:11Z",
+      "sampleWindowEnd": "2025-10-04T19:00:18Z"
+    },
+    {
       "repo": "httpie/cli",
       "language": "Python",
       "topics": "api|api-client|api-testing|cli|client|curl|debugging|developer-tools|development|devops|http|http-client|httpie|json|python|rest|rest-api|terminal|usability|web",
@@ -1936,6 +2192,22 @@
       "prCycleTimeHoursP95": 20.501944444444444,
       "sampleWindowStart": "2024-11-01T17:29:56Z",
       "sampleWindowEnd": "2024-12-17T17:30:35Z"
+    },
+    {
+      "repo": "huggingface/transformers",
+      "language": "Python",
+      "topics": "audio|deep-learning|deepseek|gemma|glm|hacktoberfest|llm|machine-learning|model-hub|natural-language-processing|nlp|pretrained-models|python|pytorch|pytorch-transformers|qwen|speech-recognition|transformer|vlm",
+      "defaultBranch": "main",
+      "deployCount": 18,
+      "prCount": 109,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 2.3499999999999996,
+      "deploymentsPerWeekP95": 3,
+      "prCycleTimeHoursMedian": 42.494166666666665,
+      "prCycleTimeHoursP85": 199.69122222222222,
+      "prCycleTimeHoursP95": 351.74094444444444,
+      "sampleWindowStart": "2025-07-11T12:33:16Z",
+      "sampleWindowEnd": "2025-10-04T09:02:13Z"
     },
     {
       "repo": "HumanSignal/label-studio",
@@ -1970,6 +2242,22 @@
       "sampleWindowEnd": "2025-10-01T05:12:07Z"
     },
     {
+      "repo": "iina/iina",
+      "language": "Swift",
+      "topics": "hacktoberfest|macos|mpv|swift|video|video-player",
+      "defaultBranch": "develop",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
+    },
+    {
       "repo": "immich-app/immich",
       "language": "TypeScript",
       "topics": "backup-tool|flutter|google-photos|google-photos-alternative|javascript|mobile-app|nestjs|nodejs|photo-gallery|photos|photos-management|self-hosted|svelte|sveltekit|typescript|videos",
@@ -1984,6 +2272,22 @@
       "prCycleTimeHoursP95": 324.87811111111023,
       "sampleWindowStart": "2024-10-15T10:48:53Z",
       "sampleWindowEnd": "2025-10-03T03:48:17Z"
+    },
+    {
+      "repo": "infiniflow/ragflow",
+      "language": "TypeScript",
+      "topics": "agent|agentic|agentic-ai|agentic-workflow|ai|ai-search|deep-learning|deep-research|deepseek|deepseek-r1|document-parser|document-understanding|graphrag|llm|mcp|multi-agent|ollama|openai|rag|retrieval-augmented-generation",
+      "defaultBranch": "main",
+      "deployCount": 12,
+      "prCount": 799,
+      "deploymentsPerWeekMedian": 3.5,
+      "deploymentsPerWeekP85": 4,
+      "deploymentsPerWeekP95": 4,
+      "prCycleTimeHoursMedian": 2.876388888888889,
+      "prCycleTimeHoursP85": 20.628722222222216,
+      "prCycleTimeHoursP95": 69.38652777777769,
+      "sampleWindowStart": "2024-12-01T08:10:15Z",
+      "sampleWindowEnd": "2025-10-04T14:10:28Z"
     },
     {
       "repo": "Infisical/infisical",
@@ -2034,6 +2338,22 @@
       "sampleWindowEnd": "2025-10-03T12:58:01Z"
     },
     {
+      "repo": "interpretml/interpret",
+      "language": "C++",
+      "topics": "ai|artificial-intelligence|bias|blackbox|differential-privacy|explainability|explainable-ai|explainable-ml|gradient-boosting|iml|interpretability|interpretable-ai|interpretable-machine-learning|interpretable-ml|interpretml|machine-learning|scikit-learn|transparency|xai",
+      "defaultBranch": "main",
+      "deployCount": 14,
+      "prCount": 10,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 2,
+      "deploymentsPerWeekP95": 2.549999999999999,
+      "prCycleTimeHoursMedian": 57.74791666666667,
+      "prCycleTimeHoursP85": 82.22806944444443,
+      "prCycleTimeHoursP95": 152.94391666666655,
+      "sampleWindowStart": "2025-01-06T16:53:58Z",
+      "sampleWindowEnd": "2025-10-03T07:47:31Z"
+    },
+    {
       "repo": "ionic-team/ionic-framework",
       "language": "TypeScript",
       "topics": "angular|capacitor|framework|frontend|ionic|ios|javascript|material-design|mobile|pwa|react|stencil|stenciljs|typescript|vue|web|webcomponents",
@@ -2064,6 +2384,22 @@
       "prCycleTimeHoursP95": 559.014972222222,
       "sampleWindowStart": "2024-10-23T01:40:30Z",
       "sampleWindowEnd": "2025-10-03T00:03:08Z"
+    },
+    {
+      "repo": "jacobgil/pytorch-grad-cam",
+      "language": "Python",
+      "topics": "class-activation-maps|computer-vision|deep-learning|explainable-ai|explainable-ml|grad-cam|image-classification|interpretability|interpretable-ai|interpretable-deep-learning|machine-learning|object-detection|pytorch|score-cam|vision-transformers|visualizations|xai",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 3,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 8.29,
+      "prCycleTimeHoursP85": 19.093527777777776,
+      "prCycleTimeHoursP95": 22.18025,
+      "sampleWindowStart": "2025-01-18T13:22:58Z",
+      "sampleWindowEnd": "2025-03-21T04:17:48Z"
     },
     {
       "repo": "jaegertracing/jaeger",
@@ -2114,6 +2450,38 @@
       "sampleWindowEnd": "2025-10-01T15:28:24Z"
     },
     {
+      "repo": "JetBrains/kotlin",
+      "language": "Kotlin",
+      "topics": "compiler|gradle-plugin|intellij-plugin|kotlin|kotlin-library|maven-plugin|programming-language|wasm|webassembly",
+      "defaultBranch": "master",
+      "deployCount": 2,
+      "prCount": 1,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 1,
+      "deploymentsPerWeekP95": 1,
+      "prCycleTimeHoursMedian": 337.45222222222225,
+      "prCycleTimeHoursP85": 337.45222222222225,
+      "prCycleTimeHoursP95": 337.45222222222225,
+      "sampleWindowStart": "2025-08-05T12:15:13Z",
+      "sampleWindowEnd": "2025-09-30T17:55:38Z"
+    },
+    {
+      "repo": "JunkFood02/Seal",
+      "language": "Kotlin",
+      "topics": "android|f-droid|jetpack-compose|kotlin|material-design|youtube-dl|youtube-downloader|yt-dlp",
+      "defaultBranch": "main",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
+    },
+    {
       "repo": "kanidm/kanidm",
       "language": "Rust",
       "topics": "authentication|iam|identity|identity-management|idm|ldap|oidc|radius|rust|scim|security|ssh-authentication|webauthn",
@@ -2162,6 +2530,22 @@
       "sampleWindowEnd": "2025-10-03T14:55:52Z"
     },
     {
+      "repo": "keras-team/keras",
+      "language": "Python",
+      "topics": "data-science|deep-learning|jax|machine-learning|neural-networks|python|pytorch|tensorflow",
+      "defaultBranch": "master",
+      "deployCount": 4,
+      "prCount": 5,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 1.7,
+      "deploymentsPerWeekP95": 1.9,
+      "prCycleTimeHoursMedian": 12.404166666666667,
+      "prCycleTimeHoursP85": 401.28972222222217,
+      "prCycleTimeHoursP95": 777.5841666666665,
+      "sampleWindowStart": "2025-07-29T22:57:31Z",
+      "sampleWindowEnd": "2025-10-04T02:18:43Z"
+    },
+    {
       "repo": "keystonejs/keystone",
       "language": "TypeScript",
       "topics": "cms|cms-framework|graphql|keystonejs|nodejs|react",
@@ -2208,6 +2592,38 @@
       "prCycleTimeHoursP95": 514.5115555555554,
       "sampleWindowStart": "2025-01-29T20:06:22Z",
       "sampleWindowEnd": "2025-10-02T15:41:10Z"
+    },
+    {
+      "repo": "ksm26/Multi-AI-Agent-Systems-with-crewAI",
+      "language": "Jupyter Notebook",
+      "topics": "agent-cooperation|ai-agents|ai-memory|ai-workflow-optimization|business-process-automation|complex-task-management|crewai|custom-tools|customer-support-automation|error-handling|event-planning|financial-analysis|multi-agent-systems|natural-language-prompting|open-source-ai|resume-tailoring|role-playing|task-automation|technical-writing",
+      "defaultBranch": "main",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
+    },
+    {
+      "repo": "kubeedge/kubeedge",
+      "language": "Go",
+      "topics": "cloud-native|cncf|container|device-management|docker|edge-computing|golang|iot|kubernetes|mosquitto|mqtt",
+      "defaultBranch": "master",
+      "deployCount": 89,
+      "prCount": 38,
+      "deploymentsPerWeekMedian": 6.5,
+      "deploymentsPerWeekP85": 8.9,
+      "deploymentsPerWeekP95": 36.299999999999976,
+      "prCycleTimeHoursMedian": 348.44416666666666,
+      "prCycleTimeHoursP85": 1877.7424305555555,
+      "prCycleTimeHoursP95": 2567.3566944444447,
+      "sampleWindowStart": "2025-02-06T14:27:12Z",
+      "sampleWindowEnd": "2025-09-26T08:56:59Z"
     },
     {
       "repo": "kubernetes-sigs/external-dns",
@@ -2384,6 +2800,22 @@
       "prCycleTimeHoursP95": 2626.900777777776,
       "sampleWindowStart": "2024-11-15T10:15:35Z",
       "sampleWindowEnd": "2025-09-16T15:30:21Z"
+    },
+    {
+      "repo": "lobehub/lobe-chat",
+      "language": "TypeScript",
+      "topics": "agent|ai|artifacts|chat|chatgpt|claude|deepseek|deepseek-r1|function-calling|gemini|gpt|knowledge-base|mcp|nextjs|ollama|openai|rag",
+      "defaultBranch": "main",
+      "deployCount": 897,
+      "prCount": 351,
+      "deploymentsPerWeekMedian": 15,
+      "deploymentsPerWeekP85": 23,
+      "deploymentsPerWeekP95": 27.39999999999999,
+      "prCycleTimeHoursMedian": 6.292222222222223,
+      "prCycleTimeHoursP85": 111.64763888888889,
+      "prCycleTimeHoursP95": 412.8175,
+      "sampleWindowStart": "2024-10-05T13:59:49Z",
+      "sampleWindowEnd": "2025-10-05T06:38:47Z"
     },
     {
       "repo": "localsend/localsend",
@@ -2738,6 +3170,22 @@
       "sampleWindowEnd": "2025-10-03T09:25:50Z"
     },
     {
+      "repo": "multimindlab/multimind-sdk",
+      "language": "Python",
+      "topics": "agentic-ai|agentic-framework|agents|ai|ai-agents|deep-learning|fine-tuning|fine-tuning-llm|framework|langchain-alternative|large-language-model|llm|multimindsdk|multimodal-deep-learning|multimodal-large-language-models|multimodel-architecture|neural-network|open-source-ai|sdk|sdk-python",
+      "defaultBranch": "develop",
+      "deployCount": 2,
+      "prCount": 20,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 1,
+      "deploymentsPerWeekP95": 1,
+      "prCycleTimeHoursMedian": 10.614166666666666,
+      "prCycleTimeHoursP85": 91.37811111111108,
+      "prCycleTimeHoursP95": 455.66475,
+      "sampleWindowStart": "2025-05-19T17:47:42Z",
+      "sampleWindowEnd": "2025-08-18T20:54:18Z"
+    },
+    {
       "repo": "n8n-io/n8n",
       "language": "TypeScript",
       "topics": "ai|apis|automation|cli|data-flow|development|integration-framework|integrations|ipaas|low-code|low-code-platform|mcp|mcp-client|mcp-server|n8n|no-code|self-hosted|typescript|workflow|workflow-automation",
@@ -2752,6 +3200,22 @@
       "prCycleTimeHoursP95": 209.4151527777777,
       "sampleWindowStart": "2024-10-07T12:11:56Z",
       "sampleWindowEnd": "2025-10-03T14:22:43Z"
+    },
+    {
+      "repo": "Narratium/Narratium.ai",
+      "language": "TypeScript",
+      "topics": "adventure-game|ai-npc|ai-storytelling|chatbot|interactive-fiction|llm|nextjs|open-source-ai|openai|roleplay|sillytavern|text-adventure|typescript|visual-novel",
+      "defaultBranch": "main",
+      "deployCount": 7,
+      "prCount": 80,
+      "deploymentsPerWeekMedian": 7,
+      "deploymentsPerWeekP85": 7,
+      "deploymentsPerWeekP95": 7,
+      "prCycleTimeHoursMedian": 0.0030555555555555557,
+      "prCycleTimeHoursP85": 0.42838888888888815,
+      "prCycleTimeHoursP95": 1.9027499999999993,
+      "sampleWindowStart": "2025-06-02T12:18:17Z",
+      "sampleWindowEnd": "2025-09-26T05:09:16Z"
     },
     {
       "repo": "NativeScript/NativeScript",
@@ -2882,6 +3346,22 @@
       "sampleWindowEnd": "2025-01-15T21:23:40Z"
     },
     {
+      "repo": "oegedijk/explainerdashboard",
+      "language": "Python",
+      "topics": "dash|dashboard|data-scientists|explainer|inner-workings|interactive-dashboards|interactive-plots|model-predictions|permutation-importances|plotly|shap|shap-values|xai|xai-library",
+      "defaultBranch": "master",
+      "deployCount": 4,
+      "prCount": 5,
+      "deploymentsPerWeekMedian": 2,
+      "deploymentsPerWeekP85": 2.7,
+      "deploymentsPerWeekP95": 2.9,
+      "prCycleTimeHoursMedian": 22.52,
+      "prCycleTimeHoursP85": 418.3555,
+      "prCycleTimeHoursP95": 555.1646111111111,
+      "sampleWindowStart": "2024-12-29T21:23:06Z",
+      "sampleWindowEnd": "2025-08-01T14:14:21Z"
+    },
+    {
       "repo": "ollama/ollama",
       "language": "Go",
       "topics": "deepseek|gemma|gemma3|gemma3n|go|golang|gpt-oss|llama|llama2|llama3|llava|llm|llms|mistral|ollama|phi4|qwen",
@@ -2960,6 +3440,22 @@
       "prCycleTimeHoursP95": 980.3221388888869,
       "sampleWindowStart": "2024-10-04T08:15:21Z",
       "sampleWindowEnd": "2025-10-02T22:52:55Z"
+    },
+    {
+      "repo": "opencv/opencv",
+      "language": "C++",
+      "topics": "c-plus-plus|computer-vision|deep-learning|image-processing|opencv",
+      "defaultBranch": "4.x",
+      "deployCount": 0,
+      "prCount": 18,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 24.359305555555558,
+      "prCycleTimeHoursP85": 77.14784722222218,
+      "prCycleTimeHoursP95": 466.2186111111108,
+      "sampleWindowStart": "2025-08-29T14:53:39Z",
+      "sampleWindowEnd": "2025-10-04T10:24:28Z"
     },
     {
       "repo": "openfaas/faas",
@@ -3058,6 +3554,22 @@
       "sampleWindowEnd": "2025-10-03T14:34:12Z"
     },
     {
+      "repo": "openthread/ot-br-posix",
+      "language": "C++",
+      "topics": "avahi|border-router|google|hacktoberfest|internet-of-things|iot|iot-gateway|ipv6|nest|openthread|tayga|thread-protocol|wpantund",
+      "defaultBranch": "main",
+      "deployCount": 0,
+      "prCount": 16,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 45.18,
+      "prCycleTimeHoursP85": 157.83659722222222,
+      "prCycleTimeHoursP95": 231.71243055555556,
+      "sampleWindowStart": "2025-08-04T09:01:04Z",
+      "sampleWindowEnd": "2025-10-04T01:15:19Z"
+    },
+    {
       "repo": "openziti/ziti",
       "language": "Go",
       "topics": "appsec|golang|mesh|netsec|network|networking|overlay|overlay-network|secure-networking|vpn|vpn-2|zero-trust|zero-trust-cloud|zero-trust-network|zero-trust-network-access|zero-trust-security|zerotrust|ztaa|ztha|ztna",
@@ -3120,6 +3632,22 @@
       "prCycleTimeHoursP95": 3218.2941666666666,
       "sampleWindowStart": "2024-10-08T17:09:00Z",
       "sampleWindowEnd": "2025-09-09T21:45:13Z"
+    },
+    {
+      "repo": "photoprism/photoprism",
+      "language": "Go",
+      "topics": "ai|golang|google-photos|machine-learning|photography|private-cloud|self-hosted|tensorflow",
+      "defaultBranch": "develop",
+      "deployCount": 0,
+      "prCount": 4,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 5.986944444444444,
+      "prCycleTimeHoursP85": 127.50323611111106,
+      "prCycleTimeHoursP95": 190.5401527777777,
+      "sampleWindowStart": "2025-09-23T08:56:42Z",
+      "sampleWindowEnd": "2025-10-04T09:06:01Z"
     },
     {
       "repo": "pingcap/tidb",
@@ -3250,6 +3778,22 @@
       "sampleWindowEnd": "2025-10-03T16:49:00Z"
     },
     {
+      "repo": "pytorch/pytorch",
+      "language": "Python",
+      "topics": "autograd|deep-learning|gpu|machine-learning|neural-network|numpy|python|tensor",
+      "defaultBranch": "main",
+      "deployCount": 59,
+      "prCount": 11,
+      "deploymentsPerWeekMedian": 29.5,
+      "deploymentsPerWeekP85": 29.85,
+      "deploymentsPerWeekP95": 29.95,
+      "prCycleTimeHoursMedian": 27.743333333333332,
+      "prCycleTimeHoursP85": 239.0702777777778,
+      "prCycleTimeHoursP95": 782.5715277777779,
+      "sampleWindowStart": "2024-10-18T00:14:11Z",
+      "sampleWindowEnd": "2025-09-08T15:00:02Z"
+    },
+    {
       "repo": "qdrant/qdrant",
       "language": "Rust",
       "topics": "ai-search|ai-search-engine|embeddings-similarity|hnsw|image-search|knn-algorithm|machine-learning|mlops|nearest-neighbor-search|neural-network|neural-search|recommender-system|search|search-engine|search-engines|similarity-search|vector-database|vector-search|vector-search-engine",
@@ -3280,6 +3824,38 @@
       "prCycleTimeHoursP95": 5.093486111111111,
       "sampleWindowStart": "2024-10-15T20:19:36Z",
       "sampleWindowEnd": "2025-10-02T15:58:45Z"
+    },
+    {
+      "repo": "rasbt/LLMs-from-scratch",
+      "language": "Jupyter Notebook",
+      "topics": "ai|artificial-intelligence|chatgpt|deep-learning|from-scratch|gpt|language-model|large-language-models|llm|machine-learning|python|pytorch|transformer",
+      "defaultBranch": "main",
+      "deployCount": 81,
+      "prCount": 46,
+      "deploymentsPerWeekMedian": 19,
+      "deploymentsPerWeekP85": 19,
+      "deploymentsPerWeekP95": 19,
+      "prCycleTimeHoursMedian": 1.0425,
+      "prCycleTimeHoursP85": 12.503402777777778,
+      "prCycleTimeHoursP95": 57.30138888888889,
+      "sampleWindowStart": "2025-08-01T00:50:51Z",
+      "sampleWindowEnd": "2025-10-01T15:49:24Z"
+    },
+    {
+      "repo": "ray-project/ray",
+      "language": "Python",
+      "topics": "data-science|deep-learning|deployment|distributed|hyperparameter-optimization|hyperparameter-search|large-language-models|llm|llm-inference|llm-serving|machine-learning|optimization|parallel|python|pytorch|ray|reinforcement-learning|rllib|serving|tensorflow",
+      "defaultBranch": "master",
+      "deployCount": 4,
+      "prCount": 121,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 1,
+      "deploymentsPerWeekP95": 1,
+      "prCycleTimeHoursMedian": 19.78,
+      "prCycleTimeHoursP85": 265.98,
+      "prCycleTimeHoursP95": 577.7511111111111,
+      "sampleWindowStart": "2025-07-15T00:45:03Z",
+      "sampleWindowEnd": "2025-10-04T21:08:10Z"
     },
     {
       "repo": "reata/sqllineage",
@@ -3426,6 +4002,22 @@
       "sampleWindowEnd": "2025-07-14T16:43:25Z"
     },
     {
+      "repo": "roboflow/supervision",
+      "language": "Python",
+      "topics": "classification|coco|computer-vision|deep-learning|hacktoberfest|image-processing|instance-segmentation|low-code|machine-learning|metrics|object-detection|oriented-bounding-box|pascal-voc|python|pytorch|tensorflow|tracking|video-processing|yolo",
+      "defaultBranch": "develop",
+      "deployCount": 43,
+      "prCount": 1,
+      "deploymentsPerWeekMedian": 6.5,
+      "deploymentsPerWeekP85": 12,
+      "deploymentsPerWeekP95": 14,
+      "prCycleTimeHoursMedian": 21.384444444444444,
+      "prCycleTimeHoursP85": 21.384444444444444,
+      "prCycleTimeHoursP95": 21.384444444444444,
+      "sampleWindowStart": "2025-07-07T13:46:31Z",
+      "sampleWindowEnd": "2025-09-25T15:25:32Z"
+    },
+    {
       "repo": "run-llama/llama_index",
       "language": "Python",
       "topics": "agents|application|data|fine-tuning|framework|llamaindex|llm|multi-agents|rag|vector-database",
@@ -3538,6 +4130,22 @@
       "sampleWindowEnd": "2025-10-03T08:41:34Z"
     },
     {
+      "repo": "SeldonIO/alibi",
+      "language": "Python",
+      "topics": "counterfactual|explanations|interpretability|machine-learning|xai",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 11,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 0.49416666666666664,
+      "prCycleTimeHoursP85": 11.811805555555555,
+      "prCycleTimeHoursP95": 106.50694444444443,
+      "sampleWindowStart": "2024-12-05T15:21:10Z",
+      "sampleWindowEnd": "2025-09-23T15:47:03Z"
+    },
+    {
       "repo": "SeleniumHQ/selenium",
       "language": "Java",
       "topics": "dotnet|java|javascript|python|ruby|rust|selenium|webdriver",
@@ -3618,6 +4226,38 @@
       "sampleWindowEnd": "2025-09-29T12:02:53Z"
     },
     {
+      "repo": "shadowsocks/ShadowsocksX-NG",
+      "language": "Swift",
+      "topics": "kcptun|macos|shadowsocks|shadowsocksx-ng|swift|v2ray-plugin",
+      "defaultBranch": "develop",
+      "deployCount": 0,
+      "prCount": 0,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": null,
+      "prCycleTimeHoursP85": null,
+      "prCycleTimeHoursP95": null,
+      "sampleWindowStart": null,
+      "sampleWindowEnd": null
+    },
+    {
+      "repo": "siemens/meta-iot2050",
+      "language": "Python",
+      "topics": "debian|iot-gateway|isar|sdk",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 24,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 67.48666666666668,
+      "prCycleTimeHoursP85": 484.8997638888889,
+      "prCycleTimeHoursP95": 1104.5496527777768,
+      "sampleWindowStart": "2025-01-08T11:23:15Z",
+      "sampleWindowEnd": "2025-08-22T02:38:47Z"
+    },
+    {
       "repo": "SigNoz/signoz",
       "language": "TypeScript",
       "topics": "apm|application-monitoring|distributed-tracing|go|good-first-issue|jaeger|log|logs|metrics|monitoring|nextjs|observability|open-source|opentelemetry|prometheus|react|reactjs|self-hosted|tracing|typescript",
@@ -3680,6 +4320,38 @@
       "prCycleTimeHoursP95": 2258.551166666666,
       "sampleWindowStart": "2024-10-17T07:51:04Z",
       "sampleWindowEnd": "2025-10-02T19:22:19Z"
+    },
+    {
+      "repo": "square/leakcanary",
+      "language": "Kotlin",
+      "topics": "android|java|kotlin|kotlin-android|leak-canary|leak-trace|leakcanary|memory-leak|outofmemory|outofmemoryerror",
+      "defaultBranch": "main",
+      "deployCount": 0,
+      "prCount": 1,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 7.857222222222222,
+      "prCycleTimeHoursP85": 7.857222222222222,
+      "prCycleTimeHoursP95": 7.857222222222222,
+      "sampleWindowStart": "2025-08-04T21:52:24Z",
+      "sampleWindowEnd": "2025-08-05T05:43:50Z"
+    },
+    {
+      "repo": "square/okhttp",
+      "language": "Kotlin",
+      "topics": "android|graalvm|java|kotlin",
+      "defaultBranch": "master",
+      "deployCount": 6,
+      "prCount": 3,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 3.0999999999999996,
+      "deploymentsPerWeekP95": 3.6999999999999997,
+      "prCycleTimeHoursMedian": 9.5575,
+      "prCycleTimeHoursP85": 10.781527777777777,
+      "prCycleTimeHoursP95": 11.13125,
+      "sampleWindowStart": "2025-08-16T08:30:39Z",
+      "sampleWindowEnd": "2025-10-03T17:41:45Z"
     },
     {
       "repo": "stan-smith/FossFLOW",
@@ -3922,6 +4594,38 @@
       "sampleWindowEnd": "2025-10-03T15:02:11Z"
     },
     {
+      "repo": "tensorflow/tensorflow",
+      "language": "C++",
+      "topics": "deep-learning|deep-neural-networks|distributed|machine-learning|ml|neural-network|python|tensorflow",
+      "defaultBranch": "master",
+      "deployCount": 2,
+      "prCount": 145,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 1,
+      "deploymentsPerWeekP95": 1,
+      "prCycleTimeHoursMedian": 18.915555555555557,
+      "prCycleTimeHoursP85": 141.63194444444446,
+      "prCycleTimeHoursP95": 203.5893333333331,
+      "sampleWindowStart": "2025-08-04T17:35:35Z",
+      "sampleWindowEnd": "2025-10-04T13:34:41Z"
+    },
+    {
+      "repo": "thingsboard/thingsboard-gateway",
+      "language": "Python",
+      "topics": "aws|aws-iot|bacnet|ble|can|can-bus|gateway|iot|iot-gateway|mqtt|mqtt-broker|odbc|opc-ua|sigfox|thingsboard",
+      "defaultBranch": "master",
+      "deployCount": 142,
+      "prCount": 15,
+      "deploymentsPerWeekMedian": 5,
+      "deploymentsPerWeekP85": 13.899999999999997,
+      "deploymentsPerWeekP95": 16.299999999999994,
+      "prCycleTimeHoursMedian": 25.091944444444444,
+      "prCycleTimeHoursP85": 161.22711111111113,
+      "prCycleTimeHoursP95": 384.63936111111093,
+      "sampleWindowStart": "2025-04-11T04:46:27Z",
+      "sampleWindowEnd": "2025-09-30T12:50:01Z"
+    },
+    {
       "repo": "TobikoData/sqlmesh",
       "language": "Python",
       "topics": "dataengineering|dataops|dbt|elt|etl|python|sql|transformation",
@@ -4002,6 +4706,38 @@
       "sampleWindowEnd": "2025-10-03T10:37:41Z"
     },
     {
+      "repo": "ultralytics/ultralytics",
+      "language": "Python",
+      "topics": "cli|computer-vision|deep-learning|hub|image-classification|instance-segmentation|machine-learning|object-detection|pose-estimation|python|pytorch|rotated-object-detection|segment-anything|tracking|ultralytics|yolo|yolo-world|yolo11|yolov10|yolov8",
+      "defaultBranch": "main",
+      "deployCount": 42,
+      "prCount": 173,
+      "deploymentsPerWeekMedian": 3,
+      "deploymentsPerWeekP85": 5,
+      "deploymentsPerWeekP95": 5.399999999999999,
+      "prCycleTimeHoursMedian": 3.0741666666666667,
+      "prCycleTimeHoursP85": 30.718833333333283,
+      "prCycleTimeHoursP95": 72.87683333333341,
+      "sampleWindowStart": "2025-07-07T18:25:17Z",
+      "sampleWindowEnd": "2025-10-02T16:47:04Z"
+    },
+    {
+      "repo": "ultralytics/yolov5",
+      "language": "Python",
+      "topics": "coreml|deep-learning|ios|machine-learning|ml|object-detection|onnx|pytorch|tflite|ultralytics|yolo|yolov3|yolov5",
+      "defaultBranch": "master",
+      "deployCount": 14,
+      "prCount": 3,
+      "deploymentsPerWeekMedian": 2,
+      "deploymentsPerWeekP85": 4,
+      "deploymentsPerWeekP95": 4,
+      "prCycleTimeHoursMedian": 0.07666666666666666,
+      "prCycleTimeHoursP85": 0.8937222222222221,
+      "prCycleTimeHoursP95": 1.1271666666666664,
+      "sampleWindowStart": "2025-08-01T03:20:08Z",
+      "sampleWindowEnd": "2025-10-04T12:16:52Z"
+    },
+    {
       "repo": "unionlabs/union",
       "language": "Rust",
       "topics": "astro|blockchain|cosmos|cosmwasm|ethereum|evm|golang|indexer|interoperability|move|nix|prover|relayer|rust|solidity|svelte|typescipt|typescript|zero-knowledge",
@@ -4048,6 +4784,22 @@
       "prCycleTimeHoursP95": 118.42577777777778,
       "sampleWindowStart": "2024-10-25T11:42:29Z",
       "sampleWindowEnd": "2025-10-03T12:09:50Z"
+    },
+    {
+      "repo": "unslothai/unsloth",
+      "language": "Python",
+      "topics": "agent|deepseek|deepseek-r1|fine-tuning|gemma|gemma3|gpt-oss|llama|llama3|llm|llms|mistral|openai|qwen|qwen3|reinforcement-learning|text-to-speech|tts|unsloth|voice-cloning",
+      "defaultBranch": "main",
+      "deployCount": 14,
+      "prCount": 250,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 1,
+      "deploymentsPerWeekP95": 1,
+      "prCycleTimeHoursMedian": 2.783888888888889,
+      "prCycleTimeHoursP85": 80.43270833333334,
+      "prCycleTimeHoursP95": 475.5523055555551,
+      "sampleWindowStart": "2024-10-15T02:17:35Z",
+      "sampleWindowEnd": "2025-10-02T02:14:32Z"
     },
     {
       "repo": "uptrace/uptrace",
@@ -4132,7 +4884,7 @@
     {
       "repo": "vllm-project/vllm",
       "language": "Python",
-      "topics": "amd|cuda|deepseek|gpt|hpu|inference|inferentia|llama|llm|llm-serving|llmops|mlops|model-serving|pytorch|qwen|rocm|tpu|trainium|transformer|xpu",
+      "topics": "amd|blackwell|cuda|deepseek|deepseek-v3|gpt|gpt-oss|inference|kimi|llama|llm|llm-serving|model-serving|moe|openai|pytorch|qwen|qwen3|tpu|transformer",
       "defaultBranch": "main",
       "deployCount": 26,
       "prCount": 123,
@@ -4144,6 +4896,22 @@
       "prCycleTimeHoursP95": 662.4443055555541,
       "sampleWindowStart": "2024-10-14T18:57:47Z",
       "sampleWindowEnd": "2025-10-03T11:29:45Z"
+    },
+    {
+      "repo": "voideditor/void",
+      "language": "TypeScript",
+      "topics": "chatgpt|claude|copilot|cursor|developer-tools|editor|llm|open-source|openai|visual-studio-code|vscode|vscode-extension",
+      "defaultBranch": "main",
+      "deployCount": 0,
+      "prCount": 212,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 0.02388888888888889,
+      "prCycleTimeHoursP85": 120.94716666666665,
+      "prCycleTimeHoursP95": 485.604958333332,
+      "sampleWindowStart": "2024-11-04T02:19:20Z",
+      "sampleWindowEnd": "2025-08-04T22:22:48Z"
     },
     {
       "repo": "voxel51/fiftyone",
@@ -4192,6 +4960,22 @@
       "prCycleTimeHoursP95": 6658.418472222222,
       "sampleWindowStart": "2024-11-03T15:00:31Z",
       "sampleWindowEnd": "2025-10-03T12:04:16Z"
+    },
+    {
+      "repo": "WasmEdge/WasmEdge",
+      "language": "C++",
+      "topics": "artificial-intelligence|cloud|cloud-native|cncf|container|docker|edge-computing|ewasm|hacktoberfest|hacktoberfest2023|kubernetes|rust-lang|serverless|wasm|webassembly",
+      "defaultBranch": "master",
+      "deployCount": 0,
+      "prCount": 45,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 57.53388888888889,
+      "prCycleTimeHoursP85": 491.983611111111,
+      "prCycleTimeHoursP95": 1160.7723888888884,
+      "sampleWindowStart": "2025-06-12T23:21:03Z",
+      "sampleWindowEnd": "2025-09-26T11:56:05Z"
     },
     {
       "repo": "wazuh/wazuh",
@@ -4290,6 +5074,22 @@
       "sampleWindowEnd": "2025-10-03T11:35:11Z"
     },
     {
+      "repo": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "language": null,
+      "topics": "ai|bolt|cluely|copilot|cursor|cursorai|devin|github-copilot|lovable|open-source|perplexity|replit|system-prompts|trae|trae-ai|trae-ide|v0|vscode|windsurf|windsurf-ai",
+      "defaultBranch": "main",
+      "deployCount": 0,
+      "prCount": 40,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 7.060972222222222,
+      "prCycleTimeHoursP85": 75.06381944444438,
+      "prCycleTimeHoursP95": 368.2524444444444,
+      "sampleWindowStart": "2025-03-08T16:46:16Z",
+      "sampleWindowEnd": "2025-09-30T05:25:12Z"
+    },
+    {
       "repo": "xonsh/xonsh",
       "language": "Python",
       "topics": "artificial-intelligence|bash|cli|command-line|console|data-engineering|data-science|devops|fish|iterm2|python|raspberry-pi|security-automation|shell|xonsh|zsh",
@@ -4306,6 +5106,22 @@
       "sampleWindowEnd": "2025-09-15T14:09:31Z"
     },
     {
+      "repo": "xtekky/gpt4free",
+      "language": "Python",
+      "topics": "chatbot|chatbots|chatgpt|chatgpt-4|chatgpt-api|chatgpt-free|chatgpt4|deepseek|deepseek-api|deepseek-r1|gpt|gpt-4|gpt-4o|gpt4|gpt4-api|language-model|openai|openai-api|openai-chatgpt|reverse-engineering",
+      "defaultBranch": "main",
+      "deployCount": 205,
+      "prCount": 24,
+      "deploymentsPerWeekMedian": 4,
+      "deploymentsPerWeekP85": 7.25,
+      "deploymentsPerWeekP95": 9,
+      "prCycleTimeHoursMedian": 13.003194444444444,
+      "prCycleTimeHoursP85": 96.03794444444449,
+      "prCycleTimeHoursP95": 268.4766388888886,
+      "sampleWindowStart": "2024-10-15T09:52:43Z",
+      "sampleWindowEnd": "2025-10-04T17:32:33Z"
+    },
+    {
       "repo": "ydataai/ydata-profiling",
       "language": "Python",
       "topics": "big-data-analytics|data-analysis|data-exploration|data-profiling|data-quality|data-science|deep-learning|eda|exploration|exploratory-data-analysis|hacktoberfest|html-report|jupyter|jupyter-notebook|machine-learning|pandas|pandas-dataframe|pandas-profiling|python|statistics",
@@ -4320,6 +5136,54 @@
       "prCycleTimeHoursP95": 217.21166666666667,
       "sampleWindowStart": "2024-10-30T03:47:33Z",
       "sampleWindowEnd": "2025-09-23T16:06:51Z"
+    },
+    {
+      "repo": "yeongpin/cursor-free-vip",
+      "language": "Python",
+      "topics": "automation|cursor|cursor-ai|cursor-ide|cursorai|cursors|free|freetrial|pro",
+      "defaultBranch": "main",
+      "deployCount": 0,
+      "prCount": 75,
+      "deploymentsPerWeekMedian": null,
+      "deploymentsPerWeekP85": null,
+      "deploymentsPerWeekP95": null,
+      "prCycleTimeHoursMedian": 8.320555555555556,
+      "prCycleTimeHoursP85": 36.009999999999984,
+      "prCycleTimeHoursP95": 61.42738888888886,
+      "sampleWindowStart": "2025-02-25T01:51:15Z",
+      "sampleWindowEnd": "2025-06-18T02:18:31Z"
+    },
+    {
+      "repo": "yuaotian/go-cursor-help",
+      "language": "Shell",
+      "topics": "cursor|error",
+      "defaultBranch": "master",
+      "deployCount": 180,
+      "prCount": 31,
+      "deploymentsPerWeekMedian": 2,
+      "deploymentsPerWeekP85": 8.699999999999996,
+      "deploymentsPerWeekP95": 21.799999999999997,
+      "prCycleTimeHoursMedian": 10.91638888888889,
+      "prCycleTimeHoursP85": 54.58111111111111,
+      "prCycleTimeHoursP95": 78.02402777777777,
+      "sampleWindowStart": "2024-12-09T13:06:56Z",
+      "sampleWindowEnd": "2025-09-22T09:55:57Z"
+    },
+    {
+      "repo": "yuliskov/SmartTube",
+      "language": "Java",
+      "topics": "android|android-tv|android-tv-box|java|kotlin|retrofit2|rxjava-android",
+      "defaultBranch": "master",
+      "deployCount": 8,
+      "prCount": 16,
+      "deploymentsPerWeekMedian": 1,
+      "deploymentsPerWeekP85": 2.4,
+      "deploymentsPerWeekP95": 2.8,
+      "prCycleTimeHoursMedian": 66.11958333333334,
+      "prCycleTimeHoursP85": 150.79118055555557,
+      "prCycleTimeHoursP95": 216.9813888888889,
+      "sampleWindowStart": "2025-07-09T21:25:12Z",
+      "sampleWindowEnd": "2025-10-04T09:33:37Z"
     }
   ]
 }
