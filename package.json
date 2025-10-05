@@ -10,6 +10,7 @@
     "promote": "tsx scripts/tools/promote-config.ts",
     "inspect-releases": "tsx scripts/tools/inspect-releases.ts",
     "mttr-cfr": "tsx scripts/analysis/mttr-cfr.ts",
+    "charts": "tsx scripts/visualize/generate-charts.ts",
     "lint": "eslint \"scripts/**/*.ts\"",
     "test": "vitest run"
   },
