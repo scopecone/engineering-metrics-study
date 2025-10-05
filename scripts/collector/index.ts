@@ -115,6 +115,18 @@ program
     "Keep PRs authored by bot accounts (default: filtered)",
     false
   )
+  .option(
+    "--concurrency <number>",
+    "Number of repositories to collect in parallel",
+    (value) => {
+      const parsed = Number.parseInt(value, 10);
+      if (!Number.isFinite(parsed) || parsed <= 0) {
+        throw new Error("--concurrency must be a positive integer");
+      }
+      return parsed;
+    },
+    Number.parseInt(process.env.COLLECTOR_CONCURRENCY || "5", 10)
+  )
   .parse(process.argv);
 
 async function readRepoArguments(
@@ -249,12 +261,14 @@ async function collectPullRequests(
         }
         continue;
       }
-      const createdAt = new Date(pr.createdAt);
-      if (createdAt < windowStartDate) {
-        return {
-          pullRequests: results,
-          excludedBots,
-        };
+      const mergedAtDate = pr.mergedAt ? new Date(pr.mergedAt) : null;
+      if (!mergedAtDate || mergedAtDate < windowStartDate) {
+        if (debugLog) {
+          console.log(
+            `[${owner}/${repo}] [pull-requests] PR #${pr.number} skipped (merged ${pr.mergedAt ?? "unknown"} before window ${windowStart})`
+          );
+        }
+        continue;
       }
       results.push({
         number: pr.number,
@@ -524,6 +538,7 @@ async function run() {
     debug?: boolean;
     botAuthorPatterns: string[];
     includeBotPrs: boolean;
+    concurrency: number;
   }>();
 
   if (options.debug) {
@@ -582,7 +597,9 @@ async function run() {
     botAuthorPatterns,
   };
 
-  const summaries = await collectReposParallel(runtime, repoConfigs, graphqlClient, 5);
+  console.log(`ℹ️  Using concurrency: ${options.concurrency}`);
+
+  const summaries = await collectReposParallel(runtime, repoConfigs, graphqlClient, options.concurrency);
 
   console.log("\n✅ Collection complete:");
   for (const item of summaries) {
