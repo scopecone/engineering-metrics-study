@@ -96,6 +96,14 @@
     }
   },
   {
+    "slug": "ankidroid/Anki-Android",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "ansible/ansible",
     "method": "releases",
     "releases": {
@@ -288,6 +296,14 @@
     }
   },
   {
+    "slug": "astral-sh/uv",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
     "slug": "AUTOMATIC1111/stable-diffusion-webui",
     "method": "actions",
     "actions": {
@@ -332,6 +348,14 @@
   },
   {
     "slug": "baidu/dperf",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "basecamp/kamal",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -419,6 +443,14 @@
     }
   },
   {
+    "slug": "chatwoot/chatwoot",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "cilium/cilium",
     "method": "releases",
     "releases": {
@@ -464,6 +496,14 @@
     }
   },
   {
+    "slug": "coil-kt/coil",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
     "slug": "comfyanonymous/ComfyUI",
     "method": "releases",
     "releases": {}
@@ -501,6 +541,14 @@
         "release",
         "publish"
       ]
+    }
+  },
+  {
+    "slug": "dani-garcia/vaultwarden",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
     }
   },
   {
@@ -731,6 +779,14 @@
     }
   },
   {
+    "slug": "fluent/fluentd",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v[0-9]"
+    }
+  },
+  {
     "slug": "flyteorg/flyte",
     "method": "releases",
     "releases": {
@@ -739,11 +795,52 @@
     }
   },
   {
+    "slug": "forem/forem",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "cd",
+        "deploy",
+        "release"
+      ],
+      "workflowId": 38824273
+    }
+  },
+  {
     "slug": "fosrl/pangolin",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "freeCodeCamp/devdocs",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy"
+      ],
+      "events": [
+        "push"
+      ],
+      "workflowId": 7270215
+    }
+  },
+  {
+    "slug": "FuelLabs/fuel-core",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "FuelLabs/sway",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
     }
   },
   {
@@ -980,6 +1077,42 @@
     }
   },
   {
+    "slug": "Homebrew/brew",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "Homebrew/homebrew-cask",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "bump"
+      ],
+      "events": [
+        "schedule"
+      ],
+      "workflowId": 55040103
+    }
+  },
+  {
+    "slug": "Homebrew/homebrew-core",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "publish",
+        "bottle",
+        "rebottle"
+      ],
+      "events": [
+        "workflow_dispatch",
+        "schedule"
+      ]
+    }
+  },
+  {
     "slug": "httpie/cli",
     "method": "releases",
     "releases": {
@@ -1109,6 +1242,14 @@
     }
   },
   {
+    "slug": "JetBrains/compose-multiplatform",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "JetBrains/kotlin",
     "method": "releases",
     "releases": {}
@@ -1168,11 +1309,27 @@
     }
   },
   {
+    "slug": "Kotlin/kotlinx.coroutines",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
     "slug": "kptdev/kpt",
     "method": "releases",
     "releases": {
       "includePrereleases": true,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "ktorio/ktor",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
     }
   },
   {
@@ -1329,6 +1486,22 @@
     }
   },
   {
+    "slug": "mastodon/mastodon",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "maybe-finance/maybe",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "meilisearch/meilisearch",
     "method": "releases",
     "releases": {
@@ -1396,6 +1569,14 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "mobile-dev-inc/Maestro",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^cli-"
     }
   },
   {
@@ -1615,6 +1796,14 @@
     }
   },
   {
+    "slug": "opf/openproject",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "ory/kratos",
     "method": "releases",
     "releases": {
@@ -1655,6 +1844,14 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "pola-rs/polars",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^py-[0-9]"
     }
   },
   {
@@ -1701,6 +1898,14 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "puma/puma",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v[0-9]"
     }
   },
   {
@@ -1815,6 +2020,14 @@
     }
   },
   {
+    "slug": "rmosolgo/graphql-ruby",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "roboflow/supervision",
     "method": "deployments",
     "deployments": {
@@ -1824,11 +2037,35 @@
     }
   },
   {
+    "slug": "rubocop/rubocop",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "ruby/ruby",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v[0-9]_"
+    }
+  },
+  {
     "slug": "run-llama/llama_index",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "rust-lang/rust",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
     }
   },
   {
@@ -1971,6 +2208,22 @@
     }
   },
   {
+    "slug": "solidusio/solidus",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v[0-9]"
+    }
+  },
+  {
+    "slug": "spree/spree",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "spring-projects/spring-boot",
     "method": "releases",
     "releases": {
@@ -2006,6 +2259,24 @@
         "release",
         "publish"
       ]
+    }
+  },
+  {
+    "slug": "square/okio",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "release"
+      ],
+      "workflowId": 117192753
+    }
+  },
+  {
+    "slug": "starship/starship",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
     }
   },
   {
@@ -2139,6 +2410,14 @@
     }
   },
   {
+    "slug": "thunderbird/thunderbird-android",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^THUNDERBIRD_[0-9]+_[0-9]+$"
+    }
+  },
+  {
     "slug": "TobikoData/sqlmesh",
     "method": "releases",
     "releases": {
@@ -2164,6 +2443,14 @@
   },
   {
     "slug": "twentyhq/twenty",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "typst/typst",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -2400,5 +2687,13 @@
     "slug": "yuliskov/SmartTube",
     "method": "releases",
     "releases": {}
+  },
+  {
+    "slug": "zed-industries/zed",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
   }
 ]

@@ -2,6 +2,7 @@
 /data/raw/
 /tmp/
 output/metrics-mttr-cfr.json
+output/charts/
 
 # Local environment files
 .env

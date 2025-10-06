@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import "dotenv/config";
 import { Command } from "commander";
 import { Octokit } from "@octokit/rest";
 import fs from "fs-extra";
