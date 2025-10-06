@@ -1,120 +1,79 @@
-# Engineering Metrics Study (PoC)
+# Engineering Metrics Study
 
-This directory houses the data-collection spike that supports our engineering metrics blog post. Everything lives here so we can later extract it into a standalone open-source repository without touching the rest of the monorepo.
+This repository hosts ScopeCone's open research on software delivery benchmarks. We collect public GitHub signals from actively maintained projects, translate them into a comparable set of engineering metrics, and contrast the findings against the expectations baked into our engineering metrics simulator. All tooling, configuration, and documentation needed to replicate the study lives here.
 
-## Quick start
+## Why this study exists
+- Produce reproducible delivery benchmarks sourced directly from GitHub Actions, Deployments, and Releases APIs.
+- Validate (or challenge) the simulator assumptions we share with product and engineering leaders.
+- Provide a transparent workflow that outside contributors can extend with new data sources, heuristics, or visualisations.
 
-1. Install dependencies (Node 18+):
+Read more about the metric definitions and trade-offs in [`docs/metric-definitions.md`](docs/metric-definitions.md).
 
+## About ScopeCone
+[ScopeCone](https://scopecone.io) helps product and engineering leaders move beyond once-a-quarter roadmap guesswork. Our capacity-led planning platform supports iterative estimation loops that shrink the "cone" of uncertainty, keep teams aligned, and surface risks before commitments slip.
+
+Questions about the project or partnership opportunities? Reach us at [hello@scopecone.io](mailto:hello@scopecone.io).
+
+## Try the Engineering Metrics Simulator
+Curious how your team's delivery flow compares to the study cohort? Experiment with scenarios in the free [Engineering Metrics Simulator](https://scopecone.io/tools/engineering-metrics-simulator). The simulator lets you plug in cycle time, deployment frequency, and incident response assumptions to see how your roadmap capacity shifts under different constraints.
+
+## Getting started from scratch
+1. **Install prerequisites**
+   - Node.js 18 or newer.
+   - A GitHub personal access token stored as `GITHUB_TOKEN` in a `.env` file at the repo root (or exported in your shell). Public projects only need default scopes; private repos require the `repo` scope.
+2. **Install dependencies**
    ```bash
-   cd engineering-metrics-study
    npm install
    ```
-
-2. Set `GITHUB_TOKEN` in a `.env` file at the project root or export it in your shell. The token must have the `repo` scope for private repos (public data works with the default scope).
-
-3. Create a repo list file, e.g. `config/repos.sample.json`:
-
-   ```json
-   [
-     {
-       "slug": "vercel/next.js",
-       "method": "actions",
-   "actions": {
-     "workflowKeywords": ["deploy", "release"],
-      "workflowId": 123456789,
-      "events": ["push"],
-      "branch": "canary"
-    }
-  },
-  "withastro/astro"
-  ]
-  ```
-
-  Each entry can be a simple `"owner/name"` string (default `actions` method with the global filters), or an object that specifies per-repo collection rules. Supported methods are `actions`, `deployments`, and `releases`. See [`docs/metric-definitions.md`](docs/metric-definitions.md) for option details and trade-offs.
-  - Set `workflowId` when you want to bind collection to a particular workflow (e.g. PostHog’s "Container Images CD" job). Provide an empty `workflowKeywords` array if you rely solely on the id to avoid falling back to the CLI keyword defaults.
-
-4. Collect raw payloads:
-
+3. **Describe the repositories you want to analyse**
+   - Copy `config/repos.sample.json` and tailor it to your cohort.
+   - Each entry can be a simple `"owner/name"` string or an object with per-repository rules. Supported collection methods: `actions`, `deployments`, and `releases`.
+4. **Collect raw payloads from GitHub**
    ```bash
-   npm run collect -- \\
-     --input config/repos.sample.json \\
+   npm run collect -- \
+     --input config/repos.sample.json \
      --days 365
    ```
-
-   - Use repeated `--repo owner/name` flags for ad-hoc runs.
-   - Add `--refresh` to ignore cached responses.
-   - Add `--debug` to log every workflow run that is counted or skipped.
-   - Set `COLLECTOR_PROGRESS=true` to emit `[n/total]` progress updates during long batches.
-   - By default, raw payloads are written to `engineering-metrics-study/data/raw`. Pass `--output ../tmp` (or any path) if you need an alternate cache directory.
-   - **Retention note:** GitHub only keeps Actions runs for ~30 days on most public repos. Once you have a stable `data/raw` cache, avoid using `--refresh` during recurring collections; append new runs instead so the archive grows over time.
-
-5. Aggregate metrics into CSV and JSON summaries:
-
+   Helpful flags: `--repo owner/name` for ad-hoc runs, `--refresh` to ignore caches, `--debug` for verbose logs, and `COLLECTOR_PROGRESS=true` for progress updates. Payloads default to `data/raw`; change with `--output` if needed.
+5. **Aggregate metrics for analysis**
    ```bash
-   npm run aggregate -- \\
-     --input engineering-metrics-study/data/raw \\
-     --output engineering-metrics-study/output
+   npm run aggregate -- \
+     --input data/raw \
+     --output output
    ```
-
-6. Discover candidate repos by topic and get method recommendations:
-
+6. **(Optional) Discover additional candidate repositories**
    ```bash
-   npm run discover -- \\
-     --topic nextjs \\
-     --topic astro \\
-     --limit 3 \\
-     --holdout config/repos.holdout.json \\
-     --cache-dir tmp/discovery-cache \\
+   npm run discover -- \
+     --topic nextjs \
+     --topic astro \
+     --limit 3 \
+     --holdout config/repos.holdout.json \
      --format table
    ```
+   Use `--format json` for machine-readable results, and `--write-validation` to persist curated batches before promotion.
 
-   - Use `--format json` to export machine-consumable output for downstream tooling or AI-assisted triage.
-   - Filter out curated lists or manuals via `--exclude-topics` / `--exclude-keywords` if a topic returns non-product repos. Combine `--holdout config/repos.holdout.json` with the activity flags (`--min-commits`, `--min-prs`) to ensure discovery skips archived/templates we have already reviewed. Running discovery in small topic batches helps stay under GitHub’s 30 requests/min search quota; cached responses are reused for 24 hours by default.
-   - Pass `--write-validation config/repos.batchN.validation.json` to emit a ready-to-collect slice containing only the accepted repos that are not already present in `config/repos.sample.json`. Add `--append-validation` to grow an existing file when iterating on the same batch.
+Once the commands finish, explore the generated CSV/JSON artefacts in `output/` or load them into your own notebooks.
 
-### Batch tooling
+## Tooling highlights
+- **Validation promotion**: `npm run promote -- --input config/repos.batchN.validation.json [--apply] [--update-discovery]`
+- **Release inspector**: `npm run inspect-releases -- --repo owner/name --count 25 [--validate config/repos.sample.json]`
+- **Discovery pipeline**: Chain `discover → inspect-releases → collect → promote` to scale the cohort safely under GitHub API limits.
 
-- **Validation promotion**: `npm run promote -- --input config/repos.batchN.validation.json [--apply] [--update-discovery]`. Dry runs show which repos would be merged; re-run with `--apply` to persist and optionally update `config/repos.discovery.json`.
-- **Release inspector**: `npm run inspect-releases -- --repo owner/name --repo another/project --count 25`. The helper prints recent tag patterns, prerelease ratios, and compares them against the current config when `--validate config/repos.sample.json` is supplied. Use `--write tmp/release-audit` to capture JSON summaries for later review.
-- **Discovery pipeline**: Combine the steps — run discovery per topic with `--write-validation`, sanity-check release patterns via `npm run inspect-releases`, then collect with the generated config before promoting it into `repos.sample.json`.
-
-### Runtime configuration
-
-- `COLLECTOR_PROGRESS=true npm run collect …` — surfaces progress logs from each worker without enabling full debug mode.
-- `USE_GRAPHQL_DEPLOYMENTS=false npm run collect …` — falls back to the REST Deployments API if the GitHub GraphQL schema changes; the default GraphQL path batches deployments and statuses to minimise API calls.
-- The collector automatically respects conditional requests (ETag/Last-Modified headers) and will pause when the GitHub rate limit approaches zero, so reruns can safely share cached responses.
-- PR bot authors are filtered by default. Use `npm run collect -- --include-bot-prs …` to keep them, or override detection heuristics with `--bot-author-patterns dependabot,renovate`.
-- Deployments collected through the GitHub Deployments API can be narrowed to production-ready signals by setting both `deployments.environments` and `deployments.statuses` per repo. For example, Sentry now limits counting to `Production` deployments whose latest status is `success`, removing thousands of preview deploys from the weekly totals.
-
-### Testing
-
-Run the targeted regression tests with:
-
-```bash
-npm test
+## Repository layout
+```
+docs/                     # Metric definitions & methodology
+config/                   # Sample and curated repo lists
+data/raw/                 # Cached GitHub responses (gitignored)
+notebooks/                # Exploratory analysis (coming soon)
+output/                   # Aggregated CSV/JSON summaries
+scripts/                  # CLI entry points for collectors & aggregators
+package.json              # Local tooling dependencies
 ```
 
-This suite covers the deployment GraphQL collector pagination/filters and the Actions workflow pagination behaviour.
+## Contributing
+We welcome additions that expand the dataset or deepen the analysis. Open an issue describing the metric, heuristic, or integration you would like to add, or submit a pull request with:
+- A clear description of the proposed change and why it matters to the study.
+- Updates to documentation or examples when behaviour changes.
+- New or updated automated tests when applicable (`npm test`).
 
-## Directory layout
-
-```
-engineering-metrics-study/
-  docs/                     # Metric definitions & methodology
-  data/raw/                 # Cached GitHub responses (gitignored)
-  notebooks/                # Analysis notebooks (coming soon)
-  output/                   # Aggregated CSV/JSON summaries
-  scripts/
-    collector/              # GitHub API collection CLI
-    aggregate.ts            # Metrics aggregation CLI
-  package.json              # Local tooling dependencies
-```
-
-## Next steps
-
-- Expand the collector to persist additional metadata (workflow file paths, release tags).
-- Prototype MTTR/CFR heuristics on the cached payloads.
-- Add Jupyter/Observable notebook(s) that visualise the pilot cohort vs. simulator assumptions.
-
-Refer to [`docs/metric-definitions.md`](docs/metric-definitions.md) for the current scope of tracked metrics and output schema.
+Thanks for helping the community build more actionable engineering benchmarks!
