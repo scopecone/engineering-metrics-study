@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-06T06:53:20.315Z",
+  "generatedAt": "2025-10-06T07:02:39.891Z",
   "rows": [
     {
       "repo": "18F/identity-idp",
@@ -2102,11 +2102,11 @@
       "language": "Ruby",
       "topics": "core|formulae|hacktoberfest|homebrew|ruby|tap",
       "defaultBranch": "main",
-      "deployCount": 24,
+      "deployCount": 23,
       "prCount": 17939,
-      "deploymentsPerWeekMedian": 12,
-      "deploymentsPerWeekP85": 17.6,
-      "deploymentsPerWeekP95": 19.2,
+      "deploymentsPerWeekMedian": 23,
+      "deploymentsPerWeekP85": 23,
+      "deploymentsPerWeekP95": 23,
       "prCycleTimeHoursMedian": 0.6041666666666666,
       "prCycleTimeHoursP85": 2.4770277777777774,
       "prCycleTimeHoursP95": 9.146499999999978,
@@ -3858,22 +3858,6 @@
       "sampleWindowEnd": "2025-10-03T15:07:16Z"
     },
     {
-      "repo": "ruby/ruby",
-      "language": "Ruby",
-      "topics": "c|jit|language|object-oriented|programming-language|ruby|ruby-language|rust",
-      "defaultBranch": "master",
-      "deployCount": 16,
-      "prCount": 73,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 2,
-      "deploymentsPerWeekP95": 2,
-      "prCycleTimeHoursMedian": 2.1397222222222223,
-      "prCycleTimeHoursP85": 72.42922222222215,
-      "prCycleTimeHoursP95": 209.96838888888854,
-      "sampleWindowStart": "2024-10-30T09:47:11Z",
-      "sampleWindowEnd": "2025-10-05T16:00:48Z"
-    },
-    {
       "repo": "run-llama/llama_index",
       "language": "Python",
       "topics": "agents|application|data|fine-tuning|framework|llamaindex|llm|multi-agents|rag|vector-database",
@@ -3888,22 +3872,6 @@
       "prCycleTimeHoursP95": 165.28938888888888,
       "sampleWindowStart": "2024-10-09T01:26:36Z",
       "sampleWindowEnd": "2025-10-03T17:52:07Z"
-    },
-    {
-      "repo": "rust-lang/rust",
-      "language": "Rust",
-      "topics": "compiler|language|rust",
-      "defaultBranch": "master",
-      "deployCount": 11,
-      "prCount": 169,
-      "deploymentsPerWeekMedian": 1,
-      "deploymentsPerWeekP85": 1,
-      "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": 32.780833333333334,
-      "prCycleTimeHoursP85": 438.36527777777775,
-      "prCycleTimeHoursP95": 2571.382444444444,
-      "sampleWindowStart": "2024-10-17T16:44:28Z",
-      "sampleWindowEnd": "2025-10-05T15:51:58Z"
     },
     {
       "repo": "rustdesk/rustdesk",
@@ -4247,14 +4215,14 @@
       "topics": "bash|fish|fish-prompt|fish-theme|oh-my-zsh|powershell|rust|shell-prompt|starship|zsh|zsh-prompt|zsh-theme",
       "defaultBranch": "master",
       "deployCount": 3,
-      "prCount": 67,
+      "prCount": 119,
       "deploymentsPerWeekMedian": 1,
       "deploymentsPerWeekP85": 1,
       "deploymentsPerWeekP95": 1,
-      "prCycleTimeHoursMedian": 441.71416666666664,
-      "prCycleTimeHoursP85": 1803.3649722222224,
-      "prCycleTimeHoursP95": 3221.583138888888,
-      "sampleWindowStart": "2024-10-18T16:27:23Z",
+      "prCycleTimeHoursMedian": 362.79555555555555,
+      "prCycleTimeHoursP85": 1963.2488888888888,
+      "prCycleTimeHoursP95": 3361.843749999996,
+      "sampleWindowStart": "2023-02-17T02:47:32Z",
       "sampleWindowEnd": "2025-09-29T17:30:03Z"
     },
     {

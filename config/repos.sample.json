@@ -2045,27 +2045,11 @@
     }
   },
   {
-    "slug": "ruby/ruby",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^v[0-9]_"
-    }
-  },
-  {
     "slug": "run-llama/llama_index",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
-    }
-  },
-  {
-    "slug": "rust-lang/rust",
-    "method": "releases",
-    "releases": {
-      "includePrereleases": false,
-      "tagPattern": "^[0-9]"
     }
   },
   {
