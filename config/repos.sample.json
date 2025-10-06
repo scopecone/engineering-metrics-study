@@ -50,6 +50,14 @@
     }
   },
   {
+    "slug": "akka/akka",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "Alamofire/Alamofire",
     "method": "actions",
     "actions": {
@@ -174,11 +182,43 @@
     }
   },
   {
+    "slug": "apache/dubbo",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^dubbo-"
+    }
+  },
+  {
+    "slug": "apache/hbase",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^rel/"
+    }
+  },
+  {
+    "slug": "apache/hudi",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^release-"
+    }
+  },
+  {
     "slug": "apache/iceberg",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^apache-iceberg-"
+    }
+  },
+  {
+    "slug": "apache/pinot",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^release-"
     }
   },
   {
@@ -195,6 +235,22 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^rocketmq-all-"
+    }
+  },
+  {
+    "slug": "apache/seatunnel",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "apache/shardingsphere",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
     }
   },
   {
@@ -544,6 +600,22 @@
     }
   },
   {
+    "slug": "cortexproject/cortex",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "dagster-io/dagster",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
     "slug": "dani-garcia/vaultwarden",
     "method": "releases",
     "releases": {
@@ -553,6 +625,14 @@
   },
   {
     "slug": "datahub-project/datahub",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "dbt-labs/dbt-core",
     "method": "releases",
     "releases": {
       "includePrereleases": true,
@@ -634,6 +714,46 @@
     "method": "releases",
     "releases": {
       "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "dotnet/efcore",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "dotnet/maui",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "dotnet/msbuild",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "dotnet/runtime",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "dotnet/sdk",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
       "tagPattern": "^v"
     }
   },
@@ -922,10 +1042,26 @@
     }
   },
   {
+    "slug": "google/guava",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "goreleaser/goreleaser",
     "method": "releases",
     "releases": {
       "includePrereleases": false
+    }
+  },
+  {
+    "slug": "gradle/gradle",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
     }
   },
   {
@@ -1172,6 +1308,14 @@
     }
   },
   {
+    "slug": "influxdata/influxdb",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "intel/pcm",
     "method": "releases",
     "releases": {
@@ -1382,6 +1526,14 @@
     }
   },
   {
+    "slug": "kubeshop/testkube",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "lancedb/lance",
     "method": "releases",
     "releases": {
@@ -1526,6 +1678,14 @@
     }
   },
   {
+    "slug": "micronaut-projects/micronaut-core",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "microsoft/playwright",
     "method": "releases",
     "releases": {
@@ -1547,6 +1707,14 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "minio/minio",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^RELEASE"
     }
   },
   {
@@ -1597,6 +1765,14 @@
     "method": "releases",
     "releases": {
       "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "MudBlazor/MudBlazor",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
       "tagPattern": "^v"
     }
   },
@@ -1739,6 +1915,14 @@
     }
   },
   {
+    "slug": "open-telemetry/opentelemetry-collector-contrib",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "opencv/opencv",
     "method": "actions",
     "actions": {
@@ -1804,6 +1988,14 @@
     }
   },
   {
+    "slug": "OrchardCMS/OrchardCore",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "ory/kratos",
     "method": "releases",
     "releases": {
@@ -1816,6 +2008,14 @@
     "method": "releases",
     "releases": {
       "includePrereleases": false,
+      "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "parca-dev/parca",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
       "tagPattern": "^v"
     }
   },
@@ -1844,6 +2044,14 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "playframework/playframework",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
     }
   },
   {
@@ -1878,6 +2086,14 @@
   },
   {
     "slug": "PrefectHQ/prefect",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "prisma/prisma",
     "method": "releases",
     "releases": {
       "includePrereleases": false,
@@ -1924,6 +2140,22 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^v"
+    }
+  },
+  {
+    "slug": "quarkusio/quarkus",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
+    }
+  },
+  {
+    "slug": "questdb/questdb",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
     }
   },
   {
@@ -2129,6 +2361,14 @@
       "events": [
         "push"
       ]
+    }
+  },
+  {
+    "slug": "serilog/serilog",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
     }
   },
   {
@@ -2383,6 +2623,14 @@
     "releases": {}
   },
   {
+    "slug": "thanos-io/thanos",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^v"
+    }
+  },
+  {
     "slug": "thingsboard/thingsboard-gateway",
     "method": "actions",
     "actions": {
@@ -2399,6 +2647,14 @@
     "releases": {
       "includePrereleases": false,
       "tagPattern": "^THUNDERBIRD_[0-9]+_[0-9]+$"
+    }
+  },
+  {
+    "slug": "timescale/timescaledb",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^[0-9]"
     }
   },
   {
@@ -2458,6 +2714,14 @@
     }
   },
   {
+    "slug": "umbraco/Umbraco-CMS",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": true,
+      "tagPattern": "^release-"
+    }
+  },
+  {
     "slug": "unionlabs/union",
     "method": "releases",
     "releases": {
@@ -2497,6 +2761,14 @@
         "push"
       ],
       "branch": "canary"
+    }
+  },
+  {
+    "slug": "VictoriaMetrics/VictoriaMetrics",
+    "method": "releases",
+    "releases": {
+      "includePrereleases": false,
+      "tagPattern": "^v"
     }
   },
   {
