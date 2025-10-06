@@ -190,7 +190,7 @@ async function collectPullRequests(
         pullRequests(
           states: MERGED,
           baseRefName: $base,
-          orderBy: { field: MERGED_AT, direction: DESC },
+          orderBy: { field: UPDATED_AT, direction: DESC },
           first: 100,
           after: $cursor
         ) {
@@ -246,23 +246,6 @@ async function collectPullRequests(
     });
 
     const connection = response.repository.pullRequests;
-
-    // Deterministic early exit: since results are sorted by MERGED_AT DESC,
-    // we can stop as soon as we see a page where all PRs are merged before windowStart
-    const allMergedBeforeWindow = connection.nodes.every(pr => {
-      if (!pr.mergedAt) return true; // Treat unmerged as "old"
-      const mergedAtDate = new Date(pr.mergedAt);
-      return mergedAtDate < windowStartDate;
-    });
-
-    if (allMergedBeforeWindow && connection.nodes.length > 0) {
-      if (debugLog) {
-        console.log(
-          `[${owner}/${repo}] [pull-requests] Stopping: all PRs on this page merged before ${windowStart}`
-        );
-      }
-      break;
-    }
 
     for (const pr of connection.nodes) {
       if (!pr.mergedAt) {
