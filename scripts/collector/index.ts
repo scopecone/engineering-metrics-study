@@ -169,21 +169,113 @@ async function writeJson(filePath: string, data: unknown) {
   await fs.outputJson(filePath, data, { spaces: 2 });
 }
 
+const RETRYABLE_STATUS = new Set([500, 502, 503, 504]);
+
+function isRetryableGraphQLError(error: unknown): boolean {
+  if (!error || typeof error !== "object") {
+    return false;
+  }
+  const status = (error as { status?: number }).status ?? (error as { response?: { status?: number } }).response?.status;
+  if (status && RETRYABLE_STATUS.has(status)) {
+    return true;
+  }
+  const message = (error as { message?: string }).message ?? "";
+  return /5\d{2}/.test(message) || message.toLowerCase().includes("bad gateway");
+}
+
+function wait(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function collectPullRequests(
   graphqlClient: GraphqlClient,
+  octokit: Octokit,
   owner: string,
   repo: string,
   baseBranch: string,
   windowStart: string,
   options: { includeBotPRs: boolean; botAuthorPatterns: string[]; debug: boolean }
 ): Promise<PullRequestCollection> {
-  const results: PullRequestSummary[] = [];
-  const excludedBots: Array<{ number: number; authorLogin: string | null }> = [];
-  let cursor: string | null = null;
   const windowStartDate = new Date(windowStart);
   const botPatterns = options.botAuthorPatterns;
   const debugLog = options.debug;
+  const retryDelaysMs = [500, 1500, 3000];
+  let lastError: unknown = null;
 
+  for (let attempt = 0; attempt <= retryDelaysMs.length; attempt++) {
+    try {
+      return await collectPullRequestsGraphql({
+        graphqlClient,
+        owner,
+        repo,
+        baseBranch,
+        windowStart,
+        windowStartDate,
+        includeBotPRs: options.includeBotPRs,
+        botPatterns,
+        debugLog,
+      });
+    } catch (error) {
+      lastError = error;
+      const retryable = isRetryableGraphQLError(error);
+      const hasMoreAttempts = attempt < retryDelaysMs.length;
+      if (!retryable || !hasMoreAttempts) {
+        break;
+      }
+      const delay = retryDelaysMs[attempt];
+      if (debugLog) {
+        console.warn(
+          `[${owner}/${repo}] GraphQL PR fetch failed (attempt ${attempt + 1}); retrying in ${delay}ms`
+        );
+      }
+      await wait(delay);
+    }
+  }
+
+  if (debugLog) {
+    const message = lastError instanceof Error ? lastError.message : String(lastError ?? "unknown error");
+    console.warn(`[${owner}/${repo}] Falling back to REST pull request collection after GraphQL failures (${message})`);
+  }
+
+  return collectPullRequestsRest({
+    octokit,
+    owner,
+    repo,
+    baseBranch,
+    windowStart,
+    windowStartDate,
+    includeBotPRs: options.includeBotPRs,
+    botPatterns,
+    debugLog,
+  });
+}
+
+interface CollectPullRequestsGraphqlParams {
+  graphqlClient: GraphqlClient;
+  owner: string;
+  repo: string;
+  baseBranch: string;
+  windowStart: string;
+  windowStartDate: Date;
+  includeBotPRs: boolean;
+  botPatterns: string[];
+  debugLog: boolean;
+}
+
+async function collectPullRequestsGraphql({
+  graphqlClient,
+  owner,
+  repo,
+  baseBranch,
+  windowStart,
+  windowStartDate,
+  includeBotPRs,
+  botPatterns,
+  debugLog,
+}: CollectPullRequestsGraphqlParams): Promise<PullRequestCollection> {
+  const results: PullRequestSummary[] = [];
+  const excludedBots: Array<{ number: number; authorLogin: string | null }> = [];
+  let cursor: string | null = null;
   const query = /* GraphQL */ `
     query ($owner: String!, $name: String!, $base: String!, $cursor: String) {
       repository(owner: $owner, name: $name) {
@@ -252,7 +344,7 @@ async function collectPullRequests(
         continue;
       }
       const authorLogin = pr.author?.login ?? null;
-      const isBot = !options.includeBotPRs && isBotAuthorLogin(authorLogin, botPatterns);
+      const isBot = !includeBotPRs && isBotAuthorLogin(authorLogin, botPatterns);
       if (isBot) {
         excludedBots.push({ number: pr.number, authorLogin });
         if (debugLog) {
@@ -300,6 +392,112 @@ async function collectPullRequests(
     pullRequests: results,
     excludedBots,
   };
+}
+
+interface CollectPullRequestsRestParams {
+  octokit: Octokit;
+  owner: string;
+  repo: string;
+  baseBranch: string;
+  windowStart: string;
+  windowStartDate: Date;
+  includeBotPRs: boolean;
+  botPatterns: string[];
+  debugLog: boolean;
+}
+
+async function collectPullRequestsRest({
+  octokit,
+  owner,
+  repo,
+  baseBranch,
+  windowStart,
+  windowStartDate,
+  includeBotPRs,
+  botPatterns,
+  debugLog,
+}: CollectPullRequestsRestParams): Promise<PullRequestCollection> {
+  const results: PullRequestSummary[] = [];
+  const excludedBots: Array<{ number: number; authorLogin: string | null }> = [];
+
+  const iterator = octokit.paginate.iterator(octokit.pulls.list, {
+    owner,
+    repo,
+    state: "closed",
+    base: baseBranch,
+    sort: "updated",
+    direction: "desc",
+    per_page: 100,
+  });
+
+  for await (const response of iterator) {
+    let stopPaging = false;
+
+    for (const pr of response.data) {
+      if (!pr?.merged_at) {
+        continue;
+      }
+      const mergedAtDate = new Date(pr.merged_at);
+      if (mergedAtDate < windowStartDate) {
+        stopPaging = true;
+        break;
+      }
+
+      const authorLogin = pr.user?.login ?? null;
+      if (!includeBotPRs && isBotAuthorLogin(authorLogin, botPatterns)) {
+        excludedBots.push({ number: pr.number, authorLogin });
+        if (debugLog) {
+          console.log(
+            `[${owner}/${repo}] [pull-requests] PR #${pr.number} excluded (bot author: ${authorLogin ?? "unknown"})`
+          );
+        }
+        continue;
+      }
+
+      const hasStats =
+        typeof (pr as { additions?: number }).additions === "number" &&
+        typeof (pr as { deletions?: number }).deletions === "number" &&
+        typeof (pr as { changed_files?: number }).changed_files === "number";
+
+      const detail = hasStats ? { data: pr as any } : await octokit.pulls.get({ owner, repo, pull_number: pr.number });
+      const data = detail.data as typeof pr & {
+        additions?: number;
+        deletions?: number;
+        changed_files?: number;
+      };
+
+      if (!data.merged_at) {
+        continue;
+      }
+      const detailMergedAt = new Date(data.merged_at);
+      if (detailMergedAt < windowStartDate) {
+        continue;
+      }
+
+      results.push({
+        number: data.number,
+        title: data.title ?? pr.title ?? "",
+        createdAt: data.created_at ?? pr.created_at ?? windowStart,
+        mergedAt: data.merged_at,
+        additions: data.additions ?? 0,
+        deletions: data.deletions ?? 0,
+        changedFiles: data.changed_files ?? null,
+        headRefName: data.head?.ref ?? pr.head?.ref ?? "",
+        baseRefName: data.base?.ref ?? pr.base?.ref ?? baseBranch,
+        authorLogin: data.user?.login ?? authorLogin,
+      });
+    }
+
+    if (stopPaging) {
+      break;
+    }
+  }
+
+  if (debugLog && excludedBots.length > 0) {
+    console.log(`[${owner}/${repo}] filtered ${excludedBots.length} bot PR(s) via REST fallback`);
+  }
+
+  return { pullRequests: results, excludedBots };
 }
 
 async function collectDeploymentEvents(
@@ -444,6 +642,7 @@ async function collectRepo(
   if (!prPayload) {
     const prCollection = await collectPullRequests(
       graphqlClient,
+      runtime.octokit,
       repo.owner,
       repo.name,
       metadata.defaultBranch,
