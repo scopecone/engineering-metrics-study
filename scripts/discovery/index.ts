@@ -100,7 +100,7 @@ program
   .option(
     "--cache-dir <path>",
     "Directory to cache discovery results",
-    path.resolve(process.cwd(), "engineering-metrics-study/tmp/discovery-cache")
+    path.resolve(process.cwd(), "tmp/discovery-cache")
   )
   .option(
     "--cache-ttl <hours>",

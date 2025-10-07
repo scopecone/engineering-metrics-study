@@ -67,7 +67,12 @@ export async function collectReleaseEvents({
     }
     const publishedAt = new Date(relevantTimestamp);
     if (publishedAt < windowStartDate) {
-      break;
+      if (debug) {
+        console.log(
+          `[${owner}/${repo}] release#${release.id} ⏭️  skipped (published ${publishedAt.toISOString()} before window ${windowStart})`
+        );
+      }
+      continue;
     }
     if (publishedAt > windowEndDate) {
       continue;

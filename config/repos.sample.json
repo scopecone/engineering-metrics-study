@@ -2951,5 +2951,377 @@
       "includePrereleases": true,
       "tagPattern": "^v"
     }
+  },
+  {
+    "slug": "CodeEditApp/CodeEdit",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "pointfreeco/swift-composable-architecture",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "MrKai77/Loop",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "XcodesOrg/XcodesApp",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "MochiDiffusion/MochiDiffusion",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Dimillian/IceCubesApp",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "siteline/swiftui-introspect",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "buresdv/Cork",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "jellyfin/Swiftfin",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "ReVanced/revanced-manager",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "ente-io/ente",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "GopeedLab/gopeed",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Predidit/Kazumi",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "felangel/bloc",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "firebase/flutterfire",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "imaNNeo/fl_chart",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "lollipopkit/flutter_server_box",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "bggRGjQaUbCoE/PiliPlus",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "leoafarias/fvm",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "Production"
+      ]
+    }
+  },
+  {
+    "slug": "commaai/openpilot",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "AtsushiSakai/PythonRobotics",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "zauberzeug/nicegui",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "ArduPilot/ardupilot",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "kornia/kornia",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "rerun-io/rerun",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "isaac-sim/IsaacLab",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages",
+        "postmerge-production"
+      ]
+    }
+  },
+  {
+    "slug": "RobotLocomotion/drake",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "ros-navigation/navigation2",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "borglab/gtsam",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "pytorch/rl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "stack-of-tasks/pinocchio",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "dora-rs/dora",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "eProsima/Fast-DDS",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "godotengine/godot",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "bevyengine/bevy",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "raysan5/raylib",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "emilk/egui",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "4ian/GDevelop",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "MonoGame/MonoGame",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "playcanvas/engine",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "flame-engine/flame",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "cocos/cocos-engine",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "game1024/OpenSpeedy",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Orama-Interactive/Pixelorama",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "o3de/o3de",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "SanderMertens/flecs",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "stride3d/stride",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "libgdx/libgdx",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "KRTirtho/spotube",
+    "method": "releases",
+    "releases": {}
   }
 ]

@@ -146,5 +146,13 @@
   {
     "slug": "LinShunKang/MyPerf4J",
     "reason": "no_pr_activity"
+  },
+  {
+    "slug": "Developer-Y/cs-video-courses",
+    "reason": "docs_only"
+  },
+  {
+    "slug": "rrousselGit/riverpod",
+    "reason": "no_deploy_signals_365d"
   }
 ]

@@ -80,3 +80,11 @@ After each batch:
 - Share the report with the team for sign-off before proceeding to the next batch.
 
 Following this plan should allow us to reach 250 repositories within ~4 batches while staying under GitHub API rate limits and preserving dataset integrity.
+
+## 2025-10-06 Batch Summary
+
+- **Focus topics**: SwiftUI/macOS apps (9), Flutter/Dart clients (12), robotics & embodied AI stacks (14), game-dev engines & tooling (15).
+- **New repos captured**: 50 high-signal projects appended to `config/repos.discovery.json` and staged in `config/batches/repos.batch-20251006.json`.
+- **Collection method adjustments**: switched several high-volume projects (Godot, Drake, Swiftfin, Loop, etc.) to the `releases` method to avoid missing deployment signals hidden behind release tags.
+- **Holdouts added**: `Developer-Y/cs-video-courses` (docs-only) and `rrousselGit/riverpod` (no recent deployment surrogate) were excluded to keep the dataset focused on product repos with reproducible release cadence.
+- **Artifacts**: aggregated metrics for the batch are stored in `output/batch-20251006/` for review before promoting entries into `config/repos.sample.json`.

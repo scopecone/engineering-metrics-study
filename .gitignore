@@ -6,3 +6,5 @@ output/charts/
 
 # Local environment files
 .env
+
+node_modules/
