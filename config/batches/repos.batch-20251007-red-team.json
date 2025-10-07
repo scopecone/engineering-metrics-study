@@ -1,0 +1,143 @@
+[
+  {
+    "slug": "BishopFox/sliver",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "quasar/Quasar",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "samratashok/nishang",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "mitre/caldera",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Trusted-AI/adversarial-robustness-toolbox",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Pennyw0rth/NetExec",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "cobbr/Covenant",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "lcvvvv/kscan",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "skerkour/black-hat-rust",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "leebaird/discover",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "cisagov/RedEye",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "bats3c/shad0w",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Idov31/Nidhogg",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  }
+]

@@ -1,0 +1,150 @@
+[
+  {
+    "slug": "naptha/tesseract.js",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "emscripten-core/emscripten",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "slint-ui/slint",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "preview"
+      ]
+    }
+  },
+  {
+    "slug": "wasmerio/wasmer",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "leptos-rs/leptos",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "AssemblyScript/assemblyscript",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "bytecodealliance/wasmtime",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "tinygo-org/tinygo",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "leaningtech/webvm",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "tursodatabase/libsql",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "pion/webrtc",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "tursodatabase/turso",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "pyodide/pyodide",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "svenstaro/genact",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "therecipe/qt",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "kanaka/mal",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  }
+]

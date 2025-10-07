@@ -1,0 +1,147 @@
+[
+  {
+    "slug": "JuliaLang/julia",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "nteract/papermill",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "fonsp/Pluto.jl",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "MilesCranmer/PySR",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "SciML/DifferentialEquations.jl",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "multiprocessio/datastation",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "grame-cncm/faust",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "MakieOrg/Makie.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "GenieFramework/Genie.jl",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "jump-dev/JuMP.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "GiovineItalia/Gadfly.jl",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "JuliaPlots/Plots.jl",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "JuliaAI/MLJ.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "JuliaData/DataFrames.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "SciML/ModelingToolkit.jl",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "FluxML/Zygote.jl",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "JuliaLang/PackageCompiler.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  }
+]

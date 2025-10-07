@@ -89,3 +89,14 @@ Following this plan should allow us to reach 250 repositories within ~4 batches 
 - **Holdouts added**: `Developer-Y/cs-video-courses` (docs-only) and `rrousselGit/riverpod` (no recent deployment surrogate) were excluded to keep the dataset focused on product repos with reproducible release cadence.
 - **Artifacts**: aggregated metrics for the batch are stored in `output/batch-20251006/` for review before promoting entries into `config/repos.sample.json`.
 - **Collector resume**: Use `npm run collect -- --input config/repos.sample.json --state-file tmp/run-<date>.jsonl --resume` to recover long runs; the manifest captures per-repo status, and `--force owner/name` replays any slice as needed.
+
+## 2025-10-07 Batch Summary
+
+- **Focus topics**: .NET production apps (9), Julia data/ML ecosystems (15), operational security tooling (5), WebAssembly runtimes/toolchains (15).
+- **Signals captured**:
+  - `.NET`: median PR cycle ≈ 58 h, weekly deploy cadence ≈ 1, median deploy count 23 (key additions: `dotnet/aspnetcore`, `bitwarden/server`, `amplication/amplication`).
+  - `Julia`: median PR cycle ≈ 7.9 h, deployments ≈ 2 / week (e.g., `JuliaLang/julia`, `MakieOrg/Makie.jl`, `FluxML/Zygote.jl`).
+  - `Red-team tooling`: 5 repos with meaningful PR activity (e.g., `BishopFox/sliver`, `Pennyw0rth/NetExec`); most release asynchronously, so deploy cadence stays sparse.
+  - `WebAssembly`: median PR cycle ≈ 6 h, deployments ≈ 3 / week, median deploy count 27 (`wasmerio/wasmer`, `bytecodealliance/wasmtime`, `tursodatabase/libsql`).
+- **Holdouts added**: documentation/data dumps and repos without observable automation (`nteract/papermill`, `multiprocessio/datastation`, `quasar/Quasar`, `samratashok/nishang`, `cobbr/Covenant`, `lcvvvv/kscan`, `skerkour/black-hat-rust`, `leebaird/discover`, `cisagov/RedEye`, `bats3c/shad0w`, `therecipe/qt`).
+- **Artifacts**: Metrics for the batch live in `output/batch-20251007/` (CSV/JSON) for review before selecting repos to promote into `config/repos.sample.json`.

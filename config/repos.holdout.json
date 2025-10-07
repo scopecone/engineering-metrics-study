@@ -154,5 +154,49 @@
   {
     "slug": "rrousselGit/riverpod",
     "reason": "no_deploy_signals_365d"
+  },
+  {
+    "slug": "nteract/papermill",
+    "reason": "no_signal_recent"
+  },
+  {
+    "slug": "multiprocessio/datastation",
+    "reason": "no_signal_recent"
+  },
+  {
+    "slug": "quasar/Quasar",
+    "reason": "no_signal_recent"
+  },
+  {
+    "slug": "samratashok/nishang",
+    "reason": "no_signal_recent"
+  },
+  {
+    "slug": "cobbr/Covenant",
+    "reason": "no_signal_recent"
+  },
+  {
+    "slug": "lcvvvv/kscan",
+    "reason": "no_signal_recent"
+  },
+  {
+    "slug": "skerkour/black-hat-rust",
+    "reason": "docs_only"
+  },
+  {
+    "slug": "leebaird/discover",
+    "reason": "no_signal_recent"
+  },
+  {
+    "slug": "cisagov/RedEye",
+    "reason": "no_signal_recent"
+  },
+  {
+    "slug": "bats3c/shad0w",
+    "reason": "no_signal_recent"
+  },
+  {
+    "slug": "therecipe/qt",
+    "reason": "no_signal_recent"
   }
 ]

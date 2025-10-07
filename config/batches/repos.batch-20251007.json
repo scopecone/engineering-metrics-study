@@ -1,0 +1,392 @@
+[
+  {
+    "slug": "dotnet/aspnetcore",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "icsharpcode/ILSpy",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "BeyondDimension/SteamTools",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "ardalis/CleanArchitecture",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "bitwarden/server",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "microsoft/react-native-windows",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "OpenRA/OpenRA",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "amplication/amplication",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "sandbox"
+      ]
+    }
+  },
+  {
+    "slug": "App-vNext/Polly",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "NuGet.org"
+      ]
+    }
+  },
+  {
+    "slug": "JuliaLang/julia",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "fonsp/Pluto.jl",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "MilesCranmer/PySR",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "SciML/DifferentialEquations.jl",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "grame-cncm/faust",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "MakieOrg/Makie.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "GenieFramework/Genie.jl",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "jump-dev/JuMP.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "GiovineItalia/Gadfly.jl",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "JuliaPlots/Plots.jl",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "JuliaAI/MLJ.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "JuliaData/DataFrames.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "SciML/ModelingToolkit.jl",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "FluxML/Zygote.jl",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "JuliaLang/PackageCompiler.jl",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "BishopFox/sliver",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "mitre/caldera",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Trusted-AI/adversarial-robustness-toolbox",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Pennyw0rth/NetExec",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "Idov31/Nidhogg",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "naptha/tesseract.js",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "emscripten-core/emscripten",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "slint-ui/slint",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "preview"
+      ]
+    }
+  },
+  {
+    "slug": "wasmerio/wasmer",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "leptos-rs/leptos",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "AssemblyScript/assemblyscript",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "bytecodealliance/wasmtime",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "tinygo-org/tinygo",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "leaningtech/webvm",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "tursodatabase/libsql",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "pion/webrtc",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "tursodatabase/turso",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "pyodide/pyodide",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  },
+  {
+    "slug": "svenstaro/genact",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "kanaka/mal",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "github-pages"
+      ]
+    }
+  }
+]

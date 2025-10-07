@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "dotnet/aspnetcore",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "icsharpcode/ILSpy",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "BeyondDimension/SteamTools",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "ardalis/CleanArchitecture",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "bitwarden/server",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "microsoft/react-native-windows",
+    "method": "releases",
+    "releases": {}
+  },
+  {
+    "slug": "OpenRA/OpenRA",
+    "method": "actions",
+    "actions": {
+      "workflowKeywords": [
+        "deploy",
+        "release",
+        "publish"
+      ]
+    }
+  },
+  {
+    "slug": "amplication/amplication",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "sandbox"
+      ]
+    }
+  },
+  {
+    "slug": "App-vNext/Polly",
+    "method": "deployments",
+    "deployments": {
+      "environments": [
+        "NuGet.org"
+      ]
+    }
+  }
+]
