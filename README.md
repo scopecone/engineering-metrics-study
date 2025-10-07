@@ -35,6 +35,8 @@ Curious how your team's delivery flow compares to the study cohort? Experiment w
      --days 365
    ```
    Helpful flags: `--repo owner/name` for ad-hoc runs, `--refresh` to ignore caches, `--debug` for verbose logs, and `COLLECTOR_PROGRESS=true` for progress updates. Payloads default to `data/raw`; change with `--output` if needed.
+
+   For long-running batches, add `--state-file tmp/run.jsonl --resume` to write a manifest and restart safely after interruptions. The collector appends one JSON line per repository; subsequent runs with `--resume` skip entries already marked `success`, while `--force owner/name` re-collects specific repos.
 5. **Aggregate metrics for analysis**
    ```bash
    npm run aggregate -- \

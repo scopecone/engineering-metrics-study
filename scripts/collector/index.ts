@@ -98,6 +98,16 @@ program
     (value) => value.split(",").map((word) => word.trim()).filter(Boolean),
     ["deploy", "release"]
   )
+  .option("--state-file <path>", "Path to state manifest (defaults to tmp/collect-state/run-<timestamp>.jsonl)")
+  .option("--resume", "Skip repos already marked successful in the state file", false)
+  .option(
+    "--force <slug>",
+    "Slug to force re-collect even if marked successful (can repeat)",
+    (value, previous: string[] = []) => {
+      previous.push(value);
+      return previous;
+    }
+  )
   .option(
     "-o, --output <dir>",
     "Directory to store raw payloads",
@@ -567,6 +577,8 @@ async function collectRepo(
 
   console.log(`\n⏳ Collecting ${repo.owner}/${repo.name} [method=${repo.method}]`);
 
+  const startedAt = new Date();
+
   const metadataPath = path.join(repoDir, "metadata.json");
   const cachedMetadataFile = await maybeReadCache<RepoMetadataCache>(
     metadataPath,
@@ -623,6 +635,7 @@ async function collectRepo(
 
   const eventsPath = path.join(repoDir, "workflow-runs.json");
   let eventsPayload = await maybeReadCache<{ runs: DeploymentLikeEvent[] }>(eventsPath, runtime.forceRefresh);
+  const usedCachedEvents = Boolean(eventsPayload);
   if (!eventsPayload) {
     const events = await collectDeploymentEvents(runtime, repo);
     eventsPayload = { runs: events };
@@ -639,6 +652,7 @@ async function collectRepo(
     pullRequestPath,
     runtime.forceRefresh
   );
+  const usedCachedPulls = Boolean(prPayload);
   if (!prPayload) {
     const prCollection = await collectPullRequests(
       graphqlClient,
@@ -664,11 +678,15 @@ async function collectRepo(
     });
   }
 
+  const completedAt = new Date();
+
   return {
     repo: metadata.fullName,
     pullRequests: prPayload.pullRequests.length,
     deploymentEvents: eventsPayload.runs.length,
-    cached: !runtime.forceRefresh,
+    cached: usedCachedEvents && usedCachedPulls && !runtime.forceRefresh,
+    startedAt: startedAt.toISOString(),
+    completedAt: completedAt.toISOString(),
   };
 }
 
@@ -676,11 +694,26 @@ async function collectReposParallel(
   runtime: CollectorRuntimeConfig,
   repoConfigs: RepoConfig[],
   graphqlClient: GraphqlClient,
-  concurrency = 5
+  concurrency = 5,
+  stateWriter?: (entry: Record<string, unknown>) => Promise<void>,
+  progressTracker?: (current: number) => void
 ): Promise<RepoCollectionResult[]> {
   const results: RepoCollectionResult[] = new Array(repoConfigs.length);
   let index = 0;
   const showProgress = process.env.COLLECTOR_PROGRESS === "true" || runtime.debug;
+  const startTime = Date.now();
+
+  function formatDuration(ms: number): string {
+    const totalSeconds = Math.floor(ms / 1000);
+    const hours = Math.floor(totalSeconds / 3600)
+      .toString()
+      .padStart(2, "0");
+    const minutes = Math.floor((totalSeconds % 3600) / 60)
+      .toString()
+      .padStart(2, "0");
+    const seconds = (totalSeconds % 60).toString().padStart(2, "0");
+    return `${hours}:${minutes}:${seconds}`;
+  }
 
   const worker = async () => {
     while (true) {
@@ -690,8 +723,13 @@ async function collectReposParallel(
       }
       const repoConfig = repoConfigs[currentIndex];
       if (showProgress) {
+        const completed = currentIndex;
+        const elapsed = Date.now() - startTime;
+        const avgMs = completed > 0 ? elapsed / completed : 0;
+        const remaining = repoConfigs.length - completed;
+        const eta = completed > 0 ? formatDuration(avgMs * remaining) : "--:--:--";
         console.log(
-          `[${currentIndex + 1}/${repoConfigs.length}] Collecting ${repoConfig.slug}…`
+          `[${currentIndex + 1}/${repoConfigs.length} | ${formatDuration(elapsed)} elapsed | ETA ${eta}] Collecting ${repoConfig.slug}…`
         );
       }
       try {
@@ -701,6 +739,17 @@ async function collectReposParallel(
           console.log(
             `✓ [${currentIndex + 1}/${repoConfigs.length}] ${repoConfig.slug}`
           );
+        }
+        if (stateWriter) {
+          await stateWriter({
+            slug: repoConfig.slug,
+            startedAt: summary.startedAt ?? null,
+            completedAt: summary.completedAt ?? null,
+            status: "success",
+            pullRequests: summary.pullRequests,
+            deploymentEvents: summary.deploymentEvents,
+            cached: summary.cached,
+          });
         }
       } catch (error) {
         if (error instanceof Error) {
@@ -717,6 +766,22 @@ async function collectReposParallel(
           deploymentEvents: 0,
           cached: false,
         };
+        if (stateWriter) {
+          await stateWriter({
+            slug: repoConfig.slug,
+            startedAt: new Date().toISOString(),
+            completedAt: new Date().toISOString(),
+            status: "error",
+            pullRequests: 0,
+            deploymentEvents: 0,
+            cached: false,
+            error:
+              error instanceof Error ? { message: error.message, stack: error.stack } : error,
+          });
+        }
+      }
+      if (progressTracker) {
+        progressTracker(currentIndex + 1);
       }
     }
   };
@@ -739,6 +804,9 @@ async function run() {
     botAuthorPatterns: string[];
     includeBotPrs: boolean;
     concurrency: number;
+    stateFile?: string;
+    resume?: boolean;
+    force?: string[];
   }>();
 
   if (options.debug) {
@@ -797,9 +865,103 @@ async function run() {
     botAuthorPatterns,
   };
 
-  console.log(`ℹ️  Using concurrency: ${options.concurrency}`);
+  const stateDir = path.join(PROJECT_ROOT, "tmp", "collect-state");
+  await fs.ensureDir(stateDir);
+  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const defaultStatePath = path.join(stateDir, `run-${timestamp}.jsonl`);
+  const stateFilePath = options.stateFile
+    ? path.isAbsolute(options.stateFile)
+      ? options.stateFile
+      : path.resolve(process.cwd(), options.stateFile)
+    : defaultStatePath;
 
-  const summaries = await collectReposParallel(runtime, repoConfigs, graphqlClient, options.concurrency);
+  const forcedSlugs = new Set((options.force ?? []).map((slug) => slug.toLowerCase()));
+  const existingState = new Map<string, { status: string }>();
+  if (options.resume) {
+    if (await fs.pathExists(stateFilePath)) {
+      const raw = await fs.readFile(stateFilePath, "utf8");
+      for (const line of raw.split("\n")) {
+        if (!line.trim()) continue;
+        try {
+          const entry = JSON.parse(line);
+          if (entry && typeof entry.slug === "string" && entry.status) {
+            existingState.set(entry.slug.toLowerCase(), entry);
+          }
+        } catch (error) {
+          console.warn(`⚠️  Failed to parse state entry: ${line}`);
+        }
+      }
+    } else {
+      console.warn(`⚠️  Resume requested but state file not found: ${stateFilePath}`);
+    }
+  }
+
+  if (!options.resume || !(await fs.pathExists(stateFilePath))) {
+    await fs.ensureFile(stateFilePath);
+    await fs.writeFile(stateFilePath, "");
+  }
+
+  const plannedRepos: RepoConfig[] = [];
+  let skippedCount = 0;
+  for (const repoConfig of repoConfigs) {
+    const slugKey = repoConfig.slug.toLowerCase();
+    const prior = existingState.get(slugKey);
+    const shouldSkip =
+      options.resume &&
+      prior?.status === "success" &&
+      !forcedSlugs.has(slugKey) &&
+      !runtime.forceRefresh;
+    if (shouldSkip) {
+      skippedCount += 1;
+      if (process.env.COLLECTOR_PROGRESS === "true" || runtime.debug) {
+        console.log(`↺ Skipping ${repoConfig.slug} (resume)`);
+      }
+      continue;
+    }
+    plannedRepos.push(repoConfig);
+  }
+
+  if (plannedRepos.length === 0) {
+    console.log(`ℹ️  Nothing to collect — ${skippedCount} repositories already up to date.`);
+    return;
+  }
+
+  const runStart = Date.now();
+  let completedCount = 0;
+  const writeMutex: { chain: Promise<void> } = { chain: Promise.resolve() };
+  const appendStateEntry = async (entry: Record<string, unknown>) => {
+    writeMutex.chain = writeMutex.chain.then(() =>
+      fs.appendFile(stateFilePath, `${JSON.stringify(entry)}\n`)
+    );
+    await writeMutex.chain;
+  };
+
+  console.log(`ℹ️  Using concurrency: ${options.concurrency}`);
+  if (options.resume) {
+    console.log(
+      `ℹ️  Resume enabled — skipped ${skippedCount} / ${repoConfigs.length} repos (state: ${stateFilePath})`
+    );
+  } else {
+    console.log(`ℹ️  State manifest: ${stateFilePath}`);
+  }
+
+  const summaries = await collectReposParallel(
+    runtime,
+    plannedRepos,
+    graphqlClient,
+    options.concurrency,
+    appendStateEntry,
+    () => {
+      completedCount += 1;
+      if (completedCount % 10 === 0 || completedCount === plannedRepos.length) {
+        const elapsed = Date.now() - runStart;
+        const minutes = (elapsed / 60000).toFixed(1);
+        console.log(
+          `ℹ️  Progress checkpoint: ${completedCount}/${plannedRepos.length} processed (${skippedCount} skipped, ${minutes} min elapsed)`
+        );
+      }
+    }
+  );
 
   console.log("\n✅ Collection complete:");
   for (const item of summaries) {

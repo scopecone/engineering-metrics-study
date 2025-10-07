@@ -65,4 +65,6 @@ export interface RepoCollectionResult {
   pullRequests: number;
   deploymentEvents: number;
   cached: boolean;
+  startedAt?: string;
+  completedAt?: string;
 }

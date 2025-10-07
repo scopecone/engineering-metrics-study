@@ -88,3 +88,4 @@ Following this plan should allow us to reach 250 repositories within ~4 batches 
 - **Collection method adjustments**: switched several high-volume projects (Godot, Drake, Swiftfin, Loop, etc.) to the `releases` method to avoid missing deployment signals hidden behind release tags.
 - **Holdouts added**: `Developer-Y/cs-video-courses` (docs-only) and `rrousselGit/riverpod` (no recent deployment surrogate) were excluded to keep the dataset focused on product repos with reproducible release cadence.
 - **Artifacts**: aggregated metrics for the batch are stored in `output/batch-20251006/` for review before promoting entries into `config/repos.sample.json`.
+- **Collector resume**: Use `npm run collect -- --input config/repos.sample.json --state-file tmp/run-<date>.jsonl --resume` to recover long runs; the manifest captures per-repo status, and `--force owner/name` replays any slice as needed.
